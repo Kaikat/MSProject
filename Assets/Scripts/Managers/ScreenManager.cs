@@ -46,12 +46,8 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.Home, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
-<<<<<<< Updated upstream
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
-=======
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
->>>>>>> Stashed changes
 	}
 }
 
