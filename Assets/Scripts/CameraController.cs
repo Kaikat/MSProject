@@ -17,6 +17,7 @@ public class CameraController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		
 		//WORKS
 		/*WebCamDevice[] devices = WebCamTexture.devices;
 		for(int i = 0; i < devices.Length; i++)
@@ -38,9 +39,12 @@ public class CameraController : MonoBehaviour
 		Renderer renderer = GetComponent<Renderer>();
 		WebCamTexture tex = new WebCamTexture(devices[0].name);
 
-		float quadHeight = (float) (1.0/4.0 * backgroundCamera.orthographicSize);
-		float quadWidth  = (float) (quadHeight * (double) Screen.width / (double) Screen.height);
-		transform.localScale = new Vector3 (-quadWidth, quadHeight, 1.0f);
+		//float quadHeight = (float) (3.0/4.0 * backgroundCamera.orthographicSize);
+		float quadHeight = (float) (2.0 * backgroundCamera.orthographicSize);
+		//float quadWidth  = (float) (quadHeight * (float) Screen.width / (float) Screen.height);
+		float quadWidth  = quadHeight * Screen.width / Screen.height;
+
+		transform.localScale = new Vector3 (quadWidth, -quadHeight, 1.0f);
 
 		renderer.material.mainTexture = tex;
 		tex.Play();
