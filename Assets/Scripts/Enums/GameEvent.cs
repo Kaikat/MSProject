@@ -13,6 +13,7 @@ public enum GameEvent {
 	Home,
 	IDCard,
 	CatchAnimal,
+	Journal,
 
 	AccountCreationSuccess,
 	LoginSuccessful,

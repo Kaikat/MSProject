@@ -26,11 +26,15 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.RegisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
 		EventManager.RegisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
 		EventManager.RegisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
+		//Journal
+		EventManager.RegisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
+
 	}
 
 	public void ShowScreen(ScreenType screen)
 	{
 		Debug.LogWarning (screen.ToString ());
+		//Hide previous screen and show active screen
 		screenMap [ActiveScreen].Hide ();
 		ActiveScreen = screen;
 		screenMap [ActiveScreen].Show ();
@@ -42,7 +46,12 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.Home, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
+<<<<<<< Updated upstream
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
+=======
+		EventManager.UnregisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
+		EventManager.UnregisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
+>>>>>>> Stashed changes
 	}
 }
 
