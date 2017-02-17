@@ -7,4 +7,5 @@ public enum ScreenType {
 	FakeHome,
 	WorkingHome,
 	IDCard,
+	CatchAnimal,
 }

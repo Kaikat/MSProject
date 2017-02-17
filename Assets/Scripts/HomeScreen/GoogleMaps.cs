@@ -38,6 +38,7 @@ public class GoogleMaps : MonoBehaviour
 	IEnumerator _Refresh ()
 	{
 		var url = "http://maps.googleapis.com/maps/api/staticmap";
+		//var url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false";
 		var qs = "";
 		if (!autoLocateCenter) {
 			if (centerLocation.address != "")

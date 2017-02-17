@@ -25,6 +25,7 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.RegisterEvent (GameEvent.Home, () => ShowScreen(ScreenType.Home));
 		EventManager.RegisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
 		EventManager.RegisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
+		EventManager.RegisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
 	}
 
 	public void ShowScreen(ScreenType screen)
@@ -41,6 +42,7 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.Home, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
+		EventManager.UnregisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
 	}
 }
 

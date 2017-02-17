@@ -12,6 +12,7 @@ public class EventTriggerTest : MonoBehaviour {
 
 		if (Input.GetKeyDown ("s"))
 		{
+			EventManager.TriggerEvent (GameEvent.Destroy);
 			EventManager.TriggerEvent (GameEvent.Spawn);
 		}
 
