@@ -51,11 +51,17 @@ public class RealService : IServices
 
 	public bool VerifyLogin(string username, string password)
 	{
+		username = username.Trim ();
+		password = password.Trim ();
+		if (username.Length == 0 || password.Length == 0)
+		{
+			return false;
+		}
 
+		username = username.ToLower ();
 		// send username to server and get salt from the server if it exists
 		// hash the password with the salt
 		// send hashed password to server
-
 		JsonResponse loginSession = WebManager.instance.GetHttpResponse<JsonResponse> (
 			HTTP_ADDRESS + "VerifyLogin.php" + "?username=" + username + "&password=" + password);
 
