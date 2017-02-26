@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 	//public WebCamTexture mCamera = null;
 	//public GameObject cameraImage;
 	public Camera backgroundCamera;
+	public Text debugText;
 	//private WebCamTexture mCamera = null;
 
 	//WebCamTexture webcamTexture;
@@ -44,7 +45,20 @@ public class CameraController : MonoBehaviour
 		//float quadWidth  = (float) (quadHeight * (float) Screen.width / (float) Screen.height);
 		float quadWidth  = quadHeight * Screen.width / Screen.height;
 
+
+		transform.localScale = new Vector3 (-quadWidth, quadHeight, 1.0f);
+		debugText.text = "I'm a computer!\n";
+
+		#if UNITY_IOS
 		transform.localScale = new Vector3 (quadWidth, -quadHeight, 1.0f);
+		debugText.text = "I'm an iPhone!";
+		#endif
+
+		#if UNITY_ANDROID
+		debugText.text = "I'm an android phone!";
+		#endif
+
+	
 
 		renderer.material.mainTexture = tex;
 		tex.Play();
