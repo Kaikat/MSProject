@@ -86,6 +86,8 @@ public class UpdateGPSLocation : MonoBehaviour
 		// Stop service if there is no need to query location updates continuously
 		Input.location.Stop ();
 		debugText.text = "";
+
+		// Make sure it immediately updates when the screen shows again
 		fiveSecondCounter = 5.1f;
 	}
 }
