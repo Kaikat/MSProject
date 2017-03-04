@@ -40,8 +40,12 @@ public class CameraController : MonoBehaviour
 		transform.localScale = new Vector3 (originalScale.x, originalScale.y, originalScale.z / aspectRatio);
 		#endif*/
 
+		#if UNITY_ANDROID
+//		debugText.text += "I'm an android phone - CHANGE!";
+		transform.localScale = new Vector3 (-originalScale.x, originalScale.y, originalScale.z);
+		#endif
+
 		GetComponent<Renderer> ().material.mainTexture = tex;
-	
 		tex.Play();
 	}
 
