@@ -19,7 +19,7 @@ public class Player {
 	public Player ()
 	{
 		Animals = new Dictionary<AnimalSpecies, List<Animal>> ();
-		PopulateAnimalList ();
+		//PopulateAnimalList ();
 
 		EventManager.RegisterEvent(GameEvent.Spawn, SpawnFunction);
 		EventManager.RegisterEvent (GameEvent.Destroy, DestroyFunction);
@@ -32,6 +32,12 @@ public class Player {
 		Name = RealService.Name;
 	}
 		
+	public void LoadPlayer(string username)
+	{
+		Username = username;
+		PopulateAnimalList ();
+	}
+
 	public void Destroy()
 	{
 		EventManager.UnregisterEvent (GameEvent.Spawn, SpawnFunction);
@@ -67,7 +73,12 @@ public class Player {
 		SeenNum += num;
 	}
 
-	//To get current animal according to speicies
+	public string GetUsername()
+	{
+		return Username;
+	}
+
+	//To get current animal according to species
 	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() {
 		return Animals;
 	}
@@ -97,9 +108,7 @@ public class Player {
 
 
 		//tigerAsset = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger), new Vector3(0.0f, 0.0f, -5.0f), Quaternion.identity);
-
 		//Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);
-
 		//tigerAsset = (GameObject)GameObject.Instantiate(Resources.Load("AnimalPrefabs/Tiger"));//, new Vector3 (0f, 0f, 0f), Quaternion.identity);
 	}
 

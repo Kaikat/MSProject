@@ -20,6 +20,7 @@ public class Login : MonoBehaviour {
 			ErrorLabel.text = "Login Successful";
 			EventManager.TriggerEvent (GameEvent.LoginSuccessful);
 			EventManager.TriggerEvent (GameEvent.Home);
+			StartGame.CurrentPlayer.LoadPlayer (Username.text);
 		} 
 		else 
 		{

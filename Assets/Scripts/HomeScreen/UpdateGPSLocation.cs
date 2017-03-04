@@ -5,9 +5,12 @@ using System.Collections;
 public class UpdateGPSLocation : MonoBehaviour
 {
 	public Text debugText;
+	public Text distanceDebug;
 
 	LocationInfo myGPSLocation;
 	float fiveSecondCounter = 0.0f;
+
+	float currentDistance;
 
 	IEnumerator Start()
 	{
@@ -72,6 +75,29 @@ public class UpdateGPSLocation : MonoBehaviour
 	string getUpdatedGPSstring()
 	{
 		myGPSLocation = Input.location.lastData;
+
+		//Check if close to a predefined location
+		//El Centro: 34.414207, -119.844517
+		//Girvetz Courtyard: 34.413632, -119.846974
+
+		//Test: 		34.41103, -119.8638
+		//Test Limit: 	34.41094, -119.8639
+		Vector2 limit = new Vector2 (34.41094f, -119.8639f);
+		Vector2 testp = new Vector2 (34.41103f, -119.8638f);
+		float allowedDistance = Vector2.Distance (limit, testp);
+
+		Vector2 currentLocation = new Vector2 (myGPSLocation.latitude, myGPSLocation.longitude);
+		currentDistance = Vector2.Distance (testp, currentLocation);
+
+		currentDistance = 0.0f;
+		distanceDebug.text = "allowedDistance: " + allowedDistance.ToString () + " currentDistance: " + currentDistance.ToString ();
+
+		if (currentDistance < allowedDistance)
+		{
+			AssetManager.ShowAnimal (AnimalSpecies.Tiger);
+			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
+		}
+			
 		return "Location: " + myGPSLocation.latitude + " " + myGPSLocation.longitude + " " + myGPSLocation.altitude + " " + myGPSLocation.horizontalAccuracy + " " + myGPSLocation.timestamp + "\n"; 
 	}
 
@@ -89,5 +115,7 @@ public class UpdateGPSLocation : MonoBehaviour
 
 		// Make sure it immediately updates when the screen shows again
 		fiveSecondCounter = 5.1f;
+
+		//AssetManager.HideAnimals ();
 	}
 }

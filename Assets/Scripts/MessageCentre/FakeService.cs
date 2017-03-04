@@ -85,4 +85,8 @@ public class FakeService : IServices
 
 		return PlayerAnimals;
 	}
+
+	public void CatchAnimal(AnimalSpecies species)
+	{
+	}
 }

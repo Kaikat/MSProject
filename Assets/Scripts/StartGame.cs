@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class StartGame : MonoBehaviour {
-
+	//public static class StartGame {
+		
 	public static Player CurrentPlayer;
 
 	void Start () 

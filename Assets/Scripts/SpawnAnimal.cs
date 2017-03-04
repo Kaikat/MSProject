@@ -17,10 +17,20 @@ public class SpawnAnimal : MonoBehaviour {
 
 	public void Click()
 	{
-		Debug.Log ("Spawning");
-		animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger));
+//		Debug.Log ("Spawning");
+//		animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger));
+//		animal.layer = LayerMask.NameToLayer("Default");
 
-		animal.layer = LayerMask.NameToLayer("Default");
+
+
+		Debug.Log ("Caught Animal");
+		//animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger));
+		//animal.layer = LayerMask.NameToLayer("Default");
+
+		Service.Request.CatchAnimal (AnimalSpecies.Butterfly);
+
+
+
 
 		//tigerAsset = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger), new Vector3(0.0f, 0.0f, -5.0f), Quaternion.identity);
 		//Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);

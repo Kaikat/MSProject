@@ -6,6 +6,7 @@ public static class AssetManager
 {
 	private static Dictionary<AnimalSpecies, Object> AnimalPrefabs;
 	private static List<GameObject> AnimalModels;
+	private static List<AnimalSpecies> Species;
 
 	static AssetManager()
 	{
@@ -16,6 +17,7 @@ public static class AssetManager
 		string folder = "AnimalPrefabs";
 		AnimalPrefabs = new Dictionary<AnimalSpecies, Object> ();
 		AnimalModels = new List<GameObject> ();
+		Species = new List<AnimalSpecies> ();
 
 		List<BasicAnimal> animals = Service.Request.GetAllAnimals ();
 
@@ -48,6 +50,7 @@ public static class AssetManager
 
 				animal.SetActive (false);
 				AnimalModels.Add (animal);
+				Species.Add (animals [i].Species);
 			}
 		}
 	}
@@ -62,6 +65,25 @@ public static class AssetManager
 	public static Object GetAnimalPrefab(AnimalSpecies species)
 	{
 		return AnimalPrefabs [species];
+	}
+
+	public static void ShowAnimal(AnimalSpecies species)
+	{
+		for (int i = 0; i < Species.Count; i++)
+		{
+			if (Species [i] == species)
+			{
+				AnimalModels [i].SetActive (true);
+			}
+		}
+	}
+
+	public static void HideAnimals()
+	{
+		for (int i = 0; i < AnimalModels.Count; i++)
+		{
+			AnimalModels [i].SetActive (false);
+		}
 	}
 
 	/*private static void LoadAllAnimalModels()

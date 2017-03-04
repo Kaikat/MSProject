@@ -99,15 +99,50 @@ public class RealService : IServices
 		//EchoResponse response = WebManager.instance.GetHttpResponse<EchoResponse> ("http://localhost:8888/echo.php?tag=stuff");
 		//Debug.Log (response.ResultingData[1]);
 
-		Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);
-		PlayerAnimals.Add (animal);
+		//Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);
+		//PlayerAnimals.Add (animal);
 
+		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + StartGame.CurrentPlayer.GetUsername ());
+		foreach (OwnedAnimalData r in response.OwnedAnimals)
+		{
+			AnimalSpecies specie;
+			if (r.animal_id == "tiger1")
+			{
+				specie = AnimalSpecies.Tiger;
+			}
+			else
+			{
+				specie = AnimalSpecies.Butterfly;
+			}	
+			PlayerAnimals.Add (new Animal (r.animal_id, specie, r.nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle));
+		}
 		return PlayerAnimals;
 	}
 
 	public string GetPlayerName()
 	{
 		return Name;
+	}
+
+	//http://tamuyal.mat.ucsb.edu:8888/CaughtAnimal.php?username=kaikat15&animal_id=tiger1&nickname=tigesote&health=40.0&size=2.0&age=4.0&colorfile=color.txt
+	public void CatchAnimal(AnimalSpecies species)
+	{
+		string nickname = "tigecito";
+		string animalID = species == AnimalSpecies.Tiger ? "tiger1" : "butterfly1";
+
+		float health = 2.0f;
+		float age = 4.0f;
+		float size = 3.0f;
+		string colorFile = "colorfile.txt";
+
+
+		WebManager.GetHttpResponse<JsonResponse> (HTTP_ADDRESS + "CaughtAnimal.php?username=" + StartGame.CurrentPlayer.GetUsername() +
+			"&animal_id=" + animalID + "&nickname=" + nickname + "&health=" + health.ToString() + "&size=" + size.ToString() + 
+			"&age=" + age.ToString() + "&colorfile=" + colorFile);
+
+			/*kaikat15&animal_id=tiger1
+			&nickname=tigesote
+			&health=40.0&size=2.0&age=4.0&colorfile=color.txt*/
 	}
 
 	[System.Serializable]
@@ -144,4 +179,20 @@ public class RealService : IServices
 		public string colorkey_map_file;
 	}
 
+	[System.Serializable]
+	public class OwnedAnimalResponse
+	{		
+		public List<OwnedAnimalData> OwnedAnimals;
+	}
+			
+	[System.Serializable]
+	public class OwnedAnimalData
+	{
+		public string animal_id;
+		public string nickname;
+		public string health;
+		public float size;
+		public float age;
+		public string color;
+	}
 }
