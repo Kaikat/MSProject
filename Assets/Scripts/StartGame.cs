@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class StartGame : MonoBehaviour {
 
-	Player CurrentPlayer;
+	public static Player CurrentPlayer;
 
 	void Start () {
 		CurrentPlayer = new Player ();
