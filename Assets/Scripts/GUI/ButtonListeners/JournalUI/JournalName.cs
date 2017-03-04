@@ -14,7 +14,7 @@ public class JournalName : MonoBehaviour
 		t = GetComponent<Text> ();
 		//Animals = StartGame.CurrentPlayer.GetAnimals ();
 
-		t.text = "Tiger";
+		//t.text = "Tiger";
 	}
 	
 	// Update is called once per frame

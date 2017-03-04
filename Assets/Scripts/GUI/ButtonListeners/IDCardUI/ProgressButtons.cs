@@ -7,6 +7,8 @@ public class ProgressButtons : MonoBehaviour
 {
 	public GameObject prefab;
 	public GameObject[] buttons;
+	public Sprite tiger;
+	public Sprite butterfly;
 	Dictionary<AnimalSpecies, List<Animal>> Animals;
 
 
@@ -25,8 +27,10 @@ public class ProgressButtons : MonoBehaviour
 			button.transform.position = new Vector3 (265 + 100 * i, 300, 0);
 			if (i == 0) {
 				button.GetComponentInChildren<Text> ().text = "Tiger";
+				button.GetComponent<Image> ().sprite = tiger;
 			} else {
 				button.GetComponentInChildren<Text> ().text = "Butterfly";
+				button.GetComponent<Image> ().sprite = butterfly;
 			}
 			buttons [i] = button;
 		}
