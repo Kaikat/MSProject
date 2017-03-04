@@ -6,9 +6,8 @@ public class SetCorrectImageRotation : MonoBehaviour {
 
 	public Text debugText;
 
-	void Start () {
-	
-
+	void Start () 
+	{
 		#if UNITY_IOS
 		transform.localRotation = Quaternion.Euler(90.0f, 0.0f, 0.0f);
 		debugText.text = "I'm an iPhone!";

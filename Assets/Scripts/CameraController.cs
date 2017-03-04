@@ -24,24 +24,9 @@ public class CameraController : MonoBehaviour
 		tex = new WebCamTexture(devices[0].name);
 		tex.filterMode = FilterMode.Trilinear;
 
-		Vector3 originalScale = transform.localScale;
-		float aspectRatio = (float) Screen.width / (float) Screen.height;
-		//transform.localScale = new Vector3 (originalScale.x, originalScale.y, originalScale.z / aspectRatio);
-
-		//ios 		: -height
-		//android	: none
-		/*#if UNITY_IOS
-		transform.localScale = new Vector3 (originalScale.x, originalScale.y, originalScale.z / aspectRatio);
-		debugText.text += "I'm an iPhone!";
-		#endif
+		Vector3 originalScale = transform.localScale;	
 
 		#if UNITY_ANDROID
-		debugText.text += "I'm an android phone!";
-		transform.localScale = new Vector3 (originalScale.x, originalScale.y, originalScale.z / aspectRatio);
-		#endif*/
-
-		#if UNITY_ANDROID
-//		debugText.text += "I'm an android phone - CHANGE!";
 		transform.localScale = new Vector3 (-originalScale.x, originalScale.y, originalScale.z);
 		#endif
 
