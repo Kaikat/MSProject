@@ -8,6 +8,7 @@ public enum ScreenType {
 	WorkingHome,
 	IDCard,
 	CatchAnimal,
-	Journal
+	Journal,
+	Caught
 
 }

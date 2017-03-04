@@ -28,6 +28,7 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.RegisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
 		//Journal
 		EventManager.RegisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
+		EventManager.RegisterEvent <ScreenType> (GameEvent.Caught, ShowScreen);
 
 	}
 
@@ -48,6 +49,7 @@ public class ScreenManager : MonoBehaviour {
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
 		EventManager.UnregisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
+		EventManager.UnregisterEvent <ScreenType> (GameEvent.Caught, ShowScreen);
 	}
 }
 

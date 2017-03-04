@@ -15,7 +15,7 @@ public class SeenNum : MonoBehaviour
 	void Update ()
 	{	
 		
-		t.text = "3";
+		t.text = "2";
 		//t.text = StartGame.CurrentPlayer.GetSeen.ToString();
 	}
 }

@@ -1,24 +1,26 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
-public class GetName : MonoBehaviour
+public class JournalName : MonoBehaviour
 {
-	Player player;
 	Text t;
+	Dictionary<AnimalSpecies,List<Animal>> Animals;
 
 	// Use this for initialization
 	void Start ()
 	{
-		player = StartGame.CurrentPlayer;
 		t = GetComponent<Text> ();
-		//t.text = player.GetName ();
+		//Animals = StartGame.CurrentPlayer.GetAnimals ();
+
+		t.text = "Tiger";
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		
+	
 	}
 }
 

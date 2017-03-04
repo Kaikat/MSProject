@@ -25,6 +25,11 @@ public class Player {
 		EventManager.RegisterEvent (GameEvent.Destroy, DestroyFunction);
 		EventManager.RegisterEvent (GameEvent.Test, TestFunction);
 		EventManager.RegisterEvent (GameEvent.Junk, JunkFunction);
+
+		ReleasedNum = 0;
+		NursingNum = 0;
+		SeenNum = 0;
+		Name = RealService.Name;
 	}
 		
 	public void Destroy()
@@ -34,7 +39,7 @@ public class Player {
 	}
 
 	//add get functions for UI
-	public string GetNmae() {
+	public string GetName() {
 		return Name;
 	}
 
@@ -42,12 +47,24 @@ public class Player {
 		return ReleasedNum;
 	}
 
+	public void SetReleased(int num) {
+		ReleasedNum += num;
+	}
+
 	public int GetNursing() {
 		return NursingNum;
 	}
 
+	public void SetNursing(int num) {
+		NursingNum += num;
+	}
+
 	public int GetSeen() {
 		return SeenNum;
+	}
+
+	public void SetSeen(int num) {
+		SeenNum += num;
 	}
 
 	//To get current animal according to speicies

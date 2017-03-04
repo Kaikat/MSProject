@@ -16,13 +16,18 @@ public class ProgressButtons : MonoBehaviour
 		//prefab = Resources.Load ("Assets/Prefabs/AnimalButton") as GameObject;
 		Animals = StartGame.CurrentPlayer.GetAnimals ();
 		//int numOfAnimals = Animals.Count;
-		int numOfAnimals = 3;
+		int numOfAnimals = 2;
 
 		buttons = new GameObject[numOfAnimals];
 		for (int i = 0; i < numOfAnimals; i++) {
 			GameObject button = Instantiate (prefab) as GameObject;
 			button.transform.parent = this.transform;
-			button.transform.position = new Vector3 (285 + 100 * i, 320, 0);
+			button.transform.position = new Vector3 (265 + 100 * i, 300, 0);
+			if (i == 0) {
+				button.GetComponentInChildren<Text> ().text = "Tiger";
+			} else {
+				button.GetComponentInChildren<Text> ().text = "Butterfly";
+			}
 			buttons [i] = button;
 		}
 	}

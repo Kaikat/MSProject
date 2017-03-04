@@ -15,7 +15,7 @@ public class NursingNum : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		t.text = "2";
+		t.text = "1";
 
 		//t.text = StartGame.CurrentPlayer.GetNursing.toString();
 	}

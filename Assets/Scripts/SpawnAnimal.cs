@@ -3,7 +3,8 @@ using System.Collections;
 
 public class SpawnAnimal : MonoBehaviour {
 
-	GameObject animal;
+	//temp static for get animal type
+	public static GameObject animal;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,6 +19,7 @@ public class SpawnAnimal : MonoBehaviour {
 	{
 		Debug.Log ("Spawning");
 		animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger));
+
 		animal.layer = LayerMask.NameToLayer("Default");
 
 		//tigerAsset = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger), new Vector3(0.0f, 0.0f, -5.0f), Quaternion.identity);

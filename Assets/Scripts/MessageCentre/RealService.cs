@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class RealService : IServices
 {
+	public static string Name;
 	private static RealService _Instance;
 	public static RealService instance
 	{
@@ -69,7 +70,9 @@ public class RealService : IServices
 		{
 			return false;
 		}
-			
+
+		//tempo save for Name
+		Name = username;
 		return true;
 	}
 
@@ -100,6 +103,11 @@ public class RealService : IServices
 		PlayerAnimals.Add (animal);
 
 		return PlayerAnimals;
+	}
+
+	public string GetPlayerName()
+	{
+		return Name;
 	}
 
 	[System.Serializable]
