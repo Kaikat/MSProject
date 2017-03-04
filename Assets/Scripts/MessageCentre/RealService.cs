@@ -32,7 +32,7 @@ public class RealService : IServices
 	{
 		string message = "";
 
-		JsonResponse response = WebManager.instance.GetHttpResponse<JsonResponse> (
+		JsonResponse response = WebManager.GetHttpResponse<JsonResponse> (
 			HTTP_ADDRESS + "CreateAccount.php" + "?username=" + username + "&password=" + password);
 
 
@@ -62,7 +62,7 @@ public class RealService : IServices
 		// send username to server and get salt from the server if it exists
 		// hash the password with the salt
 		// send hashed password to server
-		JsonResponse loginSession = WebManager.instance.GetHttpResponse<JsonResponse> (
+		JsonResponse loginSession = WebManager.GetHttpResponse<JsonResponse> (
 			HTTP_ADDRESS + "VerifyLogin.php" + "?username=" + username + "&password=" + password);
 
 		if (loginSession.error == true)
@@ -76,7 +76,7 @@ public class RealService : IServices
 	public List<BasicAnimal> GetAllAnimals()
 	{
 		List<BasicAnimal> basicAnimals = new List<BasicAnimal> ();
-		DictResponse response = WebManager.instance.GetHttpResponse<DictResponse> (HTTP_ADDRESS + "GetAllAnimals.php");
+		DictResponse response = WebManager.GetHttpResponse<DictResponse> (HTTP_ADDRESS + "GetAllAnimals.php");
 
 		foreach (AnimalData r in response.AnimalData)
 		{

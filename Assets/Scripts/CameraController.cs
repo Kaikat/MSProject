@@ -9,8 +9,6 @@ using System;
 public class CameraController : MonoBehaviour
 {
 	public Camera backgroundCamera;
-	//public Text debugText;
-
 	WebCamTexture tex;
 
 	void Start ()

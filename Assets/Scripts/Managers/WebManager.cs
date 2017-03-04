@@ -1,14 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WebManager : MonoBehaviour {
-	public static WebManager instance;
-	public void Start()
-	{
-		instance = this;
-	}
-
-	public T GetHttpResponse<T> (string url)
+public static class WebManager 
+{
+	public static T GetHttpResponse<T> (string url)
 	{
 		T response;
 		WWW request = new WWW(url);
