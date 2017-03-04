@@ -7,7 +7,7 @@ public class ProgressButtons : MonoBehaviour
 {
 	public GameObject prefab;
 	public GameObject[] buttons;
-	//Dictionary<AnimalSpecies, List<Animal>> Animals;
+	Dictionary<AnimalSpecies, List<Animal>> Animals;
 
 
 	// Use this for initialization
