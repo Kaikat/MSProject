@@ -100,6 +100,19 @@ public class Player {
 		}
 	}
 
+	public void AddAnimal(AnimalSpecies species, Animal animal)
+	{
+		
+		if (Animals.ContainsKey (species)) 
+		{				
+			Animals [species].Add (animal);
+		} 
+		else 
+		{
+			Animals.Add (species, new List<Animal>());
+			Animals[species].Add(animal);
+		}
+	}
 
 	private void SpawnFunction()
 	{

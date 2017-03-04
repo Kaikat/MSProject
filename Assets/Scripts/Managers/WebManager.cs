@@ -11,8 +11,9 @@ public static class WebManager
 		{
 			new WaitForSeconds (1);
 		}
+
 		string json = request.text;
-		response = JsonUtility.FromJson<T>(json);
+		response = JsonUtility.FromJson<T> (json);
 		return response;
 	}
 }

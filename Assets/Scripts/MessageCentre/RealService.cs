@@ -102,8 +102,15 @@ public class RealService : IServices
 		//Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);
 		//PlayerAnimals.Add (animal);
 
-		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + StartGame.CurrentPlayer.GetUsername ());
-		foreach (OwnedAnimalData r in response.OwnedAnimals)
+		//http://tamuyal.mat.ucsb.edu:8888/GetPlayerAnimals.php?username=kaikat14
+		//http://tamuyal.mat.ucsb.edu:8888/GetPlayerAnimals.php?username=kaikat14
+		string url = HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + StartGame.CurrentPlayer.GetUsername ();
+		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (url);
+		if (response.empty)
+		{
+			return PlayerAnimals;
+		}
+		foreach (OwnedAnimalData r in response.OwnedAnimalData)
 		{
 			AnimalSpecies specie;
 			if (r.animal_id == "tiger1")
@@ -116,6 +123,7 @@ public class RealService : IServices
 			}	
 			PlayerAnimals.Add (new Animal (r.animal_id, specie, r.nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle));
 		}
+
 		return PlayerAnimals;
 	}
 
@@ -135,11 +143,12 @@ public class RealService : IServices
 		float size = 3.0f;
 		string colorFile = "colorfile.txt";
 
-
+		Animal animal = new Animal (animalID, species, nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle);
 		WebManager.GetHttpResponse<JsonResponse> (HTTP_ADDRESS + "CaughtAnimal.php?username=" + StartGame.CurrentPlayer.GetUsername() +
 			"&animal_id=" + animalID + "&nickname=" + nickname + "&health=" + health.ToString() + "&size=" + size.ToString() + 
 			"&age=" + age.ToString() + "&colorfile=" + colorFile);
 
+		StartGame.CurrentPlayer.AddAnimal (species, animal);
 			/*kaikat15&animal_id=tiger1
 			&nickname=tigesote
 			&health=40.0&size=2.0&age=4.0&colorfile=color.txt*/
@@ -182,7 +191,8 @@ public class RealService : IServices
 	[System.Serializable]
 	public class OwnedAnimalResponse
 	{		
-		public List<OwnedAnimalData> OwnedAnimals;
+		public bool empty;
+		public List<OwnedAnimalData> OwnedAnimalData;
 	}
 			
 	[System.Serializable]
@@ -193,6 +203,6 @@ public class RealService : IServices
 		public string health;
 		public float size;
 		public float age;
-		public string color;
+		public string color_file;
 	}
 }
