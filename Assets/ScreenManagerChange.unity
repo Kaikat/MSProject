@@ -198,6 +198,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 457354, guid: c258ab946206f46f08519e70066793ee, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -234,6 +238,30 @@ Prefab:
       propertyPath: cameraFeedBackground
       value: 
       objectReference: {fileID: 2128549119}
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.data[0].latitude
+      value: 34.41421
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.data[0].longitude
+      value: -119.844505
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.data[0].address
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.data[1].address
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.data[1].latitude
+      value: 34.413624
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493854, guid: c258ab946206f46f08519e70066793ee, type: 2}
+      propertyPath: markers.Array.data[0].locations.Array.data[1].longitude
+      value: -119.84698
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c258ab946206f46f08519e70066793ee, type: 2}
   m_IsPrefabParent: 0
