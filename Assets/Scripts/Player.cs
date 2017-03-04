@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +8,10 @@ public class Player {
 	private string Username;
 	private string Name;
 	private int Currency;
+	private int ReleasedNum;
+	private int NursingNum;
+	private int SeenNum;
+
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 
 	GameObject tigerAsset;
@@ -29,6 +33,28 @@ public class Player {
 		EventManager.UnregisterEvent (GameEvent.Destroy, DestroyFunction);
 	}
 
+	//add get functions for UI
+	public string GetNmae() {
+		return Name;
+	}
+
+	public int GetReleased() {
+		return ReleasedNum;
+	}
+
+	public int GetNursing() {
+		return NursingNum;
+	}
+
+	public int GetSeen() {
+		return SeenNum;
+	}
+
+	//To get current animal according to speicies
+	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() {
+		return Animals;
+	}
+	
 	private void PopulateAnimalList()
 	{
 		List<Animal> playerAnimals = Service.Request.GetPlayerAnimals ();
@@ -45,6 +71,7 @@ public class Player {
 			}
 		}
 	}
+
 
 	private void SpawnFunction()
 	{
