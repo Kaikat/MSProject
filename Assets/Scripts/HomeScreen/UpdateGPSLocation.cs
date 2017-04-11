@@ -18,6 +18,10 @@ public class UpdateGPSLocation : MonoBehaviour
 		//gameObject.GetComponent<TaggedShowHide> ().listener = this;
 		debugText.text += "Starting the GPS Script\n";
 
+		#if UNITY_ANROID
+		Input.compass.enabled = true;
+		#endif
+
 		return InitializeGPSServices ();
 	}
 
@@ -93,15 +97,16 @@ public class UpdateGPSLocation : MonoBehaviour
 		currentDistance = 0.0f;
 		distanceDebug.text = "allowedDistance: " + allowedDistance.ToString () + " currentDistance: " + currentDistance.ToString ();
 
+		// Default/Debug Animal
 		if (currentDistance < allowedDistance && !StartGame.CurrentPlayer.GetAnimals().ContainsKey(AnimalSpecies.Tiger))
 		{
-			AssetManager.ShowAnimal (AnimalSpecies.Tiger);
+			AssetManager.ShowAnimal (AnimalSpecies.Horse);
 			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
 			spawnHint.text = AnimalSpecies.Tiger.ToString ();
 
 		}
-			
 
+		// Actual Places
 		Vector2 GirvetzCourtyard = new Vector2 (34.413632f, -119.846974f);
 		Vector2 ElCentro = new Vector2 (34.414207f, -119.844517f);
 		float allowedDistanceRadius = 0.0001349778f;

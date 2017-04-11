@@ -26,32 +26,34 @@ public static class AssetManager
 			AnimalPrefabs.Add(animals[i].Species, LoadPrefab(folder, animals[i].Species.ToString()));
 
 			// TEMPORARY: Not the final assets
-			if (animals [i].Species != AnimalSpecies.Horse)
+			//Keep these 2
+			GameObject animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (animals [i].Species));
+			animal.layer = LayerMask.NameToLayer ("Default");
+
+			// TEMPORARY: Not the final assets
+			if (animals [i].Species == AnimalSpecies.Butterfly)
 			{
-				//Keep these 2
-				GameObject animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (animals [i].Species));
-				animal.layer = LayerMask.NameToLayer ("Default");
-
-				// TEMPORARY: Not the final assets
-				if (animals [i].Species == AnimalSpecies.Butterfly)
-				{
-					GameObject temp = new GameObject ();
-					temp.layer = LayerMask.NameToLayer ("Default");
-					Transform t = temp.transform;
-					t.localScale = t.transform.localScale * 10.0f;
-					t.localPosition = new Vector3 (1.0f, -3.5f, 0.0f);
-					animal.transform.SetParent (t);
-				}
-				else
-				{
-					// Keep these 2
-					animal.transform.localScale = animal.transform.localScale * 2.0f;
-				}
-
-				animal.SetActive (false);
-				AnimalModels.Add (animal);
-				Species.Add (animals [i].Species);
+				GameObject temp = new GameObject ();
+				temp.layer = LayerMask.NameToLayer ("Default");
+				Transform t = temp.transform;
+				t.localScale = t.transform.localScale * 10.0f;
+				t.localPosition = new Vector3 (1.0f, -3.5f, 0.0f);
+				animal.transform.SetParent (t);
 			}
+			else
+			{
+				// Keep these 2
+				animal.transform.localScale = animal.transform.localScale * 2.0f;
+			}
+
+			if (animals [i].Species == AnimalSpecies.Horse)
+			{
+				animal.transform.localPosition = new Vector3 (animal.transform.localPosition.x, -1.9f, animal.transform.localPosition.z);
+			}
+
+			animal.SetActive (false);
+			AnimalModels.Add (animal);
+			Species.Add (animals [i].Species);
 		}
 	}
 
