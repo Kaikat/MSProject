@@ -92,6 +92,26 @@ public class RealService : IServices
 		return basicAnimals;
 	}
 
+	public string AnimalDescription(AnimalSpecies species)
+	{
+		if (species == AnimalSpecies.Tiger)
+		{
+			return "The tiger (Panthera tigris) is the largest cat species, most recognisable for their pattern of dark vertical stripes on reddish-orange fur with a lighter underside.";
+		}
+		else if (species == AnimalSpecies.Butterfly)
+		{
+			return "Butterflies are insects in the macrolepidopteran clade Rhopalocera from the order Lepidoptera, which also includes moths.";
+		}
+		else if (species == AnimalSpecies.Horse)
+		{
+			return "Horses neigh.";
+		}
+		else
+		{
+			return "ERROR: Unknown Animal";
+		}
+	}
+
 	public List<Animal> GetPlayerAnimals()
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();

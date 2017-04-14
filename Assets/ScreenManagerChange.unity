@@ -571,6 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1949c84ad93274dc586a274432cfd357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimalNameTitle: {fileID: 2041158865}
+  AnimalDescription: {fileID: 1686457357}
 --- !u!1 &170903862
 GameObject:
   m_ObjectHideFlags: 0
@@ -9145,7 +9147,6 @@ GameObject:
   - 224: {fileID: 1686457356}
   - 222: {fileID: 1686457358}
   - 114: {fileID: 1686457357}
-  - 114: {fileID: 1686457359}
   m_Layer: 5
   m_Name: DescriptionValue
   m_TagString: Untagged
@@ -9211,19 +9212,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686457355}
---- !u!114 &1686457359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1686457355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2401a03a45a41c6abc9b0638a541cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnHint: {fileID: 1468198380}
-  AnimalDescription: {fileID: 1686457357}
 --- !u!1 &1690986276
 GameObject:
   m_ObjectHideFlags: 0
@@ -11542,7 +11530,6 @@ GameObject:
   - 224: {fileID: 2041158864}
   - 222: {fileID: 2041158866}
   - 114: {fileID: 2041158865}
-  - 114: {fileID: 2041158867}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -11606,19 +11593,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041158863}
---- !u!114 &2041158867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2041158863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542133a592f4945759c8f3ea14288b82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnHint: {fileID: 1468198380}
-  AnimalNameTitle: {fileID: 2041158865}
 --- !u!1 &2051599830
 GameObject:
   m_ObjectHideFlags: 0

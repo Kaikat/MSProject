@@ -76,6 +76,11 @@ public class FakeService : IServices
 		return basicAnimals;
 	}
 
+	public string AnimalDescription(AnimalSpecies species)
+	{
+		return "I am an animal!";
+	}
+
 	public List<Animal> GetPlayerAnimals()
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();

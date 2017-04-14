@@ -33,7 +33,7 @@ public class CatchAnimal : MonoBehaviour
 	{
 		CatchEncounteredAnimal ();
 		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		EventManager.TriggerEvent (GameEvent.Caught);
+		EventManager.TriggerEvent (GameEvent.Caught, encounteredAnimal);
 	}
 
 	void Destroy()

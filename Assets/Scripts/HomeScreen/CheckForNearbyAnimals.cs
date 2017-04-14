@@ -11,7 +11,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 	void Awake()
 	{
 		EventManager.RegisterEvent (GameEvent.GPSInitialized, Init);
-		EventManager.RegisterEvent (GameEvent.Caught, AnimalCaught);
+		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.Caught, SetAnimalOnScreenToFalse);
 		animalOnScreen = false;
 	}
 
@@ -20,7 +20,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		gpsScript = MapImage.GetComponent<UpdateGPSLocation> ();
 	}
 
-	public void AnimalCaught()
+	public void SetAnimalOnScreenToFalse(AnimalSpecies animal)
 	{
 		animalOnScreen = false;
 	}
@@ -55,7 +55,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 	void Destroy()
 	{
 		EventManager.UnregisterEvent (GameEvent.GPSInitialized, Init);
-		EventManager.UnregisterEvent (GameEvent.Caught, AnimalCaught);
+		EventManager.UnregisterEvent <AnimalSpecies> (GameEvent.Caught, SetAnimalOnScreenToFalse);
 	}
 }
 
