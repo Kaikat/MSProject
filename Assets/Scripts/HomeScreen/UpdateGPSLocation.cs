@@ -6,7 +6,6 @@ public class UpdateGPSLocation : MonoBehaviour
 {
 	public Text debugText;
 	public Text distanceDebug;
-	//public Text spawnHint;
 
 	LocationInfo myGPSLocation;
 	float fiveSecondCounter = 0.0f;
@@ -15,7 +14,6 @@ public class UpdateGPSLocation : MonoBehaviour
 
 	IEnumerator Start()
 	{
-		//gameObject.GetComponent<TaggedShowHide> ().listener = this;
 		debugText.text += "Starting the GPS Script\n";
 		EventManager.TriggerEvent (GameEvent.GPSInitialized);
 
@@ -81,53 +79,6 @@ public class UpdateGPSLocation : MonoBehaviour
 	string getUpdatedGPSstring()
 	{
 		myGPSLocation = Input.location.lastData;
-		Vector2 currentLocation = new Vector2 (myGPSLocation.latitude, myGPSLocation.longitude);
-
-		//Check if close to a predefined location
-		//El Centro: 34.414207, -119.844517
-		//Girvetz Courtyard: 34.413632, -119.846974
-
-		//Test: 		34.41103, -119.8638
-		//Test Limit: 	34.41094, -119.8639
-		/*Vector2 limit = new Vector2 (34.41094f, -119.8639f);
-		Vector2 testp = new Vector2 (34.41103f, -119.8638f);
-		float allowedDistance = Vector2.Distance (limit, testp);
-
-		currentDistance = Vector2.Distance (testp, currentLocation);
-
-		currentDistance = 0.0f;
-		distanceDebug.text = "allowedDistance: " + allowedDistance.ToString () + " currentDistance: " + currentDistance.ToString ();
-
-		// Default/Debug Animal
-		if (currentDistance < allowedDistance && !StartGame.CurrentPlayer.GetAnimals().ContainsKey(AnimalSpecies.Tiger))
-		{
-			AssetManager.ShowAnimal (AnimalSpecies.Horse);
-			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
-			//spawnHint.text = AnimalSpecies.Tiger.ToString ();
-			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);
-		}
-		*/
-
-		// Actual Places
-		/*Vector2 GirvetzCourtyard = new Vector2 (34.413632f, -119.846974f);
-		Vector2 ElCentro = new Vector2 (34.414207f, -119.844517f);
-		float allowedDistanceRadius = 0.0001349778f;
-
-		if (Vector2.Distance (currentLocation, GirvetzCourtyard) < allowedDistance && !StartGame.CurrentPlayer.GetAnimals().ContainsKey(AnimalSpecies.Butterfly))
-		{
-			
-			AssetManager.ShowAnimal (AnimalSpecies.Butterfly);
-			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
-			spawnHint.text = AnimalSpecies.Butterfly.ToString ();
-		}
-
-		if (Vector2.Distance (currentLocation, ElCentro) < allowedDistance && !StartGame.CurrentPlayer.GetAnimals().ContainsKey(AnimalSpecies.Tiger))
-		{
-			AssetManager.ShowAnimal (AnimalSpecies.Tiger);
-			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
-			spawnHint.text = AnimalSpecies.Tiger.ToString ();
-		}*/
-
 		return "Location: " + myGPSLocation.latitude + " " + myGPSLocation.longitude + " " + myGPSLocation.altitude + " " + myGPSLocation.horizontalAccuracy + " " + myGPSLocation.timestamp + "\n"; 
 	}
 
@@ -150,7 +101,5 @@ public class UpdateGPSLocation : MonoBehaviour
 
 		// Make sure it immediately updates when the screen shows again
 		fiveSecondCounter = 5.1f;
-
-		//AssetManager.HideAnimals ();
 	}
 }
