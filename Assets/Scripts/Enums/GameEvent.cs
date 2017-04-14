@@ -7,13 +7,11 @@ public enum GameEvent {
 	Destroy,
 	Junk,
 
-	// Screens
-	CreateNewAccount,
-	Login,
-	Home,
-	IDCard,
-	CatchAnimal,
-	Journal,
+	SwitchScreen,
+
+	// For Catch Animal Screen
+	GPSInitialized,
+	AnimalEncounter,
 	Caught,
 
 	AccountCreationSuccess,

@@ -21,15 +21,7 @@ public class ScreenManager : MonoBehaviour {
 		}
 		screenMap [ActiveScreen].Show ();
 
-		EventManager.RegisterEvent <ScreenType> (GameEvent.Login, ShowScreen);
-		EventManager.RegisterEvent (GameEvent.Home, () => ShowScreen(ScreenType.Home));
-		EventManager.RegisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
-		EventManager.RegisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
-		EventManager.RegisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
-		//Journal
-		EventManager.RegisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
-		EventManager.RegisterEvent <ScreenType> (GameEvent.Caught, ShowScreen);
-
+		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
 	}
 
 	public void ShowScreen(ScreenType screen)
@@ -43,13 +35,7 @@ public class ScreenManager : MonoBehaviour {
 
 	public void Destroy()
 	{
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.Login, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.Home, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.CreateNewAccount, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.IDCard, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.CatchAnimal, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.Journal, ShowScreen);
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.Caught, ShowScreen);
+		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
 	}
 }
 

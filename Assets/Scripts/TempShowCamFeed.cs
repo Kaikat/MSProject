@@ -15,6 +15,6 @@ public class TempShowCamFeed : MonoBehaviour {
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
+		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
 	}
 }

@@ -15,6 +15,6 @@ public class HomeButton : MonoBehaviour {
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.Home);
+		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Home);
 	}
 }

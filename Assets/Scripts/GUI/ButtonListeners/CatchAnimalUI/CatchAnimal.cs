@@ -4,13 +4,25 @@ using System.Collections;
 
 public class CatchAnimal : MonoBehaviour
 {
-	public Text SpawnHint;
-	// Use this for initialization
-	void Start ()
+	AnimalSpecies encounteredAnimal;
+
+	void Awake ()
 	{
-	
+		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
-	
+
+	void ShowEncounteredAnimal(AnimalSpecies animal)
+	{
+		encounteredAnimal = animal;
+		AssetManager.ShowAnimal (encounteredAnimal);
+	}
+
+	void CatchEncounteredAnimal()
+	{
+		Service.Request.CatchAnimal (encounteredAnimal);
+		AssetManager.HideAnimals ();
+	}
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -19,10 +31,14 @@ public class CatchAnimal : MonoBehaviour
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.Caught, ScreenType.Caught);
-		Service.Request.CatchAnimal (SpawnHint.text.ToEnum<AnimalSpecies>());
-		SpawnHint.text = "";
-		AssetManager.HideAnimals ();
+		CatchEncounteredAnimal ();
+		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
+		EventManager.TriggerEvent (GameEvent.Caught);
+	}
+
+	void Destroy()
+	{
+		EventManager.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
 }
 

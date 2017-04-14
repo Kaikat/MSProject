@@ -6,7 +6,7 @@ public class UpdateGPSLocation : MonoBehaviour
 {
 	public Text debugText;
 	public Text distanceDebug;
-	public Text spawnHint;
+	//public Text spawnHint;
 
 	LocationInfo myGPSLocation;
 	float fiveSecondCounter = 0.0f;
@@ -17,6 +17,7 @@ public class UpdateGPSLocation : MonoBehaviour
 	{
 		//gameObject.GetComponent<TaggedShowHide> ().listener = this;
 		debugText.text += "Starting the GPS Script\n";
+		EventManager.TriggerEvent (GameEvent.GPSInitialized);
 
 		#if UNITY_ANROID
 		Input.compass.enabled = true;
@@ -88,7 +89,7 @@ public class UpdateGPSLocation : MonoBehaviour
 
 		//Test: 		34.41103, -119.8638
 		//Test Limit: 	34.41094, -119.8639
-		Vector2 limit = new Vector2 (34.41094f, -119.8639f);
+		/*Vector2 limit = new Vector2 (34.41094f, -119.8639f);
 		Vector2 testp = new Vector2 (34.41103f, -119.8638f);
 		float allowedDistance = Vector2.Distance (limit, testp);
 
@@ -102,12 +103,13 @@ public class UpdateGPSLocation : MonoBehaviour
 		{
 			AssetManager.ShowAnimal (AnimalSpecies.Horse);
 			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
-			spawnHint.text = AnimalSpecies.Tiger.ToString ();
-
+			//spawnHint.text = AnimalSpecies.Tiger.ToString ();
+			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);
 		}
+		*/
 
 		// Actual Places
-		Vector2 GirvetzCourtyard = new Vector2 (34.413632f, -119.846974f);
+		/*Vector2 GirvetzCourtyard = new Vector2 (34.413632f, -119.846974f);
 		Vector2 ElCentro = new Vector2 (34.414207f, -119.844517f);
 		float allowedDistanceRadius = 0.0001349778f;
 
@@ -124,9 +126,14 @@ public class UpdateGPSLocation : MonoBehaviour
 			AssetManager.ShowAnimal (AnimalSpecies.Tiger);
 			EventManager.TriggerEvent (GameEvent.CatchAnimal, ScreenType.CatchAnimal);
 			spawnHint.text = AnimalSpecies.Tiger.ToString ();
-		}
+		}*/
 
 		return "Location: " + myGPSLocation.latitude + " " + myGPSLocation.longitude + " " + myGPSLocation.altitude + " " + myGPSLocation.horizontalAccuracy + " " + myGPSLocation.timestamp + "\n"; 
+	}
+
+	public Vector2 GetCoordinate()
+	{
+		return new Vector2 (myGPSLocation.latitude, myGPSLocation.longitude);
 	}
 
 	// For the IShowHideListener from the HomeUIObject

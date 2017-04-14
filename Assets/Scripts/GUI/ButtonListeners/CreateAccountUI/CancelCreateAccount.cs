@@ -9,6 +9,6 @@ public class CancelCreateAccount : MonoBehaviour {
 	public void Click()
 	{
 		ErrorLabel.text = "";
-		EventManager.TriggerEvent (GameEvent.Login, ScreenType.Login);
+		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
 	}
 }

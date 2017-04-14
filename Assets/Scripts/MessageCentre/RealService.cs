@@ -117,10 +117,18 @@ public class RealService : IServices
 			{
 				specie = AnimalSpecies.Tiger;
 			}
-			else
+			else if (r.animal_id == "butterfly1")
 			{
 				specie = AnimalSpecies.Butterfly;
-			}	
+			}
+			else if (r.animal_id == "horse1")
+			{
+				specie = AnimalSpecies.Horse;
+			}
+			else
+			{
+				specie = AnimalSpecies.Tiger;
+			}
 			PlayerAnimals.Add (new Animal (r.animal_id, specie, r.nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle));
 		}
 
@@ -136,7 +144,8 @@ public class RealService : IServices
 	public void CatchAnimal(AnimalSpecies species)
 	{
 		string nickname = "tigecito";
-		string animalID = species == AnimalSpecies.Tiger ? "tiger1" : "butterfly1";
+		//string animalID = species == AnimalSpecies.Tiger ? "tiger1" : "butterfly1";
+		string animalID = species.ToString().ToLower() + "1";
 
 		float health = 2.0f;
 		float age = 4.0f;

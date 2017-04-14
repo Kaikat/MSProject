@@ -15,7 +15,7 @@ public class JournalButton : MonoBehaviour {
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.Journal, ScreenType.Journal);
+		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
 	}
 }
 
