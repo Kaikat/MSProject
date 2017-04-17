@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class Player {
 
-	private string Username;
-	private string Name;
-	private int Currency;
+	public string Username { private set; get; }
+	public string Name { private set; get; }
+	public string Avatar { private set; get; }
+	public int Currency { private set; get; }
+
 	private int ReleasedNum;
 	private int NursingNum;
 	private int SeenNum;
@@ -19,7 +22,6 @@ public class Player {
 	public Player ()
 	{
 		Animals = new Dictionary<AnimalSpecies, List<Animal>> ();
-		//PopulateAnimalList ();
 
 		EventManager.RegisterEvent(GameEvent.Spawn, SpawnFunction);
 		EventManager.RegisterEvent (GameEvent.Destroy, DestroyFunction);
@@ -29,12 +31,17 @@ public class Player {
 		ReleasedNum = 0;
 		NursingNum = 0;
 		SeenNum = 0;
-		Name = RealService.Name;
 	}
 		
 	public void LoadPlayer(string username)
 	{
-		Username = username;
+		Username = username.ToLower();
+
+		string[] playerData = Service.Request.PlayerData (Username);
+		Name = playerData [0];
+		Currency = Int32.Parse (playerData [1]);
+		Avatar = playerData [2];
+
 		PopulateAnimalList ();
 	}
 
@@ -42,11 +49,6 @@ public class Player {
 	{
 		EventManager.UnregisterEvent (GameEvent.Spawn, SpawnFunction);
 		EventManager.UnregisterEvent (GameEvent.Destroy, DestroyFunction);
-	}
-
-	//add get functions for UI
-	public string GetName() {
-		return Name;
 	}
 
 	public int GetReleased() {
@@ -73,11 +75,6 @@ public class Player {
 		SeenNum += num;
 	}
 
-	public string GetUsername()
-	{
-		return Username;
-	}
-
 	//To get current animal according to species
 	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() {
 		return Animals;
@@ -85,7 +82,7 @@ public class Player {
 	
 	private void PopulateAnimalList()
 	{
-		List<Animal> playerAnimals = Service.Request.GetPlayerAnimals ();
+		List<Animal> playerAnimals = Service.Request.GetPlayerAnimals (StartGame.CurrentPlayer.Username);
 		for (int i = 0; i < playerAnimals.Count; i++) 
 		{
 			if (Animals.ContainsKey (playerAnimals [i].Species)) 

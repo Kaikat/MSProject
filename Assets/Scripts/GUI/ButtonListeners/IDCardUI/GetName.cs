@@ -4,21 +4,12 @@ using System.Collections;
 
 public class GetName : MonoBehaviour
 {
-	Player player;
-	Text t;
+	public Text PlayerName;
+	const string title = "\nThe Field Biologist";
 
-	// Use this for initialization
 	void Start ()
 	{
-		player = StartGame.CurrentPlayer;
-		t = GetComponent<Text> ();
-		//t.text = player.GetName ();
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
+		PlayerName.text = StartGame.CurrentPlayer.Name + title;
 	}
 }
 
