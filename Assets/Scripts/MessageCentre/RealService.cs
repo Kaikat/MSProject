@@ -19,7 +19,29 @@ public class RealService : IServices
 		}
 	}
 
-	private RealService() {}
+	Dictionary<AnimalSpecies, BasicAnimal> Animals;
+	Dictionary<AnimalSpecies, string> AnimalDescriptions;
+	List<BasicAnimal> basicAnimals;
+
+	private RealService() 
+	{
+		//Get All animals
+		basicAnimals = new List<BasicAnimal> ();
+		Animals = new Dictionary<AnimalSpecies, BasicAnimal> ();
+		AnimalDescriptions = new Dictionary<AnimalSpecies, string> ();
+
+		DictResponse response = WebManager.GetHttpResponse<DictResponse> (HTTP_ADDRESS + "GetAllAnimals.php");
+
+		foreach (AnimalData r in response.AnimalData)
+		{
+			BasicAnimal animal = new BasicAnimal (r.animal_id, 
+				r.name.ToEnum<AnimalSpecies> (),
+				r.habitat_level.ToEnum<HabitatLevelType> ());
+			Animals [animal.Species] = animal;
+			AnimalDescriptions[animal.Species] = r.description;
+			basicAnimals.Add (animal);
+		}
+	}
 
 	//private string HTTP_ADDRESS = "https://localhost:8888/";
 	//private string HTTP_ADDRESS = "https://localhost/";
@@ -64,38 +86,12 @@ public class RealService : IServices
 
 	public List<BasicAnimal> GetAllAnimals()
 	{
-		List<BasicAnimal> basicAnimals = new List<BasicAnimal> ();
-		DictResponse response = WebManager.GetHttpResponse<DictResponse> (HTTP_ADDRESS + "GetAllAnimals.php");
-
-		foreach (AnimalData r in response.AnimalData)
-		{
-			basicAnimals.Add(new BasicAnimal(r.animal_id, 
-				r.name.ToEnum<AnimalSpecies>(), 
-				r.habitat_level.ToEnum<HabitatLevelType>()));
-			Debug.Log (r.animal_id);
-		}
-
 		return basicAnimals;
 	}
 
 	public string AnimalDescription(AnimalSpecies species)
 	{
-		if (species == AnimalSpecies.Tiger)
-		{
-			return "The tiger (Panthera tigris) is the largest cat species, most recognisable for their pattern of dark vertical stripes on reddish-orange fur with a lighter underside.";
-		}
-		else if (species == AnimalSpecies.Butterfly)
-		{
-			return "Butterflies are insects in the macrolepidopteran clade Rhopalocera from the order Lepidoptera, which also includes moths.";
-		}
-		else if (species == AnimalSpecies.Horse)
-		{
-			return "Horses neigh.";
-		}
-		else
-		{
-			return "ERROR: Unknown Animal";
-		}
+		return AnimalDescriptions [species];
 	}
 
 	public string[] PlayerData(string username)

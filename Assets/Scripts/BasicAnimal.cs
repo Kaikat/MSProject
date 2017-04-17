@@ -3,9 +3,9 @@ using System.Collections;
 
 public class BasicAnimal 
 {
-	public string AnimalID;
-	public AnimalSpecies Species;
-	public HabitatLevelType HabitatLevel;
+	public string AnimalID { private set; get; }
+	public AnimalSpecies Species { private set; get; }
+	public HabitatLevelType HabitatLevel { private set; get; }
 
 	public BasicAnimal (string ID, AnimalSpecies species, HabitatLevelType habitat)
 	{
