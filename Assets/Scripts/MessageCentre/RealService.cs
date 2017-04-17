@@ -33,18 +33,7 @@ public class RealService : IServices
 		string message = "";
 
 		JsonResponse response = WebManager.GetHttpResponse<JsonResponse> (
-			HTTP_ADDRESS + "CreateAccount.php" + "?username=" + username + "&password=" + password);
-
-
-		/*if (users.Contains (username)) 
-		{
-			message = "A player with that username already exists. Please select a different username.";
-		}
-
-		if (emailList.Contains (email)) 
-		{
-			message = "An account with that email already exists!";	
-		}*/
+			HTTP_ADDRESS + "CreateAccount.php" + "?username=" + username.ToLower() + "&password=" + password + "&name=" + name + "&email=" + email);
 
 		return response.message;
 	}
@@ -63,7 +52,7 @@ public class RealService : IServices
 		// hash the password with the salt
 		// send hashed password to server
 		JsonResponse loginSession = WebManager.GetHttpResponse<JsonResponse> (
-			HTTP_ADDRESS + "VerifyLogin.php" + "?username=" + username + "&password=" + password);
+			HTTP_ADDRESS + "VerifyLogin.php" + "?username=" + username.ToLower() + "&password=" + password);
 
 		if (loginSession.error == true)
 		{
@@ -220,6 +209,7 @@ public class RealService : IServices
 	{
 		public string animal_id;
 		public string name;
+		public string description;
 		public string habitat_level;
 		public string sensor_id;
 		public float min_size;
