@@ -4,12 +4,12 @@ using System.Collections.Generic;
 public interface IServices
 {
 	//Basic Data
-	List<BasicAnimal> GetAllAnimals ();
+	List<BasicAnimal> AllAnimals ();
 	string AnimalDescription (AnimalSpecies species);
 
 	//Player Specific Data
 	string[] PlayerData (string username);
-	List<Animal> GetPlayerAnimals(string username);
+	List<Animal> PlayerAnimals(string username);
 
 	//Send Data
 	void CatchAnimal (AnimalSpecies species);

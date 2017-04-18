@@ -19,7 +19,7 @@ public static class AssetManager
 		AnimalModels = new List<GameObject> ();
 		Species = new List<AnimalSpecies> ();
 
-		List<BasicAnimal> animals = Service.Request.GetAllAnimals ();
+		List<BasicAnimal> animals = Service.Request.AllAnimals ();
 
 		for(int i = 0; i < animals.Count; i++)
 		{

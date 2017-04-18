@@ -84,7 +84,7 @@ public class RealService : IServices
 		return true;
 	}
 
-	public List<BasicAnimal> GetAllAnimals()
+	public List<BasicAnimal> AllAnimals()
 	{
 		return basicAnimals;
 	}
@@ -107,7 +107,7 @@ public class RealService : IServices
 		return playerInfo;
 	}
 
-	public List<Animal> GetPlayerAnimals(string username)
+	public List<Animal> PlayerAnimals(string username)
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
 

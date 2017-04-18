@@ -66,7 +66,7 @@ public class FakeService : IServices
 		return UserLogins.ContainsKey (username) && UserLogins [username] == password;
 	}
 
-	public List<BasicAnimal> GetAllAnimals()
+	public List<BasicAnimal> AllAnimals()
 	{
 		List<BasicAnimal> basicAnimals = new List<BasicAnimal> ();
 		basicAnimals.Add (new BasicAnimal ("tiger1", AnimalSpecies.Tiger, HabitatLevelType.Middle));
@@ -90,7 +90,7 @@ public class FakeService : IServices
 		return playerInfo;
 	}
 
-	public List<Animal> GetPlayerAnimals(string username)
+	public List<Animal> PlayerAnimals(string username)
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
 
