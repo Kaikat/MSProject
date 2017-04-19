@@ -8,11 +8,6 @@ public class Login : MonoBehaviour {
 	public InputField Password;
 	public Text ErrorLabel;
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	public void Click()
 	{
 		if (Service.Request.VerifyLogin (Username.text, Password.text)) 
