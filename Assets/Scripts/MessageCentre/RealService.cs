@@ -94,9 +94,9 @@ public class RealService : IServices
 		return AnimalDescriptions [species];
 	}
 
-	public string[] PlayerData(string username)
+	public string[] PlayerData()
 	{
-		string url = HTTP_ADDRESS + "GetPlayerData.php?username=" + username;
+		string url = HTTP_ADDRESS + "GetPlayerData.php?username=" + StartGame.CurrentPlayer.Username;
 		PlayerDataResponse playerData = WebManager.GetHttpResponse<PlayerDataResponse> (url);
 
 		string[] playerInfo = new string[3];
@@ -107,7 +107,7 @@ public class RealService : IServices
 		return playerInfo;
 	}
 
-	public List<Animal> PlayerAnimals(string username)
+	public List<Animal> PlayerAnimals()
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
 
@@ -118,7 +118,7 @@ public class RealService : IServices
 		//PlayerAnimals.Add (animal);
 
 		//http://tamuyal.mat.ucsb.edu:8888/GetPlayerAnimals.php?username=kaikat14
-		string url = HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + username;
+		string url = HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + StartGame.CurrentPlayer.Username;
 		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (url);
 		if (response.empty)
 		{

@@ -81,7 +81,7 @@ public class FakeService : IServices
 		return "I am an animal!";
 	}
 
-	public string[] PlayerData(string username)
+	public string[] PlayerData()
 	{
 		string[] playerInfo = new string[3];
 		playerInfo [0] = "Kaikat";
@@ -90,7 +90,7 @@ public class FakeService : IServices
 		return playerInfo;
 	}
 
-	public List<Animal> PlayerAnimals(string username)
+	public List<Animal> PlayerAnimals()
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
 

@@ -19,7 +19,7 @@ public class AnimalButton : MonoBehaviour {
 	{
 		bool found = false;
 
-		List<Animal> ownedAnimals = Service.Request.PlayerAnimals (StartGame.CurrentPlayer.Username);
+		List<Animal> ownedAnimals = Service.Request.PlayerAnimals ();
 		for (int i = 0; i < ownedAnimals.Count; i++)
 		{
 			if (ownedAnimals [i].Species == Species)

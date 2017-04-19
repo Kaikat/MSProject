@@ -8,8 +8,8 @@ public interface IServices
 	string AnimalDescription (AnimalSpecies species);
 
 	//Player Specific Data
-	string[] PlayerData (string username);
-	List<Animal> PlayerAnimals(string username);
+	string[] PlayerData ();
+	List<Animal> PlayerAnimals();
 
 	//Send Data
 	void CatchAnimal (AnimalSpecies species);

@@ -13,7 +13,7 @@ public class Player {
 
 	public int AnimalsReleased { private set; get; }
 	public int AnimalsBeingNursed { private set; get; }
-	public int AnimalsSeen { private set; get; }
+	public int AnimalsDiscovered { private set; get; }
 
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 
@@ -26,7 +26,7 @@ public class Player {
 	{
 		Username = username.ToLower();
 
-		string[] playerData = Service.Request.PlayerData (Username);
+		string[] playerData = Service.Request.PlayerData ();
 		Name = playerData [0];
 		Currency = Int32.Parse (playerData [1]);
 		Avatar = playerData [2];
@@ -45,7 +45,7 @@ public class Player {
 	
 	private void PopulateAnimalList()
 	{
-		List<Animal> playerAnimals = Service.Request.PlayerAnimals (StartGame.CurrentPlayer.Username);
+		List<Animal> playerAnimals = Service.Request.PlayerAnimals ();
 		for (int i = 0; i < playerAnimals.Count; i++) 
 		{
 			if (Animals.ContainsKey (playerAnimals [i].Species)) 
