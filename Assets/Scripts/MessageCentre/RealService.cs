@@ -19,9 +19,12 @@ public class RealService : IServices
 		}
 	}
 
+	Player CurrentPlayer;
 	Dictionary<AnimalSpecies, BasicAnimal> Animals;
 	Dictionary<AnimalSpecies, string> AnimalDescriptions;
 	List<BasicAnimal> basicAnimals;
+
+	private string HTTP_ADDRESS = "http://tamuyal.mat.ucsb.edu:8888/";
 
 	private RealService() 
 	{
@@ -42,14 +45,7 @@ public class RealService : IServices
 			basicAnimals.Add (animal);
 		}
 	}
-
-	//private string HTTP_ADDRESS = "https://localhost:8888/";
-	//private string HTTP_ADDRESS = "https://localhost/";
-	//private string HTTP_ADDRESS = "https://192.168.100.166/";
-	//private string HTTP_ADDRESS = "https://192.168.1.118/";
-	//private string HTTP_ADDRESS = "https://192.168.1.118/";
-	private string HTTP_ADDRESS = "http://tamuyal.mat.ucsb.edu:8888/";
-		
+				
 	public string CreateAccount(string username, string name, string password, string email)
 	{
 		string message = "";
@@ -80,8 +76,29 @@ public class RealService : IServices
 		{
 			return false;
 		}
-			
+
+		LoadPlayer (username);
+
 		return true;
+	}
+
+	public Player Player()
+	{
+		return CurrentPlayer;
+	}
+
+	void LoadPlayer(string username)
+	{
+		string url = HTTP_ADDRESS + "GetPlayerData.php?username=" + username;
+		PlayerDataResponse playerData = WebManager.GetHttpResponse<PlayerDataResponse> (url);
+
+		CurrentPlayer = new Player (username, playerData.name, playerData.avatar, playerData.currency, 
+			0, 0, GetPlayerAnimals(username), GetAnimalEncounters(username));
+	}
+
+	Dictionary<AnimalSpecies, List<AnimalEncounterType>> GetAnimalEncounters(string username)
+	{
+		return new Dictionary<AnimalSpecies, List<AnimalEncounterType>> ();
 	}
 
 	public List<BasicAnimal> AllAnimals()
@@ -94,35 +111,18 @@ public class RealService : IServices
 		return AnimalDescriptions [species];
 	}
 
-	public string[] PlayerData()
-	{
-		string url = HTTP_ADDRESS + "GetPlayerData.php?username=" + StartGame.CurrentPlayer.Username;
-		PlayerDataResponse playerData = WebManager.GetHttpResponse<PlayerDataResponse> (url);
-
-		string[] playerInfo = new string[3];
-		playerInfo [0] = playerData.name;
-		playerInfo [1] = playerData.currency.ToString ();
-		playerInfo [2] = playerData.avatar;
-
-		return playerInfo;
-	}
-
-	public List<Animal> PlayerAnimals()
+	Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string username)
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
 
 		//EchoResponse response = WebManager.instance.GetHttpResponse<EchoResponse> ("http://localhost:8888/echo.php?tag=stuff");
 		//Debug.Log (response.ResultingData[1]);
 
-		//Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);
-		//PlayerAnimals.Add (animal);
-
-		//http://tamuyal.mat.ucsb.edu:8888/GetPlayerAnimals.php?username=kaikat14
-		string url = HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + StartGame.CurrentPlayer.Username;
+		string url = HTTP_ADDRESS + "GetPlayerAnimals.php?username=" + username;
 		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (url);
 		if (response.empty)
 		{
-			return PlayerAnimals;
+			return new Dictionary<AnimalSpecies, List<Animal>> ();
 		}
 		foreach (OwnedAnimalData r in response.OwnedAnimalData)
 		{
@@ -146,14 +146,27 @@ public class RealService : IServices
 			PlayerAnimals.Add (new Animal (r.animal_id, specie, r.nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle));
 		}
 
-		return PlayerAnimals;
+		Dictionary<AnimalSpecies, List<Animal>> Animals = new Dictionary<AnimalSpecies, List<Animal>> ();
+		for (int i = 0; i < PlayerAnimals.Count; i++) 
+		{
+			if (Animals.ContainsKey (PlayerAnimals [i].Species)) 
+			{
+				Animals [PlayerAnimals [i].Species].Add (PlayerAnimals[i]);
+			} 
+			else 
+			{
+				Animals.Add (PlayerAnimals [i].Species, new List<Animal>());
+				Animals[PlayerAnimals[i].Species].Add(PlayerAnimals [i]);
+			}
+		}
+
+		return Animals;
 	}
 
 	//http://tamuyal.mat.ucsb.edu:8888/CaughtAnimal.php?username=kaikat15&animal_id=tiger1&nickname=tigesote&health=40.0&size=2.0&age=4.0&colorfile=color.txt
 	public void CatchAnimal(AnimalSpecies species)
 	{
 		string nickname = "tigecito";
-		//string animalID = species == AnimalSpecies.Tiger ? "tiger1" : "butterfly1";
 		string animalID = species.ToString().ToLower() + "1";
 
 		float health = 2.0f;
@@ -162,14 +175,11 @@ public class RealService : IServices
 		string colorFile = "colorfile.txt";
 
 		Animal animal = new Animal (animalID, species, nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle);
-		WebManager.GetHttpResponse<JsonResponse> (HTTP_ADDRESS + "CaughtAnimal.php?username=" + StartGame.CurrentPlayer.Username +
+		WebManager.GetHttpResponse<JsonResponse> (HTTP_ADDRESS + "CaughtAnimal.php?username=" + CurrentPlayer.Username +
 			"&animal_id=" + animalID + "&nickname=" + nickname + "&health=" + health.ToString() + "&size=" + size.ToString() + 
 			"&age=" + age.ToString() + "&colorfile=" + colorFile);
 
-		StartGame.CurrentPlayer.AddAnimal (species, animal);
-			/*kaikat15&animal_id=tiger1
-			&nickname=tigesote
-			&health=40.0&size=2.0&age=4.0&colorfile=color.txt*/
+		CurrentPlayer.AddAnimal(species, animal);
 	}
 
 	[System.Serializable]
@@ -233,3 +243,13 @@ public class RealService : IServices
 		public string color_file;
 	}
 }
+
+
+
+
+
+//private string HTTP_ADDRESS = "https://localhost:8888/";
+//private string HTTP_ADDRESS = "https://localhost/";
+//private string HTTP_ADDRESS = "https://192.168.100.166/";
+//private string HTTP_ADDRESS = "https://192.168.1.118/";
+//private string HTTP_ADDRESS = "https://192.168.1.118/";

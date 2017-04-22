@@ -16,48 +16,36 @@ public class Player {
 	public int AnimalsDiscovered { private set; get; }
 
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
+	private Dictionary<AnimalSpecies, List<AnimalEncounterType>> AnimalEncounters;
 
-	public Player ()
+	public Player(string username, string name, string avatar, int currency, int released, int nursing, 
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<AnimalEncounterType>> animalEncounters)
 	{
-		Animals = new Dictionary<AnimalSpecies, List<Animal>> ();
-	}
-		
-	public void LoadPlayer(string username)
-	{
-		Username = username.ToLower();
+		Username = username;
+		Name = name;
+		Avatar = avatar;
+		Currency = currency;
 
-		string[] playerData = Service.Request.PlayerData ();
-		Name = playerData [0];
-		Currency = Int32.Parse (playerData [1]);
-		Avatar = playerData [2];
+		AnimalEncounters = animalEncounters;
+		Animals = ownedAnimals;
 
-		PopulateAnimalList ();
+		AnimalsReleased = released;
+		AnimalsBeingNursed = nursing;
+		AnimalsDiscovered = AnimalEncounters.Count;
 	}
 
 	public void Destroy()
 	{
 	}
 
-	//To get current animal according to species
-	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() {
+	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() 
+	{
 		return Animals;
 	}
-	
-	private void PopulateAnimalList()
+
+	public Dictionary<AnimalSpecies, List<AnimalEncounterType>> GetAnimalEncounters()
 	{
-		List<Animal> playerAnimals = Service.Request.PlayerAnimals ();
-		for (int i = 0; i < playerAnimals.Count; i++) 
-		{
-			if (Animals.ContainsKey (playerAnimals [i].Species)) 
-			{
-				Animals [playerAnimals [i].Species].Add (playerAnimals[i]);
-			} 
-			else 
-			{
-				Animals.Add (playerAnimals [i].Species, new List<Animal>());
-				Animals[playerAnimals[i].Species].Add(playerAnimals [i]);
-			}
-		}
+		return AnimalEncounters;
 	}
 
 	public void AddAnimal(AnimalSpecies species, Animal animal)

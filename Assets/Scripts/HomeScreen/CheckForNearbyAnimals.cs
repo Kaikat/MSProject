@@ -44,7 +44,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		//distanceDebug.text = "allowedDistance: " + allowedDistance.ToString () + " currentDistance: " + currentDistance.ToString ();
 
 		// Default/Debug Animal
-		if (currentDistance < allowedDistance && !StartGame.CurrentPlayer.GetAnimals().ContainsKey(AnimalSpecies.Horse))
+		if (currentDistance < allowedDistance && !Service.Request.Player().GetAnimals().ContainsKey(AnimalSpecies.Horse))
 		{
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
 			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);

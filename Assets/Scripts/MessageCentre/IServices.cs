@@ -7,9 +7,7 @@ public interface IServices
 	List<BasicAnimal> AllAnimals ();
 	string AnimalDescription (AnimalSpecies species);
 
-	//Player Specific Data
-	string[] PlayerData ();
-	List<Animal> PlayerAnimals();
+	Player Player();
 
 	//Send Data
 	void CatchAnimal (AnimalSpecies species);

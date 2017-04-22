@@ -23,6 +23,7 @@ public class FakeService : IServices
 	private int NAME_MIN_LENGTH = 3;
 	private int PASSWORD_MIN_LENGTH = 8;
 
+	private Player CurrentPlayer;
 
 	public string CreateAccount(string username, string name, string password, string email)
 	{
@@ -63,7 +64,16 @@ public class FakeService : IServices
 		UserLogins.Add ("user2", "pass2");
 		UserLogins.Add ("user3", "pass3");
 
+		Dictionary<AnimalSpecies, List<Animal>> owned = new Dictionary<AnimalSpecies, List<Animal>> ();
+		Dictionary<AnimalSpecies, List<AnimalEncounterType>> encountered = new Dictionary<AnimalSpecies, List<AnimalEncounterType>> ();
+		CurrentPlayer = new Player (username, "name", "avatar", 0, 0, 0, owned, encountered);
+
 		return UserLogins.ContainsKey (username) && UserLogins [username] == password;
+	}
+
+	public Player Player()
+	{
+		return CurrentPlayer;
 	}
 
 	public List<BasicAnimal> AllAnimals()

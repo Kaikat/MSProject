@@ -17,26 +17,16 @@ public class AnimalButton : MonoBehaviour {
 
 	void Start()
 	{
-		bool found = false;
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals = Service.Request.Player().GetAnimals();
 
-		List<Animal> ownedAnimals = Service.Request.PlayerAnimals ();
-		for (int i = 0; i < ownedAnimals.Count; i++)
-		{
-			if (ownedAnimals [i].Species == Species)
-			{
-				found = true;
-			}
-		}
-
-		if (found)
+		if (ownedAnimals.ContainsKey (Species))
 		{
 			SetButtonComponents (species);
 		}
 		else
 		{
 			SetButtonComponents (unknown);
-		}
-
+		}	
 	}
 
 	void SetButtonComponents(string animalName)

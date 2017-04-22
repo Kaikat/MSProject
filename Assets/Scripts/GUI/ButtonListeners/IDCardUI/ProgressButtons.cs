@@ -5,18 +5,24 @@ using System.Collections.Generic;
 
 public class ProgressButtons : MonoBehaviour
 {
+
+
+
+	// THIS SCRIPT IS NOT USED
+
+
+
 	public GameObject prefab;
 	public GameObject[] buttons;
 	public Sprite tiger;
 	public Sprite butterfly;
 	Dictionary<AnimalSpecies, List<Animal>> Animals;
 
-
-	// Use this for initialization
 	void Start ()
 	{
 		//prefab = Resources.Load ("Assets/Prefabs/AnimalButton") as GameObject;
-		Animals = StartGame.CurrentPlayer.GetAnimals ();
+		Animals = Service.Request.Player().GetAnimals();
+
 		//int numOfAnimals = Animals.Count;
 		int numOfAnimals = 2;
 
@@ -34,12 +40,6 @@ public class ProgressButtons : MonoBehaviour
 			}
 			buttons [i] = button;
 		}
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
 	}
 }
 

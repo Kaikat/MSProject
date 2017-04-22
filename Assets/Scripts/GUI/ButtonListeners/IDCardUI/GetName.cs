@@ -9,7 +9,7 @@ public class GetName : MonoBehaviour
 
 	void Start ()
 	{
-		PlayerName.text = StartGame.CurrentPlayer.Name + title;
+		PlayerName.text = Service.Request.Player().Name + title;
 	}
 }
 

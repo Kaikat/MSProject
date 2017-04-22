@@ -17,3 +17,12 @@ public class Animal : BasicAnimal {
 		EncounterType = encounter;
 	}
 }
+
+/*
+AnimalSpecies
+Nickname
+Health
+Size
+Age
+Colorfile
+*/
