@@ -14,54 +14,21 @@ public static class DataManager
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
 	private const string NOTIFY_ANIMAL_CAUGHT = "CaughtAnimal.php";
 
-	public static List<BasicAnimal> GetBasicAnimalList ()
+	public static Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData()
 	{
-		List<BasicAnimal> basicAnimals = new List<BasicAnimal> ();
-
-		ListResponse response = WebManager.GetHttpResponse<ListResponse> (HTTP_ADDRESS + ANIMAL_DATA);			
-		foreach (AnimalData r in response.AnimalData)
-		{
-			BasicAnimal animal = new BasicAnimal (r.animal_id, 
-				r.name.ToEnum<AnimalSpecies> (),
-				r.habitat_level.ToEnum<HabitatLevelType> ());
-			basicAnimals.Add (animal);
-		}
-
-		return basicAnimals;
-	}
-
-	public static Dictionary<AnimalSpecies, BasicAnimal> GetBasicAnimalDictionary ()
-	{
-		Dictionary<AnimalSpecies, BasicAnimal> Animals = new Dictionary<AnimalSpecies, BasicAnimal> ();
-
+		Dictionary<AnimalSpecies, AnimalData> Animals = new Dictionary<AnimalSpecies, AnimalData> ();
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (HTTP_ADDRESS + ANIMAL_DATA);
-		foreach (AnimalData r in response.AnimalData)
+		foreach (DataAnimal anim in response.AnimalData)
 		{
-			BasicAnimal animal = new BasicAnimal (r.animal_id, 
-				r.name.ToEnum<AnimalSpecies> (),
-				r.habitat_level.ToEnum<HabitatLevelType> ());
-			Animals [animal.Species] = animal;
+			AnimalData animal = new AnimalData (anim.animal_id.ToEnum<AnimalSpecies>(), anim.description, anim.habitat_level.ToEnum<HabitatLevelType>(), 
+				                    anim.min_size, anim.max_size, 
+				                    anim.min_age, anim.max_age,
+				                    anim.colorkey_map_file);
+			Animals.Add (animal.Species, animal);
 		}
 
 		return Animals;
 	}
-
-	public static Dictionary<AnimalSpecies, string> GetAnimalDescriptionDictionary ()
-	{
-		Dictionary<AnimalSpecies, string> AnimalDescriptions = new Dictionary<AnimalSpecies, string> ();
-
-		ListResponse response = WebManager.GetHttpResponse<ListResponse> (HTTP_ADDRESS + ANIMAL_DATA);
-		foreach (AnimalData r in response.AnimalData)
-		{
-			BasicAnimal animal = new BasicAnimal (r.animal_id, 
-				r.name.ToEnum<AnimalSpecies> (),
-				r.habitat_level.ToEnum<HabitatLevelType> ());
-			AnimalDescriptions[animal.Species] = r.description;
-		}
-
-		return AnimalDescriptions;
-	}
-
 
 	public static string CreateAccount (string username, string name, string password, string email)
 	{

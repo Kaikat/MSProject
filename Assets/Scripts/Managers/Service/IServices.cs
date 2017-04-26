@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public interface IServices
 {
 	//Basic Data
-	List<BasicAnimal> AllAnimals ();
+	Dictionary<AnimalSpecies, AnimalData> AllAnimals();
 	string AnimalDescription (AnimalSpecies species);
 
 	Player Player();

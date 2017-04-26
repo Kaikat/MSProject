@@ -19,9 +19,10 @@ public static class AssetManager
 		AnimalModels = new List<GameObject> ();
 		Species = new List<AnimalSpecies> ();
 
-		List<BasicAnimal> animals = Service.Request.AllAnimals ();
+		Dictionary<AnimalSpecies, AnimalData> animals = Service.Request.AllAnimals();
 
-		for(int i = 0; i < animals.Count; i++)
+		var species = System.Enum.GetValues(typeof(AnimalSpecies));
+		foreach (AnimalSpecies i in species)
 		{
 			AnimalPrefabs.Add(animals[i].Species, LoadPrefab(folder, animals[i].Species.ToString()));
 

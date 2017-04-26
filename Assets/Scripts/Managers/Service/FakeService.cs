@@ -76,12 +76,14 @@ public class FakeService : IServices
 		return CurrentPlayer;
 	}
 
-	public List<BasicAnimal> AllAnimals()
+	public Dictionary<AnimalSpecies, AnimalData> AllAnimals()
 	{
-		List<BasicAnimal> basicAnimals = new List<BasicAnimal> ();
-		basicAnimals.Add (new BasicAnimal ("tiger1", AnimalSpecies.Tiger, HabitatLevelType.Middle));
-		basicAnimals.Add (new BasicAnimal ("horse1", AnimalSpecies.Horse, HabitatLevelType.Middle));
-		basicAnimals.Add (new BasicAnimal ("butterfly1", AnimalSpecies.Butterfly, HabitatLevelType.Upper));
+		Dictionary<AnimalSpecies, AnimalData> basicAnimals = new Dictionary<AnimalSpecies, AnimalData> ();
+
+		//List<AnimalData> basicAnimals = new List<AnimalData> ();
+		//basicAnimals.Add (new BasicAnimal (AnimalSpecies.Tiger, HabitatLevelType.Middle));
+		//basicAnimals.Add (new BasicAnimal (AnimalSpecies.Horse, HabitatLevelType.Middle));
+		//basicAnimals.Add (new BasicAnimal (AnimalSpecies.Butterfly, HabitatLevelType.Upper));
 
 		return basicAnimals;
 	}

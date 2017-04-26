@@ -29,14 +29,13 @@ namespace JsonResponse
 	[System.Serializable]
 	public class ListResponse //DictResponse
 	{
-		public List<AnimalData> AnimalData;
+		public List<DataAnimal> AnimalData;
 	}
 
 	[System.Serializable]
-	public class AnimalData
+	public class DataAnimal
 	{
 		public string animal_id;
-		public string name;
 		public string description;
 		public string habitat_level;
 		public string sensor_id;

@@ -11,7 +11,7 @@ public class Animal : BasicAnimal {
 	private AnimalStats CurrentStats;
 	private AnimalEncounterType EncounterType;
 
-	public Animal (string ID, AnimalSpecies species, string nickname, AnimalEncounterType encounter, HabitatLevelType habitatType) : base (ID, species, habitatType)
+	public Animal (string ID, AnimalSpecies species, string nickname, AnimalEncounterType encounter, HabitatLevelType habitatType) : base (species, habitatType)
 	{
 		Nickname = nickname;
 		EncounterType = encounter;

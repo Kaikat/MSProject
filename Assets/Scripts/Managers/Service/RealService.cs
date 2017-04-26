@@ -20,15 +20,11 @@ public class RealService : IServices
 	}
 
 	Player CurrentPlayer;
-	Dictionary<AnimalSpecies, BasicAnimal> Animals;
-	Dictionary<AnimalSpecies, string> AnimalDescriptions;
-	List<BasicAnimal> basicAnimals;
+	Dictionary<AnimalSpecies, AnimalData> Animals;
 
 	private RealService() 
 	{
-		basicAnimals = DataManager.GetBasicAnimalList ();
-		Animals = DataManager.GetBasicAnimalDictionary ();
-		AnimalDescriptions = DataManager.GetAnimalDescriptionDictionary ();
+		Animals = DataManager.GetAllAnimalData ();
 	}
 				
 	public string CreateAccount(string username, string name, string password, string email)
@@ -59,14 +55,14 @@ public class RealService : IServices
 		return CurrentPlayer;
 	}
 
-	public List<BasicAnimal> AllAnimals()
+	public Dictionary<AnimalSpecies, AnimalData> AllAnimals()
 	{
-		return basicAnimals;
+		return Animals;
 	}
 
 	public string AnimalDescription(AnimalSpecies species)
 	{
-		return AnimalDescriptions [species];
+		return Animals [species].Description;
 	}
 
 	public void CatchAnimal(AnimalSpecies species)
