@@ -22,9 +22,9 @@ public class QuizGrading : MonoBehaviour {
 		
 	}
 
-    public void CheckAnswers(List<int> player_answers)
+    public void Click()
     {
-        if (/*array contents equal*/ true)
+        if (Random.Range(0,20)>=10)
         {
             EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Celebration);
         } else

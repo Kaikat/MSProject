@@ -38,7 +38,7 @@ public class SwitchOnHealth : MonoBehaviour {
         }
         else
         {
-            EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Failure);
+            EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Quiz);
         }
     }
 }
