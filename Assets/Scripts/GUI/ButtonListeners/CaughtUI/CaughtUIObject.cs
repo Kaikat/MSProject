@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class CaughtUIObject : MonoBehaviour {
 
 	public Text AnimalNameTitle;
 	public Text AnimalDescription;
+	public RawImage AnimalImage;
 
 	void Awake()
 	{
@@ -14,8 +14,10 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void SetTextFields(AnimalSpecies animal)
 	{
-		AnimalNameTitle.text = animal.ToString ();
+		string animalName = animal.ToString ();
+		AnimalNameTitle.text = animalName;
 		AnimalDescription.text = Service.Request.AnimalDescription (animal);
+		AnimalImage.texture = Resources.Load<Texture> (animalName);
 	}
 
 	void Destroy()

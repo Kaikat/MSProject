@@ -60,9 +60,9 @@ public static class AssetManager
 
 	public static Object LoadPrefab(string folder, string prefabName)
 	{
-		Object animalPrefabObj = new Object ();
-		animalPrefabObj = folder == string.Empty ? Resources.Load (prefabName) : Resources.Load (folder + "/" + prefabName);
-		return animalPrefabObj;
+		Object prefabObj = new Object ();
+		prefabObj = folder == string.Empty ? Resources.Load (prefabName) : Resources.Load (folder + "/" + prefabName);
+		return prefabObj;
 	}
 
 	public static Object GetAnimalPrefab(AnimalSpecies species)
