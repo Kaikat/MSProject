@@ -11,5 +11,6 @@ public enum ScreenType {
 	Journal,
 	Caught,
     Celebration,
-    Failure
+    Failure,
+    Quiz
 }
