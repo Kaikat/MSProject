@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45126927, g: 0.5009536, b: 0.5733615, a: 1}
+  m_IndirectSpecularColor: {r: 0.45128846, g: 0.5009715, b: 0.57337314, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimalNameTitle: {fileID: 2041158865}
   AnimalDescription: {fileID: 1686457357}
-  AnimalImage: {fileID: 0}
+  AnimalImage: {fileID: 1707144067}
 --- !u!1 &123796907
 GameObject:
   m_ObjectHideFlags: 0
