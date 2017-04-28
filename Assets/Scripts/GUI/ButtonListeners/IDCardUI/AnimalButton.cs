@@ -12,7 +12,7 @@ public class AnimalButton : MonoBehaviour {
 	void Awake()
 	{
 		species = Species.ToString ();
-		EventManager.RegisterEvent<AnimalSpecies> (GameEvent.Caught, UpdateButton);
+		EventManager.RegisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
 	}
 
 	void Start()
@@ -35,9 +35,9 @@ public class AnimalButton : MonoBehaviour {
 		GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (animalName);
 	}
 
-	void UpdateButton(AnimalSpecies animal)
+	void UpdateButton(Animal animal)
 	{
-		if (Species == animal)
+		if (Species == animal.Species)
 		{
 			SetButtonComponents (species);
 			Unregister ();
@@ -51,6 +51,6 @@ public class AnimalButton : MonoBehaviour {
 		
 	void Unregister()
 	{
-		EventManager.UnregisterEvent<AnimalSpecies> (GameEvent.Caught, UpdateButton);
+		EventManager.UnregisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
 	}
 }

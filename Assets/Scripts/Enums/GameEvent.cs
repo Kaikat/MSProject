@@ -12,7 +12,7 @@ public enum GameEvent {
 	// For Catch Animal Screen
 	GPSInitialized,
 	AnimalEncounter,
-	Caught,
+	AnimalCaught,
 
 	AccountCreationSuccess,
 	LoginSuccessful,

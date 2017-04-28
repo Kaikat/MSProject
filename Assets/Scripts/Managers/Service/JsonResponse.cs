@@ -27,23 +27,24 @@ namespace JsonResponse
 	}
 
 	[System.Serializable]
-	public class ListResponse //DictResponse
-	{
-		public List<DataAnimal> AnimalData;
-	}
-
-	[System.Serializable]
 	public class DataAnimal
 	{
-		public string animal_id;
+		public string species;
 		public string description;
 		public string habitat_level;
-		public string sensor_id;
 		public float min_size;
 		public float max_size;
 		public float min_age;
 		public float max_age;
+		public float min_weight;
+		public float max_weight;
 		public string colorkey_map_file;
+	}
+
+	[System.Serializable]
+	public class ListResponse //DictResponse
+	{
+		public List<DataAnimal> AnimalData;
 	}
 
 	[System.Serializable]
@@ -53,14 +54,31 @@ namespace JsonResponse
 		public List<OwnedAnimalData> OwnedAnimalData;
 	}
 
+	//TODO: Update these last 2
 	[System.Serializable]
 	public class OwnedAnimalData
 	{
-		public string animal_id;
+		public string animal_species;
+		public int animal_id;
 		public string nickname;
-		public string health;
+		public float health_1;
+		public float health_2;
+		public float health_3;
 		public float size;
+		public float weight;
 		public float age;
-		public string color_file;
+	}
+
+	[System.Serializable]
+	public class GennedAnimalData
+	{
+		public string animal_species;
+		public int animal_id;
+		public float health_1;
+		public float health_2;
+		public float health_3;
+		public float size;
+		public float weight;
+		public float age;
 	}
 }

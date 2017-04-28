@@ -10,9 +10,12 @@ public class AnimalData
 	public float MaximumSize { private set; get; }
 	public float MinimumAge { private set; get; }
 	public float MaximumAge { private set; get; }
+	public float MinimumWeight { private set; get; }
+	public float MaximumWeight { private set; get; }
 	public string ColorMapFile { private set; get; }
 
-	public AnimalData(AnimalSpecies species, string description, HabitatLevelType habitat, float min_size, float max_size, float min_age, float max_age, string colorFile)
+	public AnimalData(AnimalSpecies species, string description, HabitatLevelType habitat, 
+		float min_size, float max_size, float min_age, float max_age, float min_weight, float max_weight, string colorFile)
 	{
 		Species = species;
 		Description = description;

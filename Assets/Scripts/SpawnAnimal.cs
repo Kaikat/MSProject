@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//TODO: DEAD CLASS ?
+
 public class SpawnAnimal : MonoBehaviour {
 
 	//temp static for get animal type
@@ -27,7 +29,7 @@ public class SpawnAnimal : MonoBehaviour {
 		//animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (AnimalSpecies.Tiger));
 		//animal.layer = LayerMask.NameToLayer("Default");
 
-		Service.Request.CatchAnimal (AnimalSpecies.Butterfly);
+		//Service.Request.CatchAnimal (AnimalSpecies.Butterfly);
 
 
 

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SwitchOnHealth : MonoBehaviour {
 
-    private AnimalSpecies animal;
+	//TODO: Find use for this animal argument
+    private Animal animal;
 
     void Awake() {
-        EventManager.RegisterEvent<AnimalSpecies>(GameEvent.Caught, SetAnimal);
+		EventManager.RegisterEvent<Animal>(GameEvent.AnimalCaught, SetAnimal);
     }
 
     // Use this for initialization
@@ -20,14 +21,14 @@ public class SwitchOnHealth : MonoBehaviour {
 		
 	}
 
-    private void SetAnimal(AnimalSpecies animal_arg)
+    private void SetAnimal(Animal animal_arg)
     {
         animal = animal_arg;
     }
 
     void Destroy()
     {
-        EventManager.UnregisterEvent<AnimalSpecies>(GameEvent.Caught, SetAnimal);
+		EventManager.UnregisterEvent<Animal>(GameEvent.AnimalCaught, SetAnimal);
     }
 
     public void Click()

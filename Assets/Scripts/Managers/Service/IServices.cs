@@ -9,8 +9,10 @@ public interface IServices
 
 	Player Player();
 
+	Animal AnimalToCatch(AnimalSpecies species);
+
 	//Send Data
-	void CatchAnimal (AnimalSpecies species);
+	void CatchAnimal (Animal animal);
 
 
 	bool VerifyLogin (string username, string password);

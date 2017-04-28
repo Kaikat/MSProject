@@ -106,13 +106,20 @@ public class FakeService : IServices
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
 
-		Animal animal = new Animal ("tiger1", AnimalSpecies.Tiger, "Tigecito", AnimalEncounterType.Caught, HabitatLevelType.Middle);
+		Animal animal = new Animal (AnimalSpecies.Tiger, 1, new AnimalStats(1.0f, 2.0f, 3.0f, 10.0f, 45.0f, 70.0f), "colorfile.txt");
+		animal.SetNickname ("Tigecito");
+
 		PlayerAnimals.Add (animal);
 
 		return PlayerAnimals;
 	}
+		
+	public Animal AnimalToCatch(AnimalSpecies species)
+	{
+		return new Animal (AnimalSpecies.Tiger, 1, new AnimalStats (1.0f, 2.0f, 3.0f, 10.0f, 40.0f, 35.0f), "colorfile.txt");
+	}
 
-	public void CatchAnimal(AnimalSpecies species)
+	public void CatchAnimal(Animal animal)
 	{
 	}
 }

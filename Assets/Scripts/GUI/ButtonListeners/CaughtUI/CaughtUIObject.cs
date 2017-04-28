@@ -9,19 +9,19 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void Awake()
 	{
-		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.Caught, SetTextFields);
+		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
 	}
 
-	void SetTextFields(AnimalSpecies animal)
+	void SetTextFields(Animal animal)
 	{
-		string animalName = animal.ToString ();
+		string animalName = animal.Species.ToString ();
 		AnimalNameTitle.text = animalName;
-		AnimalDescription.text = Service.Request.AnimalDescription (animal);
+		AnimalDescription.text = Service.Request.AnimalDescription (animal.Species);
 		AnimalImage.texture = Resources.Load<Texture> (animalName);
 	}
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <AnimalSpecies> (GameEvent.Caught, SetTextFields);
+		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
 	}
 }

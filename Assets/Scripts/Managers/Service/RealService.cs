@@ -65,19 +65,14 @@ public class RealService : IServices
 		return Animals [species].Description;
 	}
 
-	public void CatchAnimal(AnimalSpecies species)
+	public void CatchAnimal(Animal animal)
 	{
-		string nickname = "tigecito";
-		string animalID = species.ToString().ToLower() + "1";
+		DataManager.NotifyAnimalCaught(CurrentPlayer.Username, animal);
+		CurrentPlayer.AddAnimal(animal.Species, animal);
+	}
 
-		float health = 2.0f;
-		float age = 4.0f;
-		float size = 3.0f;
-		string colorFile = "colorfile.txt";
-
-		Animal animal = new Animal (animalID, species, nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle);
-		DataManager.NotifyAnimalCaught (CurrentPlayer.Username, animalID, nickname, health, size, age, colorFile);
-
-		CurrentPlayer.AddAnimal(species, animal);
+	public Animal AnimalToCatch(AnimalSpecies species)
+	{
+		return DataManager.GenerateAnimal (CurrentPlayer.Username, species);
 	}
 }

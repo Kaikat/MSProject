@@ -2,27 +2,33 @@
 using System;
 using System.Collections;
 
-public class Animal : BasicAnimal {
+public class Animal 
+{
+	public AnimalSpecies Species { private set; get; }
+	public int AnimalID { private set; get; }
+	public string Nickname { private set; get; }
+	public AnimalStats Stats { private set; get; }
+	public string Colorfile { private set; get; }
 
-	private string Nickname;
-	private DateTime CaughtDate;
-	private DateTime ReleaseDate;
-	private AnimalStats InitialStats;
-	private AnimalStats CurrentStats;
-	private AnimalEncounterType EncounterType;
+	public Animal (AnimalSpecies species, int animalID, AnimalStats stats, string colorfile)
+	{
+		Species = species;
+		AnimalID = animalID;
+		Stats = stats;
+		Colorfile = colorfile;
+	}
 
-	public Animal (string ID, AnimalSpecies species, string nickname, AnimalEncounterType encounter, HabitatLevelType habitatType) : base (species, habitatType)
+	public Animal (AnimalSpecies species, int animalID, string nickname, AnimalStats stats, string colorfile)
+	{
+		Species = species;
+		AnimalID = animalID;
+		Nickname = nickname;
+		Stats = stats;
+		Colorfile = colorfile;
+	}
+
+	public void SetNickname(string nickname)
 	{
 		Nickname = nickname;
-		EncounterType = encounter;
 	}
 }
-
-/*
-AnimalSpecies
-Nickname
-Health
-Size
-Age
-Colorfile
-*/

@@ -4,36 +4,30 @@ using System.Collections;
 
 public class CatchAnimal : MonoBehaviour
 {
-	AnimalSpecies encounteredAnimal;
+	Animal wildAnimal;
 
 	void Awake ()
 	{
 		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
 
-	void ShowEncounteredAnimal(AnimalSpecies animal)
+	void ShowEncounteredAnimal(AnimalSpecies species)
 	{
-		encounteredAnimal = animal;
-		AssetManager.ShowAnimal (encounteredAnimal);
+		wildAnimal = Service.Request.AnimalToCatch (species);
+		AssetManager.ShowAnimal (species);
 	}
 
 	void CatchEncounteredAnimal()
 	{
-		Service.Request.CatchAnimal (encounteredAnimal);
+		Service.Request.CatchAnimal (wildAnimal);
 		AssetManager.HideAnimals ();
-	}
-
-	// Update is called once per frame
-	void Update ()
-	{
-	
 	}
 
 	public void Click()
 	{
 		CatchEncounteredAnimal ();
 		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		EventManager.TriggerEvent (GameEvent.Caught, encounteredAnimal);
+		EventManager.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
 	}
 
 	void Destroy()

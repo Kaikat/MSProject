@@ -12,6 +12,7 @@ public static class DataManager
 	private const string ANIMAL_DATA = "GetAllAnimals.php";
 	private const string PLAYER_DATA = "GetPlayerData.php";
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
+	private const string GENERATE_ANIMAL = "GenerateAnimal.php";
 	private const string NOTIFY_ANIMAL_CAUGHT = "CaughtAnimal.php";
 
 	public static Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData()
@@ -20,10 +21,8 @@ public static class DataManager
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (HTTP_ADDRESS + ANIMAL_DATA);
 		foreach (DataAnimal anim in response.AnimalData)
 		{
-			AnimalData animal = new AnimalData (anim.animal_id.ToEnum<AnimalSpecies>(), anim.description, anim.habitat_level.ToEnum<HabitatLevelType>(), 
-				                    anim.min_size, anim.max_size, 
-				                    anim.min_age, anim.max_age,
-				                    anim.colorkey_map_file);
+			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (),
+				anim.min_size, anim.max_size, anim.min_age, anim.max_age, anim.min_weight, anim.max_weight, anim.colorkey_map_file);
 			Animals.Add (animal.Species, animal);
 		}
 
@@ -72,24 +71,9 @@ public static class DataManager
 		}
 		foreach (OwnedAnimalData r in response.OwnedAnimalData)
 		{
-			AnimalSpecies specie;
-			if (r.animal_id == "tiger1")
-			{
-				specie = AnimalSpecies.Tiger;
-			}
-			else if (r.animal_id == "butterfly1")
-			{
-				specie = AnimalSpecies.Butterfly;
-			}
-			else if (r.animal_id == "horse1")
-			{
-				specie = AnimalSpecies.Horse;
-			}
-			else
-			{
-				specie = AnimalSpecies.Tiger;
-			}
-			PlayerAnimals.Add (new Animal (r.animal_id, specie, r.nickname, AnimalEncounterType.Caught, HabitatLevelType.Middle));
+			PlayerAnimals.Add(new Animal(r.animal_species.ToEnum<AnimalSpecies>(), r.animal_id, 
+				new AnimalStats(r.health_1, r.health_2, r.health_3, r.age, r.size, r.weight), 
+				GenerateColorFile(r.health_1, r.health_2, r.health_3)));
 		}
 
 		Dictionary<AnimalSpecies, List<Animal>> Animals = new Dictionary<AnimalSpecies, List<Animal>> ();
@@ -111,17 +95,66 @@ public static class DataManager
 
 	private static Dictionary<AnimalSpecies, List<AnimalEncounterType>> GetAnimalEncounters(string username)
 	{
+		//this should query the database for the animal encounters
 		return new Dictionary<AnimalSpecies, List<AnimalEncounterType>> ();
 	}
 
-	//http://tamuyal.mat.ucsb.edu:8888/CaughtAnimal.php?username=kaikat15&animal_id=tiger1&nickname=tigesote&health=40.0&size=2.0&age=4.0&colorfile=color.txt
-	public static void NotifyAnimalCaught(string username, string animalID, string nickname, float health, float size, float age, string colorFile)
+	public static Animal GenerateAnimal(string username, AnimalSpecies species)
 	{
+		GennedAnimalData gennedAnimal = WebManager.GetHttpResponse<GennedAnimalData> (
+			HTTP_ADDRESS + GENERATE_ANIMAL + 
+			"?username=" + username + "&species=" + species.ToString ());
+
+		return new Animal (species, gennedAnimal.animal_id,
+			new AnimalStats(gennedAnimal.health_1, gennedAnimal.health_2, gennedAnimal.health_3, 
+				gennedAnimal.age, gennedAnimal.size, gennedAnimal.weight), 
+			GenerateColorFile(gennedAnimal.health_1, gennedAnimal.health_2, gennedAnimal.health_3));
+	}
+
+	private static string GenerateColorFile(float health1, float health2, float health3)
+	{
+		return "colorfile.txt";
+	}
+
+	//TODO: Change the event triggers and listeners for CatchAnimal (DONE)
+	//TODO: Update PHP Code for OwnedAnimal (DONE)
+	public static void NotifyAnimalSeen(string username, Animal animal)
+	{
+		//TODO: In the PHP code save only the first encounter, the "discovery", of an animal for each player (DONE)
+
+		//This is done automatically now in PHP when the animal is first genned
+	}
+
+
+	//TODO: CHECK THESE Notify Calls
+	//http://tamuyal.mat.ucsb.edu:8888/CaughtAnimal.php?username=kaikat15&animal_id=tiger1&nickname=tigesote&health=40.0&size=2.0&age=4.0&colorfile=color.txt
+	//public static void NotifyAnimalCaught(string username, string animalID, string nickname, float health, float size, float age, string colorFile)
+	public static void NotifyAnimalCaught(string username, Animal animal)
+	{
+		//TODO: CHANGE THE PHP CODE AND DATABASE TO TAKE THE RIGHT PARAMETERS
+		WebManager.GetHttpResponse<BasicResponse> (
+			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
+			"?username=" + username + "&encounter_id=" + animal.AnimalID.ToString() + 
+			"&animal_species=" + animal.Species.ToString() + "&nickname=" + animal.Nickname + 
+			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight.ToString() +
+			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
+			);
+		/*
 		WebManager.GetHttpResponse<BasicResponse> (
 			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
 			"?username=" + username + "&animal_id=" + animalID + "&nickname=" + nickname + 
 			"&health=" + health.ToString() + "&size=" + size.ToString() + 
-			"&age=" + age.ToString() + "&colorfile=" + colorFile);
+			"&age=" + age.ToString() + "&colorfile=" + colorFile);*/
+	}
+
+	public static void NotifyAnimalReleased(string username, Animal animal)
+	{
+		WebManager.GetHttpResponse<BasicResponse> (
+			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
+			"?username=" + username + "&animal_id=" + animal.Species.ToString() + "&nickname=" + animal.Nickname + "&encounter_type=" + AnimalEncounterType.Released +
+			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString() +
+			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight +
+			"&colorfile=" + animal.Colorfile);
 	}
 }
 
