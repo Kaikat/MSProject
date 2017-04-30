@@ -2,10 +2,14 @@
 using UnityEngine.UI;
 
 public class CaughtUIObject : MonoBehaviour {
-
+	
+	public RawImage AnimalImage;
 	public Text AnimalNameTitle;
 	public Text AnimalDescription;
-	public RawImage AnimalImage;
+
+	public Text HealthFactor1;
+	public Text HealthFactor2;
+	public Text HealthFactor3;
 
 	void Awake()
 	{
@@ -15,9 +19,13 @@ public class CaughtUIObject : MonoBehaviour {
 	void SetTextFields(Animal animal)
 	{
 		string animalName = animal.Species.ToString ();
+		AnimalImage.texture = Resources.Load<Texture> (animalName);
 		AnimalNameTitle.text = animalName;
 		AnimalDescription.text = Service.Request.AnimalDescription (animal.Species);
-		AnimalImage.texture = Resources.Load<Texture> (animalName);
+
+		HealthFactor1.text = animal.Stats.Health1.ToString ();
+		HealthFactor2.text = animal.Stats.Health2.ToString ();
+		HealthFactor3.text = animal.Stats.Health3.ToString ();
 	}
 
 	void Destroy()
