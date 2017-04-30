@@ -13,6 +13,12 @@ namespace JsonResponse
 	}
 
 	[System.Serializable]
+	public class BasicIntResponse
+	{
+		public int count;
+	}
+
+	[System.Serializable]
 	public class PlayerDataResponse
 	{
 		public string name;
@@ -80,5 +86,23 @@ namespace JsonResponse
 		public float size;
 		public float weight;
 		public float age;
+	}
+
+	[System.Serializable]
+	public class EncounteredAnimalResponse
+	{
+		public bool empty;
+		public List<EncounterData> EncounterData;
+	}
+
+	[System.Serializable]
+	public class EncounterData
+	{
+		public int animal_id;
+		public string species;
+		public float health_1;
+		public float health_2;
+		public float health_3;
+		public string encounter_date;
 	}
 }

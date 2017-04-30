@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum AnimalEncounterType {
-	Seen,
+	Discovered,
 	Caught,
 	Released
 }

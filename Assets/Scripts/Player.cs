@@ -11,27 +11,25 @@ public class Player {
 	public string Avatar { private set; get; }
 	public int Currency { private set; get; }
 
-	public int AnimalsReleased { private set; get; }
-	public int AnimalsBeingNursed { private set; get; }
 	public int AnimalsDiscovered { private set; get; }
+	public int AnimalsCaught { private set; get; }
+	public int AnimalsReleased { private set; get; }
 
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
-	private Dictionary<AnimalSpecies, List<AnimalEncounterType>> AnimalEncounters;
 
-	public Player(string username, string name, string avatar, int currency, int released, int nursing, 
-		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<AnimalEncounterType>> animalEncounters)
+	public Player(string username, string name, string avatar, int currency, int discovered, int caught, int released,
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals)
 	{
 		Username = username;
 		Name = name;
 		Avatar = avatar;
 		Currency = currency;
 
-		AnimalEncounters = animalEncounters;
 		Animals = ownedAnimals;
 
+		AnimalsDiscovered = discovered;
+		AnimalsCaught = caught;
 		AnimalsReleased = released;
-		AnimalsBeingNursed = nursing;
-		AnimalsDiscovered = AnimalEncounters.Count;
 	}
 
 	public void Destroy()
@@ -41,11 +39,6 @@ public class Player {
 	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() 
 	{
 		return Animals;
-	}
-
-	public Dictionary<AnimalSpecies, List<AnimalEncounterType>> GetAnimalEncounters()
-	{
-		return AnimalEncounters;
 	}
 
 	public void AddAnimal(AnimalSpecies species, Animal animal)

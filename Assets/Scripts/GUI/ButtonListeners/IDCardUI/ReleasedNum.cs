@@ -6,15 +6,14 @@ public class ReleasedNum : MonoBehaviour
 {
 	Text t;
 
-	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		t = GetComponent<Text> ();
 	}
 
-	// Update is called once per frame
-	void Update () {
-		t.text = "0";
-		//t.text = StartGame.CurrentPlayer.GetReleased.ToString();
+	void Update () 
+	{
+		t.text = Service.Request.Player ().AnimalsReleased.ToString ();
 	}
 }
 

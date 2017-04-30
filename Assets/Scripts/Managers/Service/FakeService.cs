@@ -65,8 +65,7 @@ public class FakeService : IServices
 		UserLogins.Add ("user3", "pass3");
 
 		Dictionary<AnimalSpecies, List<Animal>> owned = new Dictionary<AnimalSpecies, List<Animal>> ();
-		Dictionary<AnimalSpecies, List<AnimalEncounterType>> encountered = new Dictionary<AnimalSpecies, List<AnimalEncounterType>> ();
-		CurrentPlayer = new Player (username, "name", "avatar", 0, 0, 0, owned, encountered);
+		CurrentPlayer = new Player (username, "name", "avatar", 10000, 0, 0, 0, owned);
 
 		return UserLogins.ContainsKey (username) && UserLogins [username] == password;
 	}

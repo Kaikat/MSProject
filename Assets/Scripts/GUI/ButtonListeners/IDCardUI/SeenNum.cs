@@ -11,12 +11,9 @@ public class SeenNum : MonoBehaviour
 		t = GetComponent<Text> ();
 	}
 	
-	// Update is called once per frame
 	void Update ()
 	{	
-		
-		t.text = "2";
-		//t.text = StartGame.CurrentPlayer.GetSeen.ToString();
+		t.text = Service.Request.Player ().AnimalsDiscovered.ToString ();
 	}
 }
 

@@ -14,6 +14,8 @@ public static class DataManager
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
 	private const string GENERATE_ANIMAL = "GenerateAnimal.php";
 	private const string NOTIFY_ANIMAL_CAUGHT = "CaughtAnimal.php";
+	private const string ENCOUNTER_COUNT = "GetPlayersDiscoveredAnimals.php";
+	private const string ANIMAL_ENCOUNTERS = "GetPlayerEncounters.php";
 
 	public static Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData()
 	{
@@ -56,7 +58,10 @@ public static class DataManager
 			HTTP_ADDRESS + PLAYER_DATA + "?username=" + username);
 
 		return new Player (username, playerData.name, playerData.avatar, playerData.currency, 
-			0, 0, GetPlayerAnimals(username), GetAnimalEncounters(username));
+			GetEncounterCount(username, AnimalEncounterType.Discovered), 
+			GetEncounterCount(username, AnimalEncounterType.Caught), 
+			GetEncounterCount(username, AnimalEncounterType.Released), 
+			GetPlayerAnimals(username));
 	}
 
 	private static Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string username)
@@ -93,10 +98,39 @@ public static class DataManager
 		return Animals;	
 	}
 
-	private static Dictionary<AnimalSpecies, List<AnimalEncounterType>> GetAnimalEncounters(string username)
+	private static int GetEncounterCount(string username, AnimalEncounterType encounter)
 	{
-		//this should query the database for the animal encounters
-		return new Dictionary<AnimalSpecies, List<AnimalEncounterType>> ();
+		BasicIntResponse response = WebManager.GetHttpResponse<BasicIntResponse> (
+			HTTP_ADDRESS + ENCOUNTER_COUNT + "?username=" + username + "&encounter_type=" + encounter.ToString ());
+
+		return response.count;
+	}
+
+	//TODO: Use this to update the Journal Page
+	public static Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter)
+	{
+		Dictionary<AnimalSpecies, List<JournalAnimal>> encounteredAnimals = new Dictionary<AnimalSpecies, List<JournalAnimal>> ();
+
+		EncounteredAnimalResponse response = WebManager.GetHttpResponse<EncounteredAnimalResponse> (
+			HTTP_ADDRESS + ANIMAL_ENCOUNTERS + "?username=" + username + "&encounter_type=" + encounter.ToString ());
+
+		foreach (EncounterData j in response.EncounterData)
+		{
+			AnimalSpecies species = j.species.ToEnum<AnimalSpecies> ();
+			if (encounteredAnimals.ContainsKey (species))
+			{
+				encounteredAnimals [species].Add (new JournalAnimal (j.animal_id, species, 
+					j.health_1, j.health_2, j.health_3, j.encounter_date));
+			}
+			else
+			{
+				encounteredAnimals.Add (species, new List<JournalAnimal> ());
+				encounteredAnimals [species].Add (new JournalAnimal (j.animal_id, species, 
+					j.health_1, j.health_2, j.health_3, j.encounter_date));
+			}
+		}
+
+		return encounteredAnimals;
 	}
 
 	public static Animal GenerateAnimal(string username, AnimalSpecies species)
@@ -121,14 +155,11 @@ public static class DataManager
 	public static void NotifyAnimalSeen(string username, Animal animal)
 	{
 		//TODO: In the PHP code save only the first encounter, the "discovery", of an animal for each player (DONE)
-
 		//This is done automatically now in PHP when the animal is first genned
 	}
 
 
 	//TODO: CHECK THESE Notify Calls
-	//http://tamuyal.mat.ucsb.edu:8888/CaughtAnimal.php?username=kaikat15&animal_id=tiger1&nickname=tigesote&health=40.0&size=2.0&age=4.0&colorfile=color.txt
-	//public static void NotifyAnimalCaught(string username, string animalID, string nickname, float health, float size, float age, string colorFile)
 	public static void NotifyAnimalCaught(string username, Animal animal)
 	{
 		//TODO: CHANGE THE PHP CODE AND DATABASE TO TAKE THE RIGHT PARAMETERS
@@ -139,12 +170,6 @@ public static class DataManager
 			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight.ToString() +
 			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
 			);
-		/*
-		WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
-			"?username=" + username + "&animal_id=" + animalID + "&nickname=" + nickname + 
-			"&health=" + health.ToString() + "&size=" + size.ToString() + 
-			"&age=" + age.ToString() + "&colorfile=" + colorFile);*/
 	}
 
 	public static void NotifyAnimalReleased(string username, Animal animal)
@@ -165,3 +190,5 @@ public static class DataManager
 //private string HTTP_ADDRESS = "https://192.168.100.166/";
 //private string HTTP_ADDRESS = "https://192.168.1.118/";
 //private string HTTP_ADDRESS = "https://192.168.1.118/";
+
+//http://tamuyal.mat.ucsb.edu:8888/CaughtAnimal.php?username=kaikat15&animal_id=tiger1&nickname=tigesote&health=40.0&size=2.0&age=4.0&colorfile=color.txt
