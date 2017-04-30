@@ -61,7 +61,7 @@ public static class DataManager
 			GetEncounterCount(username, AnimalEncounterType.Discovered), 
 			GetEncounterCount(username, AnimalEncounterType.Caught), 
 			GetEncounterCount(username, AnimalEncounterType.Released), 
-			GetPlayerAnimals(username, false));
+			GetPlayerAnimals(username, false), GetPlayerAnimals(username, true));
 	}
 
 	private static Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string username, bool released)

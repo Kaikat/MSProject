@@ -16,9 +16,10 @@ public class Player {
 	public int AnimalsReleased { private set; get; }
 
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
+	private Dictionary<AnimalSpecies, List<Animal>> ReleasedAnimals;
 
 	public Player(string username, string name, string avatar, int currency, int discovered, int caught, int released,
-		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals)
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals)
 	{
 		Username = username;
 		Name = name;
@@ -26,6 +27,7 @@ public class Player {
 		Currency = currency;
 
 		Animals = ownedAnimals;
+		ReleasedAnimals = releasedAnimals;
 
 		AnimalsDiscovered = discovered;
 		AnimalsCaught = caught;
@@ -39,6 +41,11 @@ public class Player {
 	public Dictionary<AnimalSpecies, List<Animal>> GetAnimals() 
 	{
 		return Animals;
+	}
+
+	public Dictionary<AnimalSpecies, List<Animal>> GetReleasedAnimals()
+	{
+		return ReleasedAnimals;
 	}
 
 	public void AddAnimal(AnimalSpecies species, Animal animal)
