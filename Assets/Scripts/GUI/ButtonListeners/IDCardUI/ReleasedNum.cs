@@ -4,16 +4,12 @@ using System.Collections;
 
 public class ReleasedNum : MonoBehaviour
 {
-	Text t;
+	public Text Released;
 
-	void Start () 
-	{
-		t = GetComponent<Text> ();
-	}
-
+	//This number can change during gameplay
 	void Update () 
 	{
-		t.text = Service.Request.Player ().AnimalsReleased.ToString ();
+		Released.text = Service.Request.Player ().AnimalsReleased.ToString ();
 	}
 }
 

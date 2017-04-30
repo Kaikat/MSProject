@@ -4,16 +4,12 @@ using System.Collections;
 
 public class SeenNum : MonoBehaviour
 {
-	Text t;
+	public Text Discovered;
 
-	void Start ()
-	{
-		t = GetComponent<Text> ();
-	}
-	
+	//This number can change during gameplay
 	void Update ()
 	{	
-		t.text = Service.Request.Player ().AnimalsDiscovered.ToString ();
+		Discovered.text = Service.Request.Player ().AnimalsDiscovered.ToString ();
 	}
 }
 

@@ -4,20 +4,12 @@ using System.Collections;
 
 public class NursingNum : MonoBehaviour
 {
-	Text t;
-	// Use this for initialization
+	public Text Nursing;
 
-	void Start ()
-	{
-		t = GetComponent<Text> ();
-	}
-	
-	// Update is called once per frame
+	//This number can change during gameplay
 	void Update ()
 	{
-		t.text = "1";
-
-		//t.text = StartGame.CurrentPlayer.GetNursing.toString();
+		Nursing.text = "1";	
 	}
 }
 
