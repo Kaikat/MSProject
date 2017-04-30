@@ -48,6 +48,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		{
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
 			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);
+			Service.Request.Player ().AddDiscoveredAnimal (AnimalSpecies.Horse);
 			animalOnScreen = true;
 		}
 	}

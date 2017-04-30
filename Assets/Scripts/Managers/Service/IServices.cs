@@ -13,7 +13,7 @@ public interface IServices
 
 	//Send Data
 	void CatchAnimal (Animal animal);
-
+	void ReleaseAnimal (Animal animal);
 
 	bool VerifyLogin (string username, string password);
 	string CreateAccount (string username, string name, string password, string email);

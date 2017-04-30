@@ -7,19 +7,10 @@ public class SwitchOnHealth : MonoBehaviour {
 	//TODO: Find use for this animal argument
     private Animal animal;
 
-    void Awake() {
+    void Awake() 
+	{
 		EventManager.RegisterEvent<Animal>(GameEvent.AnimalCaught, SetAnimal);
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private void SetAnimal(Animal animal_arg)
     {
@@ -33,13 +24,15 @@ public class SwitchOnHealth : MonoBehaviour {
 
     public void Click()
     {
-        if (Random.Range(0, 20) >= 15)
+		if (Random.Range(0, 20) >= 15)
         {
+			Service.Request.ReleaseAnimal (animal);
             EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Celebration);
         }
         else
         {
             EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Quiz);
+			EventManager.TriggerEvent(GameEvent.QuizTime, animal);
         }
     }
 }

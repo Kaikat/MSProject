@@ -54,6 +54,13 @@ namespace JsonResponse
 	}
 
 	[System.Serializable]
+	public class DiscoveredListResponse
+	{
+		public bool empty;
+		public List<string> DiscoveredSpecies;
+	}
+
+	[System.Serializable]
 	public class OwnedAnimalResponse
 	{		
 		public bool empty;
@@ -74,7 +81,7 @@ namespace JsonResponse
 		public float weight;
 		public float age;
 	}
-
+		
 	[System.Serializable]
 	public class GennedAnimalData
 	{

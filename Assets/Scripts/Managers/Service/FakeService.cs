@@ -66,8 +66,9 @@ public class FakeService : IServices
 
 		Dictionary<AnimalSpecies, List<Animal>> owned = new Dictionary<AnimalSpecies, List<Animal>> ();
 		Dictionary<AnimalSpecies, List<Animal>> released = new Dictionary<AnimalSpecies, List<Animal>> ();
+		List<AnimalSpecies> discovered = new List<AnimalSpecies> ();
 
-		CurrentPlayer = new Player (username, "name", "avatar", 10000, 0, 0, 0, owned, released);
+		CurrentPlayer = new Player (username, "name", "avatar", 10000, 0, 0, 0, owned, released, discovered);
 
 		return UserLogins.ContainsKey (username) && UserLogins [username] == password;
 	}
@@ -121,6 +122,10 @@ public class FakeService : IServices
 	}
 
 	public void CatchAnimal(Animal animal)
+	{
+	}
+
+	public void ReleaseAnimal(Animal animal)
 	{
 	}
 }

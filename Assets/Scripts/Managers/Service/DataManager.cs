@@ -12,8 +12,10 @@ public static class DataManager
 	private const string ANIMAL_DATA = "GetAllAnimals.php";
 	private const string PLAYER_DATA = "GetPlayerData.php";
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
+	private const string PLAYER_DISCOVERED_LIST = "GetDiscoveredList.php";
 	private const string GENERATE_ANIMAL = "GenerateAnimal.php";
 	private const string NOTIFY_ANIMAL_CAUGHT = "CaughtAnimal.php";
+	private const string NOTIFY_ANIMAL_RELEASED = "ReleasedAnimal.php";
 	private const string ENCOUNTER_COUNT = "GetPlayersDiscoveredAnimals.php";
 	private const string ANIMAL_ENCOUNTERS = "GetPlayerEncounters.php";
 
@@ -57,11 +59,12 @@ public static class DataManager
 		PlayerDataResponse playerData = WebManager.GetHttpResponse<PlayerDataResponse> (
 			HTTP_ADDRESS + PLAYER_DATA + "?username=" + username);
 
+		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
 		return new Player (username, playerData.name, playerData.avatar, playerData.currency, 
 			GetEncounterCount(username, AnimalEncounterType.Discovered), 
 			GetEncounterCount(username, AnimalEncounterType.Caught), 
 			GetEncounterCount(username, AnimalEncounterType.Released), 
-			GetPlayerAnimals(username, false), GetPlayerAnimals(username, true));
+			GetPlayerAnimals(username, false), GetPlayerAnimals(username, true), GetDiscoveredAnimals(username));
 	}
 
 	private static Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string username, bool released)
@@ -96,6 +99,22 @@ public static class DataManager
 		}
 
 		return Animals;	
+	}
+
+	private static List<AnimalSpecies> GetDiscoveredAnimals(string username)
+	{
+		List<AnimalSpecies> discoveredAnimals = new List<AnimalSpecies> ();
+		DiscoveredListResponse response = WebManager.GetHttpResponse<DiscoveredListResponse> (
+			HTTP_ADDRESS + PLAYER_DISCOVERED_LIST + "?username=" + username);
+
+		if (!response.empty)
+		{
+			foreach (string animal in response.DiscoveredSpecies)
+			{
+				discoveredAnimals.Add (animal.ToEnum<AnimalSpecies> ());
+			}
+		}
+		return discoveredAnimals;
 	}
 
 	private static int GetEncounterCount(string username, AnimalEncounterType encounter)
@@ -175,11 +194,10 @@ public static class DataManager
 	public static void NotifyAnimalReleased(string username, Animal animal)
 	{
 		WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
-			"?username=" + username + "&animal_id=" + animal.Species.ToString() + "&nickname=" + animal.Nickname + "&encounter_type=" + AnimalEncounterType.Released +
-			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString() +
-			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight +
-			"&colorfile=" + animal.Colorfile);
+			HTTP_ADDRESS + NOTIFY_ANIMAL_RELEASED +
+			"?username=" + username + "&encounter_id=" + animal.AnimalID.ToString() + "&animal_species=" + animal.Species.ToString() + 
+			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
+		);
 	}
 }
 

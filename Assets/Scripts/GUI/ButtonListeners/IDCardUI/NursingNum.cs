@@ -9,7 +9,7 @@ public class NursingNum : MonoBehaviour
 	//This number can change during gameplay
 	void Update ()
 	{
-		Nursing.text = "1";	
+		Nursing.text = Service.Request.Player().AnimalsNursing.ToString();	
 	}
 }
 

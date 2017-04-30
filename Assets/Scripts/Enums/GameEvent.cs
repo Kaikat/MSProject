@@ -14,6 +14,8 @@ public enum GameEvent {
 	AnimalEncounter,
 	AnimalCaught,
 
+	QuizTime,
+
 	AccountCreationSuccess,
 	LoginSuccessful,
 }

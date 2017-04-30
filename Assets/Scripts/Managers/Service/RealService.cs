@@ -65,14 +65,21 @@ public class RealService : IServices
 		return Animals [species].Description;
 	}
 
-	public void CatchAnimal(Animal animal)
-	{
-		DataManager.NotifyAnimalCaught(CurrentPlayer.Username, animal);
-		CurrentPlayer.AddAnimal(animal.Species, animal);
-	}
-
 	public Animal AnimalToCatch(AnimalSpecies species)
 	{
 		return DataManager.GenerateAnimal (CurrentPlayer.Username, species);
+	}
+
+	public void CatchAnimal(Animal animal)
+	{
+		CurrentPlayer.AddOwnedAnimal(animal);
+		DataManager.NotifyAnimalCaught(CurrentPlayer.Username, animal);
+	}
+
+	public void ReleaseAnimal(Animal animal)
+	{
+		CurrentPlayer.RemoveOwnedAnimal (animal);
+		CurrentPlayer.AddReleasedAnimal (animal);
+		DataManager.NotifyAnimalReleased (CurrentPlayer.Username, animal);
 	}
 }

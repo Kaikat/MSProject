@@ -14,12 +14,15 @@ public class Player {
 	public int AnimalsDiscovered { private set; get; }
 	public int AnimalsCaught { private set; get; }
 	public int AnimalsReleased { private set; get; }
+	public int AnimalsNursing { private set; get; }
 
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 	private Dictionary<AnimalSpecies, List<Animal>> ReleasedAnimals;
+	private List<AnimalSpecies> DiscoveredAnimals;
 
 	public Player(string username, string name, string avatar, int currency, int discovered, int caught, int released,
-		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals)
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
+		List<AnimalSpecies> discoveredAnimals)
 	{
 		Username = username;
 		Name = name;
@@ -28,10 +31,12 @@ public class Player {
 
 		Animals = ownedAnimals;
 		ReleasedAnimals = releasedAnimals;
+		DiscoveredAnimals = discoveredAnimals;
 
 		AnimalsDiscovered = discovered;
 		AnimalsCaught = caught;
 		AnimalsReleased = released;
+		AnimalsNursing = Animals.Count;
 	}
 
 	public void Destroy()
@@ -48,9 +53,23 @@ public class Player {
 		return ReleasedAnimals;
 	}
 
-	public void AddAnimal(AnimalSpecies species, Animal animal)
+	public bool HasDiscoveredAnimal(AnimalSpecies species)
 	{
-		
+		return DiscoveredAnimals.Contains (species);
+	}
+
+	public void AddDiscoveredAnimal(AnimalSpecies species)
+	{
+		if (!DiscoveredAnimals.Contains(species))
+		{
+			DiscoveredAnimals.Add (species);
+			AnimalsDiscovered++;
+		}
+	}
+
+	public void AddOwnedAnimal(Animal animal)
+	{
+		AnimalSpecies species = animal.Species;
 		if (Animals.ContainsKey (species)) 
 		{				
 			Animals [species].Add (animal);
@@ -59,7 +78,43 @@ public class Player {
 		{
 			Animals.Add (species, new List<Animal>());
 			Animals[species].Add(animal);
+			AnimalsDiscovered++;
 		}
+		AnimalsCaught++;
+		AnimalsNursing++;
+	}
+
+	public void RemoveOwnedAnimal(Animal animal)
+	{
+		AnimalSpecies species = animal.Species;
+		if (Animals.ContainsKey (species))
+		{
+			List<Animal> animalsOfSpecies = Animals [species];
+			for (int i = animalsOfSpecies.Count - 1; i >= 0; i--)
+			{
+				Animal animalToRemove = animalsOfSpecies [i];
+				if (animalToRemove.AnimalID == animal.AnimalID)
+				{
+					animalsOfSpecies.Remove (animalToRemove);
+				}
+			}
+		}
+		AnimalsNursing--;
+	}
+
+	public void AddReleasedAnimal(Animal animal)
+	{
+		AnimalSpecies species = animal.Species;
+		if (ReleasedAnimals.ContainsKey (species))
+		{				
+			ReleasedAnimals [species].Add (animal);
+		}
+		else
+		{
+			ReleasedAnimals.Add (species, new List<Animal> ());
+			ReleasedAnimals [species].Add (animal);
+		}
+		AnimalsReleased++;
 	}
 }
 
