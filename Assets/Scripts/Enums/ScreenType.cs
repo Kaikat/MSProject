@@ -12,5 +12,6 @@ public enum ScreenType {
 	Caught,
     Celebration,
     Failure,
-    Quiz
+    Quiz,
+    AnimalUnderObs
 }
