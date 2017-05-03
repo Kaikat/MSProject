@@ -82,4 +82,9 @@ public class RealService : IServices
 		CurrentPlayer.AddReleasedAnimal (animal);
 		DataManager.NotifyAnimalReleased (CurrentPlayer.Username, animal);
 	}
+
+	public List<JournalEntry> PlayerJournal()
+	{
+		return DataManager.GetJournalEntryData (CurrentPlayer.Username);
+	}
 }

@@ -128,4 +128,9 @@ public class FakeService : IServices
 	public void ReleaseAnimal(Animal animal)
 	{
 	}
+
+	public List<JournalEntry> PlayerJournal()
+	{
+		return new List<JournalEntry> ();
+	}
 }

@@ -18,6 +18,9 @@ public static class DataManager
 	private const string NOTIFY_ANIMAL_RELEASED = "ReleasedAnimal.php";
 	private const string ENCOUNTER_COUNT = "GetPlayersDiscoveredAnimals.php";
 	private const string ANIMAL_ENCOUNTERS = "GetPlayerEncounters.php";
+	private const string LATEST_X_ENCOUNTERS = "GetXMostRecentEncounters.php";
+
+	private const int JOURNAL_ENTRY_LIMIT = 5;
 
 	public static Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData()
 	{
@@ -199,7 +202,37 @@ public static class DataManager
 			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
 		);
 	}
+
+	public static List<JournalEntry> GetJournalEntryData(string username)
+	{
+		List<JournalEntry> journalEntries = new List<JournalEntry> ();
+		JournalResponse response = WebManager.GetHttpResponse<JournalResponse> (
+			HTTP_ADDRESS + LATEST_X_ENCOUNTERS +
+			"?username=" + username + "&encounter_limit=" + JOURNAL_ENTRY_LIMIT.ToString()
+		);
+
+		foreach (JournalEntryData entry in response.JournalEntryData)
+		{
+			AnimalEncounterType encounter = entry.encounter_type.ToEnum<AnimalEncounterType> ();
+			if (encounter == AnimalEncounterType.Released)
+			{				
+				journalEntries.Add (new JournalEntry(entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), entry.encounter_type.ToEnum<AnimalEncounterType> (), 
+					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3, 
+					entry.caught_date, entry.encounter_date, entry.health_1, entry.health_2, entry.health_3));
+			}
+			else
+			{
+				journalEntries.Add (new JournalEntry (entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), encounter, 
+					entry.health_1, entry.health_2, entry.health_3, entry.encounter_date));
+			}
+		}
+
+		return journalEntries;
+	}
 }
+
+
+
 
 
 

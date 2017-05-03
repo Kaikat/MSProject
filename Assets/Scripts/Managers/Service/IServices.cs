@@ -10,6 +10,7 @@ public interface IServices
 	Player Player();
 
 	Animal AnimalToCatch(AnimalSpecies species);
+	List<JournalEntry> PlayerJournal();
 
 	//Send Data
 	void CatchAnimal (Animal animal);

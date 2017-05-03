@@ -112,4 +112,27 @@ namespace JsonResponse
 		public float health_3;
 		public string encounter_date;
 	}
+
+	[System.Serializable]
+	public class JournalResponse
+	{
+		public bool empty;
+		public List<JournalEntryData> JournalEntryData;
+	}
+
+	[System.Serializable]
+	public class JournalEntryData
+	{
+		public int animal_id;
+		public string species;
+		public string encounter_type;
+		public float health_1;
+		public float health_2;
+		public float health_3;
+		public string encounter_date;
+		public string caught_date;
+		public float caught_health_1;
+		public float caught_health_2;
+		public float caught_health_3;
+	}
 }
