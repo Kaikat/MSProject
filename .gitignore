@@ -4,6 +4,7 @@
 ATiPhoneVtry1/
 AndroidDevice.apk
 AndroidDeviceAdreno.apk
+*.apk
 Assets/oldGPS.cs
 Assets/oldGPS.cs.meta
 Assets/NewBehaviourScript.cs

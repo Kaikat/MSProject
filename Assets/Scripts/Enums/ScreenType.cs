@@ -7,10 +7,11 @@ public enum ScreenType {
 	FakeHome,
 	WorkingHome,
 	IDCard,
-	CatchAnimal,
+    AnimalUnderObs,
+    CatchAnimal,
 	Journal,
 	Caught,
     Celebration,
     Failure,
-    Quiz
+    Quiz,
 }
