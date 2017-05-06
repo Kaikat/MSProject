@@ -66,7 +66,7 @@ public class FakeService : IServices
 
 		Dictionary<AnimalSpecies, List<Animal>> owned = new Dictionary<AnimalSpecies, List<Animal>> ();
 		Dictionary<AnimalSpecies, List<Animal>> released = new Dictionary<AnimalSpecies, List<Animal>> ();
-		List<AnimalSpecies> discovered = new List<AnimalSpecies> ();
+		List<DiscoveredAnimal> discovered = new List<DiscoveredAnimal> ();
 
 		CurrentPlayer = new Player (username, "name", "avatar", 10000, 0, 0, 0, owned, released, discovered);
 

@@ -15,6 +15,7 @@ public static class DataManager
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
 	private const string PLAYER_DISCOVERED_LIST = "GetDiscoveredList.php";
 	private const string GENERATE_ANIMAL = "GenerateAnimal.php";
+	private const string NOTIFY_ANIMAL_DISCOVERED = "NotifyDiscovery.php";
 	private const string NOTIFY_ANIMAL_CAUGHT = "CaughtAnimal.php";
 	private const string NOTIFY_ANIMAL_RELEASED = "ReleasedAnimal.php";
 	private const string ENCOUNTER_COUNT = "GetPlayersDiscoveredAnimals.php";
@@ -125,9 +126,9 @@ public static class DataManager
 		return Animals;	
 	}
 
-	private static List<AnimalSpecies> GetDiscoveredAnimals(string username)
+	private static List<DiscoveredAnimal> GetDiscoveredAnimals(string username)
 	{
-		List<AnimalSpecies> discoveredAnimals = new List<AnimalSpecies> ();
+		List<DiscoveredAnimal> discoveredAnimals = new List<DiscoveredAnimal> ();
 		DiscoveredListResponse response = WebManager.GetHttpResponse<DiscoveredListResponse> (
 			HTTP_ADDRESS + PLAYER_DISCOVERED_LIST + "?username=" + username);
 
@@ -135,9 +136,10 @@ public static class DataManager
 		{
 			foreach (DiscoveredSpeciesData animal in response.DiscoveredSpeciesData)
 			{
-				discoveredAnimals.Add (animal.animal_species.ToEnum<AnimalSpecies> ());
+				discoveredAnimals.Add (new DiscoveredAnimal(animal.animal_species.ToEnum<AnimalSpecies> (), animal.discovered_date));
 			}
 		}
+
 		return discoveredAnimals;
 	}
 
@@ -195,10 +197,14 @@ public static class DataManager
 
 	//TODO: Change the event triggers and listeners for CatchAnimal (DONE)
 	//TODO: Update PHP Code for OwnedAnimal (DONE)
-	public static void NotifyAnimalSeen(string username, Animal animal)
+	public static string NotifyAnimalDiscovered(string username, AnimalSpecies species)
 	{
-		//TODO: In the PHP code save only the first encounter, the "discovery", of an animal for each player (DONE)
-		//This is done automatically now in PHP when the animal is first genned
+		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
+			HTTP_ADDRESS + NOTIFY_ANIMAL_DISCOVERED + 
+			"?username=" + username + "&species=" + species.ToString()
+		);
+			
+		return response.message;
 	}
 
 
@@ -212,7 +218,7 @@ public static class DataManager
 			"&animal_species=" + animal.Species.ToString() + "&nickname=" + animal.Nickname + 
 			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight.ToString() +
 			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
-			);
+		);
 	}
 
 	public static void NotifyAnimalReleased(string username, Animal animal)

@@ -40,7 +40,6 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		{
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
 			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);
-			Service.Request.Player ().AddDiscoveredAnimal (AnimalSpecies.Horse);
 			animalOnScreen = true;
 		}
 		else
@@ -60,7 +59,6 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 				{
 					EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
 					EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalLocations [i].Animal);
-					Service.Request.Player ().AddDiscoveredAnimal (AnimalLocations [i].Animal);
 					animalOnScreen = true;
 				}
 			}

@@ -79,6 +79,12 @@ public class RealService : IServices
 
 	public Animal AnimalToCatch(AnimalSpecies species)
 	{
+		if (!CurrentPlayer.HasDiscoveredAnimal (species))
+		{
+			string discovery_date = DataManager.NotifyAnimalDiscovered (CurrentPlayer.Username, species);
+			CurrentPlayer.AddDiscoveredAnimal (species, discovery_date);
+		}
+
 		return DataManager.GenerateAnimal (CurrentPlayer.Username, species);
 	}
 

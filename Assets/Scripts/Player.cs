@@ -18,11 +18,11 @@ public class Player {
 
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 	private Dictionary<AnimalSpecies, List<Animal>> ReleasedAnimals;
-	private List<AnimalSpecies> DiscoveredAnimals;
+	private List<DiscoveredAnimal> DiscoveredAnimals;
 
 	public Player(string username, string name, string avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
-		List<AnimalSpecies> discoveredAnimals)
+		List<DiscoveredAnimal> discoveredAnimals)
 	{
 		Username = username;
 		Name = name;
@@ -55,14 +55,22 @@ public class Player {
 
 	public bool HasDiscoveredAnimal(AnimalSpecies species)
 	{
-		return DiscoveredAnimals.Contains (species);
+		for (int i = 0; i < DiscoveredAnimals.Count; i++)
+		{
+			if (DiscoveredAnimals [i].Species == species)
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
-	public void AddDiscoveredAnimal(AnimalSpecies species)
+	public void AddDiscoveredAnimal(AnimalSpecies species, string discovered_date)
 	{
-		if (!DiscoveredAnimals.Contains(species))
+		if (!HasDiscoveredAnimal(species))
 		{
-			DiscoveredAnimals.Add (species);
+			DiscoveredAnimals.Add (new DiscoveredAnimal(species, discovered_date));
 			AnimalsDiscovered++;
 		}
 	}
