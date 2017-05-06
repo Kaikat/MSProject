@@ -133,9 +133,9 @@ public static class DataManager
 
 		if (!response.empty)
 		{
-			foreach (string animal in response.DiscoveredSpecies)
+			foreach (DiscoveredSpeciesData animal in response.DiscoveredSpeciesData)
 			{
-				discoveredAnimals.Add (animal.ToEnum<AnimalSpecies> ());
+				discoveredAnimals.Add (animal.animal_species.ToEnum<AnimalSpecies> ());
 			}
 		}
 		return discoveredAnimals;
@@ -247,7 +247,7 @@ public static class DataManager
 					entry.health_1, entry.health_2, entry.health_3, entry.encounter_date));
 			}
 		}
-
+			
 		return journalEntries;
 	}
 }

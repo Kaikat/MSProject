@@ -55,10 +55,17 @@ namespace JsonResponse
 	}
 
 	[System.Serializable]
+	public class DiscoveredSpeciesData
+	{
+		public string animal_species;
+		public string discovered_date;
+	}
+
+	[System.Serializable]
 	public class DiscoveredListResponse
 	{
 		public bool empty;
-		public List<string> DiscoveredSpecies;
+		public List<DiscoveredSpeciesData> DiscoveredSpeciesData;
 	}
 
 	[System.Serializable]

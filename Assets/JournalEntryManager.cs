@@ -17,7 +17,7 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 		//2017-05-01 15:09:25
 		string [] tokens = dateString.Split('-');
 		string[] removeAfterSpace = tokens [2].Split (' ');
-		return tokens [0] + "/" + tokens [1] + "/" + removeAfterSpace [0];
+		return tokens [1] + "/" + removeAfterSpace [0] + "/" + tokens [0];
 	}
 
 	public void OnShow()

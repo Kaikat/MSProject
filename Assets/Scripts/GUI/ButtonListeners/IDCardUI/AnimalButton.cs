@@ -30,7 +30,14 @@ public class AnimalButton : MonoBehaviour {
 	void SetButtonComponents(string animalName)
 	{
 		GetComponentInChildren<Text> ().text = animalName;
-		GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (animalName);
+		if (animalName != unknown)
+		{
+			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (Species.ToString ());
+		}
+		else
+		{
+			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (animalName);
+		}
 	}
 
 	void UpdateButton(Animal animal)
