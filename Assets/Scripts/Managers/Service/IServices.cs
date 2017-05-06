@@ -6,6 +6,8 @@ public interface IServices
 	//Basic Data
 	Dictionary<AnimalSpecies, AnimalData> AllAnimals();
 	string AnimalDescription (AnimalSpecies species);
+	string AnimalName (AnimalSpecies species);
+	List<AnimalLocation> PlacesToVisit();
 
 	Player Player();
 

@@ -32,7 +32,7 @@ public static class AssetManager
 			animal.layer = LayerMask.NameToLayer ("Default");
 
 			// TEMPORARY: Not the final assets
-			if (animals [i].Species == AnimalSpecies.Butterfly)
+			if (animals[i].Species == AnimalSpecies.Butterfly)
 			{
 				GameObject temp = new GameObject ();
 				temp.layer = LayerMask.NameToLayer ("Default");
@@ -47,7 +47,11 @@ public static class AssetManager
 				animal.transform.localScale = animal.transform.localScale * 2.0f;
 			}
 
-			if (animals [i].Species == AnimalSpecies.Horse)
+			AnimalSpecies a = animals[i].Species;
+			if (animals [i].Species == AnimalSpecies.Horse || a == AnimalSpecies.Bat || a == AnimalSpecies.Lizard ||
+				a == AnimalSpecies.Coyote || a == AnimalSpecies.Raingod || a == AnimalSpecies.Datura ||
+				a == AnimalSpecies.Shark || a == AnimalSpecies.Redtailedhawk || a == AnimalSpecies.Heron ||
+				a == AnimalSpecies.Watergod)
 			{
 				animal.transform.localPosition = new Vector3 (animal.transform.localPosition.x, -1.9f, animal.transform.localPosition.z);
 			}

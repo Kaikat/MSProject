@@ -17,9 +17,9 @@ public class SetJournalEntry : MonoBehaviour {
 
 	public void SetJournalEntryElements(AnimalSpecies species, string encounter_date, float health1, float health2, float health3)
 	{
-		string animal_species = species.ToString ();
+		string animal_species = Service.Request.AnimalName (species);
 		Species.text = animal_species;
-		AnimalImage.texture = Resources.Load<Texture> (animal_species);
+		AnimalImage.texture = Resources.Load<Texture> (species.ToString());
 		EncounterDate.text = encounter_date;
 		ReleaseDate.text = "";
 		Health1.text = health1.ToString ();
@@ -33,9 +33,9 @@ public class SetJournalEntry : MonoBehaviour {
 	public void SetJournalEntryElements(AnimalSpecies species, string encounter_date, float health1, float health2, float health3,
 		string release_date, float health1_r, float health2_r, float health3_r)
 	{
-		string animal_species = species.ToString ();
+		string animal_species = Service.Request.AnimalName (species);
 		Species.text = animal_species;
-		AnimalImage.texture = Resources.Load<Texture> (animal_species);
+		AnimalImage.texture = Resources.Load<Texture> (species.ToString());
 		EncounterDate.text = encounter_date;
 		ReleaseDate.text = release_date;
 		Health1.text = health1.ToString ();

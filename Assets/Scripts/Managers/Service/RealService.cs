@@ -21,10 +21,12 @@ public class RealService : IServices
 
 	Player CurrentPlayer;
 	Dictionary<AnimalSpecies, AnimalData> Animals;
+	List<AnimalLocation> GPSLocations;
 
 	private RealService() 
 	{
 		Animals = DataManager.GetAllAnimalData ();
+		GPSLocations = DataManager.GetGPSLocations ();
 	}
 				
 	public string CreateAccount(string username, string name, string password, string email)
@@ -50,6 +52,11 @@ public class RealService : IServices
 		return true;
 	}
 
+	public List<AnimalLocation> PlacesToVisit()
+	{
+		return GPSLocations;
+	}
+
 	public Player Player()
 	{
 		return CurrentPlayer;
@@ -63,6 +70,11 @@ public class RealService : IServices
 	public string AnimalDescription(AnimalSpecies species)
 	{
 		return Animals [species].Description;
+	}
+
+	public string AnimalName(AnimalSpecies species)
+	{
+		return Animals [species].Name;
 	}
 
 	public Animal AnimalToCatch(AnimalSpecies species)

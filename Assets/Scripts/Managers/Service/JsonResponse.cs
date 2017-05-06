@@ -36,6 +36,7 @@ namespace JsonResponse
 	public class DataAnimal
 	{
 		public string species;
+		public string name;
 		public string description;
 		public string habitat_level;
 		public float min_size;
@@ -134,5 +135,23 @@ namespace JsonResponse
 		public float caught_health_1;
 		public float caught_health_2;
 		public float caught_health_3;
+	}
+
+	[System.Serializable]
+	public class LocationData
+	{
+		public int location_id;
+		public string location_name;
+		public double x_coordinate;
+		public double y_coordinate;
+		public string description;
+		public string species;
+	}
+
+	[System.Serializable]
+	public class LocationResponse
+	{
+		public bool empty;
+		public List<LocationData> LocationData;
 	}
 }

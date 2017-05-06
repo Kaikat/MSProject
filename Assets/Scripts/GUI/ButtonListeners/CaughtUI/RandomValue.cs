@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
+
+//TODO: DEAD CLASS?
 public class RandomValue : MonoBehaviour
 {
 	Text t;

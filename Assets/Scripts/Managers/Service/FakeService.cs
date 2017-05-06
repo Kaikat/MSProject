@@ -95,6 +95,11 @@ public class FakeService : IServices
 		return "I am an animal!";
 	}
 
+	public string AnimalName(AnimalSpecies species)
+	{
+		return "animal name";
+	}
+
 	public string[] PlayerData()
 	{
 		string[] playerInfo = new string[3];
@@ -132,5 +137,10 @@ public class FakeService : IServices
 	public List<JournalEntry> PlayerJournal()
 	{
 		return new List<JournalEntry> ();
+	}
+
+	public List<AnimalLocation> PlacesToVisit()
+	{
+		return new List<AnimalLocation> ();
 	}
 }

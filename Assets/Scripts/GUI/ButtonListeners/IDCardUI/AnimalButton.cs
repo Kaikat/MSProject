@@ -11,7 +11,7 @@ public class AnimalButton : MonoBehaviour {
 
 	void Awake()
 	{
-		species = Species.ToString ();
+		species = Service.Request.AnimalName (Species);
 		EventManager.RegisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
 	}
 

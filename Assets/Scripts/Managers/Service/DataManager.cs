@@ -9,6 +9,7 @@ public static class DataManager
 	private const string HTTP_ADDRESS = "http://tamuyal.mat.ucsb.edu:8888/";
 	private const string CREATE_ACCOUNT = "CreateAccount.php";
 	private const string VERIFY_LOGIN = "VerifyLogin.php";
+	private const string GPS_LOCATIONS = "GetGPSLocations.php";
 	private const string ANIMAL_DATA = "GetAllAnimals.php";
 	private const string PLAYER_DATA = "GetPlayerData.php";
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
@@ -28,7 +29,7 @@ public static class DataManager
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (HTTP_ADDRESS + ANIMAL_DATA);
 		foreach (DataAnimal anim in response.AnimalData)
 		{
-			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (),
+			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (),
 				anim.min_size, anim.max_size, anim.min_age, anim.max_age, anim.min_weight, anim.max_weight, anim.colorkey_map_file);
 			Animals.Add (animal.Species, animal);
 		}
@@ -55,6 +56,26 @@ public static class DataManager
 			"?username=" + username.ToLower() + "&password=" + password);
 		
 		return !loginSession.error;
+	}
+
+	public static List<AnimalLocation> GetGPSLocations()
+	{
+		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
+		LocationResponse response = WebManager.GetHttpResponse<LocationResponse> (
+			HTTP_ADDRESS + GPS_LOCATIONS);
+
+		if (response.empty)
+		{
+			return pointsOfInterest;
+		}
+
+		foreach (LocationData d in response.LocationData)
+		{
+			pointsOfInterest.Add (new AnimalLocation(d.species.ToEnum<AnimalSpecies> (), 
+				new PointOfInterest(d.location_id, d.location_name, d.description, d.x_coordinate, d.y_coordinate)));
+		}
+
+		return pointsOfInterest;
 	}
 
 	public static Player GetPlayerData(string username)

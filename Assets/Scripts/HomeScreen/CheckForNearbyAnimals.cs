@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CheckForNearbyAnimals : MonoBehaviour {
 
@@ -32,12 +33,41 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		{
 			return;
 		}
+			
+		//float allowedDistanceRadius = 0.0001349778f;
 
-		Vector2 currentLocation = gpsScript.GetCoordinate ();
-		Vector2 limit = new Vector2 (34.41094f, -119.8639f);
-		Vector2 testp = new Vector2 (34.41103f, -119.8638f);
-		float allowedDistance = Vector2.Distance (limit, testp);
+		if (!Service.Request.Player ().HasDiscoveredAnimal (AnimalSpecies.Horse))
+		{
+			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
+			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);
+			Service.Request.Player ().AddDiscoveredAnimal (AnimalSpecies.Horse);
+			animalOnScreen = true;
+		}
+		else
+		{
+			Vector2 currentLocation = gpsScript.GetCoordinate ();
 
+			Vector2 limit = new Vector2 (34.41094f, -119.8639f);
+			Vector2 livingRoomPoint = new Vector2 (34.41103f, -119.8638f);
+			float allowedDistance = Vector2.Distance (limit, livingRoomPoint); 
+
+			List<AnimalLocation> AnimalLocations = Service.Request.PlacesToVisit ();
+			for (int i = 0; i < AnimalLocations.Count; i++)
+			{
+				Vector2 testp = AnimalLocations [i].Location.Coordinate;
+				float currentDistance = Vector2.Distance (testp, currentLocation);
+				if (currentDistance < allowedDistance && !Service.Request.Player ().GetAnimals ().ContainsKey (AnimalLocations [i].Animal))
+				{
+					EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
+					EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalLocations [i].Animal);
+					Service.Request.Player ().AddDiscoveredAnimal (AnimalLocations [i].Animal);
+					animalOnScreen = true;
+				}
+			}
+		}
+
+
+		/*
 		float currentDistance = Vector2.Distance (testp, currentLocation);
 
 		currentDistance = 0.0f;
@@ -50,7 +80,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 			EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalSpecies.Horse);
 			Service.Request.Player ().AddDiscoveredAnimal (AnimalSpecies.Horse);
 			animalOnScreen = true;
-		}
+		}*/
 	}
 
 	void Destroy()
