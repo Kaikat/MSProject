@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//POSSIBLY DEAD CLASS
 public class JournalAnimal 
 {
 	public int EncounterID { private set; get; }

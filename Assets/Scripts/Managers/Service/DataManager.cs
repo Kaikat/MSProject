@@ -90,13 +90,15 @@ public static class DataManager
 			GetEncounterCount(username, AnimalEncounterType.Caught), 
 			GetEncounterCount(username, AnimalEncounterType.Released), 
 			GetPlayerAnimals(username, false), GetPlayerAnimals(username, true), GetDiscoveredAnimals(username));
+		//owned, released
 	}
 
 	private static Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string username, bool released)
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
+		string wasReleased = released ? "1" : "0";
 		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (
-			HTTP_ADDRESS + PLAYER_ANIMALS + "?username=" + username + "&?released=" + released);
+			HTTP_ADDRESS + PLAYER_ANIMALS + "?username=" + username + "&released=" + wasReleased);
 
 		if (response.empty)
 		{
