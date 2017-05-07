@@ -1546,6 +1546,9 @@ MonoBehaviour:
   Health1Released: {fileID: 1918717016}
   Health2Released: {fileID: 478761254}
   Health3Released: {fileID: 545196883}
+  HealthFactor1: {fileID: 589254379}
+  HealthFactor2: {fileID: 395322319}
+  HealthFactor3: {fileID: 798410260}
 --- !u!114 &95187407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,6 +1863,9 @@ MonoBehaviour:
   Health1Released: {fileID: 196901402}
   Health2Released: {fileID: 134404530}
   Health3Released: {fileID: 1909490717}
+  HealthFactor1: {fileID: 1126158679}
+  HealthFactor2: {fileID: 1233000066}
+  HealthFactor3: {fileID: 1801463138}
 --- !u!114 &111437484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14185,6 +14191,9 @@ MonoBehaviour:
   Health1Released: {fileID: 1903749386}
   Health2Released: {fileID: 1136688908}
   Health3Released: {fileID: 1714372398}
+  HealthFactor1: {fileID: 704885763}
+  HealthFactor2: {fileID: 2130571478}
+  HealthFactor3: {fileID: 1872284471}
 --- !u!114 &741799144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17386,6 +17395,9 @@ MonoBehaviour:
   Health1Released: {fileID: 742937577}
   Health2Released: {fileID: 486392818}
   Health3Released: {fileID: 284671208}
+  HealthFactor1: {fileID: 400421288}
+  HealthFactor2: {fileID: 1354861615}
+  HealthFactor3: {fileID: 1796734912}
 --- !u!114 &947774203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19161,7 +19173,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2131587519}
   m_HandleRect: {fileID: 2131587518}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0.9999999
   m_Size: 0.2100291
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19783,6 +19795,9 @@ MonoBehaviour:
   Health1Released: {fileID: 325885176}
   Health2Released: {fileID: 1087885822}
   Health3Released: {fileID: 458666608}
+  HealthFactor1: {fileID: 708650731}
+  HealthFactor2: {fileID: 1643692252}
+  HealthFactor3: {fileID: 1773220856}
 --- !u!114 &1091574270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27082,6 +27097,9 @@ MonoBehaviour:
   Health1Released: {fileID: 1264231310}
   Health2Released: {fileID: 1351616303}
   Health3Released: {fileID: 20353820}
+  HealthFactor1: {fileID: 545164589}
+  HealthFactor2: {fileID: 553887146}
+  HealthFactor3: {fileID: 1439809590}
 --- !u!114 &1511344202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29083,6 +29101,9 @@ MonoBehaviour:
   Health1Released: {fileID: 1047319427}
   Health2Released: {fileID: 156638509}
   Health3Released: {fileID: 363557793}
+  HealthFactor1: {fileID: 985958809}
+  HealthFactor2: {fileID: 1641312266}
+  HealthFactor3: {fileID: 552848767}
 --- !u!114 &1624863751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33785,6 +33806,9 @@ MonoBehaviour:
   Health1Released: {fileID: 46529491}
   Health2Released: {fileID: 576656051}
   Health3Released: {fileID: 587989509}
+  HealthFactor1: {fileID: 791024593}
+  HealthFactor2: {fileID: 659155537}
+  HealthFactor3: {fileID: 1255247268}
 --- !u!114 &1858236205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34091,6 +34115,9 @@ MonoBehaviour:
   Health1Released: {fileID: 347521260}
   Health2Released: {fileID: 391344444}
   Health3Released: {fileID: 220687920}
+  HealthFactor1: {fileID: 592613397}
+  HealthFactor2: {fileID: 2096935455}
+  HealthFactor3: {fileID: 52143068}
 --- !u!114 &1869152930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37367,6 +37394,9 @@ MonoBehaviour:
   Health1Released: {fileID: 767372816}
   Health2Released: {fileID: 1404566330}
   Health3Released: {fileID: 1639192315}
+  HealthFactor1: {fileID: 1698308645}
+  HealthFactor2: {fileID: 1215680948}
+  HealthFactor3: {fileID: 480753903}
 --- !u!114 &2011525769
 MonoBehaviour:
   m_ObjectHideFlags: 0

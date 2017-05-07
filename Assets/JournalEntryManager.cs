@@ -12,14 +12,6 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 		journalScreen.GetComponent<TaggedShowHide> ().listener = this;
 	}
 
-	string ConvertDate(string dateString)
-	{
-		//2017-05-01 15:09:25
-		string [] tokens = dateString.Split('-');
-		string[] removeAfterSpace = tokens [2].Split (' ');
-		return tokens [1] + "/" + removeAfterSpace [0] + "/" + tokens [0];
-	}
-
 	public void OnShow()
 	{
 		List<JournalEntry> journalEntries = Service.Request.PlayerJournal ();
@@ -31,21 +23,32 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 				JournalEntries [i].SetActive (true);
 				JournalEntry entry = journalEntries [i];
 
-				if (entry.EncounterType == AnimalEncounterType.Released)
+				JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry);
+				JournalEntries [i].SetActive (true);
+				/*if (entry.EncounterType == AnimalEncounterType.Released)
 				{
-					string releasedString = "Released: " + ConvertDate (entry.ReleaseDate);
-					string caughtString = "Caught: " + ConvertDate (entry.EncounterDate);
+					string releasedString = "Released: " + ConvertDate (entry.LatestEncounterDate.ToString ());
+					string caughtString = "Caught: " + ConvertDate (entry.OldEncounterDate.ToString ());
 
 					JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, caughtString, 
-						entry.Health1, entry.Health2, entry.Health3, releasedString, 
-						entry.ReleaseHealth1, entry.ReleaseHealth2, entry.ReleaseHealth3);
+						entry.OldHealth1, entry.OldHealth2, entry.OldHealth3, releasedString, 
+						entry.LatestHealth1, entry.LatestHealth2, entry.LatestHealth3);
 				}
 				else
 				{
-					string encounterString = entry.EncounterType.ToString () + " " + ConvertDate (entry.EncounterDate);
-					JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, encounterString,
-						entry.Health1, entry.Health2, entry.Health3);
-				}
+					string encounterString = entry.EncounterType.ToString () + " " + ConvertDate (entry.LatestEncounterDate.ToString ());
+					if (entry.EncounterType == AnimalEncounterType.Caught)
+					{
+						JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, encounterString,
+							entry.LatestHealth1, entry.LatestHealth2, entry.LatestHealth3);
+					}
+					else
+					{
+						JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, entry.LatestEncounterDate);
+					}
+				}*/
+
+
 			}
 			else
 			{

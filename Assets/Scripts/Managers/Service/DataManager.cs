@@ -151,6 +151,7 @@ public static class DataManager
 		return response.count;
 	}
 
+	//POSSIBLY DEAD FUNCTION
 	//TODO: Use this to update the Journal Page
 	public static Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter)
 	{
@@ -174,7 +175,7 @@ public static class DataManager
 					j.health_1, j.health_2, j.health_3, j.encounter_date));
 			}
 		}
-
+			
 		return encounteredAnimals;
 	}
 
@@ -194,9 +195,7 @@ public static class DataManager
 	{
 		return "colorfile.txt";
 	}
-
-	//TODO: Change the event triggers and listeners for CatchAnimal (DONE)
-	//TODO: Update PHP Code for OwnedAnimal (DONE)
+		
 	public static string NotifyAnimalDiscovered(string username, AnimalSpecies species)
 	{
 		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
@@ -207,11 +206,8 @@ public static class DataManager
 		return response.message;
 	}
 
-
-	//TODO: CHECK THESE Notify Calls
 	public static void NotifyAnimalCaught(string username, Animal animal)
 	{
-		//TODO: CHANGE THE PHP CODE AND DATABASE TO TAKE THE RIGHT PARAMETERS
 		WebManager.GetHttpResponse<BasicResponse> (
 			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
 			"?username=" + username + "&encounter_id=" + animal.AnimalID.ToString() + 
@@ -244,17 +240,33 @@ public static class DataManager
 			if (encounter == AnimalEncounterType.Released)
 			{				
 				journalEntries.Add (new JournalEntry(entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), entry.encounter_type.ToEnum<AnimalEncounterType> (), 
-					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3, 
-					entry.caught_date, entry.encounter_date, entry.health_1, entry.health_2, entry.health_3));
+					entry.health_1, entry.health_2, entry.health_3, 
+					System.DateTime.Parse(entry.encounter_date), System.DateTime.Parse(entry.caught_date), 
+					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3));
 			}
 			else
 			{
 				journalEntries.Add (new JournalEntry (entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), encounter, 
-					entry.health_1, entry.health_2, entry.health_3, entry.encounter_date));
+					entry.health_1, entry.health_2, entry.health_3, System.DateTime.Parse(entry.encounter_date)));
 			}
 		}
-			
-		return journalEntries;
+
+		List<DiscoveredAnimal> discoveredAnimals = GetDiscoveredAnimals (username);
+		int discoveryEntries = discoveredAnimals.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : discoveredAnimals.Count;
+		for (int i = 0; i < discoveryEntries; i++)
+		{
+			journalEntries.Add (new JournalEntry (AnimalEncounterType.Discovered, discoveredAnimals [i].Species, discoveredAnimals [i].Date));
+		}
+		journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
+
+		List<JournalEntry> finalJournalEntries = new List<JournalEntry> ();
+		int totalEntries = journalEntries.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : journalEntries.Count;
+		for (int i = 0; i < totalEntries; i++)
+		{
+			finalJournalEntries.Add (journalEntries[i]);
+		}
+
+		return finalJournalEntries;
 	}
 }
 

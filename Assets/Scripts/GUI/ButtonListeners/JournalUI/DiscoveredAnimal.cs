@@ -5,11 +5,11 @@ using UnityEngine;
 public class DiscoveredAnimal
 {
 	public AnimalSpecies Species { private set; get; }
-	public string Date { private set; get; }
+	public System.DateTime Date { private set; get; }
 
 	public DiscoveredAnimal(AnimalSpecies species, string date)
 	{
 		Species = species;
-		Date = date;
+		Date = System.DateTime.Parse(date);
 	}
 }
