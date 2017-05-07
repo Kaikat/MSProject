@@ -29,56 +29,30 @@ public class SetJournalEntry : MonoBehaviour {
 		Species.text = animal_species;
 		AnimalImage.texture = Resources.Load<Texture> (entry.Species.ToString());
 
-		EncounterDate.text = entry.EncounterType != AnimalEncounterType.Discovered ? 
-			AnimalEncounterType.Caught.ToString () + " " + ConvertDate (entry.LatestEncounterDate.ToString ()) :
-			AnimalEncounterType.Discovered.ToString () + " " + ConvertDate (entry.LatestEncounterDate.ToString ());
-
-		ReleaseDate.text = entry.EncounterType == AnimalEncounterType.Released ? 
-			entry.EncounterType.ToString() + " " + ConvertDate(entry.LatestEncounterDate.ToString()) : "";
-		
-		Health1Released.text = entry.EncounterType == AnimalEncounterType.Released ? entry.LatestHealth1.ToString() : "";
-		Health2Released.text = entry.EncounterType == AnimalEncounterType.Released ? entry.LatestHealth2.ToString() : "";
-		Health3Released.text = entry.EncounterType == AnimalEncounterType.Released ? entry.LatestHealth3.ToString() : "";
-
-		HealthFactor1.text = entry.EncounterType == AnimalEncounterType.Discovered ? "" : HEALTH_FACTOR_1;
-		HealthFactor2.text = entry.EncounterType == AnimalEncounterType.Discovered ? "" : HEALTH_FACTOR_2;
-		HealthFactor3.text = entry.EncounterType == AnimalEncounterType.Discovered ? "" : HEALTH_FACTOR_3;
-
-		if (entry.EncounterType == AnimalEncounterType.Released)
+		if (entry.EncounterType == AnimalEncounterType.Discovered)
 		{
-			Health1.text = entry.OldHealth1.ToString ();
-			Health2.text = entry.OldHealth2.ToString ();
-			Health3.text = entry.OldHealth3.ToString ();
+			SetDiscoveredEntry (entry);
 		}
 		else if (entry.EncounterType == AnimalEncounterType.Caught)
 		{
-			Health1.text = entry.LatestHealth1.ToString ();
-			Health2.text = entry.LatestHealth2.ToString ();
-			Health3.text = entry.LatestHealth3.ToString ();
+			SetCaughtEntry (entry);
 		}
 		else
 		{
-			Health1.text = "";
-			Health2.text = "";
-			Health3.text = "";
+			SetReleasedEntry (entry);
 		}
 	}
 
-	string ConvertDate(string dateString)
+	private string ConvertDate(string dateString)
 	{
-		//2017-05-01 15:09:25
+		//FORMAT: 2017/05/01 15:09:25
 		string [] tokens = dateString.Split(' ');
-		//string[] removeAfterSpace = tokens [2].Split (' ');
-		return tokens [0];// + "/" + removeAfterSpace [0] + "/" + tokens [0];
+		return tokens [0];
 	}
-
-	/*
-	public void SetJournalEntryElements(AnimalSpecies species, string encounter_date)
+		
+	private void SetDiscoveredEntry(JournalEntry entry)
 	{
-		string animal_species = Service.Request.AnimalName (species);
-		Species.text = animal_species;
-		AnimalImage.texture = Resources.Load<Texture> (species.ToString());
-		EncounterDate.text = encounter_date;
+		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate (entry.LatestEncounterDate.ToString ());
 		ReleaseDate.text = "";
 		Health1.text = "";
 		Health2.text = "";
@@ -86,36 +60,38 @@ public class SetJournalEntry : MonoBehaviour {
 		Health1Released.text = "";
 		Health2Released.text = "";
 		Health3Released.text = "";
+		HealthFactor1.text = "";
+		HealthFactor2.text = "";
+		HealthFactor3.text = "";
 	}
 
-	public void SetJournalEntryElements(AnimalSpecies species, string encounter_date, float health1, float health2, float health3)
+	private void SetCaughtEntry(JournalEntry entry)
 	{
-		string animal_species = Service.Request.AnimalName (species);
-		Species.text = animal_species;
-		AnimalImage.texture = Resources.Load<Texture> (species.ToString());
-		EncounterDate.text = encounter_date;
+		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate(entry.LatestEncounterDate.ToString());
 		ReleaseDate.text = "";
-		Health1.text = health1.ToString ();
-		Health2.text = health2.ToString ();
-		Health3.text = health3.ToString ();
+		Health1.text = entry.LatestHealth1.ToString ();
+		Health2.text = entry.LatestHealth2.ToString ();
+		Health3.text = entry.LatestHealth3.ToString ();
 		Health1Released.text = "";
 		Health2Released.text = "";
 		Health3Released.text = "";
+		HealthFactor1.text = HEALTH_FACTOR_1;
+		HealthFactor2.text = HEALTH_FACTOR_2;
+		HealthFactor3.text = HEALTH_FACTOR_3;
 	}
 
-	public void SetJournalEntryElements(AnimalSpecies species, string encounter_date, float health1, float health2, float health3,
-		string release_date, float health1_r, float health2_r, float health3_r)
+	private void SetReleasedEntry(JournalEntry entry)
 	{
-		string animal_species = Service.Request.AnimalName (species);
-		Species.text = animal_species;
-		AnimalImage.texture = Resources.Load<Texture> (species.ToString());
-		EncounterDate.text = encounter_date;
-		ReleaseDate.text = release_date;
-		Health1.text = health1.ToString ();
-		Health2.text = health2.ToString ();
-		Health3.text = health3.ToString ();
-		Health1Released.text = health1_r.ToString ();
-		Health2Released.text = health2_r.ToString ();
-		Health3Released.text = health3_r.ToString ();
-	}*/
+		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate(entry.LatestEncounterDate.ToString());
+		ReleaseDate.text = AnimalEncounterType.Caught.ToString() + " " + ConvertDate(entry.OldEncounterDate.ToString());
+		Health1.text = entry.OldHealth1.ToString ();
+		Health2.text = entry.OldHealth2.ToString ();
+		Health3.text = entry.OldHealth3.ToString ();
+		Health1Released.text = entry.LatestHealth1.ToString ();
+		Health2Released.text = entry.LatestHealth2.ToString ();
+		Health3Released.text = entry.LatestHealth3.ToString ();
+		HealthFactor1.text = HEALTH_FACTOR_1;
+		HealthFactor2.text = HEALTH_FACTOR_2;
+		HealthFactor3.text = HEALTH_FACTOR_3;
+	}
 }
