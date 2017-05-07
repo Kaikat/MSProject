@@ -19,6 +19,10 @@ public class SetJournalEntry : MonoBehaviour {
 	public Text HealthFactor2;
 	public Text HealthFactor3;
 
+	public Image Background;
+	public Image Panel1;
+	public Image Panel2;
+
 	private const string HEALTH_FACTOR_1 = "Health Factor 1";
 	private const string HEALTH_FACTOR_2 = "Health Factor 2";
 	private const string HEALTH_FACTOR_3 = "Health Factor 3";
@@ -28,6 +32,8 @@ public class SetJournalEntry : MonoBehaviour {
 		string animal_species = Service.Request.AnimalName (entry.Species);
 		Species.text = animal_species;
 		AnimalImage.texture = Resources.Load<Texture> (entry.Species.ToString());
+		Panel1.color = UIConstants.Beige;
+		Panel2.color = UIConstants.Beige;
 
 		if (entry.EncounterType == AnimalEncounterType.Discovered)
 		{
@@ -52,6 +58,7 @@ public class SetJournalEntry : MonoBehaviour {
 		
 	private void SetDiscoveredEntry(JournalEntry entry)
 	{
+		Background.color = UIConstants.Red;
 		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate (entry.LatestEncounterDate.ToString ());
 		ReleaseDate.text = "";
 		Health1.text = "";
@@ -67,6 +74,7 @@ public class SetJournalEntry : MonoBehaviour {
 
 	private void SetCaughtEntry(JournalEntry entry)
 	{
+		Background.color = UIConstants.Yellow;
 		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate(entry.LatestEncounterDate.ToString());
 		ReleaseDate.text = "";
 		Health1.text = entry.LatestHealth1.ToString ();
@@ -82,6 +90,7 @@ public class SetJournalEntry : MonoBehaviour {
 
 	private void SetReleasedEntry(JournalEntry entry)
 	{
+		Background.color = UIConstants.Green;
 		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate(entry.LatestEncounterDate.ToString());
 		ReleaseDate.text = AnimalEncounterType.Caught.ToString() + " " + ConvertDate(entry.OldEncounterDate.ToString());
 		Health1.text = entry.OldHealth1.ToString ();

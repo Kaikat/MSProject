@@ -1549,6 +1549,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 589254379}
   HealthFactor2: {fileID: 395322319}
   HealthFactor3: {fileID: 798410260}
+  Background: {fileID: 1510887602}
+  Panel1: {fileID: 1110016862}
+  Panel2: {fileID: 352311473}
 --- !u!114 &95187407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,6 +1869,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 1126158679}
   HealthFactor2: {fileID: 1233000066}
   HealthFactor3: {fileID: 1801463138}
+  Background: {fileID: 318818662}
+  Panel1: {fileID: 2072275145}
+  Panel2: {fileID: 1708464757}
 --- !u!114 &111437484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14194,6 +14200,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 704885763}
   HealthFactor2: {fileID: 2130571478}
   HealthFactor3: {fileID: 1872284471}
+  Background: {fileID: 1797254953}
+  Panel1: {fileID: 1561920854}
+  Panel2: {fileID: 492898756}
 --- !u!114 &741799144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17398,6 +17407,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 400421288}
   HealthFactor2: {fileID: 1354861615}
   HealthFactor3: {fileID: 1796734912}
+  Background: {fileID: 332745709}
+  Panel1: {fileID: 2104291525}
+  Panel2: {fileID: 268216428}
 --- !u!114 &947774203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19798,6 +19810,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 708650731}
   HealthFactor2: {fileID: 1643692252}
   HealthFactor3: {fileID: 1773220856}
+  Background: {fileID: 255669940}
+  Panel1: {fileID: 2017560187}
+  Panel2: {fileID: 115853145}
 --- !u!114 &1091574270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27100,6 +27115,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 545164589}
   HealthFactor2: {fileID: 553887146}
   HealthFactor3: {fileID: 1439809590}
+  Background: {fileID: 49200564}
+  Panel1: {fileID: 481694554}
+  Panel2: {fileID: 1280296088}
 --- !u!114 &1511344202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29104,6 +29122,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 985958809}
   HealthFactor2: {fileID: 1641312266}
   HealthFactor3: {fileID: 552848767}
+  Background: {fileID: 1424923201}
+  Panel1: {fileID: 205961448}
+  Panel2: {fileID: 901794877}
 --- !u!114 &1624863751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33809,6 +33830,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 791024593}
   HealthFactor2: {fileID: 659155537}
   HealthFactor3: {fileID: 1255247268}
+  Background: {fileID: 1654809066}
+  Panel1: {fileID: 1335105729}
+  Panel2: {fileID: 352604735}
 --- !u!114 &1858236205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34118,6 +34142,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 592613397}
   HealthFactor2: {fileID: 2096935455}
   HealthFactor3: {fileID: 52143068}
+  Background: {fileID: 1057750051}
+  Panel1: {fileID: 488163045}
+  Panel2: {fileID: 298755934}
 --- !u!114 &1869152930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37397,6 +37424,9 @@ MonoBehaviour:
   HealthFactor1: {fileID: 1698308645}
   HealthFactor2: {fileID: 1215680948}
   HealthFactor3: {fileID: 480753903}
+  Background: {fileID: 702200032}
+  Panel1: {fileID: 1834167871}
+  Panel2: {fileID: 22090597}
 --- !u!114 &2011525769
 MonoBehaviour:
   m_ObjectHideFlags: 0
