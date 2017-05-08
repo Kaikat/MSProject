@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
 public class GoogleMaps : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class GoogleMaps : MonoBehaviour
 		Hybrid
 	}
 
-	public GameObject mapImage;
+	public RawImage MapImage;
 
 	public bool loadOnStart = true;
 	public bool autoLocateCenter = true;
@@ -24,6 +25,8 @@ public class GoogleMaps : MonoBehaviour
 	public bool doubleResolution = false;
 	public GoogleMapMarker[] markers;
 	public GoogleMapPath[] paths;
+
+	public Text DebugText;
 
 	void Start() {
 		SetMarkers ();
@@ -39,8 +42,9 @@ public class GoogleMaps : MonoBehaviour
 
 	IEnumerator _Refresh ()
 	{
-		var url = "http://maps.googleapis.com/maps/api/staticmap";
+		var url = "https://maps.googleapis.com/maps/api/staticmap";
 		//var url = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false";
+		 
 		var qs = "";
 		if (!autoLocateCenter) {
 			if (centerLocation.address != "")
@@ -81,14 +85,16 @@ public class GoogleMaps : MonoBehaviour
 			}
 		}
 			
-		var req = new WWW (url + "?" + qs);
-		yield return req;
+		UnityWebRequest web_request = UnityWebRequest.GetTexture(url + "?" + qs);
+		yield return web_request.Send();
 
-		//Rect rec = new Rect(0, 0, 640*2, 640*2);
-		//Panel.GetComponent<Image> ().sprite = Sprite.Create (req.texture, rec, new Vector2 (0.5f, 0.5f));
 
-		Rect rec = new Rect(0, 0, size*2, size*2);
-		mapImage.GetComponent<Image> ().sprite = Sprite.Create (req.texture, rec, new Vector2 (0.5f, 0.5f));
+		DebugText.text = web_request.url;
+
+		//interpolated strings?
+		//Debug.LogWarning ("~~~~~~~ " + web_request.error + " ~~~~~~");
+
+		MapImage.texture = ((DownloadHandlerTexture)web_request.downloadHandler).texture;
 	}
 
 	private void SetMarkers()
@@ -183,33 +189,5 @@ public class GoogleMapPath
 }
 
 
-
-
-
-
+//GOOD: https://maps.googleapis.com/maps/api/staticmap?center=34.4127,-119.845&zoom=15&size=512x512&scale=2&maptype=roadmap&sensor=false&markers=size:small|color:red|label:|34.4122,-119.8484&markers=size:small|color:red|label:|34.41296,-119.8467&markers=size:small|color:red|label:|34.41496,-119.8499&markers=size:small|color:orange|label:|34.41366,-119.8489&markers=size:small|color:orange|label:|34.40979,-119.846&markers=size:small|color:red|label:|413453,-119.8503&markers=size:small|color:red|label:|34.41182,-119.849&markers=size:small|color:red|label:|34.41153,-119.8509&markers=size:small|color:red|label:|34.41117,-119.8481&markers=size:small|color:red|label:|34.41441,-119.8449&markers=size:small|color:red|label:|34.41351,-119.8412&markers=size:small|color:red|label:|413209,-119.842&markers=size:small|color:red|label:|34.41517,-119.8402&markers=size:small|color:green|label:|34.41711,-119.8505&markers=size:small|color:red|label:|34.41274,-119.8484&markers=size:small|color:orange|label:|34.40723,-119.8434&markers=size:small|color:red|label:|34.4136,-119.8436&markers=size:small|color:red|label:|34.40752,-119.8436&markers=size:small|color:red|label:|34.41406,-119.8474&markers=size:small|color:red|label:|34.41489,-119.8446&markers=size:small|color:orange|label:|34.4111,-119.8639
 //http://maps.googleapis.com/maps/api/staticmap?center=34.4127,-119.845&zoom=15&size=512x512&scale=2&maptype=roadmap&sensor=false&markers=size:small|color:red|label:|34.41421,-119.8445|34.41362,-119.847&markers=size:small|color:orange|label:|34.41421,-119.8445|34.41362,-119.847&markers=size:small|color:yellow|label:|34.41421,-119.8445|34.41362,-119.847&markers=size:small|color:green|label:|34.41421,-119.8445|34.41362,-119.847
-//http://maps.googleapis.com/maps/api/staticmap?center=34.4127,-119.845&zoom=15&size=512x512&scale=2&maptype=roadmap&sensor=false&
-/*markers=size:small|color:red|label:|34.4122,-119.8484&
-markers=size:small|color:red|label:|34.41296,-119.8467&
-markers=size:small|color:red|label:|34.41496,-119.8499&
-markers=size:small|color:orange|label:|34.41366,-119.8489&
-markers=size:small|color:orange|label:|34.40979,-119.846&
-
-markers=size:small|color:red|label:|413453,-119.8503&
-markers=size:small|color:red|label:|34.41182,-119.849&
-markers=size:small|color:red|label:|34.41153,-119.8509&
-markers=size:small|color:red|label:|34.41117,-119.8481&
-markers=size:small|color:red|label:|34.41441,-119.8449&
-markers=size:small|color:red|label:|34.41351,-119.8412&
-
-markers=size:small|color:red|label:|413209,-119.842&
-markers=size:small|color:red|label:|34.41517,-119.8402&
-markers=size:small|color:green|label:|34.41711,-119.8505&
-markers=size:small|color:red|label:|34.41274,-119.8484&
-markers=size:small|color:orange|label:|34.40723,-119.8434&
-markers=size:small|color:red|label:|34.4136,-119.8436&
-markers=size:small|color:red|label:|34.40752,-119.8436&
-markers=size:small|color:red|label:|34.41406,-119.8474&
-markers=size:small|color:red|label:|34.41489,-119.8446&
-markers=size:small|color:orange|label:|34.4111,-119.8639
-*/

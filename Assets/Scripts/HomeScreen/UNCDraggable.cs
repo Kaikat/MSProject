@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class UNCDraggable:MonoBehaviour,
 IBeginDragHandler, IDragHandler, IEndDragHandler //, IDropHandler
 {
-	public Image image;
+	public RawImage image;
 	// note DON'T try to drag the actual item: it's not worth the hassle.
 	// a problem arises where you can't have it on top (as you would want
 	// visually), and still easily get the drops. always use a ghost.
@@ -37,6 +37,7 @@ IBeginDragHandler, IDragHandler, IEndDragHandler //, IDropHandler
 	public void OnEndDrag(PointerEventData eventData)
 	{
 		Debug.Log ("final Pos: " + image.transform.position.x + ", " + image.transform.position.y);
+
 	}
 
 	/*public void OnDrop(PointerEventData data)

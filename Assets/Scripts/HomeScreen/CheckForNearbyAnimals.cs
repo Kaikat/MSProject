@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class CheckForNearbyAnimals : MonoBehaviour {
 
-	public GameObject MapImage;
+	public RawImage MapImage;
 
 	UpdateGPSLocation gpsScript;
 	bool animalOnScreen;

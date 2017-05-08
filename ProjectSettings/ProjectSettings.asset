@@ -139,7 +139,7 @@ PlayerSettings:
     Android: com.natalymoreno.ATlatoque
     Standalone: unity.DefaultCompany.ATlatoque
     Tizen: com.natalymoreno.ATlatoque
-    iOS: com.natalymoreno.ATlatoque
+    iOS: com.natalymoreno.Tamuyal14
     tvOS: com.natalymoreno.ATlatoque
   buildNumber:
     iOS: 0
@@ -209,7 +209,7 @@ PlayerSettings:
   iOSMetalForceHardShadows: 0
   metalEditorSupport: 1
   metalAPIValidation: 1
-  appleDeveloperTeamID: 
+  appleDeveloperTeamID: kaikat14@hotmail.com
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
   appleEnableAutomaticSigning: 0
@@ -327,9 +327,10 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: 
-  locationUsageDescription: This will allow the application to show you where you
-    are on the map and allow you to catch animals.
+  cameraUsageDescription: Allows animals to be displayed with the camera feed as a
+    background.
+  locationUsageDescription: 'Location is used to detect if you are physically close
+    to an animal for this game. '
   microphoneUsageDescription: 
   switchNetLibKey: 
   switchSocketMemoryPoolSize: 6144
