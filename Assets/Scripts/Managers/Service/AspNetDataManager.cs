@@ -19,8 +19,13 @@ public class AspNetDataManager : IDataManager
 		}
 	}
 
+	private const string WEB_ADDRESS = "http://tamuyal.azurewebsites.net/api/";
+	private const string ANIMAL_CONTROLLER = "animals";
+
+
 	public Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData()
 	{
+		//WebManager.GetHttpResponse
 		return new Dictionary<AnimalSpecies, AnimalData> ();
 	}
 
