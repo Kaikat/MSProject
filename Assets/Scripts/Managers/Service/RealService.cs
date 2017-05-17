@@ -25,13 +25,13 @@ public class RealService : IServices
 
 	private RealService() 
 	{
-		Animals = DataManager.GetAllAnimalData ();
-		GPSLocations = DataManager.GetGPSLocations ();
+		Animals = DataManager.Data.GetAllAnimalData ();
+		GPSLocations = DataManager.Data.GetGPSLocations ();
 	}
 				
 	public string CreateAccount(string username, string name, string password, string email)
 	{
-		return DataManager.CreateAccount (username.Trim ().ToLower(), name, password, email);
+		return DataManager.Data.CreateAccount (username.Trim ().ToLower(), name, password, email);
 	}
 
 	public bool VerifyLogin(string username, string password)
@@ -43,12 +43,12 @@ public class RealService : IServices
 			return false;
 		}
 			
-		if (!DataManager.ValidLogin (username, password))
+		if (!DataManager.Data.ValidLogin (username, password))
 		{
 			return false;
 		}
 
-		CurrentPlayer = DataManager.GetPlayerData (username);
+		CurrentPlayer = DataManager.Data.GetPlayerData (username);
 		return true;
 	}
 
@@ -81,28 +81,28 @@ public class RealService : IServices
 	{
 		if (!CurrentPlayer.HasDiscoveredAnimal (species))
 		{
-			string discovery_date = DataManager.NotifyAnimalDiscovered (CurrentPlayer.Username, species);
+			string discovery_date = DataManager.Data.NotifyAnimalDiscovered (CurrentPlayer.Username, species);
 			CurrentPlayer.AddDiscoveredAnimal (species, discovery_date);
 		}
 
-		return DataManager.GenerateAnimal (CurrentPlayer.Username, species);
+		return DataManager.Data.GenerateAnimal (CurrentPlayer.Username, species);
 	}
 
 	public void CatchAnimal(Animal animal)
 	{
 		CurrentPlayer.AddOwnedAnimal(animal);
-		DataManager.NotifyAnimalCaught(CurrentPlayer.Username, animal);
+		DataManager.Data.NotifyAnimalCaught(CurrentPlayer.Username, animal);
 	}
 
 	public void ReleaseAnimal(Animal animal)
 	{
 		CurrentPlayer.RemoveOwnedAnimal (animal);
 		CurrentPlayer.AddReleasedAnimal (animal);
-		DataManager.NotifyAnimalReleased (CurrentPlayer.Username, animal);
+		DataManager.Data.NotifyAnimalReleased (CurrentPlayer.Username, animal);
 	}
 
 	public List<JournalEntry> PlayerJournal()
 	{
-		return DataManager.GetJournalEntryData (CurrentPlayer.Username);
+		return DataManager.Data.GetJournalEntryData (CurrentPlayer.Username);
 	}
 }
