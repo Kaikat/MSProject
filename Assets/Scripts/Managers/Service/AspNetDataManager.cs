@@ -21,6 +21,7 @@ public class AspNetDataManager : IDataManager
 
 	private const string WEB_ADDRESS = "http://tamuyal.azurewebsites.net/api/";
 	private const string ANIMAL_CONTROLLER = "animals";
+	private const string LOCATIONS_CONTROLLER = "locations";
 
 
 	//ALL THE CODE FROM THE PHP VERSION OF THE SERVER IS HERE *TEMPORARILY* WHILE
@@ -29,7 +30,6 @@ public class AspNetDataManager : IDataManager
 	private const string HTTP_ADDRESS = "http://tamuyal.mat.ucsb.edu:8888/";
 	private const string CREATE_ACCOUNT = "CreateAccount.php";
 	private const string VERIFY_LOGIN = "VerifyLogin.php";
-	private const string GPS_LOCATIONS = "GetGPSLocations.php";
 	private const string PLAYER_DATA = "GetPlayerData.php";
 	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
 	private const string PLAYER_DISCOVERED_LIST = "GetDiscoveredList.php";
@@ -81,8 +81,7 @@ public class AspNetDataManager : IDataManager
 	public List<AnimalLocation> GetGPSLocations()
 	{
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
-		LocationResponse response = WebManager.GetHttpResponse<LocationResponse> (
-			HTTP_ADDRESS + GPS_LOCATIONS);
+		LocationResponse response = WebManager.GetHttpResponse<LocationResponse> (WEB_ADDRESS + LOCATIONS_CONTROLLER);
 
 		if (response.empty)
 		{
