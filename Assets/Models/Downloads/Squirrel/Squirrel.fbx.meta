@@ -1,0 +1,425 @@
+fileFormatVersion: 2
+guid: 2270c38fd3e8fcd4e94d4d3a09e83d84
+timeCreated: 1468942431
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: b_Head
+    100002: B_L_Calf
+    100004: B_L_Clavicle
+    100006: B_L_Ear
+    100008: B_L_Foot
+    100010: B_L_Forearm
+    100012: B_L_Hand
+    100014: B_L_Toe0
+    100016: B_L_UpperArm
+    100018: b_Neck
+    100020: B_R_Clavicle
+    100022: B_R_Ear
+    100024: B_R_Forearm
+    100026: B_R_Hand
+    100028: B_R_UpperArm
+    100030: b_Spine02
+    100032: B_Tail01
+    100034: B_Tail02
+    100036: B_Tail03
+    100038: B_Tail04
+    100040: Bip01_HeadNub
+    100042: L_Thigh
+    100044: R_Calf
+    100046: R_Foot
+    100048: R_Thigh
+    100050: R_Toe0
+    100052: S_Pelvis
+    100054: S_Root
+    100056: S_Spine00
+    100058: S_Spine01
+    100060: S_Tail
+    100062: //RootNode
+    100064: squirrel
+    400000: b_Head
+    400002: B_L_Calf
+    400004: B_L_Clavicle
+    400006: B_L_Ear
+    400008: B_L_Foot
+    400010: B_L_Forearm
+    400012: B_L_Hand
+    400014: B_L_Toe0
+    400016: B_L_UpperArm
+    400018: b_Neck
+    400020: B_R_Clavicle
+    400022: B_R_Ear
+    400024: B_R_Forearm
+    400026: B_R_Hand
+    400028: B_R_UpperArm
+    400030: b_Spine02
+    400032: B_Tail01
+    400034: B_Tail02
+    400036: B_Tail03
+    400038: B_Tail04
+    400040: Bip01_HeadNub
+    400042: L_Thigh
+    400044: R_Calf
+    400046: R_Foot
+    400048: R_Thigh
+    400050: R_Toe0
+    400052: S_Pelvis
+    400054: S_Root
+    400056: S_Spine00
+    400058: S_Spine01
+    400060: S_Tail
+    400062: //RootNode
+    400064: squirrel
+    4300000: squirrel
+    7400000: jump
+    7400002: walk
+    7400004: idle
+    9500000: //RootNode
+    13700000: squirrel
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: S_Root
+        weight: 1
+      - path: S_Root/S_Pelvis
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf/B_L_Foot
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf/B_L_Foot/B_L_Toe0
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf/R_Foot
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf/R_Foot/R_Toe0
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm/B_L_Forearm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm/B_L_Forearm/B_L_Hand
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/B_L_Ear
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/B_R_Ear
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/Bip01_HeadNub
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm/B_R_Forearm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm/B_R_Forearm/B_R_Hand
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02/B_Tail03
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02/B_Tail03/B_Tail04
+        weight: 1
+      - path: squirrel
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: S_Root
+        weight: 1
+      - path: S_Root/S_Pelvis
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf/B_L_Foot
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf/B_L_Foot/B_L_Toe0
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf/R_Foot
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf/R_Foot/R_Toe0
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm/B_L_Forearm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm/B_L_Forearm/B_L_Hand
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/B_L_Ear
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/B_R_Ear
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/Bip01_HeadNub
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm/B_R_Forearm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm/B_R_Forearm/B_R_Hand
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02/B_Tail03
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02/B_Tail03/B_Tail04
+        weight: 1
+      - path: squirrel
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 31
+      lastFrame: 149
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: S_Root
+        weight: 1
+      - path: S_Root/S_Pelvis
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf/B_L_Foot
+        weight: 1
+      - path: S_Root/S_Pelvis/L_Thigh/B_L_Calf/B_L_Foot/B_L_Toe0
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf/R_Foot
+        weight: 1
+      - path: S_Root/S_Pelvis/R_Thigh/R_Calf/R_Foot/R_Toe0
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm/B_L_Forearm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_L_Clavicle/B_L_UpperArm/B_L_Forearm/B_L_Hand
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/B_L_Ear
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/B_R_Ear
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/b_Neck/b_Head/Bip01_HeadNub
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm/B_R_Forearm
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Spine01/b_Spine02/B_R_Clavicle/B_R_UpperArm/B_R_Forearm/B_R_Hand
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02/B_Tail03
+        weight: 1
+      - path: S_Root/S_Pelvis/S_Spine00/S_Tail/B_Tail01/B_Tail02/B_Tail03/B_Tail04
+        weight: 1
+      - path: squirrel
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
