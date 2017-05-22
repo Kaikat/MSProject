@@ -9633,7 +9633,7 @@ GameObject:
   - component: {fileID: 495046190}
   - component: {fileID: 495046189}
   m_Layer: 5
-  m_Name: 1RawImage
+  m_Name: FemaleImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9654,8 +9654,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 217.8, y: 43.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 229.5, y: 43.5}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495046189
 MonoBehaviour:
@@ -9676,7 +9676,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 63c5cb246e0694bb6ae8a1370caa8a57, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -9798,7 +9798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163.5, y: -53}
+  m_AnchoredPosition: {x: -181.1, y: -89.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512489803
@@ -18428,7 +18428,7 @@ GameObject:
   - component: {fileID: 981537036}
   - component: {fileID: 981537035}
   m_Layer: 5
-  m_Name: '0RawImage '
+  m_Name: MaleImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18449,8 +18449,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -168.7, y: 43.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -168.70001, y: 43.5}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981537035
 MonoBehaviour:
@@ -18471,7 +18471,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: c3fc9f0cf452c4e9498ee7c73cecf922, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -36016,7 +36016,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 215, y: -53}
+  m_AnchoredPosition: {x: 207.5, y: -89.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884465863
@@ -37668,7 +37668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -22.6, y: -36.9}
   m_SizeDelta: {x: -682, y: -286}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1968772403
