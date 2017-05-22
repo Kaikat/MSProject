@@ -73,6 +73,10 @@ public class PhpDataManager : IDataManager
 		return new JsonResponse.LoginResponse(loginSession.error, "");
 	}
 
+	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	{
+	}
+
 	public List<AnimalLocation> GetGPSLocations()
 	{
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
@@ -99,7 +103,7 @@ public class PhpDataManager : IDataManager
 			HTTP_ADDRESS + PLAYER_DATA + "?username=" + username);
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (username, playerData.name, playerData.avatar, playerData.currency, 
+		return new Player (username, playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, 
 			GetEncounterCount(username, AnimalEncounterType.Discovered), 
 			GetEncounterCount(username, AnimalEncounterType.Caught), 
 			GetEncounterCount(username, AnimalEncounterType.Released), 

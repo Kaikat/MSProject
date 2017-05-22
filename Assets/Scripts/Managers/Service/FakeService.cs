@@ -68,9 +68,13 @@ public class FakeService : IServices
 		Dictionary<AnimalSpecies, List<Animal>> released = new Dictionary<AnimalSpecies, List<Animal>> ();
 		List<DiscoveredAnimal> discovered = new List<DiscoveredAnimal> ();
 
-		CurrentPlayer = new Player (username, "name", "avatar", 10000, 0, 0, 0, owned, released, discovered);
+		CurrentPlayer = new Player (username, "name", Avatar.Default, 10000, 0, 0, 0, owned, released, discovered);
 
 		return UserLogins.ContainsKey (username) && UserLogins [username] == password;
+	}
+
+	public void UpdateAvatar(Avatar avatar)
+	{
 	}
 
 	public Player Player()

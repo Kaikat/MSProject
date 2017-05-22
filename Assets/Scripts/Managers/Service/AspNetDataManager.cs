@@ -69,6 +69,12 @@ public class AspNetDataManager : IDataManager
 		return new LoginResponse (loginSession.error, loginSession.message);
 	}
 
+	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	{
+		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
+			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL(sessionKey) + "&avatar=" + avatar.ToString());
+	}
+
 	public List<AnimalLocation> GetGPSLocations()
 	{
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
@@ -95,7 +101,7 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (playerData.name, playerData.avatar, playerData.currency, 
+		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, 
 			GetPlayerAnimals(sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals(sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals(sessionKey));
 		//owned, released
 	}

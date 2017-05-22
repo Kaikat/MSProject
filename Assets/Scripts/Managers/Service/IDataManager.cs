@@ -20,4 +20,6 @@ public interface IDataManager
 	void NotifyAnimalCaught(string username, Animal animal);
 	void NotifyAnimalReleased(string username, Animal animal);
 	List<JournalEntry> GetJournalEntryData(string username);
+
+	void UpdateAvatar(string sessionKey, Avatar avatar);
 }
