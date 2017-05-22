@@ -90,13 +90,13 @@ public class UpdateGPSLocation : MonoBehaviour
 	// For the IShowHideListener from the HomeUIObject
 	public void OnShow()
 	{
-		InitializeGPSServices ();
+		//InitializeGPSServices ();
 	}
 
 	public void OnHide()
 	{
 		// Stop service if there is no need to query location updates continuously
-		Input.location.Stop ();
+		//Input.location.Stop ();
 		debugText.text = "";
 
 		// Make sure it immediately updates when the screen shows again
