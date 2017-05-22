@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Net;
 
 public class AnimalStats {
 
@@ -19,4 +20,10 @@ public class AnimalStats {
 		Size = size;
 		Weight = weight;
 	}
+
+    private ArrayList getSensorInformation(string URL)
+    {
+        WebRequest request = WebRequest.Create(URL);
+        return new ArrayList();
+    }
 }

@@ -14,4 +14,5 @@ public enum ScreenType {
     Celebration,
     Failure,
     Quiz,
+    Gender,
 }
