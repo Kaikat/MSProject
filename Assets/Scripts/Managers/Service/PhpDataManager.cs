@@ -60,7 +60,7 @@ public class PhpDataManager : IDataManager
 		return response.message;
 	}
 
-	public bool ValidLogin(string username, string password)
+	public JsonResponse.LoginResponse ValidLogin(string username, string password)
 	{
 		// send username to server and get salt from the server if it exists
 		// hash the password with the salt
@@ -69,7 +69,8 @@ public class PhpDataManager : IDataManager
 			HTTP_ADDRESS + VERIFY_LOGIN + 
 			"?username=" + username.ToLower() + "&password=" + password);
 		
-		return !loginSession.error;
+		//return !loginSession.error;
+		return new JsonResponse.LoginResponse(loginSession.error, "");
 	}
 
 	public List<AnimalLocation> GetGPSLocations()
@@ -120,7 +121,7 @@ public class PhpDataManager : IDataManager
 		foreach (OwnedAnimalData r in response.OwnedAnimalData)
 		{
 			PlayerAnimals.Add(new Animal(r.animal_species.ToEnum<AnimalSpecies>(), r.animal_id, 
-				new AnimalStats(r.health_1, r.health_2, r.health_3, r.age, r.size, r.weight), 
+				new AnimalStats(r.health_1, r.health_2, r.health_3, r.age, r.height, r.weight), 
 				GenerateColorFile(r.health_1, r.health_2, r.health_3)));
 		}
 
@@ -168,7 +169,7 @@ public class PhpDataManager : IDataManager
 
 	//POSSIBLY DEAD FUNCTION
 	//TODO: Use this to update the Journal Page
-	public Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter)
+	/*public Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter)
 	{
 		Dictionary<AnimalSpecies, List<JournalAnimal>> encounteredAnimals = new Dictionary<AnimalSpecies, List<JournalAnimal>> ();
 
@@ -192,7 +193,7 @@ public class PhpDataManager : IDataManager
 		}
 			
 		return encounteredAnimals;
-	}
+	}*/
 
 	public Animal GenerateAnimal(string username, AnimalSpecies species)
 	{

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using JsonResponse;
+using HttpHeaderBodies;
 
 public class AspNetDataManager : IDataManager
 {
@@ -22,24 +23,13 @@ public class AspNetDataManager : IDataManager
 	private const string WEB_ADDRESS = "http://tamuyal.azurewebsites.net/api/";
 	private const string ANIMAL_CONTROLLER = "animals";
 	private const string LOCATIONS_CONTROLLER = "locations";
-
-
-	//ALL THE CODE FROM THE PHP VERSION OF THE SERVER IS HERE *TEMPORARILY* WHILE
-	//ALL THE FUNCTIONS GET REPLACED BY A REQUEST TO THE NEW DATABASE-SERVER
-
-	private const string HTTP_ADDRESS = "http://tamuyal.mat.ucsb.edu:8888/";
-	private const string CREATE_ACCOUNT = "CreateAccount.php";
-	private const string VERIFY_LOGIN = "VerifyLogin.php";
-	private const string PLAYER_DATA = "GetPlayerData.php";
-	private const string PLAYER_ANIMALS = "GetPlayerAnimals.php";
-	private const string PLAYER_DISCOVERED_LIST = "GetDiscoveredList.php";
-	private const string GENERATE_ANIMAL = "GenerateAnimal.php";
-	private const string NOTIFY_ANIMAL_DISCOVERED = "NotifyDiscovery.php";
-	private const string NOTIFY_ANIMAL_CAUGHT = "CaughtAnimal.php";
-	private const string NOTIFY_ANIMAL_RELEASED = "ReleasedAnimal.php";
-	private const string ENCOUNTER_COUNT = "GetPlayersDiscoveredAnimals.php";
-	private const string ANIMAL_ENCOUNTERS = "GetPlayerEncounters.php";
-	private const string LATEST_X_ENCOUNTERS = "GetXMostRecentEncounters.php";
+	private const string CREATE_ACCOUNT_CONTROLLER = "createaccount";
+	private const string LOGIN_CONTROLLER = "login";
+	private const string PLAYER_CONTROLLER = "player";
+	private const string PLAYER_ANIMALS_CONTROLLER = "playeranimals";
+	private const string NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER = "notifyanimalencounter";
+	private const string GENERATE_ANIMAL_CONTROLLER = "generateanimal";
+	private const string ANIMAL_ENCOUNTERS_CONTROLLER = "animalencounters";
 
 	private const int JOURNAL_ENTRY_LIMIT = 5;
 
@@ -59,23 +49,24 @@ public class AspNetDataManager : IDataManager
 
 	public string CreateAccount (string username, string name, string password, string email)
 	{
-		BasicResponse response =  WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + CREATE_ACCOUNT + 
-			"?username=" + username.ToLower() + "&password=" + password + "&name=" + name + "&email=" + email);
+		AccountDetails accountDetails = new AccountDetails (username, name, password, email);
+		BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + CREATE_ACCOUNT_CONTROLLER, JsonUtility.ToJson (accountDetails));
 
+		Debug.LogWarning ("RESPONSE: " + response.message);
 		return response.message;
 	}
 
-	public bool ValidLogin(string username, string password)
+	public LoginResponse ValidLogin(string username, string password)
 	{
+		LoginDetails loginDetails = new LoginDetails (username, password);
 		// send username to server and get salt from the server if it exists
 		// hash the password with the salt
 		// send hashed password to server
-		BasicResponse loginSession = WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + VERIFY_LOGIN + 
-			"?username=" + username.ToLower() + "&password=" + password);
+		BasicResponse loginSession = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + LOGIN_CONTROLLER, JsonUtility.ToJson(loginDetails));
 
-		return !loginSession.error;
+		return new LoginResponse (loginSession.error, loginSession.message);
 	}
 
 	public List<AnimalLocation> GetGPSLocations()
@@ -97,26 +88,23 @@ public class AspNetDataManager : IDataManager
 		return pointsOfInterest;
 	}
 
-	public Player GetPlayerData(string username)
+	public Player GetPlayerData(string sessionKey)
 	{
+		Debug.LogWarning ("SESSION_KEY: " + sessionKey);
 		PlayerDataResponse playerData = WebManager.GetHttpResponse<PlayerDataResponse> (
-			HTTP_ADDRESS + PLAYER_DATA + "?username=" + username);
+			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (username, playerData.name, playerData.avatar, playerData.currency, 
-			GetEncounterCount(username, AnimalEncounterType.Discovered), 
-			GetEncounterCount(username, AnimalEncounterType.Caught), 
-			GetEncounterCount(username, AnimalEncounterType.Released), 
-			GetPlayerAnimals(username, false), GetPlayerAnimals(username, true), GetDiscoveredAnimals(username));
+		return new Player (playerData.name, playerData.avatar, playerData.currency, 
+			GetPlayerAnimals(sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals(sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals(sessionKey));
 		//owned, released
 	}
 
-	private Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string username, bool released)
+	private Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals(string sessionKey, AnimalEncounterType encounterType)
 	{
 		List<Animal> PlayerAnimals = new List<Animal> ();
-		string wasReleased = released ? "1" : "0";
 		OwnedAnimalResponse response = WebManager.GetHttpResponse<OwnedAnimalResponse> (
-			HTTP_ADDRESS + PLAYER_ANIMALS + "?username=" + username + "&released=" + wasReleased);
+			WEB_ADDRESS + PLAYER_ANIMALS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey) + "&encounter_type=" + encounterType.ToString().ToLower());
 
 		if (response.empty)
 		{
@@ -125,7 +113,7 @@ public class AspNetDataManager : IDataManager
 		foreach (OwnedAnimalData r in response.OwnedAnimalData)
 		{
 			PlayerAnimals.Add(new Animal(r.animal_species.ToEnum<AnimalSpecies>(), r.animal_id, 
-				new AnimalStats(r.health_1, r.health_2, r.health_3, r.age, r.size, r.weight), 
+				new AnimalStats(r.health_1, r.health_2, r.health_3, r.age, r.height, r.weight), 
 				GenerateColorFile(r.health_1, r.health_2, r.health_3)));
 		}
 
@@ -146,11 +134,11 @@ public class AspNetDataManager : IDataManager
 		return Animals;	
 	}
 
-	private List<DiscoveredAnimal> GetDiscoveredAnimals(string username)
+	private List<DiscoveredAnimal> GetDiscoveredAnimals(string sessionKey)
 	{
 		List<DiscoveredAnimal> discoveredAnimals = new List<DiscoveredAnimal> ();
 		DiscoveredListResponse response = WebManager.GetHttpResponse<DiscoveredListResponse> (
-			HTTP_ADDRESS + PLAYER_DISCOVERED_LIST + "?username=" + username);
+			WEB_ADDRESS + PLAYER_ANIMALS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey) + "&encounter_type=discovered");
 
 		if (!response.empty)
 		{
@@ -163,17 +151,17 @@ public class AspNetDataManager : IDataManager
 		return discoveredAnimals;
 	}
 
-	private int GetEncounterCount(string username, AnimalEncounterType encounter)
+	/*private int GetEncounterCount(string username, AnimalEncounterType encounter)
 	{
 		BasicIntResponse response = WebManager.GetHttpResponse<BasicIntResponse> (
-			HTTP_ADDRESS + ENCOUNTER_COUNT + "?username=" + username + "&encounter_type=" + encounter.ToString ());
+			WEB_ADDRESS + ENCOUNTER_COUNT + "?username=" + username + "&encounter_type=" + encounter.ToString ());
 
 		return response.count;
-	}
+	}*/
 
 	//POSSIBLY DEAD FUNCTION
 	//TODO: Use this to update the Journal Page
-	public Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter)
+	/*public Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter)
 	{
 		Dictionary<AnimalSpecies, List<JournalAnimal>> encounteredAnimals = new Dictionary<AnimalSpecies, List<JournalAnimal>> ();
 
@@ -197,13 +185,23 @@ public class AspNetDataManager : IDataManager
 		}
 
 		return encounteredAnimals;
-	}
+	}*/
 
-	public Animal GenerateAnimal(string username, AnimalSpecies species)
+	public Animal GenerateAnimal(string sessionKey, AnimalSpecies species)
 	{
 		GennedAnimalData gennedAnimal = WebManager.GetHttpResponse<GennedAnimalData> (
-			HTTP_ADDRESS + GENERATE_ANIMAL + 
-			"?username=" + username + "&species=" + species.ToString ());
+			WEB_ADDRESS + GENERATE_ANIMAL_CONTROLLER + 
+			"?session_key=" + WWW.EscapeURL (sessionKey) + "&species=" + species.ToString ().ToLower());
+
+		string fstring = "GENNED_ANIMAL\nID: " + gennedAnimal.animal_id.ToString ();
+		fstring += "\nhealth1 : " + gennedAnimal.health_1.ToString ();
+		fstring += "\nhealth2 : " + gennedAnimal.health_2.ToString ();
+		fstring += "\nhealth3 : " + gennedAnimal.health_3.ToString ();
+		fstring += "\nage : " + gennedAnimal.age.ToString ();
+		fstring += "\nsize : " + gennedAnimal.size.ToString ();
+		fstring += "\nweight: " + gennedAnimal.weight.ToString ();
+		Debug.LogWarning (fstring);
+
 
 		return new Animal (species, gennedAnimal.animal_id,
 			new AnimalStats(gennedAnimal.health_1, gennedAnimal.health_2, gennedAnimal.health_3, 
@@ -216,42 +214,71 @@ public class AspNetDataManager : IDataManager
 		return "colorfile.txt";
 	}
 
-	public string NotifyAnimalDiscovered(string username, AnimalSpecies species)
+	public string NotifyAnimalDiscovered(string sessionKey, AnimalSpecies species)
 	{
-		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + NOTIFY_ANIMAL_DISCOVERED + 
-			"?username=" + username + "&species=" + species.ToString()
+		AnimalEncounterData animalData = new AnimalEncounterData ();
+		animalData.session_key = sessionKey;
+		animalData.encounter_type = AnimalEncounterType.Discovered.ToString ().ToLower ();
+		animalData.species = species.ToString();
+
+		BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
 
 		return response.message;
 	}
 
-	public void NotifyAnimalCaught(string username, Animal animal)
+	public void NotifyAnimalCaught(string sessionKey, Animal animal)
 	{
-		WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
-			"?username=" + username + "&encounter_id=" + animal.AnimalID.ToString() + 
-			"&animal_species=" + animal.Species.ToString() + "&nickname=" + animal.Nickname + 
-			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight.ToString() +
-			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
+		AnimalEncounterData animalData = new AnimalEncounterData ();
+		animalData.session_key = sessionKey;
+		animalData.encounter_type = AnimalEncounterType.Caught.ToString ().ToLower ();
+		animalData.species = animal.Species.ToString ();
+		animalData.encounter_id = animal.AnimalID;
+		animalData.nickname = "horsy";//animal.Nickname;
+		animalData.age = animal.Stats.Age;
+		animalData.height = animal.Stats.Size;
+		animalData.weight = animal.Stats.Weight;
+		animalData.health1 = animal.Stats.Health1;
+		animalData.health2 = animal.Stats.Health2;
+		animalData.health3 = animal.Stats.Health3;
+
+		JsonResponse.BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
+
+		string fstring = "CAUGHT: " + response.message;
+		Debug.LogWarning (fstring);
 	}
 
-	public void NotifyAnimalReleased(string username, Animal animal)
+	public void NotifyAnimalReleased(string sessionKey, Animal animal)
 	{
-		WebManager.GetHttpResponse<BasicResponse> (
-			HTTP_ADDRESS + NOTIFY_ANIMAL_RELEASED +
-			"?username=" + username + "&encounter_id=" + animal.AnimalID.ToString() + "&animal_species=" + animal.Species.ToString() + 
-			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
+		AnimalEncounterData animalData = new AnimalEncounterData ();
+		animalData.session_key = sessionKey;
+		animalData.encounter_type = AnimalEncounterType.Released.ToString ().ToLower ();
+		animalData.species = animal.Species.ToString ();
+		animalData.encounter_id = animal.AnimalID;
+		animalData.nickname = "horsy";//animal.Nickname;
+		animalData.age = animal.Stats.Age;
+		animalData.height = animal.Stats.Size;
+		animalData.weight = animal.Stats.Weight;
+		animalData.health1 = animal.Stats.Health1;
+		animalData.health2 = animal.Stats.Health2;
+		animalData.health3 = animal.Stats.Health3;
+
+		JsonResponse.BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
+
+		string fstring = "RELEASED: " + response.message;
+		Debug.LogWarning (fstring);
 	}
 
-	public List<JournalEntry> GetJournalEntryData(string username)
+	public List<JournalEntry> GetJournalEntryData(string sessionKey)
 	{
 		List<JournalEntry> journalEntries = new List<JournalEntry> ();
 		JournalResponse response = WebManager.GetHttpResponse<JournalResponse> (
-			HTTP_ADDRESS + LATEST_X_ENCOUNTERS +
-			"?username=" + username + "&encounter_limit=" + JOURNAL_ENTRY_LIMIT.ToString()
+			WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
 
 		foreach (JournalEntryData entry in response.JournalEntryData)
@@ -271,12 +298,13 @@ public class AspNetDataManager : IDataManager
 			}
 		}
 
-		List<DiscoveredAnimal> discoveredAnimals = GetDiscoveredAnimals (username);
+		List<DiscoveredAnimal> discoveredAnimals = GetDiscoveredAnimals (sessionKey);
 		int discoveryEntries = discoveredAnimals.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : discoveredAnimals.Count;
 		for (int i = 0; i < discoveryEntries; i++)
 		{
 			journalEntries.Add (new JournalEntry (AnimalEncounterType.Discovered, discoveredAnimals [i].Species, discoveredAnimals [i].Date));
 		}
+
 		journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
 
 		List<JournalEntry> finalJournalEntries = new List<JournalEntry> ();

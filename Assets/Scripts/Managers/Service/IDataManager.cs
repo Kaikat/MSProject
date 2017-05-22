@@ -6,13 +6,13 @@ public interface IDataManager
 {
 	Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData();
 	string CreateAccount (string username, string name, string password, string email);
-	bool ValidLogin(string username, string password);
+	JsonResponse.LoginResponse ValidLogin(string username, string password);
 	List<AnimalLocation> GetGPSLocations();
 	Player GetPlayerData(string username);
 	//Dictionary<AnimalSpecies, List<Animal>> GetPlayerAnimals (string username, bool released);
 	//List<DiscoveredAnimal> GetDiscoveredAnimals(string username);
 	//int GetEncounterCount(string username, AnimalEncounterType encounter);
-	Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter);
+	//Dictionary<AnimalSpecies, List<JournalAnimal>> GetAnimalEncountersForJournal(string username, AnimalEncounterType encounter);
 	Animal GenerateAnimal (string username, AnimalSpecies species);
 	//string GenerateColorFile (float health1, float health2, float health3);
 	//string GenerateColorFile(float health1, float health2, float health3);

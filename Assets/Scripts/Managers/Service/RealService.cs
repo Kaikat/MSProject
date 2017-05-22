@@ -42,14 +42,18 @@ public class RealService : IServices
 		{
 			return false;
 		}
-			
-		if (!DataManager.Data.ValidLogin (username, password))
+
+		JsonResponse.LoginResponse response =  DataManager.Data.ValidLogin (username, password);
+		if (!response.error)
 		{
-			return false;
+			CurrentPlayer = DataManager.Data.GetPlayerData (response.session_key);
+			CurrentPlayer.SessionKey = response.session_key;
+			CurrentPlayer.Username = username;
+
+			CurrentPlayer.Print ();
 		}
 
-		CurrentPlayer = DataManager.Data.GetPlayerData (username);
-		return true;
+		return !response.error;
 	}
 
 	public List<AnimalLocation> PlacesToVisit()
@@ -81,28 +85,28 @@ public class RealService : IServices
 	{
 		if (!CurrentPlayer.HasDiscoveredAnimal (species))
 		{
-			string discovery_date = DataManager.Data.NotifyAnimalDiscovered (CurrentPlayer.Username, species);
+			string discovery_date = DataManager.Data.NotifyAnimalDiscovered (CurrentPlayer.SessionKey, species);
 			CurrentPlayer.AddDiscoveredAnimal (species, discovery_date);
 		}
 
-		return DataManager.Data.GenerateAnimal (CurrentPlayer.Username, species);
+		return DataManager.Data.GenerateAnimal (CurrentPlayer.SessionKey, species);
 	}
 
 	public void CatchAnimal(Animal animal)
 	{
 		CurrentPlayer.AddOwnedAnimal(animal);
-		DataManager.Data.NotifyAnimalCaught(CurrentPlayer.Username, animal);
+		DataManager.Data.NotifyAnimalCaught(CurrentPlayer.SessionKey, animal);
 	}
 
 	public void ReleaseAnimal(Animal animal)
 	{
 		CurrentPlayer.RemoveOwnedAnimal (animal);
 		CurrentPlayer.AddReleasedAnimal (animal);
-		DataManager.Data.NotifyAnimalReleased (CurrentPlayer.Username, animal);
+		DataManager.Data.NotifyAnimalReleased (CurrentPlayer.SessionKey, animal);
 	}
 
 	public List<JournalEntry> PlayerJournal()
 	{
-		return DataManager.Data.GetJournalEntryData (CurrentPlayer.Username);
+		return DataManager.Data.GetJournalEntryData (CurrentPlayer.SessionKey);
 	}
 }
