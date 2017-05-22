@@ -5,8 +5,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Player {
-
-	public string Username { private set; get; }
+	
+	public string SessionKey;
+	public string Username { set; get; } //TODO: Make private again
 	public string Name { private set; get; }
 	public string Avatar { private set; get; }
 	public int Currency { private set; get; }
@@ -19,6 +20,20 @@ public class Player {
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 	private Dictionary<AnimalSpecies, List<Animal>> ReleasedAnimals;
 	private List<DiscoveredAnimal> DiscoveredAnimals;
+
+	public void Print()
+	{
+		string fstring = "SessionKey: " + SessionKey;
+		fstring += "\nUsername : " + Username;
+		fstring += "\nName : " + Name;
+		fstring += "\nAvatar : " + Avatar;
+		fstring += "\nCurrency : " + Currency.ToString ();
+		fstring += "\nNumDiscovered : " + AnimalsDiscovered.ToString ();
+		fstring += "\nNumCaught : " + AnimalsCaught.ToString ();
+		fstring += "\nNumReleased : " + AnimalsReleased.ToString ();
+		fstring += "\nNumNursing : " + AnimalsNursing.ToString ();
+		Debug.LogWarning (fstring);
+	}
 
 	public Player(string username, string name, string avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
@@ -36,6 +51,42 @@ public class Player {
 		AnimalsDiscovered = discovered;
 		AnimalsCaught = caught;
 		AnimalsReleased = released;
+		AnimalsNursing = Animals.Count;
+	}
+
+	public Player(string name, string avatar, int currency, int discovered, int caught, int released,
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
+		List<DiscoveredAnimal> discoveredAnimals)
+	{
+		Name = name;
+		Avatar = avatar;
+		Currency = currency;
+
+		Animals = ownedAnimals;
+		ReleasedAnimals = releasedAnimals;
+		DiscoveredAnimals = discoveredAnimals;
+
+		AnimalsDiscovered = discovered;
+		AnimalsCaught = caught;
+		AnimalsReleased = released;
+		AnimalsNursing = Animals.Count;
+	}
+
+	public Player(string name, string avatar, int currency,
+		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
+		List<DiscoveredAnimal> discoveredAnimals)
+	{
+		Name = name;
+		Avatar = avatar;
+		Currency = currency;
+
+		Animals = ownedAnimals;
+		ReleasedAnimals = releasedAnimals;
+		DiscoveredAnimals = discoveredAnimals;
+
+		AnimalsDiscovered = discoveredAnimals.Count;
+		AnimalsCaught = ownedAnimals.Count + releasedAnimals.Count;
+		AnimalsReleased = releasedAnimals.Count;
 		AnimalsNursing = Animals.Count;
 	}
 

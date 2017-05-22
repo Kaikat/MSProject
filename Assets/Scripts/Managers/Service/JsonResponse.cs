@@ -85,7 +85,7 @@ namespace JsonResponse
 		public float health_1;
 		public float health_2;
 		public float health_3;
-		public float size;
+		public float height;
 		public float weight;
 		public float age;
 	}
@@ -160,5 +160,18 @@ namespace JsonResponse
 	{
 		public bool empty;
 		public List<LocationData> LocationData;
+	}
+
+	//ODD ONE OUT - MOVE ME
+	public class LoginResponse
+	{
+		public bool error;
+		public string session_key;
+
+		public LoginResponse(bool hasError, string key)
+		{
+			error = hasError;
+			session_key = key;
+		}
 	}
 }

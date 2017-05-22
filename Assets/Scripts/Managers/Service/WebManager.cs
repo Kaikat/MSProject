@@ -41,16 +41,21 @@ public static class WebManager
 	public static T PostHttpResponse<T> (string url, string jsonPostData)
 	{
 		T response;
-		UnityWebRequest request = UnityWebRequest.Post (url, jsonPostData);
-		request.SetRequestHeader("Content-Type", "application/json");
+		UnityWebRequest request = new UnityWebRequest (url, UnityWebRequest.kHttpVerbPOST);
+		request.SetRequestHeader ("Content-Type", "application/json");
 		request.downloadHandler = new DownloadHandlerBuffer ();
+
+		byte[] body = System.Text.Encoding.UTF8.GetBytes(jsonPostData);
+		UploadHandler uploadData = new UploadHandlerRaw (body);
+		uploadData.contentType = "application/json";
+		request.uploadHandler = uploadData;
 
 		request.Send();
 		while (!request.isDone)
 		{
 			new WaitForSeconds (1);
 		}
-
+			
 		string json = request.downloadHandler.text;
 		response = JsonUtility.FromJson<T> (json);
 		return response;
