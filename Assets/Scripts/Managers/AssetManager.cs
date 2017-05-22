@@ -41,18 +41,18 @@ public static class AssetManager
 				t.localPosition = new Vector3 (1.0f, -3.5f, 0.0f);
 				animal.transform.SetParent (t);
 			}
-			else
+			/*else
 			{
 				// Keep these 2
 				animal.transform.localScale = animal.transform.localScale * 2.0f;
-			}
+			}*/
 
 			AnimalSpecies a = animals[i].Species;
-			if (animals [i].Species == AnimalSpecies.Horse || a == AnimalSpecies.Bat || a == AnimalSpecies.Lizard ||
-				a == AnimalSpecies.Coyote || a == AnimalSpecies.Raingod || a == AnimalSpecies.Datura ||
-				a == AnimalSpecies.Shark || a == AnimalSpecies.Redtailedhawk || a == AnimalSpecies.Heron ||
+			if (animals [i].Species == AnimalSpecies.Horse || a == AnimalSpecies.Bat || 
+				a == AnimalSpecies.Raingod || a == AnimalSpecies.Datura ||
 				a == AnimalSpecies.Watergod)
 			{
+				animal.transform.localScale = animal.transform.localScale * 2.0f;
 				animal.transform.localPosition = new Vector3 (animal.transform.localPosition.x, -1.9f, animal.transform.localPosition.z);
 			}
 
