@@ -49,8 +49,8 @@ public static class AssetManager
 
 			AnimalSpecies a = animals[i].Species;
 			if (animals [i].Species == AnimalSpecies.Horse || a == AnimalSpecies.Bat || 
-				a == AnimalSpecies.Raingod || a == AnimalSpecies.Datura ||
-				a == AnimalSpecies.Watergod)
+				a == AnimalSpecies.Rain || a == AnimalSpecies.Datura ||
+				a == AnimalSpecies.Water)
 			{
 				animal.transform.localScale = animal.transform.localScale * 2.0f;
 				animal.transform.localPosition = new Vector3 (animal.transform.localPosition.x, -1.9f, animal.transform.localPosition.z);
