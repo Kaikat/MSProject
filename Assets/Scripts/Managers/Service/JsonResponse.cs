@@ -37,6 +37,8 @@ namespace JsonResponse
 	{
 		public string species;
 		public string name;
+		public string nahuatl_name;
+		public string spanish_name;
 		public string description;
 		public string habitat_level;
 		public float min_size;

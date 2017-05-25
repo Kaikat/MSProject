@@ -39,8 +39,9 @@ public class AspNetDataManager : IDataManager
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (WEB_ADDRESS + ANIMAL_CONTROLLER);
 		foreach (DataAnimal anim in response.AnimalData)
 		{
-			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (),
-				anim.min_size, anim.max_size, anim.min_age, anim.max_age, anim.min_weight, anim.max_weight, anim.colorkey_map_file);
+			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.nahuatl_name, anim.spanish_name, 
+				anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (), anim.min_size, anim.max_size, anim.min_age, anim.max_age, 
+				anim.min_weight, anim.max_weight, anim.colorkey_map_file);
 			Animals.Add (animal.Species, animal);
 		}
 
