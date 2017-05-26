@@ -11,7 +11,7 @@ public class ScreenManager : MonoBehaviour {
 
 	void Start ()
 	{
-		Screen.orientation = ScreenOrientation.Landscape;
+		Screen.orientation = ScreenOrientation.Portrait;
 
 		screenMap = new Dictionary<ScreenType, TaggedShowHide> ();
 
