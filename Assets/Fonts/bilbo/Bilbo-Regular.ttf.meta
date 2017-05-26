@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 15548701db47d154091cbd35f9fab3ab
+timeCreated: 1495767602
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bilbo
+  fontNames:
+  - Bilbo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
