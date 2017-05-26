@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 449568}
   - component: {fileID: 9531728}
   m_Layer: 0
-  m_Name: Watergod
+  m_Name: Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

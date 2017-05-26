@@ -1496,7 +1496,7 @@ GameObject:
   - component: {fileID: 441616}
   - component: {fileID: 9550550}
   m_Layer: 0
-  m_Name: Deathgod
+  m_Name: Earth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
