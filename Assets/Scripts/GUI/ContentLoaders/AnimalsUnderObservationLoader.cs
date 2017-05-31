@@ -9,7 +9,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener {
     public GameObject UIObjectScreen;
     private AnimalSpecies animalSpecies;
     private List<GameObject> animalPrefabs = new List<GameObject>();
-    private const string ANIMAL_UNDER_OBS_PREFAB = "AnimalUnderObs";
+    private const string ANIMAL_UNDER_OBS_PREFAB = "AnimalUnderObs.prefab";
 
     void Awake()
     {
