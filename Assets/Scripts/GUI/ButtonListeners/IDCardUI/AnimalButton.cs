@@ -49,6 +49,12 @@ public class AnimalButton : MonoBehaviour {
 		}
 	}
 
+    public void Click()
+    {
+        EventManager.TriggerEvent(GameEvent.ViewingAnimalsUnderObservation, Species);
+        EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
+    }
+
 	void Destroy()
 	{
 		Unregister ();
