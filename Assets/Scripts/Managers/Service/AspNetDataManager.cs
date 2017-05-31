@@ -288,20 +288,21 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
 
+		Debug.LogWarning ("JOURNAL: " + WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 		foreach (JournalEntryData entry in response.JournalEntryData)
 		{
 			AnimalEncounterType encounter = entry.encounter_type.ToEnum<AnimalEncounterType> ();
 			if (encounter == AnimalEncounterType.Released)
 			{				
 				journalEntries.Add (new JournalEntry(entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), entry.encounter_type.ToEnum<AnimalEncounterType> (), 
-					entry.health_1, entry.health_2, entry.health_3, 
-					System.DateTime.Parse(entry.encounter_date), System.DateTime.Parse(entry.caught_date), 
+					entry.released_health_1, entry.released_health_2, entry.released_health_3, 
+					System.DateTime.Parse(entry.released_date), System.DateTime.Parse(entry.caught_date), 
 					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3));
 			}
 			else
 			{
 				journalEntries.Add (new JournalEntry (entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), encounter, 
-					entry.health_1, entry.health_2, entry.health_3, System.DateTime.Parse(entry.encounter_date)));
+					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3, System.DateTime.Parse(entry.caught_date)));
 			}
 		}
 
