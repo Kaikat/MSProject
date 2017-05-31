@@ -1632,7 +1632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.2368101}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 39.99997, y: 1}
+  m_AnchoredPosition: {x: 39.9998, y: 1}
   m_SizeDelta: {x: -63, y: -7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &206368829
@@ -4106,6 +4106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContentPanel: {fileID: 430494236}
+  UIObjectScreen: {fileID: 803410587}
 --- !u!114 &430494239
 MonoBehaviour:
   m_ObjectHideFlags: 0
