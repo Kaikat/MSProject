@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 using JsonResponse;
@@ -305,23 +306,14 @@ public class AspNetDataManager : IDataManager
 					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3, System.DateTime.Parse(entry.caught_date)));
 			}
 		}
+        
+        foreach (DiscoveredAnimal animal in GetDiscoveredAnimals(sessionKey).Take(JOURNAL_ENTRY_LIMIT))
+        {
+            journalEntries.Add(new JournalEntry(AnimalEncounterType.Discovered, animal.Species, animal.Date));
+        }
 
-		List<DiscoveredAnimal> discoveredAnimals = GetDiscoveredAnimals (sessionKey);
-		int discoveryEntries = discoveredAnimals.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : discoveredAnimals.Count;
-		for (int i = 0; i < discoveryEntries; i++)
-		{
-			journalEntries.Add (new JournalEntry (AnimalEncounterType.Discovered, discoveredAnimals [i].Species, discoveredAnimals [i].Date));
-		}
+        journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
 
-		journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
-
-		List<JournalEntry> finalJournalEntries = new List<JournalEntry> ();
-		int totalEntries = journalEntries.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : journalEntries.Count;
-		for (int i = 0; i < totalEntries; i++)
-		{
-			finalJournalEntries.Add (journalEntries[i]);
-		}
-
-		return finalJournalEntries;
+        return new List<JournalEntry>(journalEntries.Take(JOURNAL_ENTRY_LIMIT));
 	}
 }
