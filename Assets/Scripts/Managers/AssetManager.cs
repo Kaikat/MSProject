@@ -74,6 +74,11 @@ public static class AssetManager
 		return AnimalPrefabs [species];
 	}
 
+	public static GameObject GetAnimalClone(AnimalSpecies species)
+	{
+		return (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (species));
+	}
+
 	public static void ShowAnimal(AnimalSpecies species)
 	{
 		for (int i = 0; i < Species.Count; i++)
