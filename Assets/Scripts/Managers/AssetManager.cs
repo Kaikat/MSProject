@@ -29,13 +29,13 @@ public static class AssetManager
 			// TEMPORARY: Not the final assets
 			//Keep these 2
 			GameObject animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (animals [i].Species));
-			animal.layer = LayerMask.NameToLayer ("Default");
+			animal.layer = LayerMask.NameToLayer ("3D");
 
 			// TEMPORARY: Not the final assets
 			if (animals[i].Species == AnimalSpecies.Butterfly)
 			{
 				GameObject temp = new GameObject ();
-				temp.layer = LayerMask.NameToLayer ("Default");
+				temp.layer = LayerMask.NameToLayer ("3D");
 				Transform t = temp.transform;
 				t.localScale = t.transform.localScale * 10.0f;
 				t.localPosition = new Vector3 (1.0f, -3.5f, 0.0f);
@@ -76,7 +76,9 @@ public static class AssetManager
 
 	public static GameObject GetAnimalClone(AnimalSpecies species)
 	{
-		return (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (species));
+		GameObject animal = (GameObject)GameObject.Instantiate (AssetManager.GetAnimalPrefab (species));
+		animal.layer = LayerMask.NameToLayer ("3D");
+		return animal;
 	}
 
 	public static void ShowAnimal(AnimalSpecies species)

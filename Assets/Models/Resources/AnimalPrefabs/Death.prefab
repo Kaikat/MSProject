@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_hipTwistAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 451900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ToeRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 440592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_UpperLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469328}
   - component: {fileID: 13795352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tiger_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 465776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster7Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 485482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HiResUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 417830}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster12Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Trans3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HiResLowerLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 402278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_DistanceMeasure1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 421424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439244}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_upperJointSkewed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 488228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_torsoIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 498276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_distanceDimension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 423526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Loc3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster2Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigJoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_distanceDimension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 463554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 435720}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_pelvisAttach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 482776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 416690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 440068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 424488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_locator7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 424002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 465160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster4Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_LowerLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 429670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HiResLowerLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 419264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +474,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_DistanceMeasure2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 429448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_LegIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 471120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster3Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 447406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_LegIKAimed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 409818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 456120}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -564,7 +564,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 451240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster1Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 496890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_torsoControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -594,7 +594,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 463732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_switchIKOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 443150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 470534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HeelRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 476404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ToeBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 446820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_FootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMG_Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -684,7 +684,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 460966}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 402238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 449540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster6Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 421192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigToe_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +744,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 452616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_IKSwitchToePlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 446778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_arrowClusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 433342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_arrowClusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 477190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Curve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 460044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ToeIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +834,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 497866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_Rigging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 464618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster5Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +864,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 427070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_LowerLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -879,7 +879,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 462008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBack7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +894,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 433972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_AttributesConnectToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 465218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckAWUPAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_Rigging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +939,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 438848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMG_root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,7 +954,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_LegIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,7 +969,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 475542}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_FootBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 453808}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_poleVectCounterAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -999,7 +999,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 474096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_LegIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1014,7 +1014,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 457392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 474572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_Rigging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1044,7 +1044,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 405788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_DistanceMeasure1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1074,7 +1074,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 447152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1089,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 402894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HiResFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 467666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ParentToWorldNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1119,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 417464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,7 +1134,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 465844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentForward4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1149,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 483250}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentForward6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1164,7 +1164,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 456924}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ToeControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 444526}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1194,7 +1194,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 432016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_LegIKAimed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_cluster1Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 405828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HeelRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 407958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 492988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,7 +1269,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 420898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster0Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 444620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ToeControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1299,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 405460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Loc2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1314,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 447658}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1329,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ToeControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1344,7 +1344,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 477320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_DistanceMeasure1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1359,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 469336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_locator5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1389,7 +1389,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 431368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_DistanceMeasure1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1404,7 +1404,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 490022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResSpine4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1419,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 490908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1434,7 +1434,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 450256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_arrowClusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1464,7 +1464,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 472558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigToeAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1479,7 +1479,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 494352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441616}
   - component: {fileID: 9550550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1510,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 416058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 422578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_rotIsolate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1540,7 +1540,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 436760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HiResLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,7 +1555,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResWorkNodes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_middleSpineBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +1585,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 480814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1600,7 +1600,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 416842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_FootIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1615,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 443640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1630,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 449118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_IKSwitchToePlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1645,7 +1645,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 421084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HiResLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1660,7 +1660,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 454150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HiResToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1675,7 +1675,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 464308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_FootIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1690,7 +1690,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 460116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1705,7 +1705,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 462292}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_FootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,7 +1720,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 462178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_LowerLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1735,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 448108}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_FootBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1750,7 +1750,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414948}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckAWUPUnTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1765,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 489176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_torsoBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1780,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 480866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ToeBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1795,7 +1795,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 441936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_FootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1810,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 476692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_middleSpineControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1825,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 446576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1840,7 +1840,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 491088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_LegIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1855,7 +1855,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 444594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_LegIKAimed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1870,7 +1870,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 456646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_middleSpineIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1885,7 +1885,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 441172}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_hipUpVect2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1900,7 +1900,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 470662}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBack4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1915,7 +1915,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 411578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_torsoIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1930,7 +1930,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 448822}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_FootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1945,7 +1945,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_LegIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1960,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 418682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_highResJointAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1975,7 +1975,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 424592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_FootIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +1990,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 449090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2005,7 +2005,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 451154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2020,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 472214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2035,7 +2035,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 444946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2050,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_locator6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2065,7 +2065,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HiResLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2080,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 469484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_LegIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2095,7 +2095,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 425832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_DistanceMeasure2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,7 +2110,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 458270}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Loc1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2125,7 +2125,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster13Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2140,7 +2140,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 483276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_AttributesConnectToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2155,7 +2155,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_hipTwistAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2170,7 +2170,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 433818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_LowerLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2185,7 +2185,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 432688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2200,7 +2200,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 403710}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2215,7 +2215,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,7 +2230,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 449226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_AttributesConnectToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2245,7 +2245,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 499456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckSpace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2260,7 +2260,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 428124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ToeControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2275,7 +2275,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 408798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_Buffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2290,7 +2290,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406252}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMG_Cruft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2305,7 +2305,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 487348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2320,7 +2320,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 423286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_FootIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2335,7 +2335,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 482150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_hipTwistAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2350,7 +2350,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_FootIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2365,7 +2365,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 433800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_lowerJointSkewed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2380,7 +2380,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 494750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_poleVectCounterAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2395,7 +2395,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 428236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResSpine5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2410,7 +2410,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2425,7 +2425,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 442402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_switchIKOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2440,7 +2440,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_footControlSizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2455,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigToeAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2470,7 +2470,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 428670}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Trans1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,7 +2485,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 481628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_hipUpVect2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2500,7 +2500,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 435256}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_locator8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2515,7 +2515,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 486318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster8Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 446690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigToeAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2545,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlNull7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2560,7 +2560,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 483124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2575,7 +2575,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 471118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2590,7 +2590,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 422088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_highResJointAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2605,7 +2605,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 484038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_UpperLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2620,7 +2620,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 495620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_DistanceMeasure2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2635,7 +2635,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 402560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2650,7 +2650,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 405758}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2665,7 +2665,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 435844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2680,7 +2680,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 486756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_FootIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2695,7 +2695,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 497286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMG_upper_body_buffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2710,7 +2710,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 411952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigToe_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2725,7 +2725,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 464932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster16Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2740,7 +2740,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468384}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_IKHeelControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2755,7 +2755,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 477194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_hipUpVect1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2770,7 +2770,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_distanceDimension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,7 +2785,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 418904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2800,7 +2800,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_middleSpineIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2815,7 +2815,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 484282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster9Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2830,7 +2830,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 471214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2845,7 +2845,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 487988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentForward3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2860,7 +2860,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 460006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HiResFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2875,7 +2875,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 425442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigToe_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2890,7 +2890,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 417550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_twistDifference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2905,7 +2905,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 423502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HiResUpperLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2920,7 +2920,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 438388}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_LowerLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2935,7 +2935,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 422264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2950,7 +2950,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 483628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hipsIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 498828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2980,7 +2980,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 409366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster14Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2995,7 +2995,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ToeIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3010,7 +3010,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 428958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBack3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3025,7 +3025,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 496040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_hipUpVect1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3040,7 +3040,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 497596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigJoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3055,7 +3055,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3070,7 +3070,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 466376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HiResUpperLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3085,7 +3085,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 403166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_switchIKOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3100,7 +3100,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 467126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3115,7 +3115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 466060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3130,7 +3130,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster11Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3145,7 +3145,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 427996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_LowerLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3160,7 +3160,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 441178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3175,7 +3175,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 472982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_UpperLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3190,7 +3190,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 489892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3205,7 +3205,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 488474}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_IKHeelControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3220,7 +3220,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 467458}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_Trans2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3235,7 +3235,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 452788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_hipTwistAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 431850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster18Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3265,7 +3265,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 466812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3280,7 +3280,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 473544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigJoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3295,7 +3295,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 474452}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_RotateToIsolate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3310,7 +3310,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 487646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_ParentToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3325,7 +3325,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_hipUpVect1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3340,7 +3340,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 422726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3355,7 +3355,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 488040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_ParentToWorldNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3370,7 +3370,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HiResUpperLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3385,7 +3385,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 433976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_poleVectCounterAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3400,7 +3400,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 438268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_middleSpineTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3415,7 +3415,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 408314}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3430,7 +3430,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 424182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3445,7 +3445,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 486086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_LowerLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3460,7 +3460,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 448706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_Rigging
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3475,7 +3475,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 420022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigToeAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3490,7 +3490,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 494278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hipsIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3505,7 +3505,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 428044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HeelRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3520,7 +3520,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 491344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_hipUpVect2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3535,7 +3535,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 459514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HiResUpperLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3550,7 +3550,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 465196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_FootBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3565,7 +3565,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 427692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HiResToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3580,7 +3580,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 467902}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_lowerSpineControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3595,7 +3595,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 441728}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3610,7 +3610,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 464638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_LegIKBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3625,7 +3625,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_lowerSpineBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3640,7 +3640,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 462148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_lowerJointRotated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3655,7 +3655,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 421304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3670,7 +3670,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 449262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3685,7 +3685,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 458422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HiResUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3700,7 +3700,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBuffer6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3715,7 +3715,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_LegIKAimed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3730,7 +3730,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 419530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3745,7 +3745,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 458508}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBack6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3760,7 +3760,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 483486}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMG_upper_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3775,7 +3775,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 423460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3790,7 +3790,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 485844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMG_IK_Controllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3805,7 +3805,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 484618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigJoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3820,7 +3820,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 447976}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_reverseAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3835,7 +3835,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ToeIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3850,7 +3850,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 480562}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_ParentToWorld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3865,7 +3865,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 438908}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_UpperLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3880,7 +3880,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 480382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3895,7 +3895,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 456062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_IKSwitchToePlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3910,7 +3910,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 408214}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ParentToWorldNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3925,7 +3925,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 450502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HiResUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3940,7 +3940,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 486212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_poleVectCounterAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3955,7 +3955,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster10Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3970,7 +3970,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 441522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ToeIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3985,7 +3985,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 440282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4000,7 +4000,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 418330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4015,7 +4015,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 484408}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_footControlSizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4030,7 +4030,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_FootBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4045,7 +4045,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 484176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentForward5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4060,7 +4060,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 405904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster17Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4075,7 +4075,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 403560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4090,7 +4090,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 431688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_LowerLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4105,7 +4105,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 472218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_arrowClusters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4120,7 +4120,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 452428}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentForward2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4135,7 +4135,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 470326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4150,7 +4150,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 404242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4165,7 +4165,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 473134}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_FootArrowPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4180,7 +4180,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 487642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ToeRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4195,7 +4195,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigToe_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4210,7 +4210,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 468002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4225,7 +4225,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 427148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ToeIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4240,7 +4240,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ParentToWorldNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4255,7 +4255,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HeelRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4270,7 +4270,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 467792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_FootArrowPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4285,7 +4285,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 401930}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_FootIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4300,7 +4300,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 496362}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ToeBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4315,7 +4315,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 472436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentForward1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4330,7 +4330,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 476104}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4345,7 +4345,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 461628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4360,7 +4360,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 402984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4375,7 +4375,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 454498}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ToeBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4390,7 +4390,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_locator3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4405,7 +4405,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410410}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_ToeRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4420,7 +4420,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 426056}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_footControlSizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4435,7 +4435,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 481132}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4450,7 +4450,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 460000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_UpperLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4465,7 +4465,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 430092}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckAWUPLean
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4480,7 +4480,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 457568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_controlCluster15Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4495,7 +4495,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_UpVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4510,7 +4510,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 417740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4525,7 +4525,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 497222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_highResJointAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4540,7 +4540,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 417450}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ToeRaiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4555,7 +4555,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 425944}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HiResLowerLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4570,7 +4570,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 492716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_switchIKOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4585,7 +4585,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 478568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_UpperLegControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4600,7 +4600,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 482932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNull10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4615,7 +4615,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 431800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_IKHeelControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4630,7 +4630,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 436334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_tangentBack5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4645,7 +4645,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 454906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_RigLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4660,7 +4660,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 463102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_FootArrowPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4675,7 +4675,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 410206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_UpperLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4690,7 +4690,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 474280}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_ParentToWorld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4705,7 +4705,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 412352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_AttributesConnectToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4720,7 +4720,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_ToeIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4735,7 +4735,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 454472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_LegIKControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4750,7 +4750,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 414230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_IKHeelControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 422054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hipsControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4780,7 +4780,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 432078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_middleSpineAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4795,7 +4795,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 451604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_RigAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4810,7 +4810,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 465970}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HiResToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4825,7 +4825,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 429942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigAim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,7 +4840,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 486962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_IKSwitchToePlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,7 +4855,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 429022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TSMGWorldJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4870,7 +4870,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 453566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_highResJointAimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4885,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 454184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_footControlSizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4900,7 +4900,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 455152}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HiResLowerLegTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4915,7 +4915,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 471992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HiResToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4930,7 +4930,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 406182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_Joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4945,7 +4945,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400360}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_HiResLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +4960,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 423790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_RigFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4975,7 +4975,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 479210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_AttributesConnectToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4990,7 +4990,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 463648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_aimNullsBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5005,7 +5005,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 439530}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_upperJointRotated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5020,7 +5020,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 409160}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_RigLowerLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,7 +5035,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 409328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head1_neckAWUPTwist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5050,7 +5050,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 425560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_DistanceMeasure2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5065,7 +5065,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 486154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_HiResFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5080,7 +5080,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 462848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_ToeIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5095,7 +5095,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 416074}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_distanceDimension1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5110,7 +5110,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 411376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_hipUpVect1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 401864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_AttributesConnectToUpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5140,7 +5140,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 400782}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_HiResFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5155,7 +5155,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 407148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ParentToWorldNull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5170,7 +5170,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 478034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_ToeIK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5185,7 +5185,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 487946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spine1_hiResHips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5200,7 +5200,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 437358}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg2_hipUpVect2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5215,7 +5215,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 485180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_FootIKPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5230,7 +5230,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 480890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg1_HiResUpperLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5245,7 +5245,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 403572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg1_UpperLegBuffer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5260,7 +5260,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 477732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_placementNull10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5275,7 +5275,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 430220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg2_FootArrowPoleVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5290,7 +5290,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 413952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tail1_ParentConstrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
