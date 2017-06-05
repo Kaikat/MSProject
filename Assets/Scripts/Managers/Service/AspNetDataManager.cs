@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 using JsonResponse;
@@ -39,8 +40,9 @@ public class AspNetDataManager : IDataManager
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (WEB_ADDRESS + ANIMAL_CONTROLLER);
 		foreach (DataAnimal anim in response.AnimalData)
 		{
-			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (),
-				anim.min_size, anim.max_size, anim.min_age, anim.max_age, anim.min_weight, anim.max_weight, anim.colorkey_map_file);
+			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.nahuatl_name, anim.spanish_name, 
+				anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (), anim.min_size, anim.max_size, anim.min_age, anim.max_age, 
+				anim.min_weight, anim.max_weight, anim.colorkey_map_file);
 			Animals.Add (animal.Species, animal);
 		}
 
@@ -69,6 +71,12 @@ public class AspNetDataManager : IDataManager
 		return new LoginResponse (loginSession.error, loginSession.message);
 	}
 
+	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	{
+		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
+			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL(sessionKey) + "&avatar=" + avatar.ToString());
+	}
+
 	public List<AnimalLocation> GetGPSLocations()
 	{
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
@@ -95,7 +103,7 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (playerData.name, playerData.avatar, playerData.currency, 
+		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, 
 			GetPlayerAnimals(sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals(sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals(sessionKey));
 		//owned, released
 	}
@@ -281,39 +289,31 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
 
+		Debug.LogWarning ("JOURNAL: " + WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 		foreach (JournalEntryData entry in response.JournalEntryData)
 		{
 			AnimalEncounterType encounter = entry.encounter_type.ToEnum<AnimalEncounterType> ();
 			if (encounter == AnimalEncounterType.Released)
 			{				
 				journalEntries.Add (new JournalEntry(entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), entry.encounter_type.ToEnum<AnimalEncounterType> (), 
-					entry.health_1, entry.health_2, entry.health_3, 
-					System.DateTime.Parse(entry.encounter_date), System.DateTime.Parse(entry.caught_date), 
+					entry.released_health_1, entry.released_health_2, entry.released_health_3, 
+					System.DateTime.Parse(entry.released_date), System.DateTime.Parse(entry.caught_date), 
 					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3));
 			}
 			else
 			{
 				journalEntries.Add (new JournalEntry (entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), encounter, 
-					entry.health_1, entry.health_2, entry.health_3, System.DateTime.Parse(entry.encounter_date)));
+					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3, System.DateTime.Parse(entry.caught_date)));
 			}
 		}
+        
+        foreach (DiscoveredAnimal animal in GetDiscoveredAnimals(sessionKey).Take(JOURNAL_ENTRY_LIMIT))
+        {
+            journalEntries.Add(new JournalEntry(AnimalEncounterType.Discovered, animal.Species, animal.Date));
+        }
 
-		List<DiscoveredAnimal> discoveredAnimals = GetDiscoveredAnimals (sessionKey);
-		int discoveryEntries = discoveredAnimals.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : discoveredAnimals.Count;
-		for (int i = 0; i < discoveryEntries; i++)
-		{
-			journalEntries.Add (new JournalEntry (AnimalEncounterType.Discovered, discoveredAnimals [i].Species, discoveredAnimals [i].Date));
-		}
+        journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
 
-		journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
-
-		List<JournalEntry> finalJournalEntries = new List<JournalEntry> ();
-		int totalEntries = journalEntries.Count >= JOURNAL_ENTRY_LIMIT ? JOURNAL_ENTRY_LIMIT : journalEntries.Count;
-		for (int i = 0; i < totalEntries; i++)
-		{
-			finalJournalEntries.Add (journalEntries[i]);
-		}
-
-		return finalJournalEntries;
+        return new List<JournalEntry>(journalEntries.Take(JOURNAL_ENTRY_LIMIT));
 	}
 }

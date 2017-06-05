@@ -10,7 +10,7 @@ public class CameraController : MonoBehaviour
 {
 	public Camera backgroundCamera;
 	WebCamTexture tex;
-
+	public RawImage image;
 	void Start ()
 	{
 		WebCamDevice[] devices = WebCamTexture.devices;
@@ -24,11 +24,16 @@ public class CameraController : MonoBehaviour
 
 		Vector3 originalScale = transform.localScale;	
 
+	
+
 		#if UNITY_ANDROID
 		transform.localScale = new Vector3 (-originalScale.x, originalScale.y, originalScale.z);
 		#endif
 
 		GetComponent<Renderer> ().material.mainTexture = tex;
+		//image.texture = tex;
+
+		//image.material.mainTexture = tex;
 		tex.Play();
 	}
 

@@ -7,7 +7,8 @@ public class AnimalButton : MonoBehaviour {
 
 	public AnimalSpecies Species;
 	string species;
-	const string unknown = "Unknown";
+	const string UNKNOWN = "Unknown";
+    private bool clickable = false;
 
 	void Awake()
 	{
@@ -23,20 +24,21 @@ public class AnimalButton : MonoBehaviour {
 		}
 		else
 		{
-			SetButtonComponents (unknown);
+			SetButtonComponents (UNKNOWN);
 		}
 	}
 
 	void SetButtonComponents(string animalName)
 	{
 		GetComponentInChildren<Text> ().text = animalName;
-		if (animalName != unknown)
+		if (animalName != UNKNOWN)
 		{
-			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (Species.ToString ());
+            clickable = true;
+            GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (Species.ToString ());
 		}
 		else
 		{
-			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (animalName);
+			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (UNKNOWN);
 		}
 	}
 
@@ -48,6 +50,15 @@ public class AnimalButton : MonoBehaviour {
 			Unregister ();
 		}
 	}
+
+    public void Click()
+    {
+        if(clickable)
+        {
+            EventManager.TriggerEvent(GameEvent.ViewingAnimalsUnderObservation, Species);
+            EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
+        }
+    }
 
 	void Destroy()
 	{

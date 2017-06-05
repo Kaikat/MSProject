@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 public class CheckForNearbyAnimals : MonoBehaviour {
 
+	public GameObject GpsScriptHolder;
 	public RawImage MapImage;
-
-	UpdateGPSLocation gpsScript;
+	private UpdateGPSLocation gpsScript;
 	bool animalOnScreen;
 
 	void Awake()
@@ -19,7 +19,8 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 
 	public void Init()
 	{
-		gpsScript = MapImage.GetComponent<UpdateGPSLocation> ();
+		//gpsScript = MapImage.GetComponent<UpdateGPSLocation> ();
+		gpsScript = GpsScriptHolder.GetComponent<UpdateGPSLocation> ();
 	}
 
 	public void SetAnimalOnScreenToFalse(Animal animal)

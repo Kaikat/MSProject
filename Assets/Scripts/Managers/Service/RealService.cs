@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 
+//TODO: GET RID OF USERNAME/SESSION KEY - The player already has it
 public class RealService : IServices
 {
 	private static RealService _Instance;
@@ -54,6 +55,12 @@ public class RealService : IServices
 		}
 
 		return !response.error;
+	}
+
+	public void UpdateAvatar(Avatar avatar)
+	{
+		DataManager.Data.UpdateAvatar (CurrentPlayer.SessionKey, avatar);
+		CurrentPlayer.SetAvatar (avatar);
 	}
 
 	public List<AnimalLocation> PlacesToVisit()

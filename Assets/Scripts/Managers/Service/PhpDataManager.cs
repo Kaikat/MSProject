@@ -43,8 +43,9 @@ public class PhpDataManager : IDataManager
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (HTTP_ADDRESS + ANIMAL_DATA);
 		foreach (DataAnimal anim in response.AnimalData)
 		{
-			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (),
-				anim.min_size, anim.max_size, anim.min_age, anim.max_age, anim.min_weight, anim.max_weight, anim.colorkey_map_file);
+			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.nahuatl_name, anim.spanish_name, 
+				anim.description, anim.habitat_level.ToEnum<HabitatLevelType> (), anim.min_size, anim.max_size, anim.min_age, anim.max_age, 
+				anim.min_weight, anim.max_weight, anim.colorkey_map_file);
 			Animals.Add (animal.Species, animal);
 		}
 
@@ -73,6 +74,10 @@ public class PhpDataManager : IDataManager
 		return new JsonResponse.LoginResponse(loginSession.error, "");
 	}
 
+	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	{
+	}
+
 	public List<AnimalLocation> GetGPSLocations()
 	{
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
@@ -99,7 +104,7 @@ public class PhpDataManager : IDataManager
 			HTTP_ADDRESS + PLAYER_DATA + "?username=" + username);
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (username, playerData.name, playerData.avatar, playerData.currency, 
+		return new Player (username, playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, 
 			GetEncounterCount(username, AnimalEncounterType.Discovered), 
 			GetEncounterCount(username, AnimalEncounterType.Caught), 
 			GetEncounterCount(username, AnimalEncounterType.Released), 
@@ -256,14 +261,14 @@ public class PhpDataManager : IDataManager
 			if (encounter == AnimalEncounterType.Released)
 			{				
 				journalEntries.Add (new JournalEntry(entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), entry.encounter_type.ToEnum<AnimalEncounterType> (), 
-					entry.health_1, entry.health_2, entry.health_3, 
-					System.DateTime.Parse(entry.encounter_date), System.DateTime.Parse(entry.caught_date), 
+					entry.released_health_1, entry.released_health_2, entry.released_health_3, 
+					System.DateTime.Parse(entry.released_date), System.DateTime.Parse(entry.caught_date), 
 					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3));
 			}
 			else
 			{
-				journalEntries.Add (new JournalEntry (entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), encounter, 
-					entry.health_1, entry.health_2, entry.health_3, System.DateTime.Parse(entry.encounter_date)));
+				journalEntries.Add (new JournalEntry (entry.animal_id, entry.species.ToEnum<AnimalSpecies> (), encounter,
+					entry.caught_health_1, entry.caught_health_2, entry.caught_health_3, System.DateTime.Parse(entry.caught_date)));
 			}
 		}
 

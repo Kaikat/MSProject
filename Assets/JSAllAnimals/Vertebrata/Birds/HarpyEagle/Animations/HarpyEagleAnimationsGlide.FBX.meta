@@ -1,0 +1,3370 @@
+fileFormatVersion: 2
+guid: 06f4a66d883874a57b87b4f7856c82e2
+timeCreated: 1460904458
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Beak
+    100002: //RootNode
+    100004: HarpyEagleDummy
+    100006: Head
+    100008: HeadFeather_L.000
+    100010: HeadFeather_L.001
+    100012: HeadFeather_L.002
+    100014: HeadFeather_L.003
+    100016: HeadFeather_L.004
+    100018: HeadFeather_L.005
+    100020: HeadFeather_L.006
+    100022: HeadFeather_L.007
+    100024: HeadFeather_R.000
+    100026: HeadFeather_R.001
+    100028: HeadFeather_R.002
+    100030: HeadFeather_R.003
+    100032: HeadFeather_R.004
+    100034: HeadFeather_R.005
+    100036: HeadFeather_R.006
+    100038: HeadFeather_R.007
+    100040: HeadFeatherBottom
+    100042: HeadFeatherTop
+    100044: Keel.1
+    100046: Keel.2
+    100048: L.Digit.1.1
+    100050: L.Digit.1.2
+    100052: L.Digit.2.1
+    100054: L.Digit.2.2
+    100056: L.Digit.3.1
+    100058: L.Digit.3.2
+    100060: L.Digit.3.3
+    100062: L.Digit.4.1
+    100064: L.Digit.4.2
+    100066: L_Alula.003
+    100068: L_BasalPhalanx
+    100070: L_Breast
+    100072: L_Coracoid
+    100074: L_Covert.1
+    100076: L_Covert.2
+    100078: L_Covert.3
+    100080: L_Covert.4.1
+    100082: L_Covert.4.2
+    100084: L_Covert.5.1
+    100086: L_Covert.5.2
+    100088: L_Eye
+    100090: L_Femur
+    100092: L_Humerus
+    100094: L_LowerEyelid
+    100096: L_Metacarpus
+    100098: L_Pimary.1.1
+    100100: L_Pimary.1.2
+    100102: L_Pimary.10.1
+    100104: L_Pimary.10.2
+    100106: L_Pimary.2.1
+    100108: L_Pimary.2.2
+    100110: L_Pimary.3.1
+    100112: L_Pimary.3.2
+    100114: L_Pimary.4.1
+    100116: L_Pimary.4.2
+    100118: L_Pimary.5.1
+    100120: L_Pimary.5.2
+    100122: L_Pimary.6.1
+    100124: L_Pimary.6.2
+    100126: L_Pimary.7.1
+    100128: L_Pimary.7.2
+    100130: L_Pimary.8.1
+    100132: L_Pimary.8.2
+    100134: L_Pimary.9.1
+    100136: L_Pimary.9.2
+    100138: L_ScapularFeather.1.1
+    100140: L_ScapularFeather.1.2
+    100142: L_ScapularFeather.2.1
+    100144: L_ScapularFeather.3.1
+    100146: L_ScapularFeather.3.2
+    100148: L_ScapularFeather.4
+    100150: L_ScapularFeather.5
+    100152: L_Secondary.1.1
+    100154: L_Secondary.1.2
+    100156: L_Secondary.10.1
+    100158: L_Secondary.10.2
+    100160: L_Secondary.2.1
+    100162: L_Secondary.2.2
+    100164: L_Secondary.3.1
+    100166: L_Secondary.3.2
+    100168: L_Secondary.4.1
+    100170: L_Secondary.4.2
+    100172: L_Secondary.5.1
+    100174: L_Secondary.5.2
+    100176: L_Secondary.6.1
+    100178: L_Secondary.6.2
+    100180: L_Secondary.7.1
+    100182: L_Secondary.7.2
+    100184: L_Secondary.8.1
+    100186: L_Secondary.8.2
+    100188: L_Secondary.9.1
+    100190: L_Secondary.9.2
+    100192: L_TailFeather.1.1
+    100194: L_TailFeather.1.2
+    100196: L_TailFeather.2.1
+    100198: L_TailFeather.2.2
+    100200: L_TailFeather.3.1
+    100202: L_TailFeather.3.2
+    100204: L_TailFeather.4.1
+    100206: L_TailFeather.4.2
+    100208: L_TailFeather.5.1
+    100210: L_TailFeather.5.2
+    100212: L_Tarsus.1
+    100214: L_Tarsus.2
+    100216: L_Tertial.1.1
+    100218: L_Tertial.1.2
+    100220: L_Tertial.2.1
+    100222: L_Tertial.2.2
+    100224: L_Tertial.3.1
+    100226: L_Tertial.3.2
+    100228: L_ThirdEyelid
+    100230: L_Tibia
+    100232: L_Ulna
+    100234: L_UpperEyeLid
+    100236: Neck..3
+    100238: Neck.1
+    100240: Neck.2
+    100242: Pelvis
+    100244: R.Digit.1.1
+    100246: R.Digit.1.2
+    100248: R.Digit.2.1
+    100250: R.Digit.2.2
+    100252: R.Digit.3.1
+    100254: R.Digit.3.2
+    100256: R.Digit.3.3
+    100258: R.Digit.4.1
+    100260: R.Digit.4.2
+    100262: R_Alula.003
+    100264: R_BasalPhalanx
+    100266: R_Breast
+    100268: R_Coracoid
+    100270: R_Covert.1
+    100272: R_Covert.2
+    100274: R_Covert.3
+    100276: R_Covert.4.1
+    100278: R_Covert.4.2
+    100280: R_Covert.5.1
+    100282: R_Covert.5.2
+    100284: R_Eye
+    100286: R_Femur
+    100288: R_Humerus
+    100290: R_LowerEyelid
+    100292: R_Metacarpus
+    100294: R_Pimary.1.1
+    100296: R_Pimary.1.2
+    100298: R_Pimary.10.1
+    100300: R_Pimary.10.2
+    100302: R_Pimary.2.1
+    100304: R_Pimary.2.2
+    100306: R_Pimary.3.1
+    100308: R_Pimary.3.2
+    100310: R_Pimary.4.1
+    100312: R_Pimary.4.2
+    100314: R_Pimary.5.1
+    100316: R_Pimary.5.2
+    100318: R_Pimary.6.1
+    100320: R_Pimary.6.2
+    100322: R_Pimary.7.1
+    100324: R_Pimary.7.2
+    100326: R_Pimary.8.1
+    100328: R_Pimary.8.2
+    100330: R_Pimary.9.1
+    100332: R_Pimary.9.2
+    100334: R_ScapularFeather.1.1
+    100336: R_ScapularFeather.1.2
+    100338: R_ScapularFeather.2.1
+    100340: R_ScapularFeather.3.1
+    100342: R_ScapularFeather.3.2
+    100344: R_ScapularFeather.4
+    100346: R_ScapularFeather.5
+    100348: R_Secondary.1.1
+    100350: R_Secondary.1.2
+    100352: R_Secondary.10.1
+    100354: R_Secondary.10.2
+    100356: R_Secondary.2.1
+    100358: R_Secondary.2.2
+    100360: R_Secondary.3.1
+    100362: R_Secondary.3.2
+    100364: R_Secondary.4.1
+    100366: R_Secondary.4.2
+    100368: R_Secondary.5.1
+    100370: R_Secondary.5.2
+    100372: R_Secondary.6.1
+    100374: R_Secondary.6.2
+    100376: R_Secondary.7.1
+    100378: R_Secondary.7.2
+    100380: R_Secondary.8.1
+    100382: R_Secondary.8.2
+    100384: R_Secondary.9.1
+    100386: R_Secondary.9.2
+    100388: R_TailFeather.1.1
+    100390: R_TailFeather.1.2
+    100392: R_TailFeather.2.1
+    100394: R_TailFeather.2.2
+    100396: R_TailFeather.3.1
+    100398: R_TailFeather.3.2
+    100400: R_TailFeather.4.1
+    100402: R_TailFeather.4.2
+    100404: R_TailFeather.5.1
+    100406: R_TailFeather.5.2
+    100408: R_Tarsus.1
+    100410: R_Tarsus.2
+    100412: R_Tertial.1.1
+    100414: R_Tertial.1.2
+    100416: R_Tertial.2.1
+    100418: R_Tertial.2.2
+    100420: R_Tertial.3.1
+    100422: R_Tertial.3.2
+    100424: R_ThirdEyelid
+    100426: R_Tibia
+    100428: R_Ulna
+    100430: R_UpperEyeLid
+    100432: RootNode
+    100434: Spine.2
+    100436: Spine.3
+    100438: Spline.1
+    100440: Tail.1
+    100442: Tail.2
+    100444: Tongue.1
+    100446: Tongue.2
+    400000: Beak
+    400002: //RootNode
+    400004: HarpyEagleDummy
+    400006: Head
+    400008: HeadFeather_L.000
+    400010: HeadFeather_L.001
+    400012: HeadFeather_L.002
+    400014: HeadFeather_L.003
+    400016: HeadFeather_L.004
+    400018: HeadFeather_L.005
+    400020: HeadFeather_L.006
+    400022: HeadFeather_L.007
+    400024: HeadFeather_R.000
+    400026: HeadFeather_R.001
+    400028: HeadFeather_R.002
+    400030: HeadFeather_R.003
+    400032: HeadFeather_R.004
+    400034: HeadFeather_R.005
+    400036: HeadFeather_R.006
+    400038: HeadFeather_R.007
+    400040: HeadFeatherBottom
+    400042: HeadFeatherTop
+    400044: Keel.1
+    400046: Keel.2
+    400048: L.Digit.1.1
+    400050: L.Digit.1.2
+    400052: L.Digit.2.1
+    400054: L.Digit.2.2
+    400056: L.Digit.3.1
+    400058: L.Digit.3.2
+    400060: L.Digit.3.3
+    400062: L.Digit.4.1
+    400064: L.Digit.4.2
+    400066: L_Alula.003
+    400068: L_BasalPhalanx
+    400070: L_Breast
+    400072: L_Coracoid
+    400074: L_Covert.1
+    400076: L_Covert.2
+    400078: L_Covert.3
+    400080: L_Covert.4.1
+    400082: L_Covert.4.2
+    400084: L_Covert.5.1
+    400086: L_Covert.5.2
+    400088: L_Eye
+    400090: L_Femur
+    400092: L_Humerus
+    400094: L_LowerEyelid
+    400096: L_Metacarpus
+    400098: L_Pimary.1.1
+    400100: L_Pimary.1.2
+    400102: L_Pimary.10.1
+    400104: L_Pimary.10.2
+    400106: L_Pimary.2.1
+    400108: L_Pimary.2.2
+    400110: L_Pimary.3.1
+    400112: L_Pimary.3.2
+    400114: L_Pimary.4.1
+    400116: L_Pimary.4.2
+    400118: L_Pimary.5.1
+    400120: L_Pimary.5.2
+    400122: L_Pimary.6.1
+    400124: L_Pimary.6.2
+    400126: L_Pimary.7.1
+    400128: L_Pimary.7.2
+    400130: L_Pimary.8.1
+    400132: L_Pimary.8.2
+    400134: L_Pimary.9.1
+    400136: L_Pimary.9.2
+    400138: L_ScapularFeather.1.1
+    400140: L_ScapularFeather.1.2
+    400142: L_ScapularFeather.2.1
+    400144: L_ScapularFeather.3.1
+    400146: L_ScapularFeather.3.2
+    400148: L_ScapularFeather.4
+    400150: L_ScapularFeather.5
+    400152: L_Secondary.1.1
+    400154: L_Secondary.1.2
+    400156: L_Secondary.10.1
+    400158: L_Secondary.10.2
+    400160: L_Secondary.2.1
+    400162: L_Secondary.2.2
+    400164: L_Secondary.3.1
+    400166: L_Secondary.3.2
+    400168: L_Secondary.4.1
+    400170: L_Secondary.4.2
+    400172: L_Secondary.5.1
+    400174: L_Secondary.5.2
+    400176: L_Secondary.6.1
+    400178: L_Secondary.6.2
+    400180: L_Secondary.7.1
+    400182: L_Secondary.7.2
+    400184: L_Secondary.8.1
+    400186: L_Secondary.8.2
+    400188: L_Secondary.9.1
+    400190: L_Secondary.9.2
+    400192: L_TailFeather.1.1
+    400194: L_TailFeather.1.2
+    400196: L_TailFeather.2.1
+    400198: L_TailFeather.2.2
+    400200: L_TailFeather.3.1
+    400202: L_TailFeather.3.2
+    400204: L_TailFeather.4.1
+    400206: L_TailFeather.4.2
+    400208: L_TailFeather.5.1
+    400210: L_TailFeather.5.2
+    400212: L_Tarsus.1
+    400214: L_Tarsus.2
+    400216: L_Tertial.1.1
+    400218: L_Tertial.1.2
+    400220: L_Tertial.2.1
+    400222: L_Tertial.2.2
+    400224: L_Tertial.3.1
+    400226: L_Tertial.3.2
+    400228: L_ThirdEyelid
+    400230: L_Tibia
+    400232: L_Ulna
+    400234: L_UpperEyeLid
+    400236: Neck..3
+    400238: Neck.1
+    400240: Neck.2
+    400242: Pelvis
+    400244: R.Digit.1.1
+    400246: R.Digit.1.2
+    400248: R.Digit.2.1
+    400250: R.Digit.2.2
+    400252: R.Digit.3.1
+    400254: R.Digit.3.2
+    400256: R.Digit.3.3
+    400258: R.Digit.4.1
+    400260: R.Digit.4.2
+    400262: R_Alula.003
+    400264: R_BasalPhalanx
+    400266: R_Breast
+    400268: R_Coracoid
+    400270: R_Covert.1
+    400272: R_Covert.2
+    400274: R_Covert.3
+    400276: R_Covert.4.1
+    400278: R_Covert.4.2
+    400280: R_Covert.5.1
+    400282: R_Covert.5.2
+    400284: R_Eye
+    400286: R_Femur
+    400288: R_Humerus
+    400290: R_LowerEyelid
+    400292: R_Metacarpus
+    400294: R_Pimary.1.1
+    400296: R_Pimary.1.2
+    400298: R_Pimary.10.1
+    400300: R_Pimary.10.2
+    400302: R_Pimary.2.1
+    400304: R_Pimary.2.2
+    400306: R_Pimary.3.1
+    400308: R_Pimary.3.2
+    400310: R_Pimary.4.1
+    400312: R_Pimary.4.2
+    400314: R_Pimary.5.1
+    400316: R_Pimary.5.2
+    400318: R_Pimary.6.1
+    400320: R_Pimary.6.2
+    400322: R_Pimary.7.1
+    400324: R_Pimary.7.2
+    400326: R_Pimary.8.1
+    400328: R_Pimary.8.2
+    400330: R_Pimary.9.1
+    400332: R_Pimary.9.2
+    400334: R_ScapularFeather.1.1
+    400336: R_ScapularFeather.1.2
+    400338: R_ScapularFeather.2.1
+    400340: R_ScapularFeather.3.1
+    400342: R_ScapularFeather.3.2
+    400344: R_ScapularFeather.4
+    400346: R_ScapularFeather.5
+    400348: R_Secondary.1.1
+    400350: R_Secondary.1.2
+    400352: R_Secondary.10.1
+    400354: R_Secondary.10.2
+    400356: R_Secondary.2.1
+    400358: R_Secondary.2.2
+    400360: R_Secondary.3.1
+    400362: R_Secondary.3.2
+    400364: R_Secondary.4.1
+    400366: R_Secondary.4.2
+    400368: R_Secondary.5.1
+    400370: R_Secondary.5.2
+    400372: R_Secondary.6.1
+    400374: R_Secondary.6.2
+    400376: R_Secondary.7.1
+    400378: R_Secondary.7.2
+    400380: R_Secondary.8.1
+    400382: R_Secondary.8.2
+    400384: R_Secondary.9.1
+    400386: R_Secondary.9.2
+    400388: R_TailFeather.1.1
+    400390: R_TailFeather.1.2
+    400392: R_TailFeather.2.1
+    400394: R_TailFeather.2.2
+    400396: R_TailFeather.3.1
+    400398: R_TailFeather.3.2
+    400400: R_TailFeather.4.1
+    400402: R_TailFeather.4.2
+    400404: R_TailFeather.5.1
+    400406: R_TailFeather.5.2
+    400408: R_Tarsus.1
+    400410: R_Tarsus.2
+    400412: R_Tertial.1.1
+    400414: R_Tertial.1.2
+    400416: R_Tertial.2.1
+    400418: R_Tertial.2.2
+    400420: R_Tertial.3.1
+    400422: R_Tertial.3.2
+    400424: R_ThirdEyelid
+    400426: R_Tibia
+    400428: R_Ulna
+    400430: R_UpperEyeLid
+    400432: RootNode
+    400434: Spine.2
+    400436: Spine.3
+    400438: Spline.1
+    400440: Tail.1
+    400442: Tail.2
+    400444: Tongue.1
+    400446: Tongue.2
+    7400000: GlideUp
+    7400002: GlideDown
+    7400004: GlideAttack
+    7400006: GlideHit
+    7400008: GlideBeakAttack
+    7400010: GlideLookAround
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: GlideUp
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HarpyEagleDummy
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1/L.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1/L.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2/L.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1/L.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1/R.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1/R.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2/R.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1/R.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1/L_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1/L_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1/L_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1/L_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1/L_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1/L_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1/L_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1/L_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1/L_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1/L_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1/L_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1/L_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1/L_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1/L_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1/L_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1/L_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1/L_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1/L_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1/L_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1/L_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1/L_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1/L_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1/L_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1/L_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1/R_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1/R_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1/R_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1/R_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1/R_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1/R_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1/R_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1/R_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1/R_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1/R_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1/R_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1/R_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1/R_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1/R_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1/R_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1/R_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1/R_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1/R_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1/R_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1/R_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1/R_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1/R_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1/R_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1/R_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1/Keel.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1/Tongue.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherBottom
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherTop
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1/L_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1/L_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1/L_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1/L_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1/L_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1/R_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1/R_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1/R_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1/R_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1/R_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/Tail.2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GlideDown
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HarpyEagleDummy
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1/L.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1/L.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2/L.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1/L.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1/R.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1/R.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2/R.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1/R.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1/L_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1/L_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1/L_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1/L_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1/L_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1/L_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1/L_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1/L_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1/L_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1/L_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1/L_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1/L_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1/L_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1/L_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1/L_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1/L_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1/L_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1/L_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1/L_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1/L_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1/L_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1/L_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1/L_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1/L_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1/R_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1/R_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1/R_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1/R_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1/R_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1/R_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1/R_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1/R_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1/R_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1/R_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1/R_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1/R_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1/R_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1/R_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1/R_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1/R_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1/R_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1/R_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1/R_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1/R_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1/R_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1/R_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1/R_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1/R_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1/Keel.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1/Tongue.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherBottom
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherTop
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1/L_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1/L_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1/L_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1/L_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1/L_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1/R_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1/R_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1/R_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1/R_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1/R_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/Tail.2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GlideAttack
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HarpyEagleDummy
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1/L.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1/L.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2/L.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1/L.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1/R.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1/R.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2/R.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1/R.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1/L_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1/L_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1/L_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1/L_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1/L_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1/L_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1/L_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1/L_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1/L_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1/L_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1/L_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1/L_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1/L_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1/L_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1/L_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1/L_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1/L_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1/L_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1/L_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1/L_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1/L_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1/L_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1/L_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1/L_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1/R_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1/R_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1/R_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1/R_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1/R_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1/R_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1/R_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1/R_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1/R_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1/R_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1/R_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1/R_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1/R_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1/R_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1/R_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1/R_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1/R_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1/R_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1/R_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1/R_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1/R_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1/R_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1/R_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1/R_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1/Keel.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1/Tongue.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherBottom
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherTop
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1/L_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1/L_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1/L_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1/L_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1/L_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1/R_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1/R_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1/R_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1/R_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1/R_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/Tail.2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GlideHit
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 160
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HarpyEagleDummy
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1/L.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1/L.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2/L.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1/L.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1/R.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1/R.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2/R.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1/R.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1/L_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1/L_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1/L_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1/L_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1/L_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1/L_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1/L_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1/L_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1/L_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1/L_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1/L_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1/L_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1/L_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1/L_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1/L_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1/L_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1/L_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1/L_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1/L_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1/L_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1/L_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1/L_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1/L_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1/L_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1/R_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1/R_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1/R_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1/R_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1/R_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1/R_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1/R_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1/R_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1/R_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1/R_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1/R_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1/R_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1/R_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1/R_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1/R_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1/R_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1/R_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1/R_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1/R_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1/R_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1/R_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1/R_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1/R_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1/R_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1/Keel.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1/Tongue.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherBottom
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherTop
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1/L_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1/L_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1/L_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1/L_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1/L_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1/R_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1/R_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1/R_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1/R_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1/R_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/Tail.2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GlideBeakAttack
+      takeName: Take 001
+      firstFrame: 170
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HarpyEagleDummy
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1/L.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1/L.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2/L.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1/L.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1/R.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1/R.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2/R.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1/R.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1/L_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1/L_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1/L_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1/L_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1/L_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1/L_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1/L_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1/L_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1/L_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1/L_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1/L_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1/L_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1/L_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1/L_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1/L_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1/L_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1/L_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1/L_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1/L_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1/L_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1/L_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1/L_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1/L_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1/L_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1/R_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1/R_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1/R_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1/R_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1/R_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1/R_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1/R_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1/R_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1/R_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1/R_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1/R_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1/R_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1/R_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1/R_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1/R_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1/R_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1/R_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1/R_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1/R_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1/R_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1/R_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1/R_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1/R_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1/R_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1/Keel.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1/Tongue.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherBottom
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherTop
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1/L_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1/L_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1/L_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1/L_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1/L_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1/R_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1/R_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1/R_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1/R_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1/R_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/Tail.2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GlideLookAround
+      takeName: Take 001
+      firstFrame: 210
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: HarpyEagleDummy
+        weight: 1
+      - path: RootNode
+        weight: 1
+      - path: RootNode/Pelvis
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.1.1/L.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.2.1/L.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.3.1/L.Digit.3.2/L.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/L_Femur/L_Tibia/L_Tarsus.1/L_Tarsus.2/L.Digit.4.1/L.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.1.1/R.Digit.1.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.2.1/R.Digit.2.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.3.1/R.Digit.3.2/R.Digit.3.3
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1
+        weight: 1
+      - path: RootNode/Pelvis/R_Femur/R_Tibia/R_Tarsus.1/R_Tarsus.2/R.Digit.4.1/R.Digit.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.1.1/L_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_ScapularFeather.3.1/L_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.1.1/L_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.2.1/L_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Tertial.3.1/L_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.1.1/L_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.2.1/L_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.3.1/L_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.4.1/L_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.5.1/L_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_BasalPhalanx/L_Pimary.6.1/L_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.7.1/L_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.8.1/L_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.9.1/L_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Metacarpus/L_Pimary.10.1/L_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.1.1/L_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.2.1/L_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.3.1/L_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.4.1/L_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.5.1/L_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.6.1/L_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.7.1/L_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.8.1/L_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.9.1/L_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/L_Coracoid/L_Humerus/L_Ulna/L_Secondary.10.1/L_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Breast
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.4
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.1.1/R_ScapularFeather.5
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_ScapularFeather.3.1/R_ScapularFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.1.1/R_Tertial.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.2.1/R_Tertial.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Tertial.3.1/R_Tertial.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Covert.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Alula.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.1.1/R_Pimary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.2.1/R_Pimary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.3.1/R_Pimary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.4.1/R_Pimary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.5.1/R_Pimary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_BasalPhalanx/R_Pimary.6.1/R_Pimary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.7.1/R_Pimary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.8.1/R_Pimary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.9.1/R_Pimary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Metacarpus/R_Pimary.10.1/R_Pimary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.1.1/R_Secondary.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.2.1/R_Secondary.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.3.1/R_Secondary.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.4.1/R_Secondary.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.5.1/R_Secondary.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.6.1/R_Secondary.6.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.7.1/R_Secondary.7.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.8.1/R_Secondary.8.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.9.1/R_Secondary.9.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/R_Coracoid/R_Humerus/R_Ulna/R_Secondary.10.1/R_Secondary.10.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Keel.1/Keel.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/Beak/Tongue.1/Tongue.2
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/L_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_Eye
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_LowerEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_ThirdEyelid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/Head/R_UpperEyeLid
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_L.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.000
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.001
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.002
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.003
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.004
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.005
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.006
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeather_R.007
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherBottom
+        weight: 1
+      - path: RootNode/Pelvis/Spline.1/Spine.2/Spine.3/Neck.1/Neck.2/Neck..3/HeadFeatherTop
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.1.1/L_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.2.1/L_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.3.1/L_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.4.1/L_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/L_TailFeather.5.1/L_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.1.1/R_TailFeather.1.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.2.1/R_TailFeather.2.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.3.1/R_TailFeather.3.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.4.1/R_TailFeather.4.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/R_TailFeather.5.1/R_TailFeather.5.2
+        weight: 1
+      - path: RootNode/Pelvis/Tail.1/Tail.2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: RootNode
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

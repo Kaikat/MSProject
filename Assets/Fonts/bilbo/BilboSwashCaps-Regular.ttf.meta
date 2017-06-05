@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 96595eac0e3bb5f409790b6e7c73f191
+timeCreated: 1495767602
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bilbo Swash Caps
+  fontNames:
+  - Bilbo Swash Caps
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

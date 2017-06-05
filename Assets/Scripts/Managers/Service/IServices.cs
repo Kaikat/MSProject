@@ -20,4 +20,5 @@ public interface IServices
 
 	bool VerifyLogin (string username, string password);
 	string CreateAccount (string username, string name, string password, string email);
+	void UpdateAvatar (Avatar avatar);
 }

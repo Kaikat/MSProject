@@ -37,6 +37,8 @@ namespace JsonResponse
 	{
 		public string species;
 		public string name;
+		public string nahuatl_name;
+		public string spanish_name;
 		public string description;
 		public string habitat_level;
 		public float min_size;
@@ -79,15 +81,15 @@ namespace JsonResponse
 	[System.Serializable]
 	public class OwnedAnimalData
 	{
-		public string animal_species;
 		public int animal_id;
+		public string animal_species;
 		public string nickname;
+		public float height;
+		public float age;
+		public float weight;
 		public float health_1;
 		public float health_2;
 		public float health_3;
-		public float height;
-		public float weight;
-		public float age;
 	}
 		
 	[System.Serializable]
@@ -134,14 +136,14 @@ namespace JsonResponse
 		public int animal_id;
 		public string species;
 		public string encounter_type;
-		public float health_1;
-		public float health_2;
-		public float health_3;
-		public string encounter_date;
 		public string caught_date;
 		public float caught_health_1;
 		public float caught_health_2;
 		public float caught_health_3;
+		public string released_date;
+		public float released_health_1;
+		public float released_health_2;
+		public float released_health_3;
 	}
 
 	[System.Serializable]

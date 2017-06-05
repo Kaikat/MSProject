@@ -9,7 +9,7 @@ public class Player {
 	public string SessionKey;
 	public string Username { set; get; } //TODO: Make private again
 	public string Name { private set; get; }
-	public string Avatar { private set; get; }
+	public Avatar Avatar { private set; get; }
 	public int Currency { private set; get; }
 
 	public int AnimalsDiscovered { private set; get; }
@@ -35,7 +35,7 @@ public class Player {
 		Debug.LogWarning (fstring);
 	}
 
-	public Player(string username, string name, string avatar, int currency, int discovered, int caught, int released,
+	public Player(string username, string name, Avatar avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
 	{
@@ -54,7 +54,7 @@ public class Player {
 		AnimalsNursing = Animals.Count;
 	}
 
-	public Player(string name, string avatar, int currency, int discovered, int caught, int released,
+	public Player(string name, Avatar avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
 	{
@@ -72,7 +72,7 @@ public class Player {
 		AnimalsNursing = Animals.Count;
 	}
 
-	public Player(string name, string avatar, int currency,
+	public Player(string name, Avatar avatar, int currency,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
 	{
@@ -88,6 +88,11 @@ public class Player {
 		AnimalsCaught = ownedAnimals.Count + releasedAnimals.Count;
 		AnimalsReleased = releasedAnimals.Count;
 		AnimalsNursing = Animals.Count;
+	}
+
+	public void SetAvatar(Avatar avatar)
+	{
+		Avatar = avatar;
 	}
 
 	public void Destroy()
@@ -115,6 +120,16 @@ public class Player {
 		}
 
 		return false;
+	}
+
+	public bool isAnimalOwned(AnimalSpecies species)
+	{
+		return Animals.ContainsKey (species);
+	}
+
+	public bool hasReleasedAnimal(AnimalSpecies species)
+	{
+		return Animals.ContainsKey (species);
 	}
 
 	public void AddDiscoveredAnimal(AnimalSpecies species, string discovered_date)
