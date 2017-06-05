@@ -16,16 +16,14 @@ public class AnimalInformationLoader : MonoBehaviour
     }
 
     /// <summary>
-    /// Fills in fields for animal information, relying on globally set field.
+    /// Fills in fields for animal information, relying on GameStateManager.
     /// </summary>
-    /// <param name="animal"></param>
-    void SetTextFields(Animal animal)
+    void SetTextFields()
     {
-        // Get animal species name as string
-        string animalName = Service.Request.AnimalName(animal.Species);
+        Animal animal = GameStateManager.CurrentAnimal;
         // Populate fields
         AnimalImage.texture = Resources.Load<Texture>(animal.Species.ToString());
-        AnimalNameTitle.text = animalName;
+        AnimalNameTitle.text = Service.Request.AnimalName(animal.Species);
         AnimalDescription.text = Service.Request.AnimalDescription(animal.Species);
         // Populate health factors
         HealthFactor1.text = animal.Stats.Health1.ToString();
