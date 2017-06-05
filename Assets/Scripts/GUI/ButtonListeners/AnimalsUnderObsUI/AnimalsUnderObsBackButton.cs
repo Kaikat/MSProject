@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class IDButton : MonoBehaviour {
+public class AnimalsUnderObsBackButton : MonoBehaviour {
 
     public void Click()
     {
