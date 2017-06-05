@@ -1,16 +1,14 @@
 ﻿
 public enum ScreenType {
-
-	CreateAccount,
 	Login,
-	Home,
-	FakeHome,
-	WorkingHome,
+    CreateAccount,
+    Home,
 	IDCard,
     AnimalUnderObs,
     AnimalUnderObsDetail,
     CatchAnimal,
 	Journal,
+    JournalDetail,
 	Caught,
     Celebration,
     Failure,
