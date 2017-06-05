@@ -15,4 +15,5 @@ public enum ScreenType {
     Failure,
     Quiz,
     Gender,
+	GoMapHome,
 }

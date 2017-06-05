@@ -13,7 +13,7 @@ public enum GameEvent {
 	GPSInitialized,
 	AnimalEncounter,
 	AnimalCaught,
-
+    ViewingAnimalsUnderObservation,
 	QuizTime,
 
 	AccountCreationSuccess,

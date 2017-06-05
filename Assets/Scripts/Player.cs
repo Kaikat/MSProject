@@ -122,6 +122,16 @@ public class Player {
 		return false;
 	}
 
+	public bool isAnimalOwned(AnimalSpecies species)
+	{
+		return Animals.ContainsKey (species);
+	}
+
+	public bool hasReleasedAnimal(AnimalSpecies species)
+	{
+		return Animals.ContainsKey (species);
+	}
+
 	public void AddDiscoveredAnimal(AnimalSpecies species, string discovered_date)
 	{
 		if (!HasDiscoveredAnimal(species))

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8ca9448c85fc75444bd690aa9522b52d
+timeCreated: 1495767752
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Berner Basisschrift 2
+  fontNames:
+  - Berner Basisschrift 2
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -11,7 +11,7 @@ public class ScreenManager : MonoBehaviour {
 
 	void Start ()
 	{
-		Screen.orientation = ScreenOrientation.Landscape;
+		Screen.orientation = ScreenOrientation.Portrait;
 
 		screenMap = new Dictionary<ScreenType, TaggedShowHide> ();
 
@@ -19,9 +19,26 @@ public class ScreenManager : MonoBehaviour {
 		{
 			screenMap [screen.Tag] = screen;
 		}
+
+		InitializeScreensWithRaceConditions ();
 		screenMap [ActiveScreen].Show ();
 
 		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
+	}
+
+	private void InitializeScreensWithRaceConditions()
+	{
+		List<ScreenType> screens = new List<ScreenType> ();
+		screens.Add (ScreenType.CatchAnimal);
+		screens.Add (ScreenType.Celebration);
+		screens.Add (ScreenType.Failure);
+		screens.Add (ScreenType.AnimalUnderObs);
+
+		foreach (ScreenType screenType in screens) 
+		{
+			screenMap [screenType].Show ();
+			screenMap [screenType].Hide ();
+		}
 	}
 
 	public void ShowScreen(ScreenType screen)

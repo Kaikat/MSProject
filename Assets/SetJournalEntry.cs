@@ -58,7 +58,7 @@ public class SetJournalEntry : MonoBehaviour {
 		
 	private void SetDiscoveredEntry(JournalEntry entry)
 	{
-		Background.color = UIConstants.Red;
+		Background.color = UIConstants.Blue;
 		EncounterDate.text = entry.EncounterType.ToString() + " " + ConvertDate (entry.LatestEncounterDate.ToString ());
 		ReleaseDate.text = "";
 		Health1.text = "";

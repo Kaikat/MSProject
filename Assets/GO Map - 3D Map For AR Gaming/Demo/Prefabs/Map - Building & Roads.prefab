@@ -1,0 +1,211 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &106472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 409116}
+  - component: {fileID: 11498354}
+  - component: {fileID: 11481932}
+  m_Layer: 0
+  m_Name: Map - Building & Roads
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &409116
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11481932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62db0f303b541403292cf21c91b5bc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11498354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 106472}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2e3a95dab0a4efcab4bd5d59167548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationManager: {fileID: 0}
+  tileBuffer: 1
+  zoomLevel: 15
+  useCache: 1
+  mapzen_api_key: 
+  tileBackground: {fileID: 0}
+  tempTileBackgorund: {fileID: 0}
+  layers:
+  - name: Building
+    json: buildings
+    isPolygon: 1
+    useRealHeight: 1
+    defaultRendering:
+      kind: 
+      material: {fileID: 2100000, guid: 5acc6b59695db418eb21260832ba2000, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials:
+      - {fileID: 2100000, guid: bcded74918c79405fb00c5f2bbd0ae41, type: 2}
+      - {fileID: 2100000, guid: 24ce414c61efd4e099841a6d5e4feb56, type: 2}
+      - {fileID: 2100000, guid: 5acc6b59695db418eb21260832ba2000, type: 2}
+      lineWidth: 0
+      outlineWidth: 0
+      useStreetNames: 0
+      polygonHeight: 6
+      distanceFromFloor: 0
+      tag: 
+    renderingOptions: []
+    useOnly: []
+    avoid: []
+    useTunnels: 0
+    useBridges: 0
+    useColliders: 1
+    useLayerMask: 0
+    startInactive: 0
+    disabled: 0
+    OnFeatureLoad:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: GoMap.GOEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - name: Roads
+    json: roads
+    isPolygon: 0
+    useRealHeight: 0
+    defaultRendering:
+      kind: 
+      material: {fileID: 2100000, guid: 70ba2196d461b497a85aef384b920ed0, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials: []
+      lineWidth: 6
+      outlineWidth: 0.3
+      useStreetNames: 0
+      polygonHeight: 0
+      distanceFromFloor: 0
+      tag: 
+    renderingOptions:
+    - kind: highway
+      material: {fileID: 2100000, guid: 70ba2196d461b497a85aef384b920ed0, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials: []
+      lineWidth: 7
+      outlineWidth: 1.5
+      useStreetNames: 0
+      polygonHeight: 2
+      distanceFromFloor: 0
+      tag: 
+    - kind: major_road
+      material: {fileID: 2100000, guid: 70ba2196d461b497a85aef384b920ed0, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials: []
+      lineWidth: 6
+      outlineWidth: 1.5
+      useStreetNames: 0
+      polygonHeight: 1
+      distanceFromFloor: 0
+      tag: 
+    - kind: minor_road
+      material: {fileID: 2100000, guid: 70ba2196d461b497a85aef384b920ed0, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials: []
+      lineWidth: 5
+      outlineWidth: 1.5
+      useStreetNames: 0
+      polygonHeight: 1
+      distanceFromFloor: 0
+      tag: 
+    - kind: path
+      material: {fileID: 2100000, guid: 89553bd2b39824311a09774848d16ebc, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials: []
+      lineWidth: 1
+      outlineWidth: 1
+      useStreetNames: 0
+      polygonHeight: 1
+      distanceFromFloor: 0
+      tag: 
+    - kind: rail
+      material: {fileID: 2100000, guid: a79af60c8543847ea84096a8bbddcddd, type: 2}
+      outlineMaterial: {fileID: 0}
+      roofMaterial: {fileID: 0}
+      materials: []
+      lineWidth: 0.8
+      outlineWidth: 0
+      useStreetNames: 0
+      polygonHeight: 1.5
+      distanceFromFloor: 0
+      tag: 
+    useOnly: []
+    avoid:
+    - ferry
+    useTunnels: 0
+    useBridges: 0
+    useColliders: 1
+    useLayerMask: 0
+    startInactive: 0
+    disabled: 0
+    OnFeatureLoad:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: GoMap.GOEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  dynamicLoad: 0
+  textShader: {fileID: 0}
+  OnTileLoad:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SpawnBallons
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_TypeName: GoMap.GOTileEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  tiles: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 106472}
+  m_IsPrefabParent: 1
