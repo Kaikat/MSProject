@@ -57,7 +57,7 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 		}
 	}
 
-	public void OnHide()
+    public void OnHide()
 	{
 	}
 
