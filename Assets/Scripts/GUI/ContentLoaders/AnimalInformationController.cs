@@ -12,7 +12,8 @@ public class AnimalInformationController : MonoBehaviour
     public Text HealthFactor2;
     public Text HealthFactor3;
 
-    public Button button;
+    public Button BottomButton;
+    public Text ButtonText;
     
     // For passing information between screens, and handling state
     public const string ANIMAL = "ANIMAL";
@@ -23,25 +24,26 @@ public class AnimalInformationController : MonoBehaviour
     void Awake()
     {
         EventManager.RegisterEvent<Dictionary<string, object>>(GameEvent.ViewingAnimalInformation,
-                                                               SetAnimalAndCallingScreen);
+                                                               SetScreenContent);
     }
 
     void Destroy()
     {
         EventManager.UnregisterEvent<Dictionary<string,object>>(GameEvent.ViewingAnimalInformation,
-                                                                SetAnimalAndCallingScreen);
+                                                                SetScreenContent);
     }
 
-    private void SetAnimalAndCallingScreen(Dictionary<string, object> eventDict)
+    private void SetScreenContent(Dictionary<string, object> eventDict)
     {
         animal = eventDict[ANIMAL] as Animal;
         callingScreen = (ScreenType)eventDict[CALLING_SCREEN];
+        SetAnimalFieldsAndButton();
     }
 
     /// <summary>
     /// Fills in fields for animal information.
     /// </summary>
-    private void SetTextFields()
+    private void SetAnimalFieldsAndButton()
     {
         // Populate fields
         AnimalImage.texture = Resources.Load<Texture>(animal.Species.ToString());
@@ -51,6 +53,18 @@ public class AnimalInformationController : MonoBehaviour
         HealthFactor1.text = animal.Stats.Health1.ToString();
         HealthFactor2.text = animal.Stats.Health2.ToString();
         HealthFactor3.text = animal.Stats.Health3.ToString();
+        // Set behavior of button and text
+        BottomButton.onClick.AddListener(Click);
+        switch (callingScreen)
+        {
+            case ScreenType.AnimalUnderObs:
+            case ScreenType.Journal:
+                ButtonText.text = "Back";
+                break;
+            case ScreenType.CatchAnimal:
+                ButtonText.text = "Next";
+                break;
+        }
     }
 
     /// <summary>

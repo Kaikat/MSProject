@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class CatchAnimal : MonoBehaviour
 {
@@ -27,7 +27,12 @@ public class CatchAnimal : MonoBehaviour
 	{
 		CatchEncounteredAnimal ();
 		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		EventManager.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
+        EventManager.TriggerEvent(GameEvent.AnimalCaught, wildAnimal);
+        EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, new Dictionary<string, object>()
+        {
+            { AnimalInformationController.ANIMAL, wildAnimal },
+            { AnimalInformationController.CALLING_SCREEN, ScreenType.CatchAnimal}
+        });
 	}
 
 	void Destroy()

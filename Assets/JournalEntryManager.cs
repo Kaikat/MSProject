@@ -45,8 +45,8 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
                             { AnimalInformationController.ANIMAL, animal },
                             { AnimalInformationController.CALLING_SCREEN, ScreenType.Journal }
                         };
-                        EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
                         EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
+                        EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
                     });
 			}
 			else
