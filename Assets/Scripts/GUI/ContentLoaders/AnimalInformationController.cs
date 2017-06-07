@@ -41,7 +41,7 @@ public class AnimalInformationController : MonoBehaviour
     /// <summary>
     /// Fills in fields for animal information.
     /// </summary>
-    void SetTextFields()
+    private void SetTextFields()
     {
         // Populate fields
         AnimalImage.texture = Resources.Load<Texture>(animal.Species.ToString());
@@ -72,13 +72,13 @@ public class AnimalInformationController : MonoBehaviour
         }
     }
 
-    void ClickForAnimalUnderObs()
+    private void ClickForAnimalUnderObs()
     {
         EventManager.TriggerEvent(GameEvent.ViewingAnimalsUnderObservation, animal.Species);
         EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
     }
 
-    void ClickForCatchAnimal()
+    private void ClickForCatchAnimal()
     {
         if (Random.Range(0, 20) >= 15)
         {
@@ -92,7 +92,7 @@ public class AnimalInformationController : MonoBehaviour
         }
     }
 
-    void ClickForJournal()
+    private void ClickForJournal()
     {
         EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Journal);
     }
