@@ -14,6 +14,10 @@ public class AnimalInformationController : MonoBehaviour
 
     public Button BottomButton;
     public Text ButtonText;
+
+    public GameObject ConditionGraph;
+    private Vector3[] NewVertices;
+    private Vector2[] NewUV;
     
     // For passing information between screens, and handling state
     public const string ANIMAL = "ANIMAL";
@@ -65,6 +69,12 @@ public class AnimalInformationController : MonoBehaviour
                 ButtonText.text = "Next";
                 break;
         }
+        // Create triangles?
+        Mesh mesh = ConditionGraph.GetComponent<MeshFilter>().mesh;
+        mesh.Clear();
+        mesh.vertices = new Vector3[] { new Vector3(0, 0, 0), new Vector3(-50, 50, 0), new Vector3(50, 50, 0) };
+        mesh.uv = new Vector2[] { new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1) };
+        mesh.triangles = new int[] { 0, 1, 2 };
     }
 
     /// <summary>
