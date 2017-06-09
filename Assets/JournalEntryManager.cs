@@ -38,16 +38,16 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
                 // Create local copy of index to pass into closure
                 int _i = i;
                 JournalEntries[i].GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    Animal animal = journalAnimalObjects[journalEntryValues[_i].AnimalID];
+                    Dictionary<string, object> eventDict = new Dictionary<string, object>()
                     {
-                        Animal animal = journalAnimalObjects[journalEntryValues[_i].AnimalID];
-                        Dictionary<string, object> eventDict = new Dictionary<string, object>()
-                        {
-                            { AnimalInformationController.ANIMAL, animal },
-                            { AnimalInformationController.CALLING_SCREEN, ScreenType.Journal }
-                        };
-                        EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
-                        EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
-                    });
+                        { AnimalInformationController.ANIMAL, animal },
+                        { AnimalInformationController.CALLING_SCREEN, ScreenType.Journal }
+                    };
+                    EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
+                    EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
+                });
 			}
 			else
 			{

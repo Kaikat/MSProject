@@ -6,19 +6,19 @@ using UnityEngine.UI;
 
 public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener 
 {
-	public Camera BackgroundGUICamera;
-	public GameObject Grid;
+	//public Camera BackgroundGUICamera;
+	public GameObject AnimalGrid;
     public GameObject UIObjectScreen;
-    private AnimalSpecies animalSpecies;
 
-	private List<GameObject> rows = new List<GameObject> ();
+    private AnimalSpecies animalSpecies;
+    private bool isAnimalSpeciesSet = false;
+
+    private List<GameObject> rows = new List<GameObject> ();
 	private List<GameObject> animalModels = new List<GameObject>();
 
 	private const string ANIMAL_UNDER_OBS_PREFAB = "RowFab";
 	private const string PREFAB_FOLDER = "UIPrefabs";
-	private const int NUM_IMAGES = 4;
-
-	private bool isAnimalSpeciesSet = false;
+	private const int NUM_COLUMNS = 4;
 
     void Awake()
     {
@@ -46,35 +46,52 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
 		//TODO: This is messy and was for testing purposes
 		int totalAnimals = 0;
-		if (Service.Request.Player().isAnimalOwned(animalSpecies))
+        Player player = Service.Request.Player();
+		if (player.isAnimalOwned(animalSpecies))
 		{
-			GameObject parentlessPrefab = (GameObject)AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB);
-			List<Animal> ownedAnimals = Service.Request.Player().GetAnimals()[animalSpecies];
+			GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB) as GameObject;
+			List<Animal> ownedAnimals = player.GetAnimals()[animalSpecies];
 			totalAnimals = ownedAnimals.Count;
-			for (int i = 0; i < (ownedAnimals.Count / 4) + 1; i++) 
+
+			for (int i = 0; i < (ownedAnimals.Count / NUM_COLUMNS) + 1; i++) 
 			{
-				GameObject row = (GameObject)Instantiate(parentlessPrefab);
-				row.transform.SetParent (Grid.transform);
+				GameObject row = Instantiate(parentlessPrefab);
+				row.transform.SetParent (AnimalGrid.transform);
 				row.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
 				row.transform.localPosition = new Vector3 (0.0f, 0.0f, 0.0f);
 				rows.Add (row);
 			}
+            
+            for (int i = 0; i < ownedAnimals.Count || i < rows.Count * NUM_COLUMNS; i++)
+            {
+                int row = i / NUM_COLUMNS;
+                int col = i % NUM_COLUMNS;
+                if (i < ownedAnimals.Count)
+                {
+                    RawImage animalCard = rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col];
+                    GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
+                    Vector3 animalCardPosition = animalCard.transform.position;
+                    animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
+                    animalModel.transform.localScale = new Vector3(20.0f, 20.0f, 20.0f);
+                    animalModels.Add(animalModel);
 
-
-			int currentAnimal = 0;
-			for (int i = 0; i < rows.Count; i++) 
-			{
-				for (int cardID = 0; cardID < NUM_IMAGES && currentAnimal < totalAnimals; cardID++, currentAnimal++)
-				{
-					RawImage animalCard = rows [i].gameObject.GetComponent<RowInAnimalGrid> ().AnimalCards [cardID];
-					cardID = (cardID + 1) % 4;
-					GameObject animalModel = AssetManager.GetAnimalClone (animalSpecies);
-					Vector3 animalCardPosition = animalCard.transform.position;
-					animalModel.transform.position = new Vector3 (animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
-					animalModel.transform.localScale = new Vector3 (20.0f, 20.0f, 20.0f);
-					animalModels.Add (animalModel);
-				}
-			}
+                    int _i = i;
+                    animalCard.GetComponent<Button>().onClick.AddListener(() =>
+                    {
+                        Dictionary<string, object> eventDict = new Dictionary<string, object>()
+                        {
+                            { AnimalInformationController.ANIMAL, ownedAnimals[_i] },
+                            { AnimalInformationController.CALLING_SCREEN, ScreenType.AnimalUnderObs }
+                        };
+                        EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
+                        EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
+                    });
+                }
+                else
+                {
+                    rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col].enabled = false;
+                }
+            }
 		}
 
 		//TODO: Add the released animals to the cards
@@ -107,5 +124,6 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 			GameObject.Destroy (animal);
 		}
 		animalModels.Clear ();
+        isAnimalSpeciesSet = false;
     }
 }

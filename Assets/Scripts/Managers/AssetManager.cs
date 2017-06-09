@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public static class AssetManager
@@ -81,23 +80,21 @@ public static class AssetManager
 		return animal;
 	}
 
-	public static void ShowAnimal(AnimalSpecies species)
+	public static void ShowAnimal(AnimalSpecies speciesArg)
 	{
-		for (int i = 0; i < Species.Count; i++)
-		{
-			if (Species [i] == species)
-			{
-				AnimalModels [i].SetActive (true);
-			}
-		}
+        int index = Species.FindIndex(sp => sp == speciesArg);
+        if (index != -1)
+        {
+            AnimalModels[index].SetActive(true);
+        }
 	}
 
 	public static void HideAnimals()
 	{
-		for (int i = 0; i < AnimalModels.Count; i++)
-		{
-			AnimalModels [i].SetActive (false);
-		}
+        foreach (GameObject animalModel in AnimalModels)
+        {
+            animalModel.SetActive(false);
+        }
 	}
 
 	/*private static void LoadAllAnimalModels()
