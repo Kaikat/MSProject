@@ -12,4 +12,5 @@
     Quiz,
     Gender,
 	GoMapHome,
+    Tutorial
 }
