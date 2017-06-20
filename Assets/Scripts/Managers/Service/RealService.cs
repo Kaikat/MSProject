@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System;
-using System.Text;
-using System.Collections;
 using System.Collections.Generic;
 
 //TODO: GET RID OF USERNAME/SESSION KEY - The player already has it
@@ -30,9 +28,9 @@ public class RealService : IServices
 		GPSLocations = DataManager.Data.GetGPSLocations ();
 	}
 				
-	public string CreateAccount(string username, string name, string password, string email)
+	public string CreateAccount(string username, string name, string password, string email, string gender, DateTime birthday)
 	{
-		return DataManager.Data.CreateAccount (username.Trim ().ToLower(), name, password, email);
+		return DataManager.Data.CreateAccount(username.Trim().ToLower(), name, password, email, gender, birthday);
 	}
 
 	public bool VerifyLogin(string username, string password)

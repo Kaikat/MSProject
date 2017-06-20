@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System;
 using System.Text.RegularExpressions;
 
 public class AttemptCreateAccount : MonoBehaviour {
@@ -9,6 +9,10 @@ public class AttemptCreateAccount : MonoBehaviour {
 	public InputField Name;
 	public InputField Email;
 	public InputField Password;
+    public Text Gender;
+    public Text Day;
+    public Text Month;
+    public Text Year;
 
 	public Text ErrorLabel;
 
@@ -40,7 +44,12 @@ public class AttemptCreateAccount : MonoBehaviour {
 		}
 
 		string message = "";
-		message = Service.Request.CreateAccount (Username.text, Name.text, Password.text, Email.text);
+		message = Service.Request.CreateAccount(Username.text,
+                                                Name.text,
+                                                Password.text,
+                                                Email.text,
+                                                Gender.text,
+                                                new DateTime(Int32.Parse(Year.text), Int32.Parse(Month.text), Int32.Parse(Day.text)));
 		ErrorLabel.text = message;
 
 		if (message == "Account Created")

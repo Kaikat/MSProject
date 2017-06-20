@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public interface IDataManager
 {
 	Dictionary<AnimalSpecies, AnimalData> GetAllAnimalData();
-	string CreateAccount (string username, string name, string password, string email);
+	string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthday);
 	JsonResponse.LoginResponse ValidLogin(string username, string password);
 	List<AnimalLocation> GetGPSLocations();
 	Player GetPlayerData(string username);

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -49,9 +49,10 @@ public class AspNetDataManager : IDataManager
 		return Animals;
 	}
 
-	public string CreateAccount (string username, string name, string password, string email)
+	public string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthday)
 	{
-		AccountDetails accountDetails = new AccountDetails (username, name, password, email);
+        // TODO: implement gender and birthday handle
+        AccountDetails accountDetails = new AccountDetails (username, name, password, email);
 		BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + CREATE_ACCOUNT_CONTROLLER, JsonUtility.ToJson (accountDetails));
 
