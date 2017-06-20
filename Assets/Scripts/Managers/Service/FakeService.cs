@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -25,7 +26,7 @@ public class FakeService : IServices
 
 	private Player CurrentPlayer;
 
-	public string CreateAccount(string username, string name, string password, string email)
+	public string CreateAccount(string username, string name, string password, string email, string gender, DateTime birthdate)
 	{
 		string message = "";
 		List<string> emailList = new List<string> ();

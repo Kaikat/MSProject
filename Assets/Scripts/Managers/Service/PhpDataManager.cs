@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -52,7 +53,7 @@ public class PhpDataManager : IDataManager
 		return Animals;
 	}
 
-	public string CreateAccount (string username, string name, string password, string email)
+	public string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthdate)
 	{
 		BasicResponse response =  WebManager.GetHttpResponse<BasicResponse> (
 			HTTP_ADDRESS + CREATE_ACCOUNT + 
