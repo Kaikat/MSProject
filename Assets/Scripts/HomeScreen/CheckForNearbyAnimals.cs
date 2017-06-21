@@ -8,13 +8,15 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 	public GameObject GpsScriptHolder;
 	public RawImage MapImage;
 	private UpdateGPSLocation gpsScript;
-	bool animalOnScreen;
-
+	private bool animalOnScreen;
+	private bool allowUpdate;
 	void Awake()
 	{
+		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
 		EventManager.RegisterEvent (GameEvent.GPSInitialized, Init);
 		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
 		animalOnScreen = false;
+		allowUpdate = false;
 	}
 
 	public void Init()
@@ -28,10 +30,18 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		animalOnScreen = false;
 	}
 
+	public void SetUpdate(ScreenType screen)
+	{
+		if (screen == ScreenType.GoMapHome) 
+		{
+			allowUpdate = true;
+		}
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
-		if (gpsScript == null || animalOnScreen)
+		if (!allowUpdate || animalOnScreen)
 		{
 			return;
 		}
@@ -85,6 +95,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 
 	void Destroy()
 	{
+		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
 		EventManager.UnregisterEvent (GameEvent.GPSInitialized, Init);
 		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
 	}
