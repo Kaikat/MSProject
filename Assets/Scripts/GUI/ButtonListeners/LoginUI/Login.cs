@@ -21,7 +21,6 @@ public class Login : MonoBehaviour {
 			}
 			else
 			{
-				//EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Home);
 				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 			}
 		} 
