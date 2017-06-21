@@ -17,7 +17,7 @@ public class Login : MonoBehaviour {
 
 			if (Service.Request.Player ().Avatar == Avatar.Default)
 			{
-				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Gender);
+				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Tutorial);
 			}
 			else
 			{
