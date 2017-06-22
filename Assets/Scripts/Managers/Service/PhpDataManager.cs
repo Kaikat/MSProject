@@ -296,6 +296,11 @@ public class PhpDataManager : IDataManager
 	public void SendRatings(string sessionKey, List<InterestValue> interests)
 	{
 	}
+
+	public List<MajorLocation> GetRecommendations(string sessionKey, string username)
+	{
+		return new List<MajorLocation> ();
+	}
 }
 
 

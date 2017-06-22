@@ -27,9 +27,11 @@ public class AddGoLocations : MonoBehaviour
 		{
 			return;
 		}
-
+			
 		if (screen == ScreenType.GoMapHome) 
 		{
+			List<MajorLocation> playersRecommendations = Service.Request.GetRecommendations ();
+
 			foreach(AnimalLocation location in locations)
 			{
 				Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0.0f);
@@ -38,6 +40,21 @@ public class AddGoLocations : MonoBehaviour
 				go.transform.localScale = new Vector3 (2.0f, 2.0f, 2.0f);
 				go.transform.parent = transform;
 				go.name = location.Location.LocationName;
+
+				foreach (MajorLocation loc in playersRecommendations) 
+				{
+					if (loc.Location == location.Location.LocationName) 
+					{
+						var texture = new Texture2D(2, 2, TextureFormat.ARGB32, false);
+
+						texture.SetPixel(0, 0, Color.yellow);
+						texture.SetPixel(1, 0, Color.yellow);
+						texture.SetPixel(0, 1, Color.yellow);
+						texture.SetPixel(1, 1, Color.yellow);
+						texture.Apply();
+						go.GetComponent<Renderer>().material.mainTexture = texture;
+					}
+				}
 			}
 
 			stationsLoaded = true;

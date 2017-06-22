@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class MajorPreference 
 {
-	public Major Major;
+	public string Major;
 	public double Value;
 
 	public MajorPreference()
 	{
 	}
 
-	public MajorPreference(Major major, double value)
+	public MajorPreference(string major, double value)
 	{
 		Major = major;
 		Value = value;

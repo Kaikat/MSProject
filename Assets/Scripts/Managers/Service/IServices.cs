@@ -24,4 +24,5 @@ public interface IServices
 	void UpdateAvatar (Avatar avatar);
 
 	void SendPlayerRatings (List<InterestValue> playerInterests);
+	List<MajorLocation> GetRecommendations ();
 }

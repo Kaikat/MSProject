@@ -119,4 +119,9 @@ public class RealService : IServices
 	{
 		DataManager.Data.SendRatings (CurrentPlayer.SessionKey, playerInterests);
 	}
+
+	public List<MajorLocation> GetRecommendations ()
+	{
+		return DataManager.Data.GetRecommendations (CurrentPlayer.SessionKey, CurrentPlayer.Username);
+	}
 }

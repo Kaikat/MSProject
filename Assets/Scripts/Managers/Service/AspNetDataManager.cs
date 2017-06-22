@@ -331,13 +331,19 @@ public class AspNetDataManager : IDataManager
 		JsonResponse.BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER, JsonUtility.ToJson (data)
 		);
-
-
-
+			
 		string sentMessage = "RATINGS SENT: " + response.message;
-		var json = JsonUtility.ToJson (data);
-		json = "RESULTS: \n" + json;
+		Debug.LogWarning (sentMessage);
+	}
 
-		Debug.LogWarning (json);
+	//TODO: Change to sessionKey after fixing backend
+	public List<MajorLocation> GetRecommendations(string sessionKey, string username)
+	{
+		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username
+		);
+
+		Debug.LogWarning ("URLLLLLLLLL: " + WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username);
+		return recommendations.recommended_majors;
 	}
 }

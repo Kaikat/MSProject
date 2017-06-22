@@ -152,4 +152,10 @@ public class FakeService : IServices
 	public void SendPlayerRatings(List<InterestValue> playerInterests)
 	{
 	}
+
+	public List<MajorLocation> GetRecommendations ()
+	{
+		return new List<MajorLocation> ();
+	}
+
 }
