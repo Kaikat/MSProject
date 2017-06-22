@@ -8,18 +8,44 @@ public class AddGoLocations : MonoBehaviour
 	public GoMap.GOMap goMap;
 	public GameObject prefab;
 
+	private List<AnimalLocation> locations;
+	private bool stationsLoaded = false;
+
+	void Awake()
+	{
+		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, LoadStations);
+	}
+
 	void Start () 
 	{
-		List<AnimalLocation> locations = Service.Request.PlacesToVisit ();	
+		locations = Service.Request.PlacesToVisit ();	
+	}
 
-		foreach(AnimalLocation location in locations)
+	public void LoadStations(ScreenType screen)
+	{
+		if (stationsLoaded) 
 		{
-			Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0);
-			GameObject go = GameObject.Instantiate (prefab);
-			go.transform.localPosition = coordinates.convertCoordinateToVector(0);
-			go.transform.localScale = new Vector3 (2.0f, 2.0f, 2.0f);
-			go.transform.parent = transform;
-			go.name = location.Location.LocationName;
+			return;
 		}
+
+		if (screen == ScreenType.GoMapHome) 
+		{
+			foreach(AnimalLocation location in locations)
+			{
+				Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0.0f);
+				GameObject go = GameObject.Instantiate (prefab);
+				go.transform.localPosition = coordinates.convertCoordinateToVector();
+				go.transform.localScale = new Vector3 (2.0f, 2.0f, 2.0f);
+				go.transform.parent = transform;
+				go.name = location.Location.LocationName;
+			}
+
+			stationsLoaded = true;
+		}
+	}
+
+	void Destroy()
+	{
+		EventManager.UnregisterEvent<ScreenType> (GameEvent.SwitchScreen, LoadStations);
 	}
 }
