@@ -31,6 +31,7 @@ public class AspNetDataManager : IDataManager
 	private const string NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER = "notifyanimalencounter";
 	private const string GENERATE_ANIMAL_CONTROLLER = "generateanimal";
 	private const string ANIMAL_ENCOUNTERS_CONTROLLER = "animalencounters";
+	private const string RECOMMENDATIONS_CONTROLLER = "recommendation";
 
 	private const int JOURNAL_ENTRY_LIMIT = 5;
 
@@ -104,7 +105,7 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, 
+		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, playerData.survey,
 			GetPlayerAnimals(sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals(sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals(sessionKey));
 		//owned, released
 	}
@@ -316,5 +317,27 @@ public class AspNetDataManager : IDataManager
         journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
 
         return new List<JournalEntry>(journalEntries.Take(JOURNAL_ENTRY_LIMIT));
+	}
+
+	public void SendRatings(string sessionKey, List<InterestValue> interests)
+	{
+		SurveyData data = new SurveyData ();
+		data.session_key = sessionKey;
+		data.interests = new List<InterestData> ();
+		for (int i = 0; i < interests.Count; i++) 
+		{
+			data.interests.Add (new InterestData (interests [i].Interest.ToString (), interests [i].Value));
+		}
+		JsonResponse.BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER, JsonUtility.ToJson (data)
+		);
+
+
+
+		string sentMessage = "RATINGS SENT: " + response.message;
+		var json = JsonUtility.ToJson (data);
+		json = "RESULTS: \n" + json;
+
+		Debug.LogWarning (json);
 	}
 }

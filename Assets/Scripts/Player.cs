@@ -11,6 +11,7 @@ public class Player {
 	public string Name { private set; get; }
 	public Avatar Avatar { private set; get; }
 	public int Currency { private set; get; }
+	public bool Survey { get; set; } //TODO: Make private
 
 	public int AnimalsDiscovered { private set; get; }
 	public int AnimalsCaught { private set; get; }
@@ -43,6 +44,7 @@ public class Player {
 		Name = name;
 		Avatar = avatar;
 		Currency = currency;
+		Survey = false;
 
 		Animals = ownedAnimals;
 		ReleasedAnimals = releasedAnimals;
@@ -72,13 +74,14 @@ public class Player {
 		AnimalsNursing = Animals.Count;
 	}
 
-	public Player(string name, Avatar avatar, int currency,
+	public Player(string name, Avatar avatar, int currency, bool survey,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
 	{
 		Name = name;
 		Avatar = avatar;
 		Currency = currency;
+		Survey = survey;
 
 		Animals = ownedAnimals;
 		ReleasedAnimals = releasedAnimals;

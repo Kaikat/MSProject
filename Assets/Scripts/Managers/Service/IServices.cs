@@ -22,4 +22,6 @@ public interface IServices
 	bool VerifyLogin (string username, string password);
 	string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthdate);
 	void UpdateAvatar (Avatar avatar);
+
+	void SendPlayerRatings (List<InterestValue> playerInterests);
 }

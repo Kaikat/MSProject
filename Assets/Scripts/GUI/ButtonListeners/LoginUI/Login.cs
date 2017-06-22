@@ -15,7 +15,11 @@ public class Login : MonoBehaviour {
 			ErrorLabel.text = "Login Successful";
 			EventManager.TriggerEvent (GameEvent.LoginSuccessful);
 
-			if (Service.Request.Player ().Avatar == Avatar.Default)
+			if (!Service.Request.Player ().Survey) 
+			{
+				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Survey);
+			}
+			else if (Service.Request.Player ().Avatar == Avatar.Default)
 			{
 				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Tutorial);
 			}

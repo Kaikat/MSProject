@@ -148,4 +148,8 @@ public class FakeService : IServices
 	{
 		return new List<AnimalLocation> ();
 	}
+
+	public void SendPlayerRatings(List<InterestValue> playerInterests)
+	{
+	}
 }

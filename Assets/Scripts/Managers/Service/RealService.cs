@@ -114,4 +114,9 @@ public class RealService : IServices
 	{
 		return DataManager.Data.GetJournalEntryData (CurrentPlayer.SessionKey);
 	}
+
+	public void SendPlayerRatings(List<InterestValue> playerInterests)
+	{
+		DataManager.Data.SendRatings (CurrentPlayer.SessionKey, playerInterests);
+	}
 }

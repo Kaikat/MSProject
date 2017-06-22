@@ -24,6 +24,7 @@ namespace JsonResponse
 		public string name;
 		public string avatar;
 		public int currency;
+		public bool survey;
 	}
 
 	[System.Serializable]

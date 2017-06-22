@@ -22,4 +22,6 @@ public interface IDataManager
 	List<JournalEntry> GetJournalEntryData(string username);
 
 	void UpdateAvatar(string sessionKey, Avatar avatar);
+
+	void SendRatings(string sessionKey, List<InterestValue> interests);
 }

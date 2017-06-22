@@ -290,6 +290,12 @@ public class PhpDataManager : IDataManager
 
 		return finalJournalEntries;
 	}
+
+
+
+	public void SendRatings(string sessionKey, List<InterestValue> interests)
+	{
+	}
 }
 
 

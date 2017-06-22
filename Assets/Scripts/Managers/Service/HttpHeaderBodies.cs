@@ -56,4 +56,24 @@ namespace HttpHeaderBodies
 			health3 = -1.0f;
 		}
 	}
+
+	[System.Serializable]
+	public class InterestData
+	{
+		public string interest;
+		public int value;
+
+		public InterestData(string interestData, int valueData)
+		{
+			interest = interestData;
+			value = valueData;
+		}
+	}
+
+	[System.Serializable]
+	public class SurveyData
+	{
+		public string session_key;
+		public List<InterestData> interests;
+	}
 }
