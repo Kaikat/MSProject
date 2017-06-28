@@ -9,7 +9,8 @@ function Start() {
 // Make the character fade between an idle and a run animation 
 // when the player starts to move.
 function Update () {
-	if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1)
+	if (Mathf.Abs(Input.GetAxis("Vertical")) > 0.1 ||
+		Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1)
 		anim.CrossFade("run");
 	else
 		anim.CrossFade("idle");
