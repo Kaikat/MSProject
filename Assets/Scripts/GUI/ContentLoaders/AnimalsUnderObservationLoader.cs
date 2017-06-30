@@ -20,10 +20,15 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 	private const string PREFAB_FOLDER = "UIPrefabs";
 	private const int NUM_COLUMNS = 4;
 
+	Dictionary<AnimalSpecies, Vector3> AnimalScales;
+	Dictionary<AnimalSpecies, Vector3> AnimalRotations;
+
     void Awake()
     {
         EventManager.RegisterEvent<AnimalSpecies>(GameEvent.ViewingAnimalsUnderObservation, SetAnimalSpecies);
         UIObjectScreen.GetComponent<TaggedShowHide>().listener = this;
+		SetAnimalScales ();
+		SetAnimalRotations ();
     }
 
     void Destroy()
@@ -72,7 +77,9 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
                     GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
                     Vector3 animalCardPosition = animalCard.transform.position;
                     animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
-                    animalModel.transform.localScale = new Vector3(20.0f, 20.0f, 20.0f);
+					animalModel.transform.localScale = AnimalScales [animalSpecies];
+					animalModel.transform.localRotation = Quaternion.Euler(
+						AnimalRotations [animalSpecies].x, AnimalRotations[animalSpecies].y, AnimalRotations[animalSpecies].z);
                     animalModels.Add(animalModel);
 
                     int _i = i;
@@ -126,4 +133,56 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		animalModels.Clear ();
         isAnimalSpeciesSet = false;
     }
+
+	public void SetAnimalScales()
+	{
+		AnimalScales = new Dictionary<AnimalSpecies, Vector3> ();
+		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (3.0f, 3.0f, 3.0f));
+		AnimalScales.Add (AnimalSpecies.Bat, new Vector3 (3.0f, 3.0f, 3.0f));
+		AnimalScales.Add (AnimalSpecies.Butterfly, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Coyote, new Vector3 (15.0f, 15.0f, 15.0f));
+		AnimalScales.Add(AnimalSpecies.Datura, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Death, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Deer, new Vector3 (17.0f, 17.0f, 17.0f));
+		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Dragonfly, new Vector3 (80.0f, 80.0f, 80.0f));
+		AnimalScales.Add (AnimalSpecies.Earth, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (15.0f, 15.0f, 15.0f));
+		AnimalScales.Add (AnimalSpecies.Lizard, new Vector3 (45.0f, 45.0f, 45.0f));
+		AnimalScales.Add (AnimalSpecies.Mountainlion, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Rabbit, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Rain, new Vector3 (3.0f, 3.0f, 3.0f));
+		AnimalScales.Add (AnimalSpecies.Rattlesnake, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Redtailedhawk, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Shark, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Squirrel, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Water, new Vector3 (3.0f, 3.0f, 3.0f));
+		AnimalScales.Add (AnimalSpecies.Wind, new Vector3 (10.0f, 10.0f, 10.0f));
+	}
+
+	public void SetAnimalRotations()
+	{
+		AnimalRotations = new Dictionary<AnimalSpecies, Vector3> ();
+		AnimalRotations.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Bat, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Butterfly, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Coyote, new Vector3 (13.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Death, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Deer, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Dolphin, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Dragonfly, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Earth, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Heron, new Vector3 (0.0f, 200.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Lizard, new Vector3 (15.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Mountainlion, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rabbit, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rain, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rattlesnake, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Redtailedhawk, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Shark, new Vector3 (17.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, 270.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Water, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Wind, new Vector3 (12.0f, 180.0f, 0.0f));
+	}
 }
