@@ -132,7 +132,7 @@ public class Player {
 
 	public bool hasReleasedAnimal(AnimalSpecies species)
 	{
-		return Animals.ContainsKey (species);
+		return ReleasedAnimals.ContainsKey (species);
 	}
 
 	public void AddDiscoveredAnimal(AnimalSpecies species, string discovered_date)

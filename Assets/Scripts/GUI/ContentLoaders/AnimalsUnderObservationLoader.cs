@@ -15,6 +15,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
     private List<GameObject> rows = new List<GameObject> ();
 	private List<GameObject> animalModels = new List<GameObject>();
+	private List<RawImage> animalCards = new List<RawImage>();
 
 	private const string ANIMAL_UNDER_OBS_PREFAB = "RowFab";
 	private const string PREFAB_FOLDER = "UIPrefabs";
@@ -36,11 +37,37 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
         EventManager.UnregisterEvent<AnimalSpecies>(GameEvent.ViewingAnimalsUnderObservation, SetAnimalSpecies);
     }
 
-    private void SetAnimalSpecies(AnimalSpecies species)
-    {
-        animalSpecies = species;
-		isAnimalSpeciesSet = true;
-    }
+	public void OnHide()
+	{
+		foreach (RawImage card in animalCards) 
+		{
+			card.GetComponent<Button> ().onClick.RemoveAllListeners ();
+			GameObject.Destroy (card.GetComponent<Button> ().gameObject);
+		}
+		animalCards.Clear ();
+
+		//the row itself contains the raw image, so the row has to destroy it //ß
+		foreach (GameObject row in rows)
+		{
+			/*foreach (RawImage card in row.GetComponentsInChildren<RawImage>()) 
+			{
+				card.GetComponent<Button> ().onClick.RemoveAllListeners ();
+				Destroy (card.GetComponent<Button>().gameObject);
+			}*/
+			GameObject.Destroy(row);
+		}
+		rows.Clear();
+
+		foreach (GameObject animal in animalModels) 
+		{
+			GameObject.Destroy (animal);
+		}
+		animalModels.Clear ();
+
+
+
+		isAnimalSpeciesSet = false;
+	}
 
     public void OnShow()
     {
@@ -50,57 +77,37 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		}
 
 		//TODO: This is messy and was for testing purposes
-		int totalAnimals = 0;
         Player player = Service.Request.Player();
-		if (player.isAnimalOwned(animalSpecies))
-		{
-			GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB) as GameObject;
-			List<Animal> ownedAnimals = player.GetAnimals()[animalSpecies];
-			totalAnimals = ownedAnimals.Count;
+		List<Animal> ownedAnimals = player.isAnimalOwned (animalSpecies) ? player.GetAnimals () [animalSpecies] : new List<Animal> ();
+		List<Animal> releasedAnimals = player.hasReleasedAnimal (animalSpecies) ? player.GetReleasedAnimals () [animalSpecies] : new List<Animal> ();
+		CreateRows (ownedAnimals.Count, releasedAnimals.Count);
 
-			for (int i = 0; i < (ownedAnimals.Count / NUM_COLUMNS) + 1; i++) 
-			{
-				GameObject row = Instantiate(parentlessPrefab);
-				row.transform.SetParent (AnimalGrid.transform);
-				row.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
-				row.transform.localPosition = new Vector3 (0.0f, 0.0f, 0.0f);
-				rows.Add (row);
-			}
-            
-            for (int i = 0; i < ownedAnimals.Count || i < rows.Count * NUM_COLUMNS; i++)
+        //for (int i = 0; i < ownedAnimals.Count || i < rows.Count * NUM_COLUMNS; i++)
+		for (int i = 0; i < ownedAnimals.Count + releasedAnimals.Count; i++)
+        {
+            int row = i / NUM_COLUMNS;
+            int col = i % NUM_COLUMNS;
+
+            RawImage animalCard = rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col];
+			animalCard.texture = i >= ownedAnimals.Count ? Resources.Load<Texture> ("lab") : Resources.Load<Texture>("nature");
+            GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
+            Vector3 animalCardPosition = animalCard.transform.position;
+            animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
+			animalModel.transform.localScale = AnimalScales [animalSpecies];
+			animalModel.transform.localRotation = Quaternion.Euler(
+				AnimalRotations [animalSpecies].x, AnimalRotations[animalSpecies].y, AnimalRotations[animalSpecies].z);
+            animalModels.Add(animalModel);
+
+			//SetUpButtonListener (animalCard.GetComponent<Button>(), i < ownedAnimals.Count ? ownedAnimals[i] : releasedAnimals[i -  ownedAnimals.Count]);
+			animalCards.Add (animalCard);
+    	}
+
+		/*}
+            else
             {
-                int row = i / NUM_COLUMNS;
-                int col = i % NUM_COLUMNS;
-                if (i < ownedAnimals.Count)
-                {
-                    RawImage animalCard = rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col];
-                    GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
-                    Vector3 animalCardPosition = animalCard.transform.position;
-                    animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
-					animalModel.transform.localScale = AnimalScales [animalSpecies];
-					animalModel.transform.localRotation = Quaternion.Euler(
-						AnimalRotations [animalSpecies].x, AnimalRotations[animalSpecies].y, AnimalRotations[animalSpecies].z);
-                    animalModels.Add(animalModel);
-
-                    int _i = i;
-                    animalCard.GetComponent<Button>().onClick.AddListener(() =>
-                    {
-                        Dictionary<string, object> eventDict = new Dictionary<string, object>()
-                        {
-                            { AnimalInformationController.ANIMAL, ownedAnimals[_i] },
-                            { AnimalInformationController.CALLING_SCREEN, ScreenType.AnimalUnderObs }
-                        };
-                        EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
-                        EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
-                    });
-                }
-                else
-                {
-                    rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col].enabled = false;
-                }
-            }
-		}
-
+                rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col].enabled = false;
+            }*/
+		
 		//TODO: Add the released animals to the cards
 		//remember some owned animals were already added in front of some cards
 		//One idea would be to make a list of both owned and released animals with a bool per animal saying if it is currently owned.
@@ -118,23 +125,42 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		}    */  
     }
 
-	public void OnHide()
-    {
-		foreach (GameObject row in rows)
-        {
-			GameObject.Destroy(row);
-        }
-		rows.Clear();
+	private void SetAnimalSpecies(AnimalSpecies species)
+	{
+		animalSpecies = species;
+		isAnimalSpeciesSet = true;
+	}
+		
+	private void CreateRows(int numOwned, int numReleased)
+	{
+		GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB) as GameObject;
 
-		foreach (GameObject animal in animalModels) 
+		for (int i = 0; i < ((numOwned + numReleased) / NUM_COLUMNS) + 1; i++) 
 		{
-			GameObject.Destroy (animal);
+			GameObject row = Instantiate(parentlessPrefab);
+			row.transform.SetParent (AnimalGrid.transform);
+			row.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+			row.transform.localPosition = new Vector3 (0.0f, 0.0f, 0.0f);
+			rows.Add (row);
 		}
-		animalModels.Clear ();
-        isAnimalSpeciesSet = false;
-    }
+	}
 
-	public void SetAnimalScales()
+	private void SetUpButtonListener(Button button, Animal animal)
+	{
+		button.onClick.RemoveAllListeners ();
+		button.onClick.AddListener(() =>
+		{
+				Dictionary<string, object> eventDict = new Dictionary<string, object>()
+				{
+					{ AnimalInformationController.ANIMAL, animal },
+					{ AnimalInformationController.CALLING_SCREEN, ScreenType.AnimalUnderObs }
+				};
+				EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
+				EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
+		});
+	}
+
+	private void SetAnimalScales()
 	{
 		AnimalScales = new Dictionary<AnimalSpecies, Vector3> ();
 		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (3.0f, 3.0f, 3.0f));
@@ -160,7 +186,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		AnimalScales.Add (AnimalSpecies.Wind, new Vector3 (10.0f, 10.0f, 10.0f));
 	}
 
-	public void SetAnimalRotations()
+	private void SetAnimalRotations()
 	{
 		AnimalRotations = new Dictionary<AnimalSpecies, Vector3> ();
 		AnimalRotations.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 150.0f, 0.0f));
