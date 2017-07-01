@@ -26,16 +26,8 @@ public class CatchAnimal : MonoBehaviour
 	public void Click()
 	{
 		CatchEncounteredAnimal ();
-
 		EventManager.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
 		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-        
-		/*EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, new Dictionary<string, object>()
-        {
-            { AnimalInformationController.ANIMAL, wildAnimal },
-            { AnimalInformationController.CALLING_SCREEN, ScreenType.CatchAnimal}
-        });*/
-		
 		EventManager.TriggerEvent(GameEvent.AnimalCaught, wildAnimal);
 	}
 
@@ -45,3 +37,36 @@ public class CatchAnimal : MonoBehaviour
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, new Dictionary<string, object>()
+        {
+            { AnimalInformationController.ANIMAL, wildAnimal },
+            { AnimalInformationController.CALLING_SCREEN, ScreenType.CatchAnimal}
+        });*/

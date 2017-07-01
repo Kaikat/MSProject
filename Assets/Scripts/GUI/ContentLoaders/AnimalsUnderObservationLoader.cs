@@ -15,7 +15,6 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
     private List<GameObject> rows = new List<GameObject> ();
 	private List<GameObject> animalModels = new List<GameObject>();
-	//private List<RawImage> animalCards = new List<RawImage>();
 
 	private const string ANIMAL_UNDER_OBS_PREFAB = "RowFab2";
 	private const string PREFAB_FOLDER = "UIPrefabs";
@@ -39,21 +38,8 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
 	public void OnHide()
 	{
-		/*foreach (RawImage card in animalCards) 
-		{
-			card.GetComponent<Button> ().onClick.RemoveAllListeners ();
-			GameObject.Destroy (card.GetComponent<Button> ().gameObject);
-		}
-		animalCards.Clear ();*/
-
-		//the row itself contains the raw image, so the row has to destroy it //ß
 		foreach (GameObject row in rows)
 		{
-			/*foreach (RawImage card in row.GetComponentsInChildren<RawImage>()) 
-			{
-				card.GetComponent<Button> ().onClick.RemoveAllListeners ();
-				Destroy (card.GetComponent<Button>().gameObject);
-			}*/
 			GameObject.Destroy(row);
 		}
 		rows.Clear();
@@ -63,9 +49,6 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 			GameObject.Destroy (animal);
 		}
 		animalModels.Clear ();
-
-
-
 		isAnimalSpeciesSet = false;
 	}
 
@@ -82,7 +65,6 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		List<Animal> releasedAnimals = player.hasReleasedAnimal (animalSpecies) ? player.GetReleasedAnimals () [animalSpecies] : new List<Animal> ();
 		CreateRows (ownedAnimals.Count, releasedAnimals.Count);
 
-        //for (int i = 0; i < ownedAnimals.Count || i < rows.Count * NUM_COLUMNS; i++)
 		for (int i = 0; i < ownedAnimals.Count + releasedAnimals.Count; i++)
         {
             int row = i / NUM_COLUMNS;
@@ -93,7 +75,6 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 			animalCard.GetComponentInChildren<ObservedAnimalButton>().animal = 
 				i < ownedAnimals.Count ? ownedAnimals[i] : releasedAnimals[i -  ownedAnimals.Count];
             
-			//Animal anim = animalCard.GetComponentInChildren<ObservedAnimalButton> ().animal;
 			GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
             Vector3 animalCardPosition = animalCard.transform.position;
             animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
@@ -101,9 +82,6 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 			animalModel.transform.localRotation = Quaternion.Euler(
 				AnimalRotations [animalSpecies].x, AnimalRotations[animalSpecies].y, AnimalRotations[animalSpecies].z);
             animalModels.Add(animalModel);
-
-			//SetUpButtonListener (animalCard.GetComponent<Button>(), i < ownedAnimals.Count ? ownedAnimals[i] : releasedAnimals[i -  ownedAnimals.Count]);
-			//animalCards.Add (animalCard);
     	}
 
 		/*}
