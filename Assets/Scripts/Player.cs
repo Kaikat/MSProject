@@ -193,6 +193,29 @@ public class Player {
 		}
 		AnimalsReleased++;
 	}
+
+	public Animal GetAnimalBySpeciesAndID(AnimalSpecies species, int animalID)
+	{
+		List<Animal> animals = Animals [species];
+		foreach (Animal animal in animals) 
+		{
+			if (animal.AnimalID == animalID) 
+			{
+				return animal;
+			}
+		}
+
+		List<Animal> releasedAnimals = ReleasedAnimals [species];
+		foreach (Animal animal in releasedAnimals) 
+		{
+			if (animal.AnimalID == animalID) 
+			{
+				return animal;
+			}
+		}
+
+		return null;
+	}
 }
 
 

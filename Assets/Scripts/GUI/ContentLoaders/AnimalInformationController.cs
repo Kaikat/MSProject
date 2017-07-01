@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+//Moved to SetAnimalInformation.cs
 public class AnimalInformationController : MonoBehaviour
 {
     public RawImage AnimalImage;

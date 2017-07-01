@@ -17,6 +17,12 @@ public enum GameEvent {
     ViewingAnimalInformation,
 	QuizTime,
 
+
+	ObservedAnimalsPreviousScreen,
+
+
+
+
 	AccountCreationSuccess,
 	LoginSuccessful,
 }

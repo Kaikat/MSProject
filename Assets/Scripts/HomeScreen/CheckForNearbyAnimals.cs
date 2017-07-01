@@ -35,6 +35,10 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		if (screen == ScreenType.GoMapHome) 
 		{
 			allowUpdate = true;
+		} 
+		else 
+		{
+			allowUpdate = false;
 		}
 	}
 
@@ -75,7 +79,6 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 				}
 			}
 		}
-
 
 		/*
 		float currentDistance = Vector2.Distance (testp, currentLocation);

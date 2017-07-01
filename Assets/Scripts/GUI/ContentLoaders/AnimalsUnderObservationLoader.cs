@@ -15,9 +15,9 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
     private List<GameObject> rows = new List<GameObject> ();
 	private List<GameObject> animalModels = new List<GameObject>();
-	private List<RawImage> animalCards = new List<RawImage>();
+	//private List<RawImage> animalCards = new List<RawImage>();
 
-	private const string ANIMAL_UNDER_OBS_PREFAB = "RowFab";
+	private const string ANIMAL_UNDER_OBS_PREFAB = "RowFab2";
 	private const string PREFAB_FOLDER = "UIPrefabs";
 	private const int NUM_COLUMNS = 4;
 
@@ -39,12 +39,12 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
 	public void OnHide()
 	{
-		foreach (RawImage card in animalCards) 
+		/*foreach (RawImage card in animalCards) 
 		{
 			card.GetComponent<Button> ().onClick.RemoveAllListeners ();
 			GameObject.Destroy (card.GetComponent<Button> ().gameObject);
 		}
-		animalCards.Clear ();
+		animalCards.Clear ();*/
 
 		//the row itself contains the raw image, so the row has to destroy it //ß
 		foreach (GameObject row in rows)
@@ -90,7 +90,11 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
             RawImage animalCard = rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col];
 			animalCard.texture = i >= ownedAnimals.Count ? Resources.Load<Texture> ("lab") : Resources.Load<Texture>("nature");
-            GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
+			animalCard.GetComponentInChildren<ObservedAnimalButton>().animal = 
+				i < ownedAnimals.Count ? ownedAnimals[i] : releasedAnimals[i -  ownedAnimals.Count];
+            
+			//Animal anim = animalCard.GetComponentInChildren<ObservedAnimalButton> ().animal;
+			GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
             Vector3 animalCardPosition = animalCard.transform.position;
             animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
 			animalModel.transform.localScale = AnimalScales [animalSpecies];
@@ -99,7 +103,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
             animalModels.Add(animalModel);
 
 			//SetUpButtonListener (animalCard.GetComponent<Button>(), i < ownedAnimals.Count ? ownedAnimals[i] : releasedAnimals[i -  ownedAnimals.Count]);
-			animalCards.Add (animalCard);
+			//animalCards.Add (animalCard);
     	}
 
 		/*}
@@ -135,7 +139,8 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 	{
 		GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB) as GameObject;
 
-		for (int i = 0; i < ((numOwned + numReleased) / NUM_COLUMNS) + 1; i++) 
+		int numRows = (numOwned + numReleased) / NUM_COLUMNS + ((numOwned + numReleased) % NUM_COLUMNS > 0 ? 1 : 0);
+		for (int i = 0; i < numRows; i++) 
 		{
 			GameObject row = Instantiate(parentlessPrefab);
 			row.transform.SetParent (AnimalGrid.transform);

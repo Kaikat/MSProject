@@ -30,6 +30,7 @@ public class ScreenManager : MonoBehaviour {
 	{
 		List<ScreenType> screens = new List<ScreenType> ();
 		screens.Add (ScreenType.CatchAnimal);
+		screens.Add (ScreenType.Caught);
 		screens.Add (ScreenType.Celebration);
 		screens.Add (ScreenType.Failure);
 		screens.Add (ScreenType.AnimalUnderObs);

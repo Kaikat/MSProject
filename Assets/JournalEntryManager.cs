@@ -19,11 +19,11 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
         List<JournalEntry> journalEntryValues = Service.Request.PlayerJournal();
 
         // Get Animal objects if in Journal
-        Player player = Service.Request.Player();
+        /*Player player = Service.Request.Player();
         journalAnimalObjects = player.GetAnimals().Values.SelectMany(x => x)
                                      .Concat(player.GetReleasedAnimals().Values.SelectMany(x => x))
                                      .Where(an => journalEntryValues.Any(entry => entry.AnimalID == an.AnimalID))
-                                     .ToDictionary(x => x.AnimalID);
+                                     .ToDictionary(x => x.AnimalID);*/
 
 		for (int i = 0; i < JournalEntries.Count; i++)
 		{
@@ -36,7 +36,7 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 				JournalEntries[i].SetActive(true);
 
                 // Create local copy of index to pass into closure
-                int _i = i;
+                /*int _i = i;
                 JournalEntries[i].GetComponent<Button>().onClick.AddListener(() =>
                 {
                     Animal animal = journalAnimalObjects[journalEntryValues[_i].AnimalID];
@@ -47,7 +47,7 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
                     };
                     EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
                     EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
-                });
+                });*/
 			}
 			else
 			{
