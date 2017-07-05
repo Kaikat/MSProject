@@ -36,8 +36,8 @@ public class AddGoLocations : MonoBehaviour
 			{
 				Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0.0f);
 				GameObject go = GameObject.Instantiate (prefab);
-				go.transform.localPosition = coordinates.convertCoordinateToVector();
-				go.transform.localScale = new Vector3 (2.0f, 2.0f, 2.0f);
+				Vector3 coordinate = coordinates.convertCoordinateToVector();
+				go.transform.localPosition = new Vector3 (coordinate.x, coordinate.y + 5.0f, coordinate.z);
 				go.transform.parent = transform;
 				go.name = location.Location.LocationName;
 
