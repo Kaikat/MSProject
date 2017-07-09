@@ -196,21 +196,27 @@ public class Player {
 
 	public Animal GetAnimalBySpeciesAndID(AnimalSpecies species, int animalID)
 	{
-		List<Animal> animals = Animals [species];
-		foreach (Animal animal in animals) 
+		if (Animals.ContainsKey(species)) 
 		{
-			if (animal.AnimalID == animalID) 
+			List<Animal> animals = Animals [species];
+			foreach (Animal animal in animals) 
 			{
-				return animal;
+				if (animal.AnimalID == animalID) 
+				{
+					return animal;
+				}
 			}
 		}
 
-		List<Animal> releasedAnimals = ReleasedAnimals [species];
-		foreach (Animal animal in releasedAnimals) 
+		if (ReleasedAnimals.ContainsKey(species)) 
 		{
-			if (animal.AnimalID == animalID) 
+			List<Animal> releasedAnimals = ReleasedAnimals [species];
+			foreach (Animal animal in releasedAnimals) 
 			{
-				return animal;
+				if (animal.AnimalID == animalID) 
+				{
+					return animal;
+				}
 			}
 		}
 
