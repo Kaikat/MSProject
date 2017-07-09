@@ -29,7 +29,7 @@ public class AnimalImage : MonoBehaviour {
 
 	void SetAnimalImage(AnimalSpecies animal)
 	{
-		image.texture = Resources.Load<Texture> (animal.ToString());
+		image.texture = Resources.Load<Texture> (UIConstants.ANIMAL_IMAGE_PATH + animal.ToString());
 	}
 
 	void Update ()

@@ -51,7 +51,7 @@ public class AnimalInformationController : MonoBehaviour
     private void SetAnimalFieldsAndButton()
     {
         // Populate fields
-        AnimalImage.texture = Resources.Load<Texture>(animal.Species.ToString());
+		AnimalImage.texture = Resources.Load<Texture>(UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
         AnimalNameTitle.text = Service.Request.AnimalName(animal.Species);
         AnimalDescription.text = Service.Request.AnimalDescription(animal.Species);
         // Populate health factors

@@ -63,25 +63,32 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
         Player player = Service.Request.Player();
 		List<Animal> ownedAnimals = player.isAnimalOwned (animalSpecies) ? player.GetAnimals () [animalSpecies] : new List<Animal> ();
 		List<Animal> releasedAnimals = player.hasReleasedAnimal (animalSpecies) ? player.GetReleasedAnimals () [animalSpecies] : new List<Animal> ();
-		CreateRows (ownedAnimals.Count, releasedAnimals.Count);
+		int numRows = CreateRows (ownedAnimals.Count, releasedAnimals.Count);
 
-		for (int i = 0; i < ownedAnimals.Count + releasedAnimals.Count; i++)
+		for (int i = 0; i < numRows * NUM_COLUMNS; i++)
         {
             int row = i / NUM_COLUMNS;
             int col = i % NUM_COLUMNS;
 
-            RawImage animalCard = rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col];
-			animalCard.texture = i >= ownedAnimals.Count ? Resources.Load<Texture> ("lab") : Resources.Load<Texture>("nature");
-			animalCard.GetComponentInChildren<ObservedAnimalButton>().animal = 
-				i < ownedAnimals.Count ? ownedAnimals[i] : releasedAnimals[i -  ownedAnimals.Count];
+			if (i < ownedAnimals.Count + releasedAnimals.Count) 
+			{
+				RawImage animalCard = rows [row].gameObject.GetComponent<RowInAnimalGrid> ().AnimalCards [col];
+				animalCard.texture = i >= ownedAnimals.Count ? Resources.Load<Texture> ("lab") : Resources.Load<Texture> ("nature");
+				animalCard.GetComponentInChildren<ObservedAnimalButton> ().animal = 
+				i < ownedAnimals.Count ? ownedAnimals [i] : releasedAnimals [i - ownedAnimals.Count];
             
-			GameObject animalModel = AssetManager.GetAnimalClone(animalSpecies);
-            Vector3 animalCardPosition = animalCard.transform.position;
-            animalModel.transform.position = new Vector3(animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
-			animalModel.transform.localScale = AnimalScales [animalSpecies];
-			animalModel.transform.localRotation = Quaternion.Euler(
-				AnimalRotations [animalSpecies].x, AnimalRotations[animalSpecies].y, AnimalRotations[animalSpecies].z);
-            animalModels.Add(animalModel);
+				GameObject animalModel = AssetManager.GetAnimalClone (animalSpecies);
+				Vector3 animalCardPosition = animalCard.transform.position;
+				animalModel.transform.position = new Vector3 (animalCardPosition.x, animalCardPosition.y - 20.0f, animalCardPosition.z);
+				animalModel.transform.localScale = AnimalScales [animalSpecies];
+				animalModel.transform.localRotation = Quaternion.Euler (
+					AnimalRotations [animalSpecies].x, AnimalRotations [animalSpecies].y, AnimalRotations [animalSpecies].z);
+				animalModels.Add (animalModel);
+			} 
+			else 
+			{
+				rows [row].gameObject.GetComponent<RowInAnimalGrid> ().AnimalCards [col].enabled = false;
+			}
     	}
 
 		/*}
@@ -113,7 +120,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		isAnimalSpeciesSet = true;
 	}
 		
-	private void CreateRows(int numOwned, int numReleased)
+	private int CreateRows(int numOwned, int numReleased)
 	{
 		GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB) as GameObject;
 
@@ -126,6 +133,8 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 			row.transform.localPosition = new Vector3 (0.0f, 0.0f, 0.0f);
 			rows.Add (row);
 		}
+
+		return numRows;
 	}
 
 	private void SetUpButtonListener(Button button, Animal animal)

@@ -34,7 +34,7 @@ public class SetAnimalInformation : MonoBehaviour
 		Animal animal = screenData.Data as Animal;
 
 		// Populate fields
-		AnimalImage.texture = Resources.Load<Texture>(animal.Species.ToString());
+		AnimalImage.texture = Resources.Load<Texture>(UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
 		AnimalSpecies.text = Service.Request.AnimalName(animal.Species);
 		AnimalSpecies.text += "\n" + Service.Request.AnimalName(animal.Species);
 		AnimalSpecies.text += "\n" + Service.Request.AnimalName(animal.Species);

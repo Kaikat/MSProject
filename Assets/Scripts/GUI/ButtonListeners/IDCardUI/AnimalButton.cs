@@ -34,11 +34,11 @@ public class AnimalButton : MonoBehaviour {
 		if (animalName != UNKNOWN)
 		{
             clickable = true;
-            GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (Species.ToString ());
+			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (UIConstants.ANIMAL_IMAGE_PATH + Species.ToString ());
 		}
 		else
 		{
-			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (UNKNOWN);
+			GetComponent<Button> ().image.overrideSprite = Resources.Load<Sprite> (UIConstants.ANIMAL_IMAGE_PATH + UNKNOWN);
 		}
 	}
 
