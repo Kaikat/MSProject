@@ -7,6 +7,8 @@ public class SetAnimalInformation : MonoBehaviour
 {
 	public RawImage AnimalImage;
 	public Text AnimalSpecies;
+	public Text AnimalSpanishName;
+	public Text AnimalNahuatlName;
 	public Text AnimalDescription;
 
 	public Text HealthFactor1;
@@ -36,8 +38,9 @@ public class SetAnimalInformation : MonoBehaviour
 		// Populate fields
 		AnimalImage.texture = Resources.Load<Texture>(UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
 		AnimalSpecies.text = Service.Request.AnimalEnglishName(animal.Species);
-		AnimalSpecies.text += "\n" + Service.Request.AnimalSpanishName(animal.Species);
-		AnimalSpecies.text += "\n" + Service.Request.AnimalNahuatlName(animal.Species);
+		AnimalSpanishName.text = Service.Request.AnimalSpanishName(animal.Species);
+		AnimalNahuatlName.text = Service.Request.AnimalNahuatlName(animal.Species);
+
 		AnimalDescription.text = Service.Request.AnimalDescription(animal.Species);
 
 		// Populate health factors
