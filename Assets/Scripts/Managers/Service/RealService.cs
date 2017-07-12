@@ -81,9 +81,19 @@ public class RealService : IServices
 		return Animals [species].Description;
 	}
 
-	public string AnimalName(AnimalSpecies species)
+	public string AnimalEnglishName(AnimalSpecies species)
 	{
 		return Animals [species].Name;
+	}
+
+	public string AnimalSpanishName(AnimalSpecies species)
+	{
+		return Animals [species].SpanishName;
+	}
+
+	public string AnimalNahuatlName(AnimalSpecies species)
+	{
+		return Animals [species].NahuatlName;
 	}
 
 	public Animal AnimalToCatch(AnimalSpecies species)

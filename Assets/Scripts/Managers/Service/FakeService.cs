@@ -100,9 +100,19 @@ public class FakeService : IServices
 		return "I am an animal!";
 	}
 
-	public string AnimalName(AnimalSpecies species)
+	public string AnimalEnglishName(AnimalSpecies species)
 	{
-		return "animal name";
+		return "animal English name";
+	}
+
+	public string AnimalSpanishName(AnimalSpecies species)
+	{
+		return "animal Spanish name";
+	}
+
+	public string AnimalNahuatlName(AnimalSpecies species)
+	{
+		return "animal Nahuatl name";
 	}
 
 	public string[] PlayerData()

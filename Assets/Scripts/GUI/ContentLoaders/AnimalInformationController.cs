@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+//DEAD CODE
 //Moved to SetAnimalInformation.cs
 public class AnimalInformationController : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class AnimalInformationController : MonoBehaviour
     {
         // Populate fields
 		AnimalImage.texture = Resources.Load<Texture>(UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
-        AnimalNameTitle.text = Service.Request.AnimalName(animal.Species);
+		AnimalNameTitle.text = Service.Request.AnimalEnglishName(animal.Species);
         AnimalDescription.text = Service.Request.AnimalDescription(animal.Species);
         // Populate health factors
         HealthFactor1.text = animal.Stats.Health1.ToString();

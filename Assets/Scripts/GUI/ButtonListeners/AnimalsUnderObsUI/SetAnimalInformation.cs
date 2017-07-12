@@ -35,9 +35,9 @@ public class SetAnimalInformation : MonoBehaviour
 
 		// Populate fields
 		AnimalImage.texture = Resources.Load<Texture>(UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
-		AnimalSpecies.text = Service.Request.AnimalName(animal.Species);
-		AnimalSpecies.text += "\n" + Service.Request.AnimalName(animal.Species);
-		AnimalSpecies.text += "\n" + Service.Request.AnimalName(animal.Species);
+		AnimalSpecies.text = Service.Request.AnimalEnglishName(animal.Species);
+		AnimalSpecies.text += "\n" + Service.Request.AnimalSpanishName(animal.Species);
+		AnimalSpecies.text += "\n" + Service.Request.AnimalNahuatlName(animal.Species);
 		AnimalDescription.text = Service.Request.AnimalDescription(animal.Species);
 
 		// Populate health factors

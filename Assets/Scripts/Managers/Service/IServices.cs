@@ -7,7 +7,9 @@ public interface IServices
 	//Basic Data
 	Dictionary<AnimalSpecies, AnimalData> AllAnimals();
 	string AnimalDescription (AnimalSpecies species);
-	string AnimalName (AnimalSpecies species);
+	string AnimalEnglishName (AnimalSpecies species);
+	string AnimalSpanishName (AnimalSpecies species);
+	string AnimalNahuatlName (AnimalSpecies species);
 	List<AnimalLocation> PlacesToVisit();
 
 	Player Player();

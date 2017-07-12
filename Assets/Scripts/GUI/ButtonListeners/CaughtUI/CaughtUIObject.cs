@@ -18,7 +18,10 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void SetTextFields(Animal animal)
 	{
-		string animalName = Service.Request.AnimalName (animal.Species);
+		string animalName = Service.Request.AnimalEnglishName (animal.Species);
+		animalName += "\n" + Service.Request.AnimalSpanishName (animal.Species);
+		animalName += "\n" + Service.Request.AnimalNahuatlName (animal.Species);
+
 		AnimalImage.texture = Resources.Load<Texture> (UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
 		AnimalNameTitle.text = animalName;
 		AnimalDescription.text = Service.Request.AnimalDescription (animal.Species);

@@ -31,7 +31,7 @@ public class SetJournalEntry : MonoBehaviour {
 
 	public void SetJournalEntryElements(JournalEntry entry)
 	{
-		string animal_species = Service.Request.AnimalName (entry.Species);
+		string animal_species = Service.Request.AnimalEnglishName (entry.Species);
 		entryAnimal = Service.Request.Player ().GetAnimalBySpeciesAndID (entry.Species, entry.AnimalID);
 		Species.text = animal_species;
 		AnimalImage.texture = Resources.Load<Texture> (UIConstants.ANIMAL_IMAGE_PATH + entry.Species.ToString());
