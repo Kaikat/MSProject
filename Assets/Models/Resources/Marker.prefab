@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33818631501509158}
   - component: {fileID: 23054819685017096}
   m_Layer: 0
-  m_Name: Cube.002
+  m_Name: BaseMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 33577679653215976}
   - component: {fileID: 23145112969821394}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,8 +71,9 @@ GameObject:
   - component: {fileID: 4254117028924114}
   - component: {fileID: 33534233270597116}
   - component: {fileID: 23168262375131970}
+  - component: {fileID: 114421972745303094}
   m_Layer: 0
-  m_Name: Cylinder.002
+  m_Name: Banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89,7 +90,7 @@ GameObject:
   - component: {fileID: 33324636897503614}
   - component: {fileID: 23450042735019452}
   m_Layer: 0
-  m_Name: Cube.003
+  m_Name: BaseTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +107,7 @@ GameObject:
   - component: {fileID: 33995711419573822}
   - component: {fileID: 23948173243439510}
   m_Layer: 0
-  m_Name: Cube.001
+  m_Name: BaseBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,3 +423,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960393314411188}
   m_Mesh: {fileID: 4300006, guid: 12c864c4b978148519e6447247b73ceb, type: 3}
+--- !u!114 &114421972745303094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805226670661626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bace9c9fc8998487f975678bc46cb750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Banner: {fileID: 1805226670661626}

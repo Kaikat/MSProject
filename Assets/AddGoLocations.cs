@@ -31,7 +31,6 @@ public class AddGoLocations : MonoBehaviour
 		if (screen == ScreenType.GoMapHome) 
 		{
 			List<MajorLocation> playersRecommendations = Service.Request.GetRecommendations ();
-
 			foreach(AnimalLocation location in locations)
 			{
 				Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0.0f);
@@ -41,18 +40,23 @@ public class AddGoLocations : MonoBehaviour
 				go.transform.parent = transform;
 				go.name = location.Location.LocationName;
 
-				foreach (MajorLocation loc in playersRecommendations) 
+				//Top 7 recommendations will be color coded
+				//top 4 = gold, next 3 = blue, rest = green
+				//Already visited locations should be what color? gray? Or should it be a different asset?
+				//Making the asset not appear would make it hard if someone wanted to catch the same animal again.
+				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("green"));
+				for (int i = 0; i < playersRecommendations.Count; i++) 
 				{
-					if (loc.Location == location.Location.LocationName) 
+					if (playersRecommendations [i].Location == location.Location.LocationName) 
 					{
-						var texture = new Texture2D(2, 2, TextureFormat.ARGB32, false);
-
-						texture.SetPixel(0, 0, Color.yellow);
-						texture.SetPixel(1, 0, Color.yellow);
-						texture.SetPixel(0, 1, Color.yellow);
-						texture.SetPixel(1, 1, Color.yellow);
-						texture.Apply();
-						go.GetComponent<Renderer>().material.mainTexture = texture;
+						if (i < 3) 
+						{
+							go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
+						} 
+						else if (i <= 3 && i < 7) 
+						{
+							go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
+						} 
 					}
 				}
 			}
