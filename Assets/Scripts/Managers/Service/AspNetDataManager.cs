@@ -336,14 +336,57 @@ public class AspNetDataManager : IDataManager
 		Debug.LogWarning (sentMessage);
 	}
 
+	private int getIndexOfLocation(string location, List<MajorLocationData> majorListData)
+	{
+		for(int i = 0; i < majorListData.Count; i++)
+		{
+			if (majorListData[i].Location == location) 
+			{
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
 	//TODO: Change to sessionKey after fixing backend
-	public List<MajorLocation> GetRecommendations(string sessionKey, string username)
+	public Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey, string username)
 	{
 		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
 			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username
 		);
 
-		Debug.LogWarning ("URLLLLLLLLL: " + WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username);
-		return recommendations.recommended_majors;
+		//Debug.LogWarning ("URLLLLLLLLL: " + WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username);
+		List<MajorLocation> majorListing = recommendations.recommended_majors;
+		List<MajorLocationData> majorData = new List<MajorLocationData> ();
+
+		for (int i = 0; i < majorListing.Count; i++) 
+		{
+			int index = getIndexOfLocation (majorListing [i].Location, majorData);
+			if (index == -1) 
+			{
+				MajorLocationData data = new MajorLocationData (majorListing [i].MajorPreference, majorListing [i].Location);
+				majorData.Add (data);
+			} 
+			else 
+			{
+				majorData [index].MajorPreferences.Add (majorListing [i].MajorPreference);
+			}
+		}
+
+		foreach (MajorLocationData data in majorData) 
+		{
+			data.CalculateAverageValue ();
+		}
+
+		majorData.Sort ((y, x) => (x.AverageValue).CompareTo (y.AverageValue));
+		Dictionary<string, MajorLocationData> majorRecommendations = new Dictionary<string, MajorLocationData>();
+		for (int i = 0; i < majorData.Count; i++) 
+		{
+			majorData [i].Index = i;
+			majorRecommendations.Add(majorData[i].Location, majorData[i]);
+		}
+
+		return majorRecommendations;//recommendations.recommended_majors;
 	}
 }

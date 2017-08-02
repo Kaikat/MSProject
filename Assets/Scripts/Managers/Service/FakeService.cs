@@ -163,9 +163,9 @@ public class FakeService : IServices
 	{
 	}
 
-	public List<MajorLocation> GetRecommendations ()
+	public Dictionary<string, MajorLocationData> GetRecommendations ()
 	{
-		return new List<MajorLocation> ();
+		return new Dictionary<string, MajorLocationData> ();
 	}
 
 }

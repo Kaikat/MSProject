@@ -30,7 +30,7 @@ public class AddGoLocations : MonoBehaviour
 			
 		if (screen == ScreenType.GoMapHome) 
 		{
-			List<MajorLocation> playersRecommendations = Service.Request.GetRecommendations ();
+			Dictionary<string, MajorLocationData> playersRecommendations = Service.Request.GetRecommendations ();
 			foreach(AnimalLocation location in locations)
 			{
 				Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0.0f);
@@ -44,8 +44,25 @@ public class AddGoLocations : MonoBehaviour
 				//top 4 = gold, next 3 = blue, rest = green
 				//Already visited locations should be what color? gray? Or should it be a different asset?
 				//Making the asset not appear would make it hard if someone wanted to catch the same animal again.
-				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("green"));
-				for (int i = 0; i < playersRecommendations.Count; i++) 
+				if (Service.Request.Player ().isAnimalOwned (location.Animal) ||
+				    Service.Request.Player ().hasReleasedAnimal (location.Animal)) 
+				{
+					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
+				} 
+				else if (playersRecommendations [location.Location.LocationName].Index < 3) 
+				{
+					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
+				}
+				else if (playersRecommendations[location.Location.LocationName].Index >= 3 && 
+					playersRecommendations[location.Location.LocationName].Index < 7)
+				{
+					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
+				}
+				else 
+				{
+					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("green"));
+				}
+				/*for (int i = 0; i < playersRecommendations.Count; i++) 
 				{
 					if (playersRecommendations [i].Location == location.Location.LocationName) 
 					{
@@ -58,7 +75,7 @@ public class AddGoLocations : MonoBehaviour
 							go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
 						} 
 					}
-				}
+				}*/
 			}
 
 			stationsLoaded = true;
