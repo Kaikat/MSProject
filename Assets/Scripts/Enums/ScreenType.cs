@@ -13,5 +13,6 @@
     Gender,
 	GoMapHome,
     Tutorial,
-	Survey
+	Survey,
+	PlaceJournal,
 }

@@ -105,8 +105,9 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, playerData.survey,
-			GetPlayerAnimals(sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals(sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals(sessionKey));
+		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar> (), playerData.currency, playerData.survey,
+			GetPlayerAnimals (sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals (sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals (sessionKey),
+			GetRecommendations(sessionKey));
 		//owned, released
 	}
 
@@ -349,13 +350,13 @@ public class AspNetDataManager : IDataManager
 		return -1;
 	}
 
-	//TODO: Change to sessionKey after fixing backend
-	public Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey, string username)
+	//TODO: Fix this messy function
+	private Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)
 	{
 		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
-			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
-
+			
 		//Debug.LogWarning ("URLLLLLLLLL: " + WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username);
 		List<MajorLocation> majorListing = recommendations.recommended_majors;
 		List<MajorLocationData> majorData = new List<MajorLocationData> ();
@@ -388,5 +389,44 @@ public class AspNetDataManager : IDataManager
 		}
 
 		return majorRecommendations;//recommendations.recommended_majors;
+	}
+
+	public List<Venue> GetVenueList (string sessionKey)
+	{
+		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
+		);
+
+		List<MajorLocation> majorListing = recommendations.recommended_majors;
+		List<Venue> venues = new List<Venue> ();
+		List<AnimalLocation> animalListing = GetGPSLocations ();
+
+		//the problem is some locations have the same majors as other places
+		//and some places have more than one major
+		foreach(MajorLocation majorlocation in majorListing)
+		{
+			int index = venues.FindIndex(p => p.Location == majorlocation.Location);
+			if (index == -1) 
+			{
+				Venue venue = new Venue (majorlocation.Location, majorlocation.MajorPreference.Major.ToExactEnum<Major>());
+				venues.Add (venue);
+			} 
+			else 
+			{
+				venues [index].AddMajor (majorlocation.MajorPreference.Major.ToExactEnum<Major>());
+			}
+		}
+
+		foreach (AnimalLocation animallocation in animalListing) 
+		{
+			int index = venues.FindIndex(p => p.Location == animallocation.Location.LocationName);
+			if (index != -1) 
+			{
+				venues [index].SetDescription (animallocation.Location.Description);
+				venues [index].SetAnimal (animallocation.Animal);
+			}
+		}
+
+		return venues;
 	}
 }

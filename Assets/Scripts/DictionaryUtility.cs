@@ -13,4 +13,9 @@ public static class DictionaryUtility {
 	{
 		return (T)Enum.Parse (typeof(T), System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(enumString));
 	}
+
+	public static T ToExactEnum<T>(this string enumString) where T : struct, IConvertible
+	{
+		return (T)Enum.Parse(typeof(T), enumString);
+	}
 }

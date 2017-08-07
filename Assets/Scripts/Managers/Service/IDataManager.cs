@@ -24,5 +24,6 @@ public interface IDataManager
 	void UpdateAvatar(string sessionKey, Avatar avatar);
 
 	void SendRatings(string sessionKey, List<InterestValue> interests);
-	Dictionary<string, MajorLocationData> GetRecommendations (string sessionKey, string username);
+
+	List<Venue> GetVenueList (string sessionKey);
 }

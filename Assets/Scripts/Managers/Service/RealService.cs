@@ -21,11 +21,13 @@ public class RealService : IServices
 	Player CurrentPlayer;
 	Dictionary<AnimalSpecies, AnimalData> Animals;
 	List<AnimalLocation> GPSLocations;
+	//List<Venue> Venues;
 
 	private RealService() 
 	{
 		Animals = DataManager.Data.GetAllAnimalData ();
 		GPSLocations = DataManager.Data.GetGPSLocations ();
+		//Venues = DataManager.Data.GetVenues();
 	}
 				
 	public string CreateAccount(string username, string name, string password, string email, string gender, DateTime birthday)
@@ -130,8 +132,8 @@ public class RealService : IServices
 		DataManager.Data.SendRatings (CurrentPlayer.SessionKey, playerInterests);
 	}
 
-	public Dictionary<string, MajorLocationData> GetRecommendations ()
+	public List<Venue> AllVenues()
 	{
-		return DataManager.Data.GetRecommendations (CurrentPlayer.SessionKey, CurrentPlayer.Username);
+		return DataManager.Data.GetVenueList(CurrentPlayer.SessionKey);
 	}
 }

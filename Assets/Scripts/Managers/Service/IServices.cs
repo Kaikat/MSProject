@@ -26,5 +26,6 @@ public interface IServices
 	void UpdateAvatar (Avatar avatar);
 
 	void SendPlayerRatings (List<InterestValue> playerInterests);
-	Dictionary<string, MajorLocationData> GetRecommendations ();
+	//Dictionary<string, MajorLocationData> GetRecommendations ();
+	List<Venue> AllVenues();
 }

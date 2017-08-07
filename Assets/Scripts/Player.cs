@@ -21,6 +21,7 @@ public class Player {
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 	private Dictionary<AnimalSpecies, List<Animal>> ReleasedAnimals;
 	private List<DiscoveredAnimal> DiscoveredAnimals;
+	private Dictionary<string, MajorLocationData> Recommendations;
 
 	public void Print()
 	{
@@ -56,7 +57,8 @@ public class Player {
 		AnimalsNursing = Animals.Count;
 	}
 
-	public Player(string name, Avatar avatar, int currency, int discovered, int caught, int released,
+	//doesn't get called?
+	/*public Player(string name, Avatar avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
 	{
@@ -72,11 +74,11 @@ public class Player {
 		AnimalsCaught = caught;
 		AnimalsReleased = released;
 		AnimalsNursing = Animals.Count;
-	}
+	}*/
 
 	public Player(string name, Avatar avatar, int currency, bool survey,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
-		List<DiscoveredAnimal> discoveredAnimals)
+		List<DiscoveredAnimal> discoveredAnimals, Dictionary<string, MajorLocationData> recommendations)
 	{
 		Name = name;
 		Avatar = avatar;
@@ -91,11 +93,22 @@ public class Player {
 		AnimalsCaught = ownedAnimals.Count + releasedAnimals.Count;
 		AnimalsReleased = releasedAnimals.Count;
 		AnimalsNursing = Animals.Count;
+		Recommendations = recommendations;
 	}
 
 	public void SetAvatar(Avatar avatar)
 	{
 		Avatar = avatar;
+	}
+
+	public Dictionary<string, MajorLocationData>  GetRecommendations()
+	{
+		return Recommendations;
+	}
+
+	public int GetRecommendationIndex(string location)
+	{
+		return Recommendations [location].Index;
 	}
 
 	public void Destroy()

@@ -30,7 +30,9 @@ public class AddGoLocations : MonoBehaviour
 			
 		if (screen == ScreenType.GoMapHome) 
 		{
-			Dictionary<string, MajorLocationData> playersRecommendations = Service.Request.GetRecommendations ();
+			//Dictionary<string, MajorLocationData> playersRecommendations = Service.Request.GetRecommendations ();
+			Dictionary<string, MajorLocationData>  playersRecommendations = Service.Request.Player().GetRecommendations();
+
 			foreach(AnimalLocation location in locations)
 			{
 				Coordinates coordinates = new Coordinates (location.Location.Coordinate.x, location.Location.Coordinate.y, 0.0f);
@@ -49,33 +51,26 @@ public class AddGoLocations : MonoBehaviour
 				{
 					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
 				} 
-				else if (playersRecommendations [location.Location.LocationName].Index < 3) 
+				else if(playersRecommendations.ContainsKey(location.Location.LocationName))
 				{
-					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
-				}
-				else if (playersRecommendations[location.Location.LocationName].Index >= 3 && 
-					playersRecommendations[location.Location.LocationName].Index < 7)
-				{
-					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
-				}
-				else 
-				{
-					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("green"));
-				}
-				/*for (int i = 0; i < playersRecommendations.Count; i++) 
-				{
-					if (playersRecommendations [i].Location == location.Location.LocationName) 
+					if (playersRecommendations [location.Location.LocationName].Index < UIConstants.Recommended) 
 					{
-						if (i < 3) 
-						{
-							go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
-						} 
-						else if (i <= 3 && i < 7) 
-						{
-							go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
-						} 
+						go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
 					}
-				}*/
+					else if (playersRecommendations[location.Location.LocationName].Index >= UIConstants.Recommended && 
+				  			 playersRecommendations[location.Location.LocationName].Index < UIConstants.SomewhatRecommended)
+					{
+						go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
+					}
+					else 
+					{
+						go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("green"));
+					}
+				}
+				else
+				{
+					Debug.LogWarning ("ERROR KEY *" + location.Location.LocationName + "* was not in dictionary");
+				}
 			}
 
 			stationsLoaded = true;
