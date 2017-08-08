@@ -16,9 +16,13 @@ public class AttemptCreateAccount : MonoBehaviour {
 
 	public Text ErrorLabel;
 
-	private int USERNAME_MIN_LENGTH = 8;
+	private int USERNAME_MIN_LENGTH = 2;
+	private int USERNAME_MAX_LENGTH = 20;
 	private int NAME_MIN_LENGTH = 3;
-	private int PASSWORD_MIN_LENGTH = 8;
+	private int NAME_MAX_LENGTH = 20;
+	private int PASSWORD_MIN_LENGTH = 2;
+	private int PASSWORD_MAX_LENGTH = 20;
+	private int EMAIL_MAX_LENGTH = 40;
 
 	public void Click()
 	{
@@ -27,14 +31,34 @@ public class AttemptCreateAccount : MonoBehaviour {
 			ErrorLabel.text = "Username must be at least " + USERNAME_MIN_LENGTH.ToString() +  " characters long.";
 			return;
 		}
+		if (Username.text.Length > USERNAME_MAX_LENGTH) 
+		{
+			ErrorLabel.text = "Username must be less than " + USERNAME_MAX_LENGTH.ToString () + " characters long.";
+			return;
+		}
 		if (Name.text.Length < NAME_MIN_LENGTH) 
 		{
 			ErrorLabel.text = "Name must be at least " + NAME_MIN_LENGTH.ToString () + " characters long.";
 			return;
 		}
+		if (Name.text.Length > NAME_MAX_LENGTH)
+		{
+			ErrorLabel.text = "Name must be less than " + NAME_MAX_LENGTH.ToString () + " characters long.";
+			return;
+		}
 		if (Password.text.Length < PASSWORD_MIN_LENGTH) 
 		{
 			ErrorLabel.text = "Password must be at least " + PASSWORD_MIN_LENGTH.ToString () + " characters long.";
+			return;
+		}
+		if (Password.text.Length > PASSWORD_MAX_LENGTH)
+		{
+			ErrorLabel.text = "Password must be less than " + PASSWORD_MAX_LENGTH.ToString () + " characters long.";
+			return;
+		}
+		if (Email.text.Length > EMAIL_MAX_LENGTH)
+		{
+			ErrorLabel.text = "Email must be less than " + EMAIL_MAX_LENGTH.ToString () + " characters long.";
 			return;
 		}
 		if (!ValidEmailAddress (Email.text))
