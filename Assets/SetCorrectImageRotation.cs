@@ -14,7 +14,7 @@ public class SetCorrectImageRotation : MonoBehaviour {
 
 		#if UNITY_ANDROID
 		//debugText.text = "I'm an android phone!";
-		transform.localRotation = Quaternion.Euler(90.0f, 0.0f, 180.0f);
+		transform.localRotation = Quaternion.Euler(90.0f, 0.0f, 270.0f);
 		#endif
 	}
 
