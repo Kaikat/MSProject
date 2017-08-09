@@ -15,5 +15,5 @@ public static class UIConstants
 	public static Color Beige = new Color(250.0f/255.0f, 241.0f/255.0f, 207.0f/255.0f);
 
 	public static int Recommended = 3;
-	public static int SomewhatRecommended = 7;
+	public static int SomewhatRecommended = 5;
 }
