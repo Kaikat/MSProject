@@ -23,14 +23,18 @@ public class AddGoLocations : MonoBehaviour
 
 	public void LoadStations(ScreenType screen)
 	{
-		if (stationsLoaded) 
+		if (stationsLoaded)
 		{
 			return;
 		}
 			
 		if (screen == ScreenType.GoMapHome) 
 		{
-			//Dictionary<string, MajorLocationData> playersRecommendations = Service.Request.GetRecommendations ();
+			if (!Service.Request.Player ().Survey)
+			{
+				return;
+			}
+
 			Dictionary<string, MajorLocationData>  playersRecommendations = Service.Request.Player().GetRecommendations();
 
 			foreach(AnimalLocation location in locations)

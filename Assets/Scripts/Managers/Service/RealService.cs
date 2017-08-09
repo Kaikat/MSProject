@@ -130,6 +130,8 @@ public class RealService : IServices
 	public void SendPlayerRatings(List<InterestValue> playerInterests)
 	{
 		DataManager.Data.SendRatings (CurrentPlayer.SessionKey, playerInterests);
+		CurrentPlayer.Survey = true;
+		CurrentPlayer.SetRecommendations (DataManager.Data.GetRecommendations (CurrentPlayer.SessionKey));
 	}
 
 	public List<Venue> AllVenues()

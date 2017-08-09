@@ -26,4 +26,6 @@ public interface IDataManager
 	void SendRatings(string sessionKey, List<InterestValue> interests);
 
 	List<Venue> GetVenueList (string sessionKey);
+
+	Dictionary<string, MajorLocationData> GetRecommendations (string sessionKey);
 }

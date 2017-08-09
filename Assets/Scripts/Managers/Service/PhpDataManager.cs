@@ -297,7 +297,7 @@ public class PhpDataManager : IDataManager
 	{
 	}
 
-	private Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)
+	public Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)
 	{
 		return new Dictionary<string, MajorLocationData> ();
 	}

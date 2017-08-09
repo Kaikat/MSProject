@@ -101,6 +101,11 @@ public class Player {
 		Avatar = avatar;
 	}
 
+	public void SetRecommendations(Dictionary<string, MajorLocationData> recommendations)
+	{
+		Recommendations = recommendations;
+	}
+
 	public Dictionary<string, MajorLocationData>  GetRecommendations()
 	{
 		return Recommendations;

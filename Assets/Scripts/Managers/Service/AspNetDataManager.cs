@@ -351,7 +351,7 @@ public class AspNetDataManager : IDataManager
 	}
 
 	//TODO: Fix this messy function
-	private Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)
+	public Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)
 	{
 		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
 			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
