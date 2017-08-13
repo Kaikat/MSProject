@@ -5,6 +5,8 @@ using UnityEngine;
 public static class UIConstants 
 {
 	public static string ANIMAL_IMAGE_PATH = "AmateAnimals/";
+	public static readonly string USERNAME_FILE = "tamuyalusername.txt";
+
 	public static Color Red = new Color (227.0f / 255.0f, 27.0f / 255.0f, 69.0f / 255.0f);
 	public static Color Orange = new Color(223.0f/255.0f, 124.0f/255.0f, 35.0f/255.0f);
 	public static Color Yellow = new Color(250.0f/255.0f, 192.0f/255.0f, 17.0f/255.0f);

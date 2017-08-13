@@ -78,6 +78,8 @@ public class AttemptCreateAccount : MonoBehaviour {
 
 		if (message == "Account Created")
 		{
+			TextFile.Write (UIConstants.USERNAME_FILE, Username.text);
+
 			Username.text = "";
 			Name.text = "";
 			Email.text = "";

@@ -13,6 +13,8 @@ public class Login : MonoBehaviour {
 		if (Service.Request.VerifyLogin (Username.text, Password.text)) 
 		{
 			ErrorLabel.text = "Login Successful";
+			TextFile.Write (UIConstants.USERNAME_FILE, Username.text);
+
 			EventManager.TriggerEvent (GameEvent.LoginSuccessful);
 
 			if (!Service.Request.Player ().Survey) 
