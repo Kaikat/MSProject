@@ -306,6 +306,12 @@ public class PhpDataManager : IDataManager
 	{
 		return new List<Venue> ();
 	}
+
+
+
+	public void RequestDirections(){
+	}
+
 }
 
 

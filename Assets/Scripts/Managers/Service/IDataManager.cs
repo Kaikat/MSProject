@@ -28,4 +28,9 @@ public interface IDataManager
 	List<Venue> GetVenueList (string sessionKey);
 
 	Dictionary<string, MajorLocationData> GetRecommendations (string sessionKey);
+
+
+
+
+	void RequestDirections ();
 }

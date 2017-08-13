@@ -5,6 +5,9 @@ using UnityEngine;
 
 using JsonResponse;
 using HttpHeaderBodies;
+using MapzenJson;
+using System.Text;
+using System.Collections;
 
 public class AspNetDataManager : IDataManager
 {
@@ -428,5 +431,32 @@ public class AspNetDataManager : IDataManager
 		}
 
 		return venues;
+	}
+
+	public void RequestDirections()
+	{
+		//TODO: Work in progress
+		string address = "https://valhalla.mapzen.com/route?json={%22locations%22:" +
+			"[{%22lat%22:34.414064," +
+			"%22lon%22:-119.847391}," +
+			"{%22lat%22:34.412744," +
+			"%22lon%22:-119.848396}]," +
+			"%22costing%22:%22pedestrian%22," +
+			"%22directions_options%22:{%22units%22:%22miles%22}," +
+			"%22id%22:%22my_work_route%22}&api_key=";
+
+		address += Keys.MapZenKey;
+		Debug.LogWarning (address);
+		MapZenResponse response = WebManager.GetHttpResponse<MapZenResponse> (address);
+
+		string resultingPoints = "";
+		List<Vector2> polyline = PolylineDecoder.ExtractPolyLine(response.trip.legs [0].shape);
+		foreach (Vector2 line in polyline)
+		{
+			resultingPoints += line.x + ", " + line.y + ", ";
+		}
+		Debug.LogWarning (resultingPoints);
+		//"For n number of break locations, there are n-1 legs. Through locations do not create separate legs."
+		//return ;
 	}
 }
