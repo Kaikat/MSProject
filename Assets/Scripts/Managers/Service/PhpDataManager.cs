@@ -309,7 +309,9 @@ public class PhpDataManager : IDataManager
 
 
 
-	public void RequestDirections(){
+	public List<Vector2> RequestDirections(List<Vector2> placesToVisit)
+	{
+		return new List<Vector2> ();
 	}
 
 }

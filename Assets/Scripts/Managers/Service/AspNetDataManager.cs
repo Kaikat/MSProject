@@ -433,30 +433,48 @@ public class AspNetDataManager : IDataManager
 		return venues;
 	}
 
-	public void RequestDirections()
+	public List<Vector2> RequestDirections(List<Vector2> placesToVisit)
 	{
 		//TODO: Work in progress
+		string LATITUDE = "{%22lat%22:";
+		string LONGITUDE = ",%22lon%22:";
+		string END = ",%22type%22:%22through%22}";
+
 		string address = "https://valhalla.mapzen.com/route?json={%22locations%22:" +
-			"[{%22lat%22:34.414064," +
-			"%22lon%22:-119.847391}," +
-			"{%22lat%22:34.412744," +
-			"%22lon%22:-119.848396}]," +
+		                 "[";
+		string points = string.Empty;
+		for (int i = 1; i < placesToVisit.Count; i++)
+		{
+			points += LATITUDE + placesToVisit [i].x.ToString () + LONGITUDE + placesToVisit [i].y.ToString () + END;
+			if (i != placesToVisit.Count - 1)
+			{
+				points += ",";
+			}
+		}
+			//"{%22lat%22:34.414064," + "%22lon%22:-119.847391}," +
+			//"{%22lat%22:34.412744," + "%22lon%22:-119.848396}" + 
+
+		points += "]," +
 			"%22costing%22:%22pedestrian%22," +
 			"%22directions_options%22:{%22units%22:%22miles%22}," +
-			"%22id%22:%22my_work_route%22}&api_key=";
-
-		address += Keys.MapZenKey;
-		Debug.LogWarning (address);
+			"%22id%22:%22recommended_route%22}&api_key=";
+		address += points + Keys.MapZenKey;
+		//address += Keys.MapZenKey;
+		Debug.LogWarning ("ADDRESS: " + address);
 		MapZenResponse response = WebManager.GetHttpResponse<MapZenResponse> (address);
 
-		string resultingPoints = "";
 		List<Vector2> polyline = PolylineDecoder.ExtractPolyLine(response.trip.legs [0].shape);
+
+		string resultingPoints = "";
 		foreach (Vector2 line in polyline)
 		{
 			resultingPoints += line.x + ", " + line.y + ", ";
 		}
-		Debug.LogWarning (resultingPoints);
+		Debug.LogWarning ("RESULTING POINTS: " + resultingPoints);
+
 		//"For n number of break locations, there are n-1 legs. Through locations do not create separate legs."
 		//return ;
+
+		return polyline;
 	}
 }

@@ -43,6 +43,22 @@ namespace MapzenJson
 		public double lon;
 		public double lat;
 		public string type;
+
+		/*public string heading;
+		public string heading_tolerance;
+		public string way_id;
+		public string minimum_reachability;
+		public string radius;
+		public string name;
+		public string city;
+		public string state;
+		public string postal_code;
+		public string country;
+		public string phone;
+		public string url;*/
+
+		public string side_of_street;
+		public string date_time;
 	}
 
 	[System.Serializable]

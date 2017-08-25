@@ -10,6 +10,7 @@ public class ShowPath : MonoBehaviour
 	public Text PathButtonText;
 	public GameObject PlayerAvatar;
 	public Material Material;
+	public UpdateGPSLocation PlayerGPSLocation;
 
 	private List<GameObject> LinePath;
 	private const string SHOW_PATH = "Show\nPath";
@@ -53,9 +54,57 @@ public class ShowPath : MonoBehaviour
 		pathPoints.Add(new Vector2(34.41277f, -119.8484f));
 	}
 
+	public List<Vector2> PotentialPlacesToVisit()
+	{
+		List<Vector2> potentialVisits = new List<Vector2> ();
+		potentialVisits.Add(PlayerGPSLocation.GetCoordinate ());
+
+		Dictionary<string, MajorLocationData> recommendations = Service.Request.Player ().GetRecommendations ();
+		List<AnimalLocation> placesNotVisited = Service.Request.Player ().GetUndiscoveredPlaces ();
+
+		List<MajorLocationData> notVisitedData = new List<MajorLocationData> ();
+		foreach (AnimalLocation location in placesNotVisited)
+		{
+			notVisitedData.Add (recommendations [location.Location.LocationName]);
+		}
+
+		notVisitedData.Sort ((x, y) => (x.Index).CompareTo (y.Index));
+
+		foreach (MajorLocationData location in notVisitedData)
+		{
+			if (potentialVisits.Count < UIConstants.TOP_LOCATIONS_TO_CHOOSE_FROM + 1)
+			{
+				potentialVisits.Add (GetCoordinateFor(location.Location, placesNotVisited));
+			}
+		}
+
+		return potentialVisits;
+	}
+
+	private Vector2 GetCoordinateFor(string locationName, List<AnimalLocation> places)
+	{
+		foreach (AnimalLocation place in places)
+		{
+			if (place.Location.LocationName == locationName)
+			{
+				return place.Location.Coordinate;
+			}
+		}
+
+		return new Vector2 ();
+	}
+
 	public void DrawPath()
 	{
-		DataManager.Data.RequestDirections ();
+		List<Vector2> places = PotentialPlacesToVisit ();
+		string result = "TO VISIT: ";
+		foreach (Vector2 place in places)
+		{
+			result += place.x + ", " + place.y + "\n";
+		}
+		Debug.LogWarning (result);
+
+		List<Vector2> pathToTake = DataManager.Data.RequestDirections (places);
 
 		/*GameObject path = new GameObject();
 		path.transform.position = PlayerAvatar.transform.position;
@@ -82,7 +131,7 @@ public class ShowPath : MonoBehaviour
 
 
 		int i = 1;
-		foreach (Vector2 p in pathPoints)
+		foreach (Vector2 p in pathToTake)
 		{
 			Coordinates coordinates = new Coordinates (p.x, p.y, 0.0f);
 			Vector3 coordinate = coordinates.convertCoordinateToVector ();
@@ -102,7 +151,6 @@ public class ShowPath : MonoBehaviour
 		GameObject lineObject = new GameObject();
 		lineObject.transform.position = PlayerAvatar.transform.position;
 		lineObject.AddComponent<LineRenderer>();
-		//LineRenderer 
 		lr = lineObject.GetComponent<LineRenderer>();
 		lr.material = Material;
 		lr.SetColors(UIConstants.Red, UIConstants.Red);

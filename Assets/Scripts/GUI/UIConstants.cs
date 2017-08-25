@@ -18,4 +18,6 @@ public static class UIConstants
 
 	public static int Recommended = 3;
 	public static int SomewhatRecommended = 5;
+
+	public static int TOP_LOCATIONS_TO_CHOOSE_FROM = 10;
 }

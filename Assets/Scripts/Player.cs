@@ -37,6 +37,7 @@ public class Player {
 		Debug.LogWarning (fstring);
 	}
 
+	//TODO: ONLY USED BY OLD STUFF. Should be using the new constructor.
 	public Player(string username, string name, Avatar avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
@@ -94,6 +95,38 @@ public class Player {
 		AnimalsReleased = releasedAnimals.Count;
 		AnimalsNursing = Animals.Count;
 		Recommendations = recommendations;
+	}
+
+	public List<AnimalLocation> GetDiscoveredPlaces()
+	{
+		List<AnimalLocation> visitedPlaces = new List<AnimalLocation> ();
+		List<AnimalLocation> allPlaces = Service.Request.PlacesToVisit ();
+
+		foreach (AnimalLocation place in allPlaces)
+		{
+			if (HasDiscoveredAnimal (place.Animal))
+			{
+				visitedPlaces.Add (place);
+			}
+		}
+
+		return visitedPlaces;
+	}
+
+	public List<AnimalLocation> GetUndiscoveredPlaces()
+	{
+		List<AnimalLocation> undiscoveredPlaces = new List<AnimalLocation> ();
+		List<AnimalLocation> allPlaces = Service.Request.PlacesToVisit ();
+
+		foreach (AnimalLocation place in allPlaces)
+		{
+			if (!HasDiscoveredAnimal (place.Animal))
+			{
+				undiscoveredPlaces.Add (place);
+			}
+		}
+
+		return undiscoveredPlaces;
 	}
 
 	public void SetAvatar(Avatar avatar)

@@ -62,6 +62,6 @@ public class PolylineDecoder
 			roundedResult = ~roundedResult;
 		}
 		roundedResult >>= 1;
-		return roundedResult / 100000.0f;
+		return roundedResult / 1000000.0f;
 	}
 }

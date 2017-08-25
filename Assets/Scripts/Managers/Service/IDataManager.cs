@@ -32,5 +32,5 @@ public interface IDataManager
 
 
 
-	void RequestDirections ();
+	List<Vector2> RequestDirections (List<Vector2> placesToVisit);
 }
