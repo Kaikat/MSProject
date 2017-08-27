@@ -28,4 +28,5 @@ public interface IServices
 	void SendPlayerRatings (List<InterestValue> playerInterests);
 	//Dictionary<string, MajorLocationData> GetRecommendations ();
 	List<Venue> AllVenues();
+	Dictionary<string, List<Major>> GetMajorsAtLocation ();
 }

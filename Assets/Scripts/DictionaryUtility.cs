@@ -18,4 +18,22 @@ public static class DictionaryUtility {
 	{
 		return (T)Enum.Parse(typeof(T), enumString);
 	}
+
+	public static GameVersion GetGameVersion(this string username)
+	{
+		if (username [1] != '-')
+		{
+			return GameVersion.Default;
+		}
+
+		switch (username [0])
+		{
+			case '2':
+				return GameVersion.TrackVisits;
+			case '3':
+				return GameVersion.ColorCodedMajors;
+			default:
+				return GameVersion.Default;
+		}
+	}
 }

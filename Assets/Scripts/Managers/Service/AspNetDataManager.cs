@@ -433,6 +433,27 @@ public class AspNetDataManager : IDataManager
 		return venues;
 	}
 
+	public Dictionary<string, List<Major>> GetMajorsAtLocation(string sessionKey)
+	{
+		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
+		);
+
+		List<MajorLocation> majorListing = recommendations.recommended_majors;
+		Dictionary<string, List<Major>> majorLocations = new Dictionary<string, List<Major>> ();
+		foreach (MajorLocation majorLocation in majorListing)
+		{
+			if (!majorLocations.ContainsKey (majorLocation.Location))
+			{
+				majorLocations.Add (majorLocation.Location, new List<Major>());
+			}
+	
+			majorLocations [majorLocation.Location].Add (majorLocation.MajorPreference.Major.ToExactEnum<Major> ());
+		}
+
+		return majorLocations;
+	}
+
 	public List<Vector2> RequestDirections(List<Vector2> placesToVisit)
 	{
 		//TODO: Work in progress

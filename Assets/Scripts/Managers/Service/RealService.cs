@@ -138,4 +138,9 @@ public class RealService : IServices
 	{
 		return DataManager.Data.GetVenueList(CurrentPlayer.SessionKey);
 	}
+
+	public Dictionary<string, List<Major>> GetMajorsAtLocation()
+	{
+		return DataManager.Data.GetMajorsAtLocation (CurrentPlayer.SessionKey);
+	}
 }

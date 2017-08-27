@@ -167,4 +167,9 @@ public class FakeService : IServices
 	{
 		return new List<Venue> ();
 	}
+
+	public Dictionary<string, List<Major>> GetMajorsAtLocation()
+	{
+		return new Dictionary<string, List<Major>> ();
+	}
 }

@@ -307,13 +307,15 @@ public class PhpDataManager : IDataManager
 		return new List<Venue> ();
 	}
 
-
-
 	public List<Vector2> RequestDirections(List<Vector2> placesToVisit)
 	{
 		return new List<Vector2> ();
 	}
 
+	public Dictionary<string, List<Major>> GetMajorsAtLocation(string sessionKey)
+	{
+		return new Dictionary<string, List<Major>> ();
+	}
 }
 
 

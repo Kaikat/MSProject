@@ -33,4 +33,5 @@ public interface IDataManager
 
 
 	List<Vector2> RequestDirections (List<Vector2> placesToVisit);
+	Dictionary<string, List<Major>> GetMajorsAtLocation (string sessionKey);
 }
