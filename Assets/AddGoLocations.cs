@@ -109,17 +109,6 @@ public class AddGoLocations : MonoBehaviour
 
 	private void LoadMajorColorCodesVersion()
 	{
-		//STEM = 10, Social Science = 4, Humanities = 11
-		List<Major> STEM = new List<Major> { Major.Architecture, Major.Biology, Major.Chemistry, 
-			Major.ComputerScience, Major.EarthSciences, Major.EnvironmentalScience,
-			Major.MarineBiology, Major.MarineScience, Major.MediaArtsAndTechnology,
-			Major.Physics };
-		List<Major> socialSciences = new List<Major> { Major.Anthropology, Major.Counseling, 
-			Major.Psychology, Major.Sociology };
-		List<Major> humanities = new List<Major> { Major.Art, Major.ArtHistory, Major.Athletics, Major.Communications, 
-			Major.Dance, Major.Education, Major.EthnicStudies, Major.History, Major.Literature, 
-			Major.Music, Major.Theater };
-
 		Dictionary<string, List<Major>> majorLocations = Service.Request.GetMajorsAtLocation ();
 
 		foreach (AnimalLocation location in locations)
@@ -138,11 +127,11 @@ public class AddGoLocations : MonoBehaviour
 			{
 				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
 			} 
-			else if (STEM.Contains(majorLocations[location.Location.LocationName][0]))
+			else if (GameConstants.STEM.Contains(majorLocations[location.Location.LocationName][0]))
 			{
 				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
 			}
-			else if (socialSciences.Contains(majorLocations[location.Location.LocationName][0]))
+			else if (GameConstants.SocialSciences.Contains(majorLocations[location.Location.LocationName][0]))
 			{
 				go.GetComponentInChildren<BannerColor>().SetBannerColor (Resources.Load<Texture>("blue"));
 			}
@@ -163,8 +152,10 @@ public class AddGoLocations : MonoBehaviour
 			go.transform.localPosition = new Vector3 (coordinate.x, coordinate.y + 5.0f, coordinate.z);
 			go.transform.parent = transform;
 			go.name = location.Location.LocationName;
-			if (Service.Request.Player ().isAnimalOwned (location.Animal) ||
-				Service.Request.Player ().hasReleasedAnimal (location.Animal))
+
+			//NOTE: This is for visited/not visited so it will go off of whether or not an animal has been
+			//		discovered or not. The other options go off whether or not the animal is owned/released
+			if (Service.Request.Player().HasDiscoveredAnimal(location.Animal))
 			{
 				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
 			} 
