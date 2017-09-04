@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuizGrading : MonoBehaviour {
-
+public class QuizGrading : MonoBehaviour
+{
     private List<int> answers;
     private const int NumQuestions = 2;
 	private Animal animal;
@@ -12,10 +12,11 @@ public class QuizGrading : MonoBehaviour {
 	{
 		EventManager.RegisterEvent<Animal> (GameEvent.QuizTime, SetAnimal);
 	}
-
+		
 	void SetAnimal(Animal quizAnimal)
 	{
 		animal = quizAnimal;
+		AssetManager.ShowAnimal (animal.Species);
 	}
 
 	void Start ()
@@ -38,6 +39,8 @@ public class QuizGrading : MonoBehaviour {
 			Service.Request.ReleaseAnimal (animal);
             EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Failure);
         }
+
+		AssetManager.HideAnimals ();
     }
 
 	void Destroy()
