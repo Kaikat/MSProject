@@ -28,7 +28,7 @@ public class QuizGrading : MonoBehaviour {
 
     public void Click()
     {
-        if (Random.Range(0,20)>=10)
+		if (Random.Range(0,20) >= 10 || animal.Species == AnimalSpecies.Horse)
         {
 			Service.Request.ReleaseAnimal (animal);
             EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Celebration);
