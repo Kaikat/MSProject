@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using System.Linq;
 
 public class NewAccountController : MonoBehaviour, IShowHideListener
@@ -20,16 +21,20 @@ public class NewAccountController : MonoBehaviour, IShowHideListener
         MonthDropdown.ClearOptions();
         YearDropdown.ClearOptions();
 
-        DayDropdown.AddOptions(Enumerable.Range(1, 31)
-                                         .Select(x => new Dropdown.OptionData(x.ToString()))
-                                         .ToList());
-        MonthDropdown.AddOptions(Enumerable.Range(1, 12)
-                                           .Select(x => new Dropdown.OptionData(x.ToString()))
-                                           .ToList());
-        YearDropdown.AddOptions(Enumerable.Range(1900, 117)
-                                           .Reverse()
-                                           .Select(x => new Dropdown.OptionData(x.ToString()))
-                                           .ToList());
+		List<string> Months = new List<string> ();
+		Months.Add ("Month");
+		Months.AddRange(Enumerable.Range(1, 12).Select(x => x.ToString()));
+		MonthDropdown.AddOptions (Months);
+
+		List<string> Days = new List<string> ();
+		Days.Add ("Day");
+		Days.AddRange(Enumerable.Range(1, 31).Select(x => x.ToString()));
+		DayDropdown.AddOptions (Days);
+
+		List<string> Years = new List<string> ();
+		Years.Add ("Year");
+		Years.AddRange(Enumerable.Range(1900, 117).Select(x => x.ToString()).Reverse());
+		YearDropdown.AddOptions(Years);
     }
 
     public void OnHide()

@@ -66,8 +66,36 @@ public class AttemptCreateAccount : MonoBehaviour {
 			ErrorLabel.text = "Invalid email address.";
 			return;
 		}
+		if (Month.text == "Month")
+		{
+			ErrorLabel.text = "Invalid Month";
+			return;
+		}
+		if (Day.text == "Day")
+		{
+			ErrorLabel.text = "Invalid Day";
+			return;
+		}
+		if (Year.text == "Year")
+		{
+			ErrorLabel.text = "Invalid Year";
+			return;
+		}
 
 		string message = "";
+
+		//Remove later
+		string debugMessage = "Username: " + Username.text + "\n";
+		debugMessage += "Name: " + Name.text + "\n";
+		debugMessage += "Password: " + Password.text + "\n";
+		debugMessage += "Email: " + Email.text + "\n";
+		debugMessage += "Gender: " + Gender.text + "\n";
+		debugMessage += "Month: " + Month.text + "\n";
+		debugMessage += "Day: " + Day.text + "\n";
+		debugMessage += "Year: " + Year.text + "\n";
+		Debug.LogWarning (debugMessage);
+		//end remove
+
 		message = Service.Request.CreateAccount(Username.text,
                                                 Name.text,
                                                 Password.text,
