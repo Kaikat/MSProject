@@ -7,8 +7,15 @@ public static class AssetManager
 	private static List<GameObject> AnimalModels;
 	private static List<AnimalSpecies> Species;
 
+	private static Dictionary<AnimalSpecies, Vector3> AnimalPositions;
+	private static Dictionary<AnimalSpecies, Vector3> AnimalRotations;
+	private static Dictionary<AnimalSpecies, Vector3> AnimalScales;
+
 	static AssetManager()
 	{
+		SetAnimalPositions ();
+		SetAnimalRotations ();
+		SetAnimalScales ();
 	}
 
 	public static void Init()
@@ -31,7 +38,7 @@ public static class AssetManager
 			animal.layer = LayerMask.NameToLayer ("3D");
 
 			// TEMPORARY: Not the final assets
-			if (animals[i].Species == AnimalSpecies.Butterfly)
+			/*if (animals[i].Species == AnimalSpecies.Butterfly)
 			{
 				GameObject temp = new GameObject ();
 				temp.layer = LayerMask.NameToLayer ("3D");
@@ -39,21 +46,13 @@ public static class AssetManager
 				t.localScale = t.transform.localScale * 10.0f;
 				t.localPosition = new Vector3 (1.0f, -3.5f, 0.0f);
 				animal.transform.SetParent (t);
-			}
-			/*else
-			{
-				// Keep these 2
-				animal.transform.localScale = animal.transform.localScale * 2.0f;
 			}*/
 
 			AnimalSpecies a = animals[i].Species;
-			if (animals [i].Species == AnimalSpecies.Horse || a == AnimalSpecies.Bat || 
-				a == AnimalSpecies.Rain || a == AnimalSpecies.Datura ||
-				a == AnimalSpecies.Water)
-			{
-				animal.transform.localScale = animal.transform.localScale * 2.0f;
-				animal.transform.localPosition = new Vector3 (animal.transform.localPosition.x, -1.9f, animal.transform.localPosition.z);
-			}
+
+			animal.transform.localScale = AnimalScales [a];
+			animal.transform.localPosition = AnimalPositions [a];
+			animal.transform.localRotation = Quaternion.Euler (AnimalRotations [a]);
 
 			animal.SetActive (false);
 			AnimalModels.Add (animal);
@@ -96,6 +95,93 @@ public static class AssetManager
             animalModel.SetActive(false);
         }
 	}
+
+	private static void SetAnimalPositions()
+	{
+		AnimalPositions = new Dictionary<AnimalSpecies, Vector3> ();
+		AnimalPositions.Add (AnimalSpecies.Acorn, new Vector3 (-0.5f, -1.5f, 0.0f));	//need asset - horse
+		AnimalPositions.Add (AnimalSpecies.Bat, new Vector3 (-0.5f, -1.5f, 0.0f));		//need asset - horse
+		AnimalPositions.Add (AnimalSpecies.Butterfly, new Vector3 (0.0f, 0.0f, 0.0f));	//DO LAST
+		AnimalPositions.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, -1.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Datura, new Vector3 (-0.5f, -1.5f, 0.0f));	//need asset - horse
+		AnimalPositions.Add (AnimalSpecies.Death, new Vector3 (0.0f, -1.0f, 0.0f));		//need asset - tiger
+		AnimalPositions.Add (AnimalSpecies.Deer, new Vector3 (-0.1f, -1.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, -1.0f, 0.0f));	//need asset - tiger
+		AnimalPositions.Add (AnimalSpecies.Dragonfly, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Earth, new Vector3 (0.0f, -1.0f, 0.0f));		//need asset - tiger
+		AnimalPositions.Add (AnimalSpecies.Heron, new Vector3 (0.0f, -2.2f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Horse, new Vector3 (-0.5f, -1.5f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Lizard, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Mountainlion, new Vector3 (0.0f, -1.0f, 0.0f));	//Recolor tiger asset to light brown
+		AnimalPositions.Add (AnimalSpecies.Rabbit, new Vector3 (0.0f, -0.2f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Rain, new Vector3 (-0.5f, -1.5f, 0.0f));			//need asset - horse
+		AnimalPositions.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, -1.0f, 0.0f));	//need asset - tiger
+		AnimalPositions.Add (AnimalSpecies.Redtailedhawk, new Vector3 (0.0f, -0.5f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Shark, new Vector3 (0.2f, 0.5f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Tiger, new Vector3 (0.0f, -1.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Water, new Vector3 (-0.5f, -1.5f, 0.0f));		//need asset - horse
+		AnimalPositions.Add (AnimalSpecies.Wind, new Vector3 (0.0f, -1.0f, 0.0f));			//need asset - tiger
+	}
+
+	private static void SetAnimalScales()
+	{
+		AnimalScales = new Dictionary<AnimalSpecies, Vector3> ();
+		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (1.7f, 1.7f, 1.7f));			//horse
+		AnimalScales.Add (AnimalSpecies.Bat, new Vector3 (1.7f, 1.7f, 1.7f));			//horse
+		AnimalScales.Add (AnimalSpecies.Butterfly, new Vector3 (1.0f, 1.0f, 1.0f));
+		AnimalScales.Add (AnimalSpecies.Coyote, new Vector3 (7.0f, 7.0f, 7.0f));
+		AnimalScales.Add (AnimalSpecies.Datura, new Vector3 (1.7f, 1.7f, 1.7f));		//horse
+		AnimalScales.Add (AnimalSpecies.Death, new Vector3 (4.0f, 4.0f, 4.0f));			//tiger
+		AnimalScales.Add (AnimalSpecies.Deer, new Vector3 (7.0f, 7.0f, 7.0f));
+		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (4.0f, 4.0f, 4.0f));		//tiger
+		AnimalScales.Add (AnimalSpecies.Dragonfly, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add (AnimalSpecies.Earth, new Vector3 (4.0f, 4.0f, 4.0f));			//tiger
+		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (9.0f, 9.0f, 9.0f));
+		AnimalScales.Add (AnimalSpecies.Horse, new Vector3 (1.7f, 1.7f, 1.7f));
+		AnimalScales.Add (AnimalSpecies.Lizard, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Mountainlion, new Vector3 (4.0f, 4.0f, 4.0f));	//tiger
+		AnimalScales.Add (AnimalSpecies.Rabbit, new Vector3 (5.0f, 5.0f, 5.0f));
+		AnimalScales.Add (AnimalSpecies.Rain, new Vector3 (1.7f, 1.7f, 1.7f));			//horse
+		AnimalScales.Add (AnimalSpecies.Rattlesnake, new Vector3 (4.0f, 4.0f, 4.0f));	//tiger
+		AnimalScales.Add (AnimalSpecies.Redtailedhawk, new Vector3 (7.0f, 7.0f, 7.0f));
+		AnimalScales.Add (AnimalSpecies.Shark, new Vector3 (7.0f, 7.0f, 7.0f));
+		AnimalScales.Add (AnimalSpecies.Squirrel, new Vector3 (5.0f, 5.0f, 5.0f));
+		AnimalScales.Add (AnimalSpecies.Tiger, new Vector3 (4.0f, 4.0f, 4.0f));
+		AnimalScales.Add (AnimalSpecies.Water, new Vector3 (1.7f, 1.7f, 1.7f));			//horse
+		AnimalScales.Add (AnimalSpecies.Wind, new Vector3 (4.0f, 4.0f, 4.0f));			//tiger
+	}
+
+	private static void SetAnimalRotations()
+	{
+		AnimalRotations = new Dictionary<AnimalSpecies, Vector3> ();
+		AnimalRotations.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 150.0f, 0.0f));		//horse
+		AnimalRotations.Add (AnimalSpecies.Bat, new Vector3 (0.0f, 150.0f, 0.0f));			//horse
+		AnimalRotations.Add (AnimalSpecies.Butterfly, new Vector3 (270.0f, 30.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, 190.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 150.0f, 0.0f));		//horse
+		AnimalRotations.Add (AnimalSpecies.Death, new Vector3 (0.0f, 180.0f, 0.0f));		//tiger
+		AnimalRotations.Add (AnimalSpecies.Deer, new Vector3 (0.0f, 160.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, 180.0f, 0.0f));		//tiger
+		AnimalRotations.Add (AnimalSpecies.Dragonfly, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Earth, new Vector3 (0.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Heron, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Horse, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Lizard, new Vector3 (0.0f, 200.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Mountainlion, new Vector3 (0.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rabbit, new Vector3 (0.0f, 155.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rain, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Redtailedhawk, new Vector3 (15.0f, 200.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Shark, new Vector3 (0.0f, 190.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, 275.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Tiger, new Vector3 (0.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Water, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Wind, new Vector3 (0.0f, 180.0f, 0.0f));
+	}
+
+
+
 
 	/*private static void LoadAllAnimalModels()
 	{
