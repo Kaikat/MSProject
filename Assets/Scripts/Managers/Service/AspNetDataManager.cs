@@ -53,10 +53,10 @@ public class AspNetDataManager : IDataManager
 		return Animals;
 	}
 
-	public string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthday)
+	public string CreateAccount (string username, string name, string password, string email, string gender, string birthday)
 	{
         // TODO: implement gender and birthday handle
-        AccountDetails accountDetails = new AccountDetails (username, name, password, email);
+		AccountDetails accountDetails = new AccountDetails (username, name, password, email, gender, birthday);
 		BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + CREATE_ACCOUNT_CONTROLLER, JsonUtility.ToJson (accountDetails));
 

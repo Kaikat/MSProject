@@ -22,7 +22,7 @@ public interface IServices
 	void ReleaseAnimal (Animal animal);
 
 	bool VerifyLogin (string username, string password);
-	string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthdate);
+	string CreateAccount (string username, string name, string password, string email, string gender, string birthdate);
 	void UpdateAvatar (Avatar avatar);
 
 	void SendPlayerRatings (List<InterestValue> playerInterests);

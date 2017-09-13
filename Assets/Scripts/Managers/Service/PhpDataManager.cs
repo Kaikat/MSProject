@@ -53,7 +53,7 @@ public class PhpDataManager : IDataManager
 		return Animals;
 	}
 
-	public string CreateAccount (string username, string name, string password, string email, string gender, DateTime birthdate)
+	public string CreateAccount (string username, string name, string password, string email, string gender, string birthdate)
 	{
 		BasicResponse response =  WebManager.GetHttpResponse<BasicResponse> (
 			HTTP_ADDRESS + CREATE_ACCOUNT + 

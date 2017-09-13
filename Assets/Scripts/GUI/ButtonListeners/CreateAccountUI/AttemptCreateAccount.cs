@@ -83,25 +83,12 @@ public class AttemptCreateAccount : MonoBehaviour {
 		}
 
 		string message = "";
-
-		//Remove later
-		string debugMessage = "Username: " + Username.text + "\n";
-		debugMessage += "Name: " + Name.text + "\n";
-		debugMessage += "Password: " + Password.text + "\n";
-		debugMessage += "Email: " + Email.text + "\n";
-		debugMessage += "Gender: " + Gender.text + "\n";
-		debugMessage += "Month: " + Month.text + "\n";
-		debugMessage += "Day: " + Day.text + "\n";
-		debugMessage += "Year: " + Year.text + "\n";
-		Debug.LogWarning (debugMessage);
-		//end remove
-
 		message = Service.Request.CreateAccount(Username.text,
                                                 Name.text,
                                                 Password.text,
                                                 Email.text,
                                                 Gender.text,
-                                                new DateTime(Int32.Parse(Year.text), Int32.Parse(Month.text), Int32.Parse(Day.text)));
+												ConvertToDateTimeString(Month.text, Day.text, Year.text));
 		ErrorLabel.text = message;
 
 		if (message == "Account Created")
@@ -117,7 +104,13 @@ public class AttemptCreateAccount : MonoBehaviour {
 		}
 	}
 
-	public bool ValidEmailAddress(string email)
+	private string ConvertToDateTimeString(string month, string day, string year)
+	{
+		//FORMAT: "5/22/2017 9:44:28 AM"
+		return month + "/" + day + "/" + year + " 8:00:00 AM";
+	}
+
+	private bool ValidEmailAddress(string email)
 	{
 		// https://forum.unity3d.com/threads/check-if-its-an-e-mail.73132/
 		const string MatchEmailPattern =

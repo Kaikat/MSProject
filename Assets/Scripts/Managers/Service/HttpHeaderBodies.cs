@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,13 +11,17 @@ namespace HttpHeaderBodies
 		public string name;
 		public string password;
 		public string email;
+		public string gender;
+		public string birthdate;
 
-		public AccountDetails(string account_username, string account_name, string account_password, string account_email)
+		public AccountDetails(string account_username, string account_name, string account_password, string account_email, string account_gender, string account_birthdate)
 		{
 			username = account_username;
 			name = account_name;
 			password = account_password;
 			email = account_email;
+			gender = account_gender;
+			birthdate = account_birthdate;
 		}
 	}
 
