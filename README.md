@@ -12,8 +12,14 @@ Tamuyal, presents a new approach to increase K-12 students' awareness of higher 
 The game's location recommendations are tailored to each student's personal academic interests which are obtained through a survey. Students play as a field biologist and are encouraged to explore campus to discover and nurse local species back to health. Banners mark places of interest where a local animal species can be found. As students discover more animals they learn more about campus, majors, and the animals. Students can track their full progress through the game in the profile screen that shows them the animals they have caught. The venues button shows them the summaries for all the locations they have visited, which includes information about majors, and the journal shows them their last 5 activities.
 
 <h3>Related Projects</h3>
+
 [TamuyalBackend-ASP.NET](https://github.com/Kaikat/TamuyalBackend-ASP.NET) <br>
-[TamuyalClassifier](https://github.com/Kaikat/TamuyalClassifier)
+
+Tamuyal's Backend uses a Microsoft Azure server and database (Transact-SQL).
+
+[TamuyalClassifier](https://github.com/Kaikat/TamuyalClassifier) <br>
+
+The classifier parses survey responses from current college students or alumni about interests and majors. These responses are used to train a classifier and the resulting matrix is used in Tamuyal with the young player's interest responses to recommend majors.
 
 <h4>Unity Assets Used</h4>
 Go-Map (requires Map-Zen API Key)
