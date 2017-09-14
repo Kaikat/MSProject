@@ -1,6 +1,8 @@
 # Tamuyal
 Tamuyal is a location-based, mobile, educational game for increasing K-12 students' interest in STEM fields.
 
+**Note: For the most up-to-date code look at the develop branch.**
+
 **Platforms:** iOS, Android <br> **Requires:** Camera Access, GPS
 
 <img align="left" src="https://github.com/Kaikat/Tamuyal/blob/develop/HomeScreen.png" width="250">
