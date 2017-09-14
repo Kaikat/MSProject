@@ -38,6 +38,8 @@ public class VersionButtons : MonoBehaviour
 				Legend.image.overrideSprite = Resources.Load<Sprite> (LEGEND_COLORED_MAJORS);
 				break;
 			default:
+				//TODO: REVERSE CHANGE LATER - default should be empty
+				ShowPath.gameObject.SetActive(false);
 				break;
 		}
 			
