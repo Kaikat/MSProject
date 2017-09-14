@@ -82,22 +82,22 @@ public class AddGoLocations : MonoBehaviour
 			if (Service.Request.Player ().isAnimalOwned (location.Animal) ||
 				Service.Request.Player ().hasReleasedAnimal (location.Animal)) 
 			{
-				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
+				go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("gray"), location.Animal);
 			} 
 			else if(playersRecommendations.ContainsKey(location.Location.LocationName))
 			{
 				if (playersRecommendations [location.Location.LocationName].Index < UIConstants.Recommended) 
 				{
-					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
+					go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("yellow"), location.Animal);
 				}
 				else if (playersRecommendations[location.Location.LocationName].Index >= UIConstants.Recommended && 
 					playersRecommendations[location.Location.LocationName].Index < UIConstants.SomewhatRecommended)
 				{
-					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("blue"));
+					go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("blue"), location.Animal);
 				}
 				else 
 				{
-					go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("green"));
+					go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("green"), location.Animal);
 				}
 			}
 			else
@@ -125,19 +125,19 @@ public class AddGoLocations : MonoBehaviour
 			if (Service.Request.Player ().isAnimalOwned (location.Animal) ||
 			    Service.Request.Player ().hasReleasedAnimal (location.Animal))
 			{
-				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
+				go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("gray"), location.Animal);
 			} 
 			else if (GameConstants.STEM.Contains(majorLocations[location.Location.LocationName][0]))
 			{
-				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("yellow"));
+				go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("yellow"), location.Animal);
 			}
 			else if (GameConstants.SocialSciences.Contains(majorLocations[location.Location.LocationName][0]))
 			{
-				go.GetComponentInChildren<BannerColor>().SetBannerColor (Resources.Load<Texture>("blue"));
+				go.GetComponentInChildren<BannerColor>().SetBannerData (Resources.Load<Texture>("blue"), location.Animal);
 			}
 			else
 			{
-				go.GetComponentInChildren<BannerColor>().SetBannerColor(Resources.Load<Texture>("green"));
+				go.GetComponentInChildren<BannerColor>().SetBannerData (Resources.Load<Texture>("green"), location.Animal);
 			}
 		}
 	}
@@ -157,11 +157,11 @@ public class AddGoLocations : MonoBehaviour
 			//		discovered or not. The other options go off whether or not the animal is owned/released
 			if (Service.Request.Player().HasDiscoveredAnimal(location.Animal))
 			{
-				go.GetComponentInChildren<BannerColor> ().SetBannerColor (Resources.Load<Texture> ("gray"));
+				go.GetComponentInChildren<BannerColor> ().SetBannerData (Resources.Load<Texture> ("gray"), location.Animal);
 			} 
 			else
 			{
-				go.GetComponentInChildren<BannerColor>().SetBannerColor(Resources.Load<Texture>("yellow"));
+				go.GetComponentInChildren<BannerColor>().SetBannerData(Resources.Load<Texture>("yellow"), location.Animal);
 			}
 		}
 	}

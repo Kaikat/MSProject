@@ -28,7 +28,7 @@ public class CatchAnimal : MonoBehaviour
 		CatchEncounteredAnimal ();
 		EventManager.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
 		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		EventManager.TriggerEvent(GameEvent.AnimalCaught, wildAnimal);
+		EventManager.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
 	}
 
 	void Destroy()
