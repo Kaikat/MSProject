@@ -13,13 +13,13 @@ The game's location recommendations are tailored to each student's personal acad
 
 <h3>Related Projects</h3>
 
-[TamuyalBackend-ASP.NET](https://github.com/Kaikat/TamuyalBackend-ASP.NET) <br>
+1. [TamuyalBackend-ASP.NET](https://github.com/Kaikat/TamuyalBackend-ASP.NET) <br>
 
-Tamuyal's Backend uses a Microsoft Azure server and database (Transact-SQL).
+    * Tamuyal's Backend uses a Microsoft Azure server and database (Transact-SQL).
 
-[TamuyalClassifier](https://github.com/Kaikat/TamuyalClassifier) <br>
+2. [TamuyalClassifier](https://github.com/Kaikat/TamuyalClassifier) <br>
 
-The classifier parses survey responses from current college students or alumni about interests and majors. These responses are used to train a classifier and the resulting matrix is used in Tamuyal with the young player's interest responses to recommend majors.
+    * The classifier parses survey responses from current college students or alumni about interests and majors. These responses are used to train a classifier and the resulting matrix is used in Tamuyal with the young player's interest responses for major recommendations.
 
 <h4>Unity Assets Used</h4>
 Go-Map (requires Map-Zen API Key)
