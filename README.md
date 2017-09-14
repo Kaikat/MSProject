@@ -14,4 +14,5 @@ The game's location recommendations are tailored to each student's personal acad
 <h4>Unity Assets Used</h4>
 Go-Map (requires Map-Zen API Key)
 
-**Artwork by:** Kate Forrest
+
+<br>**Artwork by:** Kate Forrest
