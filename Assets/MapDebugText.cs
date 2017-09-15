@@ -15,8 +15,9 @@ public class MapDebugText : MonoBehaviour {
 
 	public void Click()
 	{
-		DebugText.enabled = !DebugText.enabled;
-		DebugMapUrlText.enabled = !DebugMapUrlText.enabled;
+		//TODO: Enabled/Disable Debug Text as needed
+		//DebugText.enabled = !DebugText.enabled;
+		//DebugMapUrlText.enabled = !DebugMapUrlText.enabled;
 
 		/*if (DebugText.enabled)
 		{
