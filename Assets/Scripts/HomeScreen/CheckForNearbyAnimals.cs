@@ -52,6 +52,8 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 			
 		//float allowedDistanceRadius = 0.0001349778f;
 
+		/*
+		//TODO: Bring back the TEMPORARY REMOVAL OF THE TUTORIAL HORSE
 		if (!Service.Request.Player ().HasDiscoveredAnimal (AnimalSpecies.Horse))
 		{
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
@@ -59,7 +61,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 			animalOnScreen = true;
 		}
 		else
-		{
+		{*/
 			Vector2 currentLocation = gpsScript.GetCoordinate ();
 
 			Vector2 limit = new Vector2 (34.41094f, -119.8639f);
@@ -78,7 +80,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 					animalOnScreen = true;
 				}
 			}
-		}
+		//}
 
 		/*
 		float currentDistance = Vector2.Distance (testp, currentLocation);
