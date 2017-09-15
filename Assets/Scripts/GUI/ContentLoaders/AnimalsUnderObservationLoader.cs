@@ -159,14 +159,14 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 	private void SetPositions()
 	{
 		AnimalPositions = new Dictionary<AnimalSpecies, Vector3> ();
-		AnimalPositions.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 00.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 5.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Bat, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Butterfly, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 5.9f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Death, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Deer, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, 5.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Dragonfly, new Vector3 (0.0f, 1.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Earth, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Heron, new Vector3 (0.0f, 0.0f, 0.0f));
@@ -174,7 +174,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 		AnimalPositions.Add (AnimalSpecies.Mountainlion, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Rabbit, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Rain, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, 5.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Redtailedhawk, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Shark, new Vector3 (0.0f, 3.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, 0.0f, 0.0f));
@@ -185,52 +185,52 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 	private void SetAnimalScales()
 	{
 		AnimalScales = new Dictionary<AnimalSpecies, Vector3> ();
-		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (3.0f, 3.0f, 3.0f));
+		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (150.0f, 150.0f, 150.0f));
 		AnimalScales.Add (AnimalSpecies.Bat, new Vector3 (3.0f, 3.0f, 3.0f));
 		AnimalScales.Add (AnimalSpecies.Butterfly, new Vector3 (20.0f, 20.0f, 20.0f));
 		AnimalScales.Add (AnimalSpecies.Coyote, new Vector3 (15.0f, 15.0f, 15.0f));
-		AnimalScales.Add(AnimalSpecies.Datura, new Vector3 (20.0f, 20.0f, 20.0f));
+		AnimalScales.Add(AnimalSpecies.Datura, new Vector3 (2.5f, 2.5f, 2.5f));
 		AnimalScales.Add (AnimalSpecies.Death, new Vector3 (10.0f, 10.0f, 10.0f));
 		AnimalScales.Add (AnimalSpecies.Deer, new Vector3 (17.0f, 17.0f, 17.0f));
-		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (5.0f, 5.0f, 5.0f));
 		AnimalScales.Add (AnimalSpecies.Dragonfly, new Vector3 (80.0f, 80.0f, 80.0f));
 		AnimalScales.Add (AnimalSpecies.Earth, new Vector3 (10.0f, 10.0f, 10.0f));
 		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (15.0f, 15.0f, 15.0f));
 		AnimalScales.Add (AnimalSpecies.Lizard, new Vector3 (45.0f, 45.0f, 45.0f));
 		AnimalScales.Add (AnimalSpecies.Mountainlion, new Vector3 (10.0f, 10.0f, 10.0f));
 		AnimalScales.Add (AnimalSpecies.Rabbit, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Rain, new Vector3 (3.0f, 3.0f, 3.0f));
-		AnimalScales.Add (AnimalSpecies.Rattlesnake, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Rain, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Rattlesnake, new Vector3 (230.0f, 230.0f, 230.0f));
 		AnimalScales.Add (AnimalSpecies.Redtailedhawk, new Vector3 (20.0f, 20.0f, 20.0f));
 		AnimalScales.Add (AnimalSpecies.Shark, new Vector3 (20.0f, 20.0f, 20.0f));
 		AnimalScales.Add (AnimalSpecies.Squirrel, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Water, new Vector3 (3.0f, 3.0f, 3.0f));
+		AnimalScales.Add (AnimalSpecies.Water, new Vector3 (10.0f, 10.0f, 10.0f));
 		AnimalScales.Add (AnimalSpecies.Wind, new Vector3 (10.0f, 10.0f, 10.0f));
 	}
 
 	private void SetAnimalRotations()
 	{
 		AnimalRotations = new Dictionary<AnimalSpecies, Vector3> ();
-		AnimalRotations.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Acorn, new Vector3 (-141.0f, -265.3f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Bat, new Vector3 (0.0f, 150.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Butterfly, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Coyote, new Vector3 (13.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Death, new Vector3 (12.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Deer, new Vector3 (12.0f, 180.0f, 0.0f));
-		AnimalRotations.Add (AnimalSpecies.Dolphin, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Dolphin, new Vector3 (-14.0f, 150.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Dragonfly, new Vector3 (12.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Earth, new Vector3 (12.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Heron, new Vector3 (0.0f, 200.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Lizard, new Vector3 (15.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Mountainlion, new Vector3 (12.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Rabbit, new Vector3 (12.0f, 180.0f, 0.0f));
-		AnimalRotations.Add (AnimalSpecies.Rain, new Vector3 (0.0f, 150.0f, 0.0f));
-		AnimalRotations.Add (AnimalSpecies.Rattlesnake, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rain, new Vector3 (12.0f, 180.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, 170.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Redtailedhawk, new Vector3 (12.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Shark, new Vector3 (17.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, 270.0f, 0.0f));
-		AnimalRotations.Add (AnimalSpecies.Water, new Vector3 (0.0f, 150.0f, 0.0f));
+		AnimalRotations.Add (AnimalSpecies.Water, new Vector3 (12.0f, 180.0f, 0.0f));
 		AnimalRotations.Add (AnimalSpecies.Wind, new Vector3 (12.0f, 180.0f, 0.0f));
 	}
 }
