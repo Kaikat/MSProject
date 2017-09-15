@@ -22,9 +22,15 @@ public class GoToGenderScreen : MonoBehaviour
 		RabbitChatBubble.text = RabbitChats[chatIndex];
 		chatIndex++;
 
-		if (chatIndex == RabbitChats.Length)
+		if (chatIndex == RabbitChats.Length && Service.Request.Player ().Avatar == Avatar.Default)
 		{
+			chatIndex = 0;
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Gender);
+		} 
+		else if (chatIndex == RabbitChats.Length && Service.Request.Player ().Avatar != Avatar.Default)
+		{
+			chatIndex = 0;
+			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 		}
 	}
 }
