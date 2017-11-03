@@ -4,7 +4,8 @@ using UnityEngine;
 
 public static class UIConstants 
 {
-	public static string ANIMAL_IMAGE_PATH = "AmateAnimals/";
+	public static readonly string ANIMAL_IMAGE_PATH = "AmateAnimals/";
+	public static readonly string VENUES_IMAGE_PATH = "VenueImages/";
 	public static readonly string USERNAME_FILE = "tamuyalusername.txt";
 
 	public static Color Red = new Color (227.0f / 255.0f, 27.0f / 255.0f, 69.0f / 255.0f);

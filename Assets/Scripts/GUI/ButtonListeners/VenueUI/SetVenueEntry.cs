@@ -28,6 +28,7 @@ public class SetVenueEntry : MonoBehaviour {
 			}
 		}
 
+		VenueImage.texture = Resources.Load<Texture> (UIConstants.VENUES_IMAGE_PATH + venue.Location);
 		ImagePanel.color = UIConstants.Beige;
 		DataPanel.color = UIConstants.Beige;
 
