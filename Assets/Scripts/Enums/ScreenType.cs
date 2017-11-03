@@ -15,4 +15,5 @@
     Tutorial,
 	Survey,
 	PlaceJournal,
+	Menu,
 }
