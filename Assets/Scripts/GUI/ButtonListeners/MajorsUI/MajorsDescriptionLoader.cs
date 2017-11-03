@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MajorsDescriptionLoader : MonoBehaviour, IShowHideListener
 {
 	public GameObject MajorsGrid;
 	public TaggedShowHide MajorsScreenTag;
+
+	public Text NumberOfDiscoveredMajors;
+	private readonly string DISCOVERED_MAJORS = "Discovered ";
 
 	private const string PREFAB_FOLDER = "UIPrefabs";
 	private const string MAJOR_FAB = "MajorEntry";
@@ -30,14 +34,25 @@ public class MajorsDescriptionLoader : MonoBehaviour, IShowHideListener
 		}
 
 		List<Venue> playerVenues = new List<Venue> ();
+		List<Major> discoveredMajors = new List<Major> ();
 		foreach (Venue venue in venues)
 		{
 			if (Service.Request.Player ().HasDiscoveredAnimal (venue.Animal)) 
 			{
 				int recommendationIndex = Service.Request.Player ().GetRecommendationIndex (venue.Location);
 				playerVenues.Add (new Venue (venue, recommendationIndex));
+
+				foreach (Major major in venue.Majors)
+				{
+					if (!discoveredMajors.Contains (major))
+					{
+						discoveredMajors.Add (major);
+					}
+				}
 			}
 		}
+
+		NumberOfDiscoveredMajors.text = DISCOVERED_MAJORS + discoveredMajors.Count.ToString() + "/" + Major.GetNames(typeof(Major)).Length;	
 		playerVenues.Sort ((x, y) => (x.Index).CompareTo (y.Index));
 
 		GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, MAJOR_FAB) as GameObject;
