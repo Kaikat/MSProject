@@ -172,4 +172,9 @@ public class FakeService : IServices
 	{
 		return new Dictionary<string, List<Major>> ();
 	}
+
+	public Dictionary<Major, MajorData> AllMajors()
+	{
+		return new Dictionary<Major, MajorData> ();
+	}
 }

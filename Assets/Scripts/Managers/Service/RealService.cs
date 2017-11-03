@@ -143,4 +143,9 @@ public class RealService : IServices
 	{
 		return DataManager.Data.GetMajorsAtLocation (CurrentPlayer.SessionKey);
 	}
+
+	public Dictionary<Major, MajorData> AllMajors()
+	{
+		return DataManager.Data.AllMajors ();
+	}
 }

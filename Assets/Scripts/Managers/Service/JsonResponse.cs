@@ -165,6 +165,21 @@ namespace JsonResponse
 		public List<LocationData> LocationData;
 	}
 
+	[System.Serializable]
+	public class MajorEntryData
+	{
+		public string major;
+		public string major_name;
+		public string description;
+	}
+
+	[System.Serializable]
+	public class MajorEntriesResponse
+	{
+		public bool empty;
+		public List<MajorEntryData> MajorEntries;
+	}
+
 	//ODD ONE OUT - MOVE ME
 	public class LoginResponse
 	{

@@ -35,6 +35,7 @@ public class AspNetDataManager : IDataManager
 	private const string GENERATE_ANIMAL_CONTROLLER = "generateanimal";
 	private const string ANIMAL_ENCOUNTERS_CONTROLLER = "animalencounters";
 	private const string RECOMMENDATIONS_CONTROLLER = "recommendation";
+	private const string MAJORS_CONTROLLER = "majors";
 
 	private const int JOURNAL_ENTRY_LIMIT = 5;
 
@@ -452,6 +453,24 @@ public class AspNetDataManager : IDataManager
 		}
 
 		return majorLocations;
+	}
+
+	public Dictionary<Major, MajorData> AllMajors()
+	{
+		Debug.LogWarning (WEB_ADDRESS + MAJORS_CONTROLLER);
+
+		MajorEntriesResponse majorEntriesResponse = WebManager.GetHttpResponse<MajorEntriesResponse> (
+			WEB_ADDRESS + MAJORS_CONTROLLER
+		);
+
+		List<MajorEntryData> majorEntriesList = majorEntriesResponse.MajorEntries;
+		Dictionary<Major, MajorData> majorEntries = new Dictionary<Major, MajorData> ();
+		foreach(MajorEntryData majorEntry in majorEntriesList)
+		{
+			majorEntries.Add (majorEntry.major.ToExactEnum<Major> (), new MajorData (majorEntry.major_name, majorEntry.description));
+		}
+
+		return majorEntries;
 	}
 
 	public List<Vector2> RequestDirections(List<Vector2> placesToVisit)

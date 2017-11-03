@@ -8,7 +8,6 @@ public class RecommendationData
 	public List<MajorLocation> recommended_majors;
 }
 
-
 [System.Serializable]
 public class MajorLocation 
 {
