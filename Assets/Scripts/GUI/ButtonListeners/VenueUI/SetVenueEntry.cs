@@ -14,11 +14,23 @@ public class SetVenueEntry : MonoBehaviour {
 	public Image ImagePanel;
 	public Image DataPanel;
 
+	private readonly string VENUE_MESSAGE = "Discover more at this location!";
+
 	public void SetVenueEntryElements(Venue venue)
 	{
 		VenueName.text = venue.Location;
-		Description.text = venue.Description;
+		VenueImage.texture = Resources.Load<Texture> (UIConstants.VENUES_IMAGE_PATH + venue.Location);
+		ImagePanel.color = UIConstants.Beige;
+		DataPanel.color = UIConstants.Beige;
 
+		if (!Service.Request.Player ().HasDiscoveredAnimal (venue.Animal))
+		{
+			Background.color = UIConstants.Gray;
+			Description.text = VENUE_MESSAGE;
+			return;
+		}
+
+		Description.text = venue.Description;
 		for (int i = 0; i < venue.Majors.Count; i++) 
 		{
 			Majors.text += venue.Majors [i].ToString();
@@ -27,11 +39,7 @@ public class SetVenueEntry : MonoBehaviour {
 				Majors.text += ", ";
 			}
 		}
-
-		VenueImage.texture = Resources.Load<Texture> (UIConstants.VENUES_IMAGE_PATH + venue.Location);
-		ImagePanel.color = UIConstants.Beige;
-		DataPanel.color = UIConstants.Beige;
-
+			
 		GameVersion version = Service.Request.Player ().Username.GetGameVersion();
 		switch (version)
 		{
