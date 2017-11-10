@@ -17,7 +17,7 @@ public class SetAnimalInformation : MonoBehaviour
 
 	public Text ButtonText;
 
-	public GameObject ConditionGraph;
+	public RawImage ConditionGraph;
 	private Vector3[] NewVertices;
 	private Vector2[] NewUV;
 
@@ -49,7 +49,7 @@ public class SetAnimalInformation : MonoBehaviour
 		Biomagnification.text = animal.Stats.Health3.ToString();
 
 		SetButtonText (screenData.Screen);
-		CreateTriangleGraph ();
+		//CreateTriangleGraph ();
 	}
 
 	private void SetButtonText(ScreenType screen)

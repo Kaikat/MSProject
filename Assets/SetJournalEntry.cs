@@ -56,6 +56,11 @@ public class SetJournalEntry : MonoBehaviour {
 
 	public void Click()
 	{
+		if (entryAnimal == null)
+		{
+			return;
+		}
+
 		EventManager.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData(ScreenType.Journal, entryAnimal));
 		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
 	}

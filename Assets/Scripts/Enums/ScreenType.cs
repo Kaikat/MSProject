@@ -17,4 +17,5 @@
 	PlaceJournal,
 	Menu,
 	MajorsJournal,
+	AnimalsJournal,
 }
