@@ -13,12 +13,11 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
     private AnimalSpecies animalSpecies;
     private bool isAnimalSpeciesSet = false;
 
-    private List<GameObject> rows = new List<GameObject> ();
+    private List<GameObject> entries = new List<GameObject> ();
 	private List<GameObject> animalModels = new List<GameObject>();
 
-	private const string ANIMAL_UNDER_OBS_PREFAB = "RowFab2";
+	private readonly string ANIMAL_CARD = "AnimalCard";
 	private const string PREFAB_FOLDER = "UIPrefabs";
-	private const int NUM_COLUMNS = 4;
 
 	Dictionary<AnimalSpecies, Vector3> AnimalScales;
 	Dictionary<AnimalSpecies, Vector3> AnimalRotations;
@@ -40,11 +39,11 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
 	public void OnHide()
 	{
-		foreach (GameObject row in rows)
+		foreach (GameObject entry in entries)
 		{
-			GameObject.Destroy(row);
+			GameObject.Destroy(entry);
 		}
-		rows.Clear();
+		entries.Clear();
 
 		foreach (GameObject animal in animalModels) 
 		{
@@ -61,84 +60,48 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 			return;
 		}
 
-		//TODO: This is messy and was for testing purposes
         Player player = Service.Request.Player();
 		List<Animal> ownedAnimals = player.isAnimalOwned (animalSpecies) ? player.GetAnimals () [animalSpecies] : new List<Animal> ();
 		List<Animal> releasedAnimals = player.hasReleasedAnimal (animalSpecies) ? player.GetReleasedAnimals () [animalSpecies] : new List<Animal> ();
-		int numRows = CreateRows (ownedAnimals.Count, releasedAnimals.Count);
 
-		for (int i = 0; i < numRows * NUM_COLUMNS; i++)
-        {
-            int row = i / NUM_COLUMNS;
-            int col = i % NUM_COLUMNS;
-
-			if (i < ownedAnimals.Count + releasedAnimals.Count) 
-			{
-				RawImage animalCard = rows [row].gameObject.GetComponent<RowInAnimalGrid> ().AnimalCards [col];
-				animalCard.texture = i >= ownedAnimals.Count ? Resources.Load<Texture> ("lab") : Resources.Load<Texture> ("nature");
-				animalCard.GetComponentInChildren<ObservedAnimalButton> ().animal = 
-				i < ownedAnimals.Count ? ownedAnimals [i] : releasedAnimals [i - ownedAnimals.Count];
-            
-				GameObject animalModel = AssetManager.GetAnimalClone (animalSpecies);
-				Vector3 animalCardPosition = animalCard.transform.position;
-				animalModel.transform.position = new Vector3 (animalCardPosition.x + AnimalPositions[animalSpecies].x, 
-					animalCardPosition.y - (20.0f + (row * 14.0f)) + AnimalPositions[animalSpecies].y, 
-					animalCardPosition.z + AnimalPositions[animalSpecies].z);
-				animalModel.transform.localScale = AnimalScales [animalSpecies];
-				animalModel.transform.localRotation = Quaternion.Euler (
-					AnimalRotations [animalSpecies].x, AnimalRotations [animalSpecies].y, AnimalRotations [animalSpecies].z);
-				animalModels.Add (animalModel);
-			} 
-			else 
-			{
-				rows [row].gameObject.GetComponent<RowInAnimalGrid> ().AnimalCards [col].enabled = false;
-			}
-    	}
-
-		/*}
-            else
-            {
-                rows[row].gameObject.GetComponent<RowInAnimalGrid>().AnimalCards[col].enabled = false;
-            }*/
-		
-		//TODO: Add the released animals to the cards
-		//remember some owned animals were already added in front of some cards
-		//One idea would be to make a list of both owned and released animals with a bool per animal saying if it is currently owned.
-		//Then the loop would only need to be done once instead of twice
-		/*if (Service.Request.Player().hasReleasedAnimal(animalSpecies))
+		GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_CARD) as GameObject;
+		foreach (Animal animal in ownedAnimals)
 		{
-			List<Animal> releasedAnimals = Service.Request.Player().GetReleasedAnimals()[animalSpecies];
-			totalAnimals += releasedAnimals.Count;
-			foreach(Animal animal in releasedAnimals)
-			{
-				GameObject animalObject = AssetManager.GetAnimalClone(animalSpecies);
-				//animalObject.transform.parent = ContentPanel.transform;
-				//animalPrefabs.Add(animalObject);
-			}
-		}    */  
+			SetupAnimalCard (parentlessPrefab, animal, true);
+		}
+
+		foreach (Animal animal in releasedAnimals)
+		{
+			SetupAnimalCard (parentlessPrefab, animal, false);
+		}
     }
+
+	private void SetupAnimalCard(GameObject parentlessPrefab, Animal animal, bool released)
+	{
+		GameObject entry = Instantiate(parentlessPrefab);
+		entry.GetComponent<RawImage> ().texture = released ? Resources.Load<Texture> ("nature") : Resources.Load<Texture> ("lab");
+		entry.GetComponentInChildren<ObservedAnimalButton> ().animal = animal;
+
+		GameObject animalObject = AssetManager.GetAnimalClone (animalSpecies);
+		animalObject.transform.SetParent (entry.transform);
+		animalObject.transform.position = new Vector3 (entry.transform.position.x + AnimalPositions[animalSpecies].x, 
+			entry.transform.position.y + AnimalPositions[animalSpecies].y, 
+			entry.transform.position.z + AnimalPositions[animalSpecies].z);
+		animalObject.transform.localScale = AnimalScales [animalSpecies];
+		animalObject.transform.localRotation = Quaternion.Euler (
+			AnimalRotations [animalSpecies].x, AnimalRotations [animalSpecies].y, AnimalRotations [animalSpecies].z); 
+
+		entry.transform.SetParent (AnimalGrid.transform);
+		entry.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+		entry.transform.localPosition = new Vector3 (0.0f, 0.0f, 0.0f);
+		animalModels.Add (animalObject);
+		entries.Add (entry);
+	}
 
 	private void SetAnimalSpecies(AnimalSpecies species)
 	{
 		animalSpecies = species;
 		isAnimalSpeciesSet = true;
-	}
-		
-	private int CreateRows(int numOwned, int numReleased)
-	{
-		GameObject parentlessPrefab = AssetManager.LoadPrefab(PREFAB_FOLDER, ANIMAL_UNDER_OBS_PREFAB) as GameObject;
-
-		int numRows = (numOwned + numReleased) / NUM_COLUMNS + ((numOwned + numReleased) % NUM_COLUMNS > 0 ? 1 : 0);
-		for (int i = 0; i < numRows; i++) 
-		{
-			GameObject row = Instantiate(parentlessPrefab);
-			row.transform.SetParent (AnimalGrid.transform);
-			row.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
-			row.transform.localPosition = new Vector3 (0.0f, 0.0f, 0.0f);
-			rows.Add (row);
-		}
-
-		return numRows;
 	}
 
 	private void SetUpButtonListener(Button button, Animal animal)
@@ -162,53 +125,53 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 	private void SetPositions()
 	{
 		AnimalPositions = new Dictionary<AnimalSpecies, Vector3> ();
-		AnimalPositions.Add (AnimalSpecies.Acorn, new Vector3 (0.0f, 5.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Acorn, new Vector3 (-5.0f, 5.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Bat, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Butterfly, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, -30.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 5.9f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Death, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Deer, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, 5.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Dragonfly, new Vector3 (0.0f, 1.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Earth, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Heron, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Lizard, new Vector3 (0.0f, 1.5f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Mountainlion, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Rabbit, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Rain, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, 5.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Redtailedhawk, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Shark, new Vector3 (0.0f, 3.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Water, new Vector3 (0.0f, 0.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Wind, new Vector3 (0.0f, 0.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Death, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Deer, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, -7.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Dragonfly, new Vector3 (0.0f, -12.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Earth, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Heron, new Vector3 (0.0f, -30.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Lizard, new Vector3 (0.0f, -16.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Mountainlion, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Rabbit, new Vector3 (0.0f, -22.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Rain, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Rattlesnake, new Vector3 (0.0f, -8.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Redtailedhawk, new Vector3 (0.0f, -24.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Shark, new Vector3 (0.0f, -8.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Squirrel, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Water, new Vector3 (0.0f, -28.0f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Wind, new Vector3 (0.0f, -28.0f, 0.0f));
 	}
 
 	private void SetAnimalScales()
 	{
 		AnimalScales = new Dictionary<AnimalSpecies, Vector3> ();
-		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (150.0f, 150.0f, 150.0f));
+		AnimalScales.Add (AnimalSpecies.Acorn, new Vector3 (2000.0f, 2000.0f, 2000.0f));
 		AnimalScales.Add (AnimalSpecies.Bat, new Vector3 (3.0f, 3.0f, 3.0f));
 		AnimalScales.Add (AnimalSpecies.Butterfly, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Coyote, new Vector3 (15.0f, 15.0f, 15.0f));
-		AnimalScales.Add(AnimalSpecies.Datura, new Vector3 (2.5f, 2.5f, 2.5f));
-		AnimalScales.Add (AnimalSpecies.Death, new Vector3 (10.0f, 10.0f, 10.0f));
-		AnimalScales.Add (AnimalSpecies.Deer, new Vector3 (17.0f, 17.0f, 17.0f));
-		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (5.0f, 5.0f, 5.0f));
-		AnimalScales.Add (AnimalSpecies.Dragonfly, new Vector3 (80.0f, 80.0f, 80.0f));
-		AnimalScales.Add (AnimalSpecies.Earth, new Vector3 (10.0f, 10.0f, 10.0f));
-		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (15.0f, 15.0f, 15.0f));
-		AnimalScales.Add (AnimalSpecies.Lizard, new Vector3 (45.0f, 45.0f, 45.0f));
-		AnimalScales.Add (AnimalSpecies.Mountainlion, new Vector3 (10.0f, 10.0f, 10.0f));
-		AnimalScales.Add (AnimalSpecies.Rabbit, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Rain, new Vector3 (10.0f, 10.0f, 10.0f));
-		AnimalScales.Add (AnimalSpecies.Rattlesnake, new Vector3 (230.0f, 230.0f, 230.0f));
-		AnimalScales.Add (AnimalSpecies.Redtailedhawk, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Shark, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Squirrel, new Vector3 (20.0f, 20.0f, 20.0f));
-		AnimalScales.Add (AnimalSpecies.Water, new Vector3 (10.0f, 10.0f, 10.0f));
-		AnimalScales.Add (AnimalSpecies.Wind, new Vector3 (10.0f, 10.0f, 10.0f));
+		AnimalScales.Add (AnimalSpecies.Coyote, new Vector3 (100.0f, 100.0f, 100.0f));
+		AnimalScales.Add(AnimalSpecies.Datura, new Vector3 (15.0f, 15.0f, 15.0f));
+		AnimalScales.Add (AnimalSpecies.Death, new Vector3 (60.0f, 60.0f, 60.0f));
+		AnimalScales.Add (AnimalSpecies.Deer, new Vector3 (100.0f, 100.0f, 100.0f));
+		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (30.0f, 30.0f, 30.0f));
+		AnimalScales.Add (AnimalSpecies.Dragonfly, new Vector3 (500.0f, 500.0f, 500.0f));
+		AnimalScales.Add (AnimalSpecies.Earth, new Vector3 (60.0f, 60.0f, 60.0f));
+		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (75.0f, 75.0f, 75.0f));
+		AnimalScales.Add (AnimalSpecies.Lizard, new Vector3 (200.0f, 200.0f, 200.0f));
+		AnimalScales.Add (AnimalSpecies.Mountainlion, new Vector3 (60.0f, 60.0f, 60.0f));
+		AnimalScales.Add (AnimalSpecies.Rabbit, new Vector3 (100.0f, 100.0f, 100.0f));
+		AnimalScales.Add (AnimalSpecies.Rain, new Vector3 (60.0f, 60.0f, 60.0f));
+		AnimalScales.Add (AnimalSpecies.Rattlesnake, new Vector3 (1500.0f, 1500.0f, 1500.0f));
+		AnimalScales.Add (AnimalSpecies.Redtailedhawk, new Vector3 (100.0f, 100.0f, 100.0f));
+		AnimalScales.Add (AnimalSpecies.Shark, new Vector3 (80.0f, 80.0f, 80.0f));
+		AnimalScales.Add (AnimalSpecies.Squirrel, new Vector3 (100.0f, 100.0f, 100.0f));
+		AnimalScales.Add (AnimalSpecies.Water, new Vector3 (60.0f, 60.0f, 60.0f));
+		AnimalScales.Add (AnimalSpecies.Wind, new Vector3 (60.0f, 60.0f, 60.0f));
 	}
 
 	private void SetAnimalRotations()
