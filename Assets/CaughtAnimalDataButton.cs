@@ -33,7 +33,11 @@ public class CaughtAnimalDataButton : MonoBehaviour
 				break;
 
 			case ScreenType.CatchAnimal:
-				if (Random.Range(0, 20) >= 15)
+				EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Quiz);
+				EventManager.TriggerEvent(GameEvent.QuizTime, animal);	
+
+				//FOR THE FUTURE
+				/*if (Random.Range(0, 20) >= 15)
 				{
 					Service.Request.ReleaseAnimal(animal);
 					EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Celebration);
@@ -42,7 +46,7 @@ public class CaughtAnimalDataButton : MonoBehaviour
 				{
 					EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Quiz);
 					EventManager.TriggerEvent(GameEvent.QuizTime, animal);
-				}
+				}*/
 				break;
 
 			case ScreenType.Journal:

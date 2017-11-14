@@ -143,13 +143,16 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
 	private void SetUpButtonListener(Button button, Animal animal)
 	{
+		const string ANIMAL = "ANIMAL";
+		const string CALLING_SCREEN = "CALLING_SCREEN";
+
 		button.onClick.RemoveAllListeners ();
 		button.onClick.AddListener(() =>
 		{
 				Dictionary<string, object> eventDict = new Dictionary<string, object>()
 				{
-					{ AnimalInformationController.ANIMAL, animal },
-					{ AnimalInformationController.CALLING_SCREEN, ScreenType.AnimalUnderObs }
+					{ ANIMAL, animal },
+					{ CALLING_SCREEN, ScreenType.AnimalUnderObs }
 				};
 				EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
 				EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
