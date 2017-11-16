@@ -5,7 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Generic2D.unity
+  - enabled: 1
+    path: Assets/EmptyScene.unity
+    guid: 865468ac1373e4eb8b80b1c8e100d4a0
   - enabled: 1
     path: Assets/ScreenManagerChange.unity
+    guid: f27ab2d5ecb5046b5a6dddc07503c7c0
