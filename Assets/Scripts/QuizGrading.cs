@@ -10,12 +10,16 @@ public class QuizGrading : MonoBehaviour
 	private Animal animal;
 	private bool encounterFinished = false;
 
-	public Text BunnyMessage;
+	public RawImage FaceBubble;
+	public Text BubbleMessage;
 	public Text ButtonText;
 
+	private readonly string GIRL = "GirlBubble";
+	private readonly string BOY = "BoyBubble";
+	private readonly string BUNNY = "RabbitScribeBubble";
 	private readonly string HOME = "Home";
 	private readonly string NEXT = "Next";
-	private readonly string ENCOUNTER_MESSAGE = "We may be able to help this animal depending on its health values.";
+	private readonly string ENCOUNTER_MESSAGE = "I may be able to help this animal depending on its health values.";
 	private readonly string CELEBRATORY_MESSAGE = "Congratulations! You found the animal in time to help. Keep up the good work.";
 	private readonly string TOO_LATE_MESSAGE = "The biomagnification value is too high. Sorry, this animal can no longer be helped.";
 
@@ -28,6 +32,7 @@ public class QuizGrading : MonoBehaviour
 	{
 		animal = quizAnimal;
 		AssetManager.ShowAnimal (animal.Species);
+		FaceBubble.texture = Service.Request.Player ().Avatar == Avatar.Girl ? Resources.Load<Texture> (GIRL) : Resources.Load<Texture> (BOY);
 	}
 
 	void Start ()
@@ -43,7 +48,7 @@ public class QuizGrading : MonoBehaviour
 		if (encounterFinished)
 		{
 			encounterFinished = false;
-			BunnyMessage.text = ENCOUNTER_MESSAGE;
+			BubbleMessage.text = ENCOUNTER_MESSAGE;
 			Service.Request.ReleaseAnimal (animal);
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 			AssetManager.HideAnimals ();
@@ -53,14 +58,16 @@ public class QuizGrading : MonoBehaviour
 
 		if (!encounterFinished && (Random.Range (0, 20) >= 10 || animal.Species == AnimalSpecies.Horse))
 		{
-			BunnyMessage.text = CELEBRATORY_MESSAGE;
+			FaceBubble.texture = Resources.Load<Texture> (BUNNY);
+			BubbleMessage.text = CELEBRATORY_MESSAGE;
 			encounterFinished = true;
 			ButtonText.text = HOME;
 			return;
 		} 
 		else if (!encounterFinished && (Random.Range(0, 20) < 10 || animal.Species != AnimalSpecies.Horse))
 		{
-			BunnyMessage.text = TOO_LATE_MESSAGE;
+			FaceBubble.texture = Resources.Load<Texture> (BUNNY);
+			BubbleMessage.text = TOO_LATE_MESSAGE;
 			encounterFinished = true;
 			ButtonText.text = HOME;
 			return;
