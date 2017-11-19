@@ -18,4 +18,5 @@
 	Menu,
 	MajorsJournal,
 	AnimalsJournal,
+	WifiError,
 }

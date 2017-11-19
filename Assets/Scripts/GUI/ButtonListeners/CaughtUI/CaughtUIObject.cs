@@ -13,7 +13,7 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void Awake()
 	{
-		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
+		Event.Request.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
 	}
 
 	void SetTextFields(Animal animal)
@@ -33,6 +33,6 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
+		Event.Request.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
 	}
 }

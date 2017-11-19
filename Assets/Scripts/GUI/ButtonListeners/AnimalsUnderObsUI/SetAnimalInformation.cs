@@ -23,12 +23,12 @@ public class SetAnimalInformation : MonoBehaviour
 
 	void Awake()
 	{
-		EventManager.RegisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SetScreenContent);
+		Event.Request.RegisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SetScreenContent);
 	}
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SetScreenContent);
+		Event.Request.UnregisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SetScreenContent);
 	}
 
 	public void SetScreenContent(PreviousScreenData screenData)

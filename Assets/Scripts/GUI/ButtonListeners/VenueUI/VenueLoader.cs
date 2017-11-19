@@ -24,6 +24,11 @@ public class VenueLoader : MonoBehaviour, IShowHideListener
 		if (venues == null) 
 		{
 			venues = Service.Request.AllVenues ();
+			if (venues == null)
+			{
+				Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Menu);
+				return;
+			}
 		}
 
 		List<Venue> playerVenues = new List<Venue> ();

@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 
-//TODO: GET RID OF USERNAME/SESSION KEY - The player already has it
 public class RealService : IServices
 {
 	private static RealService _Instance;
@@ -19,32 +18,80 @@ public class RealService : IServices
 	}
 
 	Player CurrentPlayer;
-	Dictionary<AnimalSpecies, AnimalData> Animals;
-	List<AnimalLocation> GPSLocations;
+	Dictionary<AnimalSpecies, AnimalData> Animals = null;
+	List<AnimalLocation> GPSLocations = null;
 	//List<Venue> Venues;
+
+	private Animal temporaryUnreleasedAnimal = null;
 
 	private RealService() 
 	{
 		Animals = DataManager.Data.GetAllAnimalData ();
 		GPSLocations = DataManager.Data.GetGPSLocations ();
+
+		if (Animals == null || GPSLocations == null)
+		{
+			Event.Request.RegisterEvent (GameEvent.ScreenManagerInitialized, ReloadGame);
+			WifiManager.SetWifiAvailability (false);
+		}
 		//Venues = DataManager.Data.GetVenues();
+	}
+
+	~RealService()
+	{
+	}
+
+	public void ReloadGame()
+	{
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.WifiError);
+		Event.Request.UnregisterEvent (GameEvent.ScreenManagerInitialized, ReloadGame);
+	}
+
+	public void InitAgain()
+	{
+		Animals = DataManager.Data.GetAllAnimalData ();
+		GPSLocations = DataManager.Data.GetGPSLocations ();
+
+		if (Animals == null || GPSLocations == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.WifiError);
+			return;
+		}
+
+		AssetManager.Init ();
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
+		WifiManager.SetWifiAvailability (true);
 	}
 				
 	public string CreateAccount(string username, string name, string password, string email, string gender, string birthday)
 	{
-		return DataManager.Data.CreateAccount(username.Trim().ToLower(), name, password, email, gender, birthday);
+		string createAccountResult = DataManager.Data.CreateAccount(username.Trim().ToLower(), name, password, email, gender, birthday);
+		if (createAccountResult == string.Empty)
+		{
+			WifiManager.SetWifiAvailability (false);
+			return "Please find internet access and try again.";
+		}
+
+		WifiManager.SetWifiAvailability (true);
+		return createAccountResult;
 	}
 
-	public bool VerifyLogin(string username, string password)
+	public string VerifyLogin(string username, string password)
 	{
 		username = username.Trim ().ToLower ();
 		password = password.Trim ();
 		if (username.Length == 0 || password.Length == 0)
 		{
-			return false;
+			return "false";
 		}
 
 		JsonResponse.LoginResponse response =  DataManager.Data.ValidLogin (username, password);
+		if (response == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+			return "null";
+		}
 		if (!response.error)
 		{
 			CurrentPlayer = DataManager.Data.GetPlayerData (response.session_key);
@@ -52,14 +99,22 @@ public class RealService : IServices
 			CurrentPlayer.Username = username;
 
 			CurrentPlayer.Print ();
-		}
+			WifiManager.SetWifiAvailability (true);
+		} 
 
-		return !response.error;
+		return !response.error ? "true" : "false";
 	}
 
 	public void UpdateAvatar(Avatar avatar)
 	{
-		DataManager.Data.UpdateAvatar (CurrentPlayer.SessionKey, avatar);
+		bool error = DataManager.Data.UpdateAvatar (CurrentPlayer.SessionKey, avatar);
+		if (error)
+		{
+			WifiManager.SetWifiAvailability (false);
+			return;
+		}
+
+		WifiManager.SetWifiAvailability (true);
 		CurrentPlayer.SetAvatar (avatar);
 	}
 
@@ -103,49 +158,160 @@ public class RealService : IServices
 		if (!CurrentPlayer.HasDiscoveredAnimal (species))
 		{
 			string discovery_date = DataManager.Data.NotifyAnimalDiscovered (CurrentPlayer.SessionKey, species);
-			CurrentPlayer.AddDiscoveredAnimal (species, discovery_date);
+			if (discovery_date != null || discovery_date != string.Empty)
+			{
+				CurrentPlayer.AddDiscoveredAnimal (species, discovery_date);
+				WifiManager.SetWifiAvailability (true);
+			} 
+			else
+			{
+				WifiManager.SetWifiAvailability (false);
+				return null;
+			}
 		}
 
-		return DataManager.Data.GenerateAnimal (CurrentPlayer.SessionKey, species);
+		Animal animal = DataManager.Data.GenerateAnimal (CurrentPlayer.SessionKey, species);
+		if (animal == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+		} 
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return animal;
 	}
 
-	public void CatchAnimal(Animal animal)
+	public bool CatchAnimal(Animal animal)
 	{
 		CurrentPlayer.AddOwnedAnimal(animal);
-		DataManager.Data.NotifyAnimalCaught(CurrentPlayer.SessionKey, animal);
+		bool error = DataManager.Data.NotifyAnimalCaught(CurrentPlayer.SessionKey, animal);
+		if (error)
+		{
+			WifiManager.SetWifiAvailability (false);
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return error;
 	}
 
-	public void ReleaseAnimal(Animal animal)
+	public bool ReleaseAnimal(Animal animal)
 	{
 		CurrentPlayer.RemoveOwnedAnimal (animal);
 		CurrentPlayer.AddReleasedAnimal (animal);
-		DataManager.Data.NotifyAnimalReleased (CurrentPlayer.SessionKey, animal);
+		bool error = DataManager.Data.NotifyAnimalReleased (CurrentPlayer.SessionKey, animal);
+		if (error)
+		{
+			temporaryUnreleasedAnimal = animal;
+			WifiManager.SetWifiAvailability (false);
+			Event.Request.RegisterEvent (GameEvent.WifiAvailable, AttemptAnimalReleaseAgain);
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return error;
+	}
+
+	public void AttemptAnimalReleaseAgain()
+	{
+		if (temporaryUnreleasedAnimal != null)
+		{
+			bool error = DataManager.Data.NotifyAnimalReleased (CurrentPlayer.SessionKey, temporaryUnreleasedAnimal);
+			if (!error)
+			{
+				WifiManager.SetWifiAvailability (true);
+				Event.Request.UnregisterEvent (GameEvent.WifiAvailable, AttemptAnimalReleaseAgain);
+				temporaryUnreleasedAnimal = null;
+			}
+		}
 	}
 
 	public List<JournalEntry> PlayerJournal()
 	{
-		return DataManager.Data.GetJournalEntryData (CurrentPlayer.SessionKey);
+		List<JournalEntry> journalEntries = DataManager.Data.GetJournalEntryData (CurrentPlayer.SessionKey);
+		if (journalEntries == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return journalEntries;
 	}
 
-	public void SendPlayerRatings(List<InterestValue> playerInterests)
+	public bool SendPlayerRatings(List<InterestValue> playerInterests)
 	{
-		DataManager.Data.SendRatings (CurrentPlayer.SessionKey, playerInterests);
+		bool error = false;
+		if (CurrentPlayer.Survey == false)
+		{
+			error = DataManager.Data.SendRatings (CurrentPlayer.SessionKey, playerInterests);
+		}
+		if (error)
+		{
+			WifiManager.SetWifiAvailability (false);
+			return true;
+		}
+
 		CurrentPlayer.Survey = true;
-		CurrentPlayer.SetRecommendations (DataManager.Data.GetRecommendations (CurrentPlayer.SessionKey));
+
+		Dictionary<string, MajorLocationData> majorRecommendations = DataManager.Data.GetRecommendations (CurrentPlayer.SessionKey);
+		if (majorRecommendations == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+			return true;
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+
+		CurrentPlayer.SetRecommendations (majorRecommendations);
+		return error;
 	}
 
 	public List<Venue> AllVenues()
 	{
-		return DataManager.Data.GetVenueList(CurrentPlayer.SessionKey);
+		List<Venue> venues = DataManager.Data.GetVenueList(CurrentPlayer.SessionKey);
+		if (venues == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return venues;
 	}
 
 	public Dictionary<string, List<Major>> GetMajorsAtLocation()
 	{
-		return DataManager.Data.GetMajorsAtLocation (CurrentPlayer.SessionKey);
+		Dictionary<string, List<Major>> majorData = DataManager.Data.GetMajorsAtLocation (CurrentPlayer.SessionKey);
+		if (majorData == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return majorData;
 	}
 
 	public Dictionary<Major, MajorData> AllMajors()
 	{
-		return DataManager.Data.AllMajors ();
+		Dictionary<Major, MajorData> majors = DataManager.Data.AllMajors ();
+		if (majors == null)
+		{
+			WifiManager.SetWifiAvailability (false);
+		}
+		else
+		{
+			WifiManager.SetWifiAvailability (true);
+		}
+		return majors;
 	}
 }

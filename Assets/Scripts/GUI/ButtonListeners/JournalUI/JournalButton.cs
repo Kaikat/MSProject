@@ -6,7 +6,7 @@ public class JournalButton : MonoBehaviour {
 	//TODO: Move me to HomeUI
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
 	}
 }
 

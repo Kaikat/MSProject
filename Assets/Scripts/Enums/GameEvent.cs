@@ -25,4 +25,8 @@ public enum GameEvent {
 
 	AccountCreationSuccess,
 	LoginSuccessful,
+
+	WifiAvailable,
+	WifiUnavailable,
+	ScreenManagerInitialized,
 }

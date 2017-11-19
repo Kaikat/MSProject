@@ -17,13 +17,13 @@ public interface IDataManager
 	//string GenerateColorFile (float health1, float health2, float health3);
 	//string GenerateColorFile(float health1, float health2, float health3);
 	string NotifyAnimalDiscovered(string username, AnimalSpecies species);
-	void NotifyAnimalCaught(string username, Animal animal);
-	void NotifyAnimalReleased(string username, Animal animal);
+	bool NotifyAnimalCaught(string username, Animal animal);
+	bool NotifyAnimalReleased(string username, Animal animal);
 	List<JournalEntry> GetJournalEntryData(string username);
 
-	void UpdateAvatar(string sessionKey, Avatar avatar);
+	bool UpdateAvatar(string sessionKey, Avatar avatar);
 
-	void SendRatings(string sessionKey, List<InterestValue> interests);
+	bool SendRatings(string sessionKey, List<InterestValue> interests);
 
 	List<Venue> GetVenueList (string sessionKey);
 

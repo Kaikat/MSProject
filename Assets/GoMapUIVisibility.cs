@@ -9,7 +9,7 @@ public class GoMapUIVisibility : MonoBehaviour {
 
 	void Awake () 
 	{
-		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowHideCanvas);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowHideCanvas);
 	}
 	
 	public void ShowHideCanvas(ScreenType screen)
@@ -28,6 +28,6 @@ public class GoMapUIVisibility : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowHideCanvas);
+		Event.Request.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowHideCanvas);
 	}
 }

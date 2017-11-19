@@ -75,8 +75,9 @@ public class PhpDataManager : IDataManager
 		return new JsonResponse.LoginResponse(loginSession.error, "");
 	}
 
-	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	public bool UpdateAvatar(string sessionKey, Avatar avatar)
 	{
+		return true;
 	}
 
 	public List<AnimalLocation> GetGPSLocations()
@@ -228,7 +229,7 @@ public class PhpDataManager : IDataManager
 		return response.message;
 	}
 
-	public void NotifyAnimalCaught(string username, Animal animal)
+	public bool NotifyAnimalCaught(string username, Animal animal)
 	{
 		WebManager.GetHttpResponse<BasicResponse> (
 			HTTP_ADDRESS + NOTIFY_ANIMAL_CAUGHT +
@@ -237,15 +238,19 @@ public class PhpDataManager : IDataManager
 			"&size=" + animal.Stats.Size.ToString() + "&age=" + animal.Stats.Age.ToString() + "&weight=" + animal.Stats.Weight.ToString() +
 			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
 		);
+
+		return true;
 	}
 
-	public void NotifyAnimalReleased(string username, Animal animal)
+	public bool NotifyAnimalReleased(string username, Animal animal)
 	{
 		WebManager.GetHttpResponse<BasicResponse> (
 			HTTP_ADDRESS + NOTIFY_ANIMAL_RELEASED +
 			"?username=" + username + "&encounter_id=" + animal.AnimalID.ToString() + "&animal_species=" + animal.Species.ToString() + 
 			"&health1=" + animal.Stats.Health1.ToString() + "&health2=" + animal.Stats.Health2.ToString() + "&health3=" + animal.Stats.Health3.ToString()
 		);
+
+		return true;
 	}
 
 	public List<JournalEntry> GetJournalEntryData(string username)
@@ -293,8 +298,9 @@ public class PhpDataManager : IDataManager
 
 
 
-	public void SendRatings(string sessionKey, List<InterestValue> interests)
+	public bool SendRatings(string sessionKey, List<InterestValue> interests)
 	{
+		return true;
 	}
 
 	public Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)

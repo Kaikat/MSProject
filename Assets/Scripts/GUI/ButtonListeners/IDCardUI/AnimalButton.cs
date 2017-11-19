@@ -13,7 +13,7 @@ public class AnimalButton : MonoBehaviour {
 	void Awake()
 	{
 		species = Service.Request.AnimalEnglishName (Species);
-		EventManager.RegisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
+		Event.Request.RegisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
 	}
 
 	void Start()
@@ -55,8 +55,8 @@ public class AnimalButton : MonoBehaviour {
     {
         if(clickable)
         {
-            EventManager.TriggerEvent(GameEvent.ViewingAnimalsUnderObservation, Species);
-            EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
+			Event.Request.TriggerEvent(GameEvent.ViewingAnimalsUnderObservation, Species);
+			Event.Request.TriggerEvent(GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
         }
     }
 
@@ -67,6 +67,6 @@ public class AnimalButton : MonoBehaviour {
 		
 	void Unregister()
 	{
-		EventManager.UnregisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
+		Event.Request.UnregisterEvent<Animal> (GameEvent.AnimalCaught, UpdateButton);
 	}
 }

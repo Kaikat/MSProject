@@ -18,6 +18,6 @@ public class IDCard : MonoBehaviour
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.IDCard);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.IDCard);
 	}
 }

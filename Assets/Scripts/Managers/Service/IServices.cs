@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public interface IServices
 {
+	void InitAgain();
 	//Basic Data
 	Dictionary<AnimalSpecies, AnimalData> AllAnimals();
 	string AnimalDescription (AnimalSpecies species);
@@ -18,14 +19,14 @@ public interface IServices
 	List<JournalEntry> PlayerJournal();
 
 	//Send Data
-	void CatchAnimal (Animal animal);
-	void ReleaseAnimal (Animal animal);
+	bool CatchAnimal (Animal animal);
+	bool ReleaseAnimal (Animal animal);
 
-	bool VerifyLogin (string username, string password);
+	string VerifyLogin (string username, string password);
 	string CreateAccount (string username, string name, string password, string email, string gender, string birthdate);
 	void UpdateAvatar (Avatar avatar);
 
-	void SendPlayerRatings (List<InterestValue> playerInterests);
+	bool SendPlayerRatings (List<InterestValue> playerInterests);
 	//Dictionary<string, MajorLocationData> GetRecommendations ();
 	List<Venue> AllVenues();
 	Dictionary<string, List<Major>> GetMajorsAtLocation ();

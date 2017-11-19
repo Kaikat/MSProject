@@ -9,7 +9,7 @@ public class BannerColor : MonoBehaviour {
 
 	void Awake()
 	{
-		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetBannerColorToGray);
+		Event.Request.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetBannerColorToGray);
 	}
 
 	public void SetBannerData(Texture bannerColor, AnimalSpecies animal)
@@ -28,6 +28,6 @@ public class BannerColor : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetBannerColorToGray);
+		Event.Request.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetBannerColorToGray);
 	}
 }

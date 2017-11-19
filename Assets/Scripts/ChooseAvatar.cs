@@ -9,6 +9,6 @@ public class ChooseAvatar : MonoBehaviour
 	public void Click ()
 	{
 		Service.Request.UpdateAvatar (Avatar);
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 	}
 }

@@ -61,8 +61,8 @@ public class SetJournalEntry : MonoBehaviour {
 			return;
 		}
 
-		EventManager.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData(ScreenType.Journal, entryAnimal));
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
+		Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData(ScreenType.Journal, entryAnimal));
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
 	}
 
 	private string ConvertDate(string dateString)

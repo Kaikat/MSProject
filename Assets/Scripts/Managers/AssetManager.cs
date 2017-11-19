@@ -20,13 +20,17 @@ public static class AssetManager
 
 	public static void Init()
 	{
-		string folder = "AnimalPrefabs";
+		Dictionary<AnimalSpecies, AnimalData> animals = Service.Request.AllAnimals();
+		if (animals == null)
+		{
+			return;
+		}
+
 		AnimalPrefabs = new Dictionary<AnimalSpecies, Object> ();
 		AnimalModels = new List<GameObject> ();
 		Species = new List<AnimalSpecies> ();
 
-		Dictionary<AnimalSpecies, AnimalData> animals = Service.Request.AllAnimals();
-
+		string folder = "AnimalPrefabs";
 		var species = System.Enum.GetValues(typeof(AnimalSpecies));
 		foreach (AnimalSpecies i in species)
 		{

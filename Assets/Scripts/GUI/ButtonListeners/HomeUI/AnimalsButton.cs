@@ -6,6 +6,6 @@ public class AnimalsButton : MonoBehaviour
 {
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.AnimalsJournal);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.AnimalsJournal);
 	}
 }

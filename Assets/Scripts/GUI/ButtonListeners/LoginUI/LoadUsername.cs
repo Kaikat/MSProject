@@ -9,7 +9,7 @@ public class LoadUsername : MonoBehaviour
 
 	void Awake ()
 	{
-		EventManager.RegisterEvent <ScreenType>(GameEvent.SwitchScreen, UpdateUsername);
+		Event.Request.RegisterEvent <ScreenType>(GameEvent.SwitchScreen, UpdateUsername);
 	}
 
 	void Start () 
@@ -27,6 +27,6 @@ public class LoadUsername : MonoBehaviour
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent<ScreenType> (GameEvent.SwitchScreen, UpdateUsername);
+		Event.Request.UnregisterEvent<ScreenType> (GameEvent.SwitchScreen, UpdateUsername);
 	}
 }

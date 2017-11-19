@@ -11,8 +11,8 @@ public class ObservedAnimalButton : MonoBehaviour
 		if (animal != null) 
 		{
 			PreviousScreenData screenData = new PreviousScreenData (ScreenType.AnimalUnderObs, animal);
-			EventManager.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, screenData);
-			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
+			Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, screenData);
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
 		}
 	}
 }

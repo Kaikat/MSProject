@@ -43,6 +43,10 @@ public class AspNetDataManager : IDataManager
 	{
 		Dictionary<AnimalSpecies, AnimalData> Animals = new Dictionary<AnimalSpecies, AnimalData> ();
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (WEB_ADDRESS + ANIMAL_CONTROLLER);
+		if (response == null)
+		{
+			return null;
+		}
 		foreach (DataAnimal anim in response.AnimalData)
 		{
 			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.nahuatl_name, anim.spanish_name, 
@@ -61,6 +65,11 @@ public class AspNetDataManager : IDataManager
 		BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + CREATE_ACCOUNT_CONTROLLER, JsonUtility.ToJson (accountDetails));
 
+		if (response == null)
+		{
+			return string.Empty;
+		}
+
 		Debug.LogWarning ("RESPONSE: " + response.message);
 		return response.message;
 	}
@@ -74,13 +83,20 @@ public class AspNetDataManager : IDataManager
 		BasicResponse loginSession = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + LOGIN_CONTROLLER, JsonUtility.ToJson(loginDetails));
 
+		if (loginSession == null)
+		{
+			return null;
+		}
+
 		return new LoginResponse (loginSession.error, loginSession.message);
 	}
 
-	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	public bool UpdateAvatar(string sessionKey, Avatar avatar)
 	{
 		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL(sessionKey) + "&avatar=" + avatar.ToString());
+
+		return response == null;
 	}
 
 	public List<AnimalLocation> GetGPSLocations()
@@ -88,9 +104,9 @@ public class AspNetDataManager : IDataManager
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
 		LocationResponse response = WebManager.GetHttpResponse<LocationResponse> (WEB_ADDRESS + LOCATIONS_CONTROLLER);
 
-		if (response.empty)
+		if (response == null)
 		{
-			return pointsOfInterest;
+			return null;
 		}
 
 		foreach (LocationData d in response.LocationData)
@@ -208,6 +224,11 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + GENERATE_ANIMAL_CONTROLLER + 
 			"?session_key=" + WWW.EscapeURL (sessionKey) + "&species=" + species.ToString ().ToLower());
 
+		if (gennedAnimal == null)
+		{
+			return null;
+		}
+
 		string fstring = "GENNED_ANIMAL\nID: " + gennedAnimal.animal_id.ToString ();
 		fstring += "\nhealth1 : " + gennedAnimal.health_1.ToString ();
 		fstring += "\nhealth2 : " + gennedAnimal.health_2.ToString ();
@@ -216,7 +237,6 @@ public class AspNetDataManager : IDataManager
 		fstring += "\nsize : " + gennedAnimal.size.ToString ();
 		fstring += "\nweight: " + gennedAnimal.weight.ToString ();
 		Debug.LogWarning (fstring);
-
 
 		return new Animal (species, gennedAnimal.animal_id,
 			new AnimalStats(gennedAnimal.health_1, gennedAnimal.health_2, gennedAnimal.health_3, 
@@ -243,7 +263,7 @@ public class AspNetDataManager : IDataManager
 		return response.message;
 	}
 
-	public void NotifyAnimalCaught(string sessionKey, Animal animal)
+	public bool NotifyAnimalCaught(string sessionKey, Animal animal)
 	{
 		AnimalEncounterData animalData = new AnimalEncounterData ();
 		animalData.session_key = sessionKey;
@@ -264,9 +284,11 @@ public class AspNetDataManager : IDataManager
 
 		string fstring = "CAUGHT: " + response.message;
 		Debug.LogWarning (fstring);
+
+		return response.error || response == null;
 	}
 
-	public void NotifyAnimalReleased(string sessionKey, Animal animal)
+	public bool NotifyAnimalReleased(string sessionKey, Animal animal)
 	{
 		AnimalEncounterData animalData = new AnimalEncounterData ();
 		animalData.session_key = sessionKey;
@@ -287,6 +309,8 @@ public class AspNetDataManager : IDataManager
 
 		string fstring = "RELEASED: " + response.message;
 		Debug.LogWarning (fstring);
+
+		return response.error || response == null;
 	}
 
 	public List<JournalEntry> GetJournalEntryData(string sessionKey)
@@ -295,6 +319,11 @@ public class AspNetDataManager : IDataManager
 		JournalResponse response = WebManager.GetHttpResponse<JournalResponse> (
 			WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
+
+		if (response == null)
+		{
+			return null;
+		}
 
 		Debug.LogWarning ("JOURNAL: " + WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 		foreach (JournalEntryData entry in response.JournalEntryData)
@@ -324,7 +353,7 @@ public class AspNetDataManager : IDataManager
         return new List<JournalEntry>(journalEntries.Take(JOURNAL_ENTRY_LIMIT));
 	}
 
-	public void SendRatings(string sessionKey, List<InterestValue> interests)
+	public bool SendRatings(string sessionKey, List<InterestValue> interests)
 	{
 		SurveyData data = new SurveyData ();
 		data.session_key = sessionKey;
@@ -339,6 +368,7 @@ public class AspNetDataManager : IDataManager
 			
 		string sentMessage = "RATINGS SENT: " + response.message;
 		Debug.LogWarning (sentMessage);
+		return response.error || response == null;
 	}
 
 	private int getIndexOfLocation(string location, List<MajorLocationData> majorListData)
@@ -360,7 +390,12 @@ public class AspNetDataManager : IDataManager
 		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
 			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
-			
+
+		if (recommendations == null)
+		{
+			return null;
+		}
+
 		//Debug.LogWarning ("URLLLLLLLLL: " + WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username);
 		List<MajorLocation> majorListing = recommendations.recommended_majors;
 		List<MajorLocationData> majorData = new List<MajorLocationData> ();
@@ -401,6 +436,11 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
 
+		if (recommendations == null)
+		{
+			return null;
+		}
+
 		List<MajorLocation> majorListing = recommendations.recommended_majors;
 		List<Venue> venues = new List<Venue> ();
 		List<AnimalLocation> animalListing = GetGPSLocations ();
@@ -440,6 +480,11 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
 
+		if (recommendations == null)
+		{
+			return null;
+		}
+
 		List<MajorLocation> majorListing = recommendations.recommended_majors;
 		Dictionary<string, List<Major>> majorLocations = new Dictionary<string, List<Major>> ();
 		foreach (MajorLocation majorLocation in majorListing)
@@ -462,6 +507,11 @@ public class AspNetDataManager : IDataManager
 		MajorEntriesResponse majorEntriesResponse = WebManager.GetHttpResponse<MajorEntriesResponse> (
 			WEB_ADDRESS + MAJORS_CONTROLLER
 		);
+
+		if (majorEntriesResponse == null)
+		{
+			return null;
+		}
 
 		List<MajorEntryData> majorEntriesList = majorEntriesResponse.MajorEntries;
 		Dictionary<Major, MajorData> majorEntries = new Dictionary<Major, MajorData> ();

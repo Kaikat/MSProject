@@ -9,8 +9,8 @@ public class AnimalImage : MonoBehaviour {
 
 	void Awake()
 	{
-		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, SetSize);
-		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, SetAnimalImage);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, SetSize);
+		Event.Request.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, SetAnimalImage);
 
 		image.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
 	}
@@ -38,7 +38,7 @@ public class AnimalImage : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, SetSize);
-		EventManager.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, SetAnimalImage);
+		Event.Request.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, SetSize);
+		Event.Request.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, SetAnimalImage);
 	}
 }

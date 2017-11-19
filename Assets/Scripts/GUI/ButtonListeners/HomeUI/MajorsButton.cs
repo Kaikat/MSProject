@@ -6,6 +6,6 @@ public class MajorsButton : MonoBehaviour
 {
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.MajorsJournal);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.MajorsJournal);
 	}
 }

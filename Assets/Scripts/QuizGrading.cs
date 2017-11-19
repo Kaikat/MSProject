@@ -25,7 +25,7 @@ public class QuizGrading : MonoBehaviour
 
 	void Awake()
 	{
-		EventManager.RegisterEvent<Animal> (GameEvent.QuizTime, SetAnimal);
+		Event.Request.RegisterEvent<Animal> (GameEvent.QuizTime, SetAnimal);
 	}
 		
 	void SetAnimal(Animal quizAnimal)
@@ -49,8 +49,12 @@ public class QuizGrading : MonoBehaviour
 		{
 			encounterFinished = false;
 			BubbleMessage.text = ENCOUNTER_MESSAGE;
-			Service.Request.ReleaseAnimal (animal);
-			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
+			bool error = Service.Request.ReleaseAnimal (animal);
+			if (error)
+			{
+				return;
+			}
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 			AssetManager.HideAnimals ();
 			ButtonText.text = NEXT;
 			return;
@@ -89,6 +93,6 @@ public class QuizGrading : MonoBehaviour
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent<Animal> (GameEvent.QuizTime, SetAnimal);
+		Event.Request.UnregisterEvent<Animal> (GameEvent.QuizTime, SetAnimal);
 	}
 }

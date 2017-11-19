@@ -15,6 +15,6 @@ public class OpenMainMenu : MonoBehaviour
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Menu);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Menu);
 	}
 }

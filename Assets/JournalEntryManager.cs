@@ -16,6 +16,12 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 	public void OnShow()
 	{
         List<JournalEntry> journalEntryValues = Service.Request.PlayerJournal();
+		if (journalEntryValues == null)
+		{
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Menu);
+			return;
+		}
+
 		for (int i = 0; i < JournalEntries.Count; i++)
 		{
 			if (i < journalEntryValues.Count)

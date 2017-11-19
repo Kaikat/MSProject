@@ -9,6 +9,7 @@ public class NewAccountController : MonoBehaviour, IShowHideListener
     public Dropdown DayDropdown;
     public Dropdown MonthDropdown;
     public Dropdown YearDropdown;
+	public Text ErrorLabel;
 
     private void Awake()
     {
@@ -39,6 +40,6 @@ public class NewAccountController : MonoBehaviour, IShowHideListener
 
     public void OnHide()
     {
-
+		ErrorLabel.text = "";
     }
 }

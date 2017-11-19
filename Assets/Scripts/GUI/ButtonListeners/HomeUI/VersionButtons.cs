@@ -13,7 +13,7 @@ public class VersionButtons : MonoBehaviour
 	 
 	void Awake()
 	{
-		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowGameVersionButtons);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowGameVersionButtons);
 	}
 
 	public void ShowGameVersionButtons(ScreenType screen)
@@ -48,6 +48,6 @@ public class VersionButtons : MonoBehaviour
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowGameVersionButtons);
+		Event.Request.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowGameVersionButtons);
 	}
 }

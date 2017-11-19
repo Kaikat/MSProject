@@ -12,9 +12,9 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 	private bool allowUpdate;
 	void Awake()
 	{
-		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
-		EventManager.RegisterEvent (GameEvent.GPSInitialized, Init);
-		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
+		Event.Request.RegisterEvent (GameEvent.GPSInitialized, Init);
+		Event.Request.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
 		animalOnScreen = false;
 		allowUpdate = false;
 	}
@@ -75,8 +75,8 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 				float currentDistance = Vector2.Distance (testp, currentLocation);
 				if (currentDistance < allowedDistance && !Service.Request.Player ().GetAnimals ().ContainsKey (AnimalLocations [i].Animal))
 				{
-					EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
-					EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalLocations [i].Animal);
+					Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
+					Event.Request.TriggerEvent (GameEvent.AnimalEncounter, AnimalLocations [i].Animal);
 					animalOnScreen = true;
 				}
 			}
@@ -100,9 +100,9 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
-		EventManager.UnregisterEvent (GameEvent.GPSInitialized, Init);
-		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
+		Event.Request.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
+		Event.Request.UnregisterEvent (GameEvent.GPSInitialized, Init);
+		Event.Request.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
 	}
 }
 

@@ -100,7 +100,8 @@ public class AttemptCreateAccount : MonoBehaviour {
 			Email.text = "";
 			Password.text = "";
 
-			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
+			ErrorLabel.text = "";
 		}
 	}
 

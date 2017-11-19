@@ -8,12 +8,12 @@ public class CaughtAnimalDataButton : MonoBehaviour
 
 	void Awake()
 	{
-		EventManager.RegisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SavePreviousScreenData);
+		Event.Request.RegisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SavePreviousScreenData);
 	}
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SavePreviousScreenData);
+		Event.Request.UnregisterEvent<PreviousScreenData> (GameEvent.ObservedAnimalsPreviousScreen, SavePreviousScreenData);
 	}
 
 	public void SavePreviousScreenData(PreviousScreenData data)
@@ -28,13 +28,13 @@ public class CaughtAnimalDataButton : MonoBehaviour
 		switch (screenData.Screen) 
 		{
 			case ScreenType.AnimalUnderObs:
-				EventManager.TriggerEvent (GameEvent.ViewingAnimalsUnderObservation, animal.Species);
-				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
+				Event.Request.TriggerEvent (GameEvent.ViewingAnimalsUnderObservation, animal.Species);
+				Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.AnimalUnderObs);
 				break;
 
 			case ScreenType.CatchAnimal:
-				EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Quiz);
-				EventManager.TriggerEvent(GameEvent.QuizTime, animal);	
+				Event.Request.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Quiz);
+				Event.Request.TriggerEvent(GameEvent.QuizTime, animal);	
 
 				//FOR THE FUTURE
 				/*if (Random.Range(0, 20) >= 15)
@@ -50,7 +50,7 @@ public class CaughtAnimalDataButton : MonoBehaviour
 				break;
 
 			case ScreenType.Journal:
-				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
+				Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
 				break;
 
 			default:

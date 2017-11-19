@@ -13,12 +13,25 @@ public class AddGoLocations : MonoBehaviour
 
 	void Awake()
 	{
-		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, LoadStations);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, LoadStations);
 	}
 
 	void Start () 
 	{
-		locations = Service.Request.PlacesToVisit ();	
+		locations = Service.Request.PlacesToVisit ();
+		if (locations == null)
+		{
+			Event.Request.RegisterEvent (GameEvent.WifiAvailable, Init);
+		}
+	}
+
+	void Init()
+	{
+		locations = Service.Request.PlacesToVisit ();
+		if (locations != null)
+		{
+			Event.Request.UnregisterEvent (GameEvent.WifiAvailable, Init);
+		}
 	}
 
 	public void LoadStations(ScreenType screen)
@@ -42,7 +55,7 @@ public class AddGoLocations : MonoBehaviour
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent<ScreenType> (GameEvent.SwitchScreen, LoadStations);
+		Event.Request.UnregisterEvent<ScreenType> (GameEvent.SwitchScreen, LoadStations);
 	}
 
 	private void LoadProperGameVersion()
@@ -110,6 +123,10 @@ public class AddGoLocations : MonoBehaviour
 	private void LoadMajorColorCodesVersion()
 	{
 		Dictionary<string, List<Major>> majorLocations = Service.Request.GetMajorsAtLocation ();
+		if (majorLocations == null)
+		{
+			return;
+		}
 
 		foreach (AnimalLocation location in locations)
 		{

@@ -53,16 +53,21 @@ public class SurveyButton : MonoBehaviour {
 		{
 			if (isSurveyPart2Complete())
 			{
-				Service.Request.SendPlayerRatings (surveyResults);
+				bool error = Service.Request.SendPlayerRatings (surveyResults);
+				if (error)
+				{
+					return;
+				}
+
 				SurveyPart2.SetActive (false);
 				PrintSurveyResults ();
 				if (Service.Request.Player ().Avatar == Avatar.Default) 
 				{
-					EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Tutorial);
+					Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Tutorial);
 				} 
 				else 
 				{
-					EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
+					Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 				}
 			}
 		}

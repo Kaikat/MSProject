@@ -8,32 +8,43 @@ public class CatchAnimal : MonoBehaviour
 
 	void Awake ()
 	{
-		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
+		Event.Request.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
 
 	void ShowEncounteredAnimal(AnimalSpecies species)
 	{
 		wildAnimal = Service.Request.AnimalToCatch (species);
+		if (wildAnimal == null)
+		{
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
+			return;
+		}
+
 		AssetManager.ShowAnimal (species);
 	}
 
 	void CatchEncounteredAnimal()
 	{
-		Service.Request.CatchAnimal (wildAnimal);
+		bool error = Service.Request.CatchAnimal (wildAnimal);
+		if (error)
+		{
+			return;
+		}
+
 		AssetManager.HideAnimals ();
 	}
 
 	public void Click()
 	{
 		CatchEncounteredAnimal ();
-		EventManager.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		EventManager.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
+		Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
+		Event.Request.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
 	}
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
+		Event.Request.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
 }
 

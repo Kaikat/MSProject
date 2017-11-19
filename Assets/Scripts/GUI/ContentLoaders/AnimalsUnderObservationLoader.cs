@@ -25,7 +25,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
     void Awake()
     {
-        EventManager.RegisterEvent<AnimalSpecies>(GameEvent.ViewingAnimalsUnderObservation, SetAnimalSpecies);
+		Event.Request.RegisterEvent<AnimalSpecies>(GameEvent.ViewingAnimalsUnderObservation, SetAnimalSpecies);
         UIObjectScreen.GetComponent<TaggedShowHide>().listener = this;
 		SetPositions ();
 		SetAnimalScales ();
@@ -34,7 +34,7 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 
     void Destroy()
     {
-        EventManager.UnregisterEvent<AnimalSpecies>(GameEvent.ViewingAnimalsUnderObservation, SetAnimalSpecies);
+		Event.Request.UnregisterEvent<AnimalSpecies>(GameEvent.ViewingAnimalsUnderObservation, SetAnimalSpecies);
     }
 
 	public void OnHide()
@@ -117,8 +117,8 @@ public class AnimalsUnderObservationLoader : MonoBehaviour, IShowHideListener
 					{ ANIMAL, animal },
 					{ CALLING_SCREEN, ScreenType.AnimalUnderObs }
 				};
-				EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
-				EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
+				Event.Request.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
+				Event.Request.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
 		});
 	}
 

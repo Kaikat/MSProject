@@ -1,48 +1,42 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
-
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
-public class EventManager : MonoBehaviour 
+public static class Event 
 {
-	private Dictionary<string, List<Delegate>> listeners;
-	private Dictionary<string, List<Delegate>> toRemove;
+	public static EventManager Request = EventManager.instance;
+}
 
-	private static EventManager eventManager;
-
+public class EventManager 
+{
+	private static EventManager _Instance;
 	public static EventManager instance
 	{
 		get 
 		{
-			if (!eventManager) 
+			if (_Instance == null)
 			{
-				eventManager = FindObjectOfType (typeof(EventManager)) as EventManager;
-
-				if (!eventManager) 
-				{
-					Debug.LogError ("There needs to be one active EventManager script on a GameObject in your scene.");
-				} 
-				else 
-				{
-					eventManager.Init (); 
-				}
+				_Instance = new EventManager ();
 			}
-
-			return eventManager;
+			return _Instance;
 		}
 	}
 
-	void Init()
+	private Dictionary<string, List<Delegate>> listeners;
+	private Dictionary<string, List<Delegate>> toRemove;
+
+	private EventManager()
 	{
 		listeners = new Dictionary<string, List<Delegate>>();
 		toRemove = new Dictionary<string, List<Delegate>>();
 	}
 
-	public static void RegisterEvent (GameEvent eventName, Callback callback)
-	{
+	public void RegisterEvent (GameEvent eventName, Callback callback)
+	{			
 		string message = eventName.ToString ();
+					
 		if (!instance.listeners.ContainsKey(message))
 		{
 			instance.listeners[message] = new List<Delegate>();
@@ -53,7 +47,7 @@ public class EventManager : MonoBehaviour
 
 	//public void AddListener<A>(string message, Callback<A> callback)
 
-	public static void RegisterEvent<A> (GameEvent eventName, Callback<A> callback)
+	public void RegisterEvent<A> (GameEvent eventName, Callback<A> callback)
 	{
 		string message = eventName.ToString ();
 		if (!instance.listeners.ContainsKey(message))
@@ -99,16 +93,17 @@ public class EventManager : MonoBehaviour
 		listeners[message].Add(callback);
 	}
 
-	public static void UnregisterEvent (GameEvent eventName, Callback callback)
+	public void UnregisterEvent (GameEvent eventName, Callback callback)
 	{
 		string message = eventName.ToString ();
+
 		if (instance.listeners.ContainsKey(message))
 		{
-			instance.toRemove[message].Add(callback);
+			instance.toRemove[message].Add(callback);			
 		}
 	}
 
-	public static void UnregisterEvent<A> (GameEvent eventName, Callback<A> callback)
+	public void UnregisterEvent<A> (GameEvent eventName, Callback<A> callback)
 	{
 		string message = eventName.ToString ();
 
@@ -148,25 +143,25 @@ public class EventManager : MonoBehaviour
 		}
 	}
 
-	public static void TriggerEvent (GameEvent eventName)
+	public void TriggerEvent (GameEvent eventName)
 	{
 		string message = eventName.ToString ();
 
-		if (instance.listeners.ContainsKey(message))
-		{
+		if (instance.listeners.ContainsKey (message))
+		{			
 			foreach (Delegate callbackDelegate in instance.listeners[message])
 			{
 				Callback callback = callbackDelegate as Callback;
 				if (callback != null)
 				{
-					callback();
-				}
+					callback ();
+				} 
 			}
-			CleanUp(message);
+			CleanUp (message);
 		}
 	}
 
-	public static void TriggerEvent<A>(GameEvent eventName, A parameterOne)
+	public void TriggerEvent<A>(GameEvent eventName, A parameterOne)
 	{
 		string message = eventName.ToString ();
 
@@ -237,7 +232,7 @@ public class EventManager : MonoBehaviour
 		}
 	}
 
-	public static void CleanUp()
+	public void CleanUp()
 	{
 		foreach (string message in instance.listeners.Keys)
 		{
@@ -246,7 +241,7 @@ public class EventManager : MonoBehaviour
 	}
 
 
-	private static void CleanUp(string message)
+	private void CleanUp(string message)
 	{
 		foreach (Delegate callback in instance.toRemove[message])
 		{
@@ -255,137 +250,3 @@ public class EventManager : MonoBehaviour
 		instance.toRemove[message].Clear();
 	}
 }
-
-
-
-
-/*
-public class EventManager : MonoBehaviour 
-{
-	private Dictionary <GameEvent, UnityEvent> eventDictionary;
-
-	private static EventManager eventManager;
-
-	public static EventManager instance
-	{
-		get 
-		{
-			if (!eventManager) 
-			{
-				eventManager = FindObjectOfType (typeof(EventManager)) as EventManager;
-
-				if (!eventManager) 
-				{
-					Debug.LogError ("There needs to be one active EventManager script on a GameObject in your scene.");
-				} 
-				else 
-				{
-					eventManager.Init (); 
-				}
-			}
-
-			return eventManager;
-		}
-	}
-
-	void Init()
-	{
-		if (eventDictionary == null)
-		{
-			eventDictionary = new Dictionary<GameEvent, UnityEvent> ();
-		}
-	}
-
-	public static void RegisterEvent (GameEvent eventName, UnityAction listener)
-	{
-		UnityEvent thisEvent = null;
-
-		if (instance.eventDictionary.TryGetValue(eventName, out thisEvent))
-		{
-			thisEvent.AddListener(listener);
-		}
-		else
-		{
-			thisEvent = new UnityEvent ();
-
-			thisEvent.AddListener (listener);
-			instance.eventDictionary.Add (eventName, thisEvent);
-		}
-	}
-
-	public static void UnregisterEvent (GameEvent eventName, UnityAction listener)
-	{
-		if (eventManager == null) 
-		{
-			return;
-		}
-
-		UnityEvent thisEvent = null;
-
-		if (instance.eventDictionary.TryGetValue (eventName, out thisEvent)) 
-		{
-			thisEvent.RemoveListener (listener);
-		}
-	}
-
-	public static void TriggerEvent (GameEvent eventName)
-	{
-		UnityEvent thisEvent = null;
-
-		if (instance.eventDictionary.TryGetValue (eventName, out thisEvent)) 
-		{
-			thisEvent.Invoke ();
-		}
-	}
-}
-*************/
-
-
-
-
-
-
-
-
-/*
-using UnityEngine;
-using UnityEngine.Events;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
-public class EventManager : MonoBehaviour
-{
-	private static MessageCenter MessageCenter;
-
-	public static void Init()
-	{
-		MessageCenter = new MessageCenter ();
-	}
-
-	public static void RegisterEvent(GameEvent eventName, Callback callback)
-	{
-		MessageCenter.AddListener (eventName.ToString (), callback);
-	}
-
-	public static void RegisterEvent<A>(GameEvent eventName, Callback<A> callback)
-	{
-		MessageCenter.AddListener (eventName.ToString (), callback);
-	}
-
-	public static void UnregisterEvent(GameEvent eventName, Callback callback)
-	{
-		MessageCenter.RemoveListener (eventName.ToString (), callback);
-	}
-
-	public static void UnregisterEvent<A>(GameEvent eventName, Callback<A> callback)
-	{
-		MessageCenter.RemoveListener (eventName.ToString(), callback);
-	}
-
-	public static void TriggerEvent(GameEvent eventName)
-	{
-		MessageCenter.Broadcast (eventName.ToString ());
-	}
-}
-*/

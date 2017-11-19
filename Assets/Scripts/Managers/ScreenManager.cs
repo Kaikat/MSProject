@@ -23,7 +23,8 @@ public class ScreenManager : MonoBehaviour {
 		InitializeScreensWithRaceConditions ();
 		screenMap [ActiveScreen].Show ();
 
-		EventManager.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
+		Event.Request.TriggerEvent (GameEvent.ScreenManagerInitialized);
 	}
 
 	private void InitializeScreensWithRaceConditions()
@@ -53,7 +54,7 @@ public class ScreenManager : MonoBehaviour {
 
 	public void Destroy()
 	{
-		EventManager.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
+		Event.Request.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, ShowScreen);
 	}
 }
 
