@@ -44,6 +44,7 @@ public class RealService : IServices
 	public void ReloadGame()
 	{
 		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.WifiError);
+		Event.Request.RegisterEvent (GameEvent.WifiAvailable, InitAgain);
 		Event.Request.UnregisterEvent (GameEvent.ScreenManagerInitialized, ReloadGame);
 	}
 
@@ -60,6 +61,7 @@ public class RealService : IServices
 		}
 
 		AssetManager.Init ();
+		Event.Request.UnregisterEvent (GameEvent.WifiAvailable, InitAgain);
 		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
 		WifiManager.SetWifiAvailability (true);
 	}

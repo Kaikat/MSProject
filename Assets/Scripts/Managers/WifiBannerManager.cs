@@ -15,6 +15,11 @@ public class WifiBannerManager : MonoBehaviour
 		Event.Request.RegisterEvent (GameEvent.WifiUnavailable, ShowBanners);
 	}
 
+	void Update()
+	{
+		WifiManager.Update ();
+	}
+
 	public void ShowBanners()
 	{
 		UIBanner.SetActive (true);
