@@ -106,14 +106,14 @@ public static class AssetManager
 		AnimalPositions.Add (AnimalSpecies.Acorn, new Vector3 (-0.5f, 0.71f, 0.0f));		//needs animation
 		AnimalPositions.Add (AnimalSpecies.Bat, new Vector3 (1.0f, -3.5f, 0.0f));			//need asset - butterfly - GOOD
 		AnimalPositions.Add (AnimalSpecies.Butterfly, new Vector3 (0.0f, 0.0f, 0.0f));		//DO LAST
-		AnimalPositions.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, -1.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 0.0f, 0.0f));			//needs animation
+		AnimalPositions.Add (AnimalSpecies.Coyote, new Vector3 (0.0f, -1.7f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Datura, new Vector3 (0.0f, 1.0f, 0.0f));			//needs animation
 		AnimalPositions.Add (AnimalSpecies.Death, new Vector3 (0.0f, -1.0f, 0.0f));			//need asset - tiger - OK
 		AnimalPositions.Add (AnimalSpecies.Deer, new Vector3 (-0.1f, -1.0f, 0.0f));
-		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, 0.0f, 0.0f));		//needs animation
+		AnimalPositions.Add (AnimalSpecies.Dolphin, new Vector3 (0.0f, -0.5f, 0.0f));		//needs animation
 		AnimalPositions.Add (AnimalSpecies.Dragonfly, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Earth, new Vector3 (0.0f, -1.0f, 0.0f));			//need asset - tiger - OK
-		AnimalPositions.Add (AnimalSpecies.Heron, new Vector3 (0.0f, -2.2f, 0.0f));
+		AnimalPositions.Add (AnimalSpecies.Heron, new Vector3 (0.0f, -2.3f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Horse, new Vector3 (-0.5f, -1.5f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Lizard, new Vector3 (0.0f, 0.0f, 0.0f));
 		AnimalPositions.Add (AnimalSpecies.Mountainlion, new Vector3 (0.0f, -1.0f, 0.0f));	//Recolor tiger asset to light brown - OK
@@ -135,13 +135,13 @@ public static class AssetManager
 		AnimalScales.Add (AnimalSpecies.Bat, new Vector3 (10.0f, 10.0f, 10.0f));		//butterfly
 		AnimalScales.Add (AnimalSpecies.Butterfly, new Vector3 (10.0f, 10.0f, 10.0f));
 		AnimalScales.Add (AnimalSpecies.Coyote, new Vector3 (7.0f, 7.0f, 7.0f));
-		AnimalScales.Add (AnimalSpecies.Datura, new Vector3 (1.5f, 1.5f, 1.5f));		//horse
+		AnimalScales.Add (AnimalSpecies.Datura, new Vector3 (1.0f, 1.0f, 1.0f));		//horse
 		AnimalScales.Add (AnimalSpecies.Death, new Vector3 (4.0f, 4.0f, 4.0f));			//tiger
 		AnimalScales.Add (AnimalSpecies.Deer, new Vector3 (7.0f, 7.0f, 7.0f));
-		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (3.0f, 3.0f, 3.0f));		//tiger
+		AnimalScales.Add (AnimalSpecies.Dolphin, new Vector3 (1.7f, 1.7f, 1.7f));		//tiger
 		AnimalScales.Add (AnimalSpecies.Dragonfly, new Vector3 (20.0f, 20.0f, 20.0f));
 		AnimalScales.Add (AnimalSpecies.Earth, new Vector3 (4.0f, 4.0f, 4.0f));			//tiger
-		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (9.0f, 9.0f, 9.0f));
+		AnimalScales.Add (AnimalSpecies.Heron, new Vector3 (8.0f, 8.0f, 8.0f));
 		AnimalScales.Add (AnimalSpecies.Horse, new Vector3 (1.7f, 1.7f, 1.7f));
 		AnimalScales.Add (AnimalSpecies.Lizard, new Vector3 (10.0f, 10.0f, 10.0f));
 		AnimalScales.Add (AnimalSpecies.Mountainlion, new Vector3 (4.0f, 4.0f, 4.0f));	//tiger

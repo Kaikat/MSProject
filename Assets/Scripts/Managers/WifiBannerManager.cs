@@ -7,7 +7,6 @@ public class WifiBannerManager : MonoBehaviour
 {
 	public GameObject UIBanner;
 	public GameObject GOBanner;
-	public GameObject BackgroundUIBanner;
 
 	void Awake()
 	{
@@ -24,14 +23,12 @@ public class WifiBannerManager : MonoBehaviour
 	{
 		UIBanner.SetActive (true);
 		GOBanner.SetActive (true);
-		BackgroundUIBanner.SetActive (true);
 	}
 
 	public void HideBanners()
 	{
 		UIBanner.SetActive (false);
 		GOBanner.SetActive (false);
-		BackgroundUIBanner.SetActive (false);
 	}
 
 	void Destroy()

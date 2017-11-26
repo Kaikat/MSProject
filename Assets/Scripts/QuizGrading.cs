@@ -49,14 +49,13 @@ public class QuizGrading : MonoBehaviour
 		{
 			encounterFinished = false;
 			BubbleMessage.text = ENCOUNTER_MESSAGE;
-			bool error = Service.Request.ReleaseAnimal (animal);
-			if (error)
-			{
-				return;
-			}
 			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 			AssetManager.HideAnimals ();
 			ButtonText.text = NEXT;
+
+			//Service will release the animal as soon as it has a chance
+			//this allows the player to return to the map screen and continue on their journey
+			bool error = Service.Request.ReleaseAnimal (animal);
 			return;
 		}
 

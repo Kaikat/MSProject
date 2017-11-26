@@ -282,10 +282,15 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
 
-		string fstring = "CAUGHT: " + response.message;
-		Debug.LogWarning (fstring);
+		if (response == null)
+		{
+			return true;
+		}
 
-		return response.error || response == null;
+		//string fstring = "CAUGHT: " + response.message;
+		//Debug.LogWarning (fstring);
+
+		return response.error;
 	}
 
 	public bool NotifyAnimalReleased(string sessionKey, Animal animal)
@@ -307,10 +312,14 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
 
-		string fstring = "RELEASED: " + response.message;
-		Debug.LogWarning (fstring);
+		//string fstring = "RELEASED: " + response.message;
+		//Debug.LogWarning (fstring);
+		if (response == null)
+		{
+			return true;
+		}
 
-		return response.error || response == null;
+		return response.error;
 	}
 
 	public List<JournalEntry> GetJournalEntryData(string sessionKey)

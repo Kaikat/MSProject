@@ -23,23 +23,26 @@ public class CatchAnimal : MonoBehaviour
 		AssetManager.ShowAnimal (species);
 	}
 
-	void CatchEncounteredAnimal()
+	bool CatchEncounteredAnimal()
 	{
 		bool error = Service.Request.CatchAnimal (wildAnimal);
 		if (error)
 		{
-			return;
+			return false;
 		}
 
 		AssetManager.HideAnimals ();
+		return true;
 	}
 
 	public void Click()
 	{
-		CatchEncounteredAnimal ();
-		Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
-		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		Event.Request.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
+		if (CatchEncounteredAnimal ())
+		{
+			Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
+			Event.Request.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
+		}
 	}
 
 	void Destroy()
