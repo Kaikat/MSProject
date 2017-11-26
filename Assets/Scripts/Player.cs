@@ -86,14 +86,66 @@ public class Player {
 		Currency = currency;
 		Survey = survey;
 
-		Animals = ownedAnimals;
-		ReleasedAnimals = releasedAnimals;
-		DiscoveredAnimals = discoveredAnimals;
+		if (ownedAnimals.ContainsKey(AnimalSpecies.Horse))
+		{
+			ownedAnimals.Remove (AnimalSpecies.Horse);
+		}
+		if (ownedAnimals.ContainsKey (AnimalSpecies.Butterfly))
+		{
+			ownedAnimals.Remove (AnimalSpecies.Butterfly);
+		}
+		if (ownedAnimals.ContainsKey (AnimalSpecies.Tiger))
+		{
+			ownedAnimals.Remove (AnimalSpecies.Tiger);
+		}
 
+		Animals = ownedAnimals;
+
+		if (releasedAnimals.ContainsKey(AnimalSpecies.Horse))
+		{
+			releasedAnimals.Remove (AnimalSpecies.Horse);
+		}
+		if (releasedAnimals.ContainsKey (AnimalSpecies.Butterfly))
+		{
+			releasedAnimals.Remove (AnimalSpecies.Butterfly);
+		}
+		if (releasedAnimals.ContainsKey (AnimalSpecies.Tiger))
+		{
+			releasedAnimals.Remove (AnimalSpecies.Tiger);
+		}
+
+		ReleasedAnimals = releasedAnimals;
+
+		for (int i = discoveredAnimals.Count - 1; i >= 0; i--)
+		{
+			if (discoveredAnimals[i].Species == AnimalSpecies.Horse || discoveredAnimals[i].Species == AnimalSpecies.Butterfly ||
+				discoveredAnimals[i].Species == AnimalSpecies.Tiger)
+			{
+				discoveredAnimals.RemoveAt (i);
+			}
+		}
+
+		DiscoveredAnimals = discoveredAnimals;
 		AnimalsDiscovered = discoveredAnimals.Count;
-		AnimalsCaught = ownedAnimals.Count + releasedAnimals.Count;
-		AnimalsReleased = releasedAnimals.Count;
-		AnimalsNursing = Animals.Count;
+
+		int ownedAnimalCount = 0;
+		List<AnimalSpecies> ownedKeyList = new List<AnimalSpecies> (ownedAnimals.Keys);
+		foreach (AnimalSpecies species in ownedKeyList)
+		{
+			ownedAnimalCount += ownedAnimals [species].Count;
+		}
+
+		int releasedAnimalCount = 0;
+		List<AnimalSpecies> releasedKeyList = new List<AnimalSpecies> (releasedAnimals.Keys);
+		foreach (AnimalSpecies species in releasedKeyList)
+		{
+			releasedAnimalCount += releasedAnimals [species].Count;
+		}
+
+		AnimalsCaught = ownedAnimalCount + releasedAnimalCount;
+		AnimalsReleased = releasedAnimalCount;
+
+		AnimalsNursing = ownedAnimalCount;
 		Recommendations = recommendations;
 	}
 
