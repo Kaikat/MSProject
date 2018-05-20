@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System;
 using System.Text.RegularExpressions;
 
 public class AttemptCreateAccount : MonoBehaviour {
@@ -9,12 +9,20 @@ public class AttemptCreateAccount : MonoBehaviour {
 	public InputField Name;
 	public InputField Email;
 	public InputField Password;
+    public Text Gender;
+    public Text Day;
+    public Text Month;
+    public Text Year;
 
 	public Text ErrorLabel;
 
-	private int USERNAME_MIN_LENGTH = 8;
+	private int USERNAME_MIN_LENGTH = 2;
+	private int USERNAME_MAX_LENGTH = 20;
 	private int NAME_MIN_LENGTH = 3;
-	private int PASSWORD_MIN_LENGTH = 8;
+	private int NAME_MAX_LENGTH = 20;
+	private int PASSWORD_MIN_LENGTH = 2;
+	private int PASSWORD_MAX_LENGTH = 20;
+	private int EMAIL_MAX_LENGTH = 40;
 
 	public void Click()
 	{
@@ -23,9 +31,19 @@ public class AttemptCreateAccount : MonoBehaviour {
 			ErrorLabel.text = "Username must be at least " + USERNAME_MIN_LENGTH.ToString() +  " characters long.";
 			return;
 		}
+		if (Username.text.Length > USERNAME_MAX_LENGTH) 
+		{
+			ErrorLabel.text = "Username must be less than " + USERNAME_MAX_LENGTH.ToString () + " characters long.";
+			return;
+		}
 		if (Name.text.Length < NAME_MIN_LENGTH) 
 		{
 			ErrorLabel.text = "Name must be at least " + NAME_MIN_LENGTH.ToString () + " characters long.";
+			return;
+		}
+		if (Name.text.Length > NAME_MAX_LENGTH)
+		{
+			ErrorLabel.text = "Name must be less than " + NAME_MAX_LENGTH.ToString () + " characters long.";
 			return;
 		}
 		if (Password.text.Length < PASSWORD_MIN_LENGTH) 
@@ -33,28 +51,67 @@ public class AttemptCreateAccount : MonoBehaviour {
 			ErrorLabel.text = "Password must be at least " + PASSWORD_MIN_LENGTH.ToString () + " characters long.";
 			return;
 		}
+		if (Password.text.Length > PASSWORD_MAX_LENGTH)
+		{
+			ErrorLabel.text = "Password must be less than " + PASSWORD_MAX_LENGTH.ToString () + " characters long.";
+			return;
+		}
+		if (Email.text.Length > EMAIL_MAX_LENGTH)
+		{
+			ErrorLabel.text = "Email must be less than " + EMAIL_MAX_LENGTH.ToString () + " characters long.";
+			return;
+		}
 		if (!ValidEmailAddress (Email.text))
 		{
 			ErrorLabel.text = "Invalid email address.";
 			return;
 		}
+		if (Month.text == "Month")
+		{
+			ErrorLabel.text = "Invalid Month";
+			return;
+		}
+		if (Day.text == "Day")
+		{
+			ErrorLabel.text = "Invalid Day";
+			return;
+		}
+		if (Year.text == "Year")
+		{
+			ErrorLabel.text = "Invalid Year";
+			return;
+		}
 
 		string message = "";
-		message = Service.Request.CreateAccount (Username.text, Name.text, Password.text, Email.text);
+		message = Service.Request.CreateAccount(Username.text,
+                                                Name.text,
+                                                Password.text,
+                                                Email.text,
+                                                Gender.text,
+												ConvertToDateTimeString(Month.text, Day.text, Year.text));
 		ErrorLabel.text = message;
 
 		if (message == "Account Created")
 		{
+			TextFile.Write (UIConstants.USERNAME_FILE, Username.text);
+
 			Username.text = "";
 			Name.text = "";
 			Email.text = "";
 			Password.text = "";
 
-			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Login);
+			ErrorLabel.text = "";
 		}
 	}
 
-	public bool ValidEmailAddress(string email)
+	private string ConvertToDateTimeString(string month, string day, string year)
+	{
+		//FORMAT: "5/22/2017 9:44:28 AM"
+		return month + "/" + day + "/" + year + " 8:00:00 AM";
+	}
+
+	private bool ValidEmailAddress(string email)
 	{
 		// https://forum.unity3d.com/threads/check-if-its-an-e-mail.73132/
 		const string MatchEmailPattern =

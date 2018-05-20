@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -18,6 +19,7 @@ public class FakeService : IServices
 	}
 		
 	private FakeService() {}
+	public void InitAgain() {}
 
 	private int USERNAME_MIN_LENGTH = 8;
 	private int NAME_MIN_LENGTH = 3;
@@ -25,7 +27,7 @@ public class FakeService : IServices
 
 	private Player CurrentPlayer;
 
-	public string CreateAccount(string username, string name, string password, string email)
+	public string CreateAccount(string username, string name, string password, string email, string gender, string birthdate)
 	{
 		string message = "";
 		List<string> emailList = new List<string> ();
@@ -57,7 +59,7 @@ public class FakeService : IServices
 		return message;
 	}
 
-	public bool VerifyLogin(string username, string password)
+	public string VerifyLogin(string username, string password)
 	{
 		Dictionary<string, string> UserLogins = new Dictionary<string, string> ();
 		UserLogins.Add ("user1", "pass1");
@@ -70,7 +72,7 @@ public class FakeService : IServices
 
 		CurrentPlayer = new Player (username, "name", Avatar.Default, 10000, 0, 0, 0, owned, released, discovered);
 
-		return UserLogins.ContainsKey (username) && UserLogins [username] == password;
+		return "false";//UserLogins.ContainsKey (username) && UserLogins [username] == password;
 	}
 
 	public void UpdateAvatar(Avatar avatar)
@@ -99,9 +101,19 @@ public class FakeService : IServices
 		return "I am an animal!";
 	}
 
-	public string AnimalName(AnimalSpecies species)
+	public string AnimalEnglishName(AnimalSpecies species)
 	{
-		return "animal name";
+		return "animal English name";
+	}
+
+	public string AnimalSpanishName(AnimalSpecies species)
+	{
+		return "animal Spanish name";
+	}
+
+	public string AnimalNahuatlName(AnimalSpecies species)
+	{
+		return "animal Nahuatl name";
 	}
 
 	public string[] PlayerData()
@@ -130,12 +142,14 @@ public class FakeService : IServices
 		return new Animal (AnimalSpecies.Tiger, 1, new AnimalStats (1.0f, 2.0f, 3.0f, 10.0f, 40.0f, 35.0f), "colorfile.txt");
 	}
 
-	public void CatchAnimal(Animal animal)
+	public bool CatchAnimal(Animal animal)
 	{
+		return true;
 	}
 
-	public void ReleaseAnimal(Animal animal)
+	public bool ReleaseAnimal(Animal animal)
 	{
+		return true;
 	}
 
 	public List<JournalEntry> PlayerJournal()
@@ -146,5 +160,25 @@ public class FakeService : IServices
 	public List<AnimalLocation> PlacesToVisit()
 	{
 		return new List<AnimalLocation> ();
+	}
+
+	public bool SendPlayerRatings(List<InterestValue> playerInterests)
+	{
+		return true;
+	}
+
+	public List<Venue> AllVenues()
+	{
+		return new List<Venue> ();
+	}
+
+	public Dictionary<string, List<Major>> GetMajorsAtLocation()
+	{
+		return new Dictionary<string, List<Major>> ();
+	}
+
+	public Dictionary<Major, MajorData> AllMajors()
+	{
+		return new Dictionary<Major, MajorData> ();
 	}
 }

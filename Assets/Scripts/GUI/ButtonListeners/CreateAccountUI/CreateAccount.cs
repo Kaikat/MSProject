@@ -9,6 +9,6 @@ public class CreateAccount : MonoBehaviour {
 	public void Click()
 	{
 		ErrorLabel.text = "";
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CreateAccount);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CreateAccount);
 	}
 }

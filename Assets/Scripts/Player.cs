@@ -11,6 +11,7 @@ public class Player {
 	public string Name { private set; get; }
 	public Avatar Avatar { private set; get; }
 	public int Currency { private set; get; }
+	public bool Survey { get; set; } //TODO: Make private
 
 	public int AnimalsDiscovered { private set; get; }
 	public int AnimalsCaught { private set; get; }
@@ -20,6 +21,7 @@ public class Player {
 	private Dictionary<AnimalSpecies, List<Animal>> Animals;
 	private Dictionary<AnimalSpecies, List<Animal>> ReleasedAnimals;
 	private List<DiscoveredAnimal> DiscoveredAnimals;
+	private Dictionary<string, MajorLocationData> Recommendations;
 
 	public void Print()
 	{
@@ -35,6 +37,7 @@ public class Player {
 		Debug.LogWarning (fstring);
 	}
 
+	//TODO: ONLY USED BY OLD STUFF. Should be using the new constructor.
 	public Player(string username, string name, Avatar avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
@@ -43,6 +46,7 @@ public class Player {
 		Name = name;
 		Avatar = avatar;
 		Currency = currency;
+		Survey = false;
 
 		Animals = ownedAnimals;
 		ReleasedAnimals = releasedAnimals;
@@ -54,7 +58,8 @@ public class Player {
 		AnimalsNursing = Animals.Count;
 	}
 
-	public Player(string name, Avatar avatar, int currency, int discovered, int caught, int released,
+	//doesn't get called?
+	/*public Player(string name, Avatar avatar, int currency, int discovered, int caught, int released,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
 		List<DiscoveredAnimal> discoveredAnimals)
 	{
@@ -70,29 +75,130 @@ public class Player {
 		AnimalsCaught = caught;
 		AnimalsReleased = released;
 		AnimalsNursing = Animals.Count;
-	}
+	}*/
 
-	public Player(string name, Avatar avatar, int currency,
+	public Player(string name, Avatar avatar, int currency, bool survey,
 		Dictionary<AnimalSpecies, List<Animal>> ownedAnimals, Dictionary<AnimalSpecies, List<Animal>> releasedAnimals,
-		List<DiscoveredAnimal> discoveredAnimals)
+		List<DiscoveredAnimal> discoveredAnimals, Dictionary<string, MajorLocationData> recommendations)
 	{
 		Name = name;
 		Avatar = avatar;
 		Currency = currency;
+		Survey = survey;
+
+		if (ownedAnimals.ContainsKey(AnimalSpecies.Horse))
+		{
+			ownedAnimals.Remove (AnimalSpecies.Horse);
+		}
+		if (ownedAnimals.ContainsKey (AnimalSpecies.Butterfly))
+		{
+			ownedAnimals.Remove (AnimalSpecies.Butterfly);
+		}
+		if (ownedAnimals.ContainsKey (AnimalSpecies.Tiger))
+		{
+			ownedAnimals.Remove (AnimalSpecies.Tiger);
+		}
 
 		Animals = ownedAnimals;
-		ReleasedAnimals = releasedAnimals;
-		DiscoveredAnimals = discoveredAnimals;
 
+		if (releasedAnimals.ContainsKey(AnimalSpecies.Horse))
+		{
+			releasedAnimals.Remove (AnimalSpecies.Horse);
+		}
+		if (releasedAnimals.ContainsKey (AnimalSpecies.Butterfly))
+		{
+			releasedAnimals.Remove (AnimalSpecies.Butterfly);
+		}
+		if (releasedAnimals.ContainsKey (AnimalSpecies.Tiger))
+		{
+			releasedAnimals.Remove (AnimalSpecies.Tiger);
+		}
+
+		ReleasedAnimals = releasedAnimals;
+
+		for (int i = discoveredAnimals.Count - 1; i >= 0; i--)
+		{
+			if (discoveredAnimals[i].Species == AnimalSpecies.Horse || discoveredAnimals[i].Species == AnimalSpecies.Butterfly ||
+				discoveredAnimals[i].Species == AnimalSpecies.Tiger)
+			{
+				discoveredAnimals.RemoveAt (i);
+			}
+		}
+
+		DiscoveredAnimals = discoveredAnimals;
 		AnimalsDiscovered = discoveredAnimals.Count;
-		AnimalsCaught = ownedAnimals.Count + releasedAnimals.Count;
-		AnimalsReleased = releasedAnimals.Count;
-		AnimalsNursing = Animals.Count;
+
+		int ownedAnimalCount = 0;
+		List<AnimalSpecies> ownedKeyList = new List<AnimalSpecies> (ownedAnimals.Keys);
+		foreach (AnimalSpecies species in ownedKeyList)
+		{
+			ownedAnimalCount += ownedAnimals [species].Count;
+		}
+
+		int releasedAnimalCount = 0;
+		List<AnimalSpecies> releasedKeyList = new List<AnimalSpecies> (releasedAnimals.Keys);
+		foreach (AnimalSpecies species in releasedKeyList)
+		{
+			releasedAnimalCount += releasedAnimals [species].Count;
+		}
+
+		AnimalsCaught = ownedAnimalCount + releasedAnimalCount;
+		AnimalsReleased = releasedAnimalCount;
+
+		AnimalsNursing = ownedAnimalCount;
+		Recommendations = recommendations;
+	}
+
+	public List<AnimalLocation> GetDiscoveredPlaces()
+	{
+		List<AnimalLocation> visitedPlaces = new List<AnimalLocation> ();
+		List<AnimalLocation> allPlaces = Service.Request.PlacesToVisit ();
+
+		foreach (AnimalLocation place in allPlaces)
+		{
+			if (HasDiscoveredAnimal (place.Animal))
+			{
+				visitedPlaces.Add (place);
+			}
+		}
+
+		return visitedPlaces;
+	}
+
+	public List<AnimalLocation> GetUndiscoveredPlaces()
+	{
+		List<AnimalLocation> undiscoveredPlaces = new List<AnimalLocation> ();
+		List<AnimalLocation> allPlaces = Service.Request.PlacesToVisit ();
+
+		foreach (AnimalLocation place in allPlaces)
+		{
+			if (!HasDiscoveredAnimal (place.Animal))
+			{
+				undiscoveredPlaces.Add (place);
+			}
+		}
+
+		return undiscoveredPlaces;
 	}
 
 	public void SetAvatar(Avatar avatar)
 	{
 		Avatar = avatar;
+	}
+
+	public void SetRecommendations(Dictionary<string, MajorLocationData> recommendations)
+	{
+		Recommendations = recommendations;
+	}
+
+	public Dictionary<string, MajorLocationData>  GetRecommendations()
+	{
+		return Recommendations;
+	}
+
+	public int GetRecommendationIndex(string location)
+	{
+		return Recommendations [location].Index;
 	}
 
 	public void Destroy()
@@ -129,7 +235,7 @@ public class Player {
 
 	public bool hasReleasedAnimal(AnimalSpecies species)
 	{
-		return Animals.ContainsKey (species);
+		return ReleasedAnimals.ContainsKey (species);
 	}
 
 	public void AddDiscoveredAnimal(AnimalSpecies species, string discovered_date)
@@ -189,6 +295,35 @@ public class Player {
 			ReleasedAnimals [species].Add (animal);
 		}
 		AnimalsReleased++;
+	}
+
+	public Animal GetAnimalBySpeciesAndID(AnimalSpecies species, int animalID)
+	{
+		if (Animals.ContainsKey(species)) 
+		{
+			List<Animal> animals = Animals [species];
+			foreach (Animal animal in animals) 
+			{
+				if (animal.AnimalID == animalID) 
+				{
+					return animal;
+				}
+			}
+		}
+
+		if (ReleasedAnimals.ContainsKey(species)) 
+		{
+			List<Animal> releasedAnimals = ReleasedAnimals [species];
+			foreach (Animal animal in releasedAnimals) 
+			{
+				if (animal.AnimalID == animalID) 
+				{
+					return animal;
+				}
+			}
+		}
+
+		return null;
 	}
 }
 

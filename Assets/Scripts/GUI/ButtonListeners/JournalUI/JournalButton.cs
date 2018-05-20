@@ -3,19 +3,10 @@ using System.Collections;
 
 public class JournalButton : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+	//TODO: Move me to HomeUI
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Journal);
 	}
 }
 

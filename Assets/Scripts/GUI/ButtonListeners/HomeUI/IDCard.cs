@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class IDCard : MonoBehaviour {
+public class IDCard : MonoBehaviour
+{
+	public Button ProfileButton;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	private readonly string GIRL_PROFILE = "GirlProfileButton";
+	private readonly string BOY_PROFILE = "BoyProfileButton";
+
+	void Start()
+	{
+		ProfileButton.image.overrideSprite = Service.Request.Player ().Avatar == Avatar.Girl ? 
+			Resources.Load<Sprite> (UIConstants.BUTTON_ICON_PATH + GIRL_PROFILE) : 
+			Resources.Load<Sprite> (UIConstants.BUTTON_ICON_PATH + BOY_PROFILE);
 	}
 
 	public void Click()
 	{
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.IDCard);
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.IDCard);
 	}
 }

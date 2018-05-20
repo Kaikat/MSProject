@@ -10,24 +10,34 @@ public class Login : MonoBehaviour {
 
 	public void Click()
 	{
-		if (Service.Request.VerifyLogin (Username.text, Password.text)) 
+		string result = Service.Request.VerifyLogin (Username.text, Password.text);
+		if (result == "true")
 		{
 			ErrorLabel.text = "Login Successful";
-			EventManager.TriggerEvent (GameEvent.LoginSuccessful);
+			TextFile.Write (UIConstants.USERNAME_FILE, Username.text);
 
-			if (Service.Request.Player ().Avatar == Avatar.Default)
+			Event.Request.TriggerEvent (GameEvent.LoginSuccessful);
+
+			if (!Service.Request.Player ().Survey)
 			{
-				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Gender);
-			}
+				Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Survey);
+			} 
+			else if (Service.Request.Player ().Avatar == Avatar.Default)
+			{
+				Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Tutorial);
+			} 
 			else
 			{
-				//EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Home);
-				EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
+				Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
 			}
 		} 
-		else 
+		else if (result == "false")
 		{
 			ErrorLabel.text = "Wrong username or password!";
+		} 
+		else
+		{
+			ErrorLabel.text = "Please find internet access and try again.";
 		}
 	}
 }

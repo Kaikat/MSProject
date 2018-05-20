@@ -15,7 +15,7 @@ public class UpdateGPSLocation : MonoBehaviour
 	IEnumerator Start()
 	{
 		debugText.text += "Starting the GPS Script\n";
-		EventManager.TriggerEvent (GameEvent.GPSInitialized);
+		Event.Request.TriggerEvent (GameEvent.GPSInitialized);
 
 		#if UNITY_ANROID
 		Input.compass.enabled = true;

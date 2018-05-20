@@ -8,13 +8,15 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 	public GameObject GpsScriptHolder;
 	public RawImage MapImage;
 	private UpdateGPSLocation gpsScript;
-	bool animalOnScreen;
-
+	private bool animalOnScreen;
+	private bool allowUpdate;
 	void Awake()
 	{
-		EventManager.RegisterEvent (GameEvent.GPSInitialized, Init);
-		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
+		Event.Request.RegisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
+		Event.Request.RegisterEvent (GameEvent.GPSInitialized, Init);
+		Event.Request.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
 		animalOnScreen = false;
+		allowUpdate = false;
 	}
 
 	public void Init()
@@ -28,16 +30,30 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 		animalOnScreen = false;
 	}
 
+	public void SetUpdate(ScreenType screen)
+	{
+		if (screen == ScreenType.GoMapHome) 
+		{
+			allowUpdate = true;
+		} 
+		else 
+		{
+			allowUpdate = false;
+		}
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
-		if (gpsScript == null || animalOnScreen)
+		if (!allowUpdate || animalOnScreen)
 		{
 			return;
 		}
 			
 		//float allowedDistanceRadius = 0.0001349778f;
 
+		/*
+		//TODO: Bring back the TEMPORARY REMOVAL OF THE TUTORIAL HORSE
 		if (!Service.Request.Player ().HasDiscoveredAnimal (AnimalSpecies.Horse))
 		{
 			EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
@@ -45,7 +61,7 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 			animalOnScreen = true;
 		}
 		else
-		{
+		{*/
 			Vector2 currentLocation = gpsScript.GetCoordinate ();
 
 			Vector2 limit = new Vector2 (34.41094f, -119.8639f);
@@ -59,13 +75,12 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 				float currentDistance = Vector2.Distance (testp, currentLocation);
 				if (currentDistance < allowedDistance && !Service.Request.Player ().GetAnimals ().ContainsKey (AnimalLocations [i].Animal))
 				{
-					EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
-					EventManager.TriggerEvent (GameEvent.AnimalEncounter, AnimalLocations [i].Animal);
+					Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.CatchAnimal);
+					Event.Request.TriggerEvent (GameEvent.AnimalEncounter, AnimalLocations [i].Animal);
 					animalOnScreen = true;
 				}
 			}
-		}
-
+		//}
 
 		/*
 		float currentDistance = Vector2.Distance (testp, currentLocation);
@@ -85,8 +100,9 @@ public class CheckForNearbyAnimals : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent (GameEvent.GPSInitialized, Init);
-		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
+		Event.Request.UnregisterEvent <ScreenType> (GameEvent.SwitchScreen, SetUpdate);
+		Event.Request.UnregisterEvent (GameEvent.GPSInitialized, Init);
+		Event.Request.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetAnimalOnScreenToFalse);
 	}
 }
 

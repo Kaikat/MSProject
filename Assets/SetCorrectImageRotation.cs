@@ -9,12 +9,12 @@ public class SetCorrectImageRotation : MonoBehaviour {
 	void Start () 
 	{
 		#if UNITY_IOS
-		debugText.text = "I'm an iPhone!";
+		//debugText.text = "I'm an iPhone!";
 		#endif
 
 		#if UNITY_ANDROID
-		debugText.text = "I'm an android phone!";
-		transform.localRotation = Quaternion.Euler(90.0f, 180.0f, 0.0f);
+		//debugText.text = "I'm an android phone!";
+		transform.localRotation = Quaternion.Euler(90.0f, 0.0f, 270.0f);
 		#endif
 	}
 

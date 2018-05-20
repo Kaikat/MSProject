@@ -14,8 +14,19 @@ public enum GameEvent {
 	AnimalEncounter,
 	AnimalCaught,
     ViewingAnimalsUnderObservation,
+    ViewingAnimalInformation,
 	QuizTime,
+
+
+	ObservedAnimalsPreviousScreen,
+
+
+
 
 	AccountCreationSuccess,
 	LoginSuccessful,
+
+	WifiAvailable,
+	WifiUnavailable,
+	ScreenManagerInitialized,
 }

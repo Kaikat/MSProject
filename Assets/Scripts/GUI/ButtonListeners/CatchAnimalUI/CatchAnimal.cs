@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class CatchAnimal : MonoBehaviour
 {
@@ -8,31 +8,79 @@ public class CatchAnimal : MonoBehaviour
 
 	void Awake ()
 	{
-		EventManager.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
+		Event.Request.RegisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
 
 	void ShowEncounteredAnimal(AnimalSpecies species)
 	{
 		wildAnimal = Service.Request.AnimalToCatch (species);
+		if (wildAnimal == null)
+		{
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.GoMapHome);
+			return;
+		}
+
 		AssetManager.ShowAnimal (species);
 	}
 
-	void CatchEncounteredAnimal()
+	bool CatchEncounteredAnimal()
 	{
-		Service.Request.CatchAnimal (wildAnimal);
+		bool error = Service.Request.CatchAnimal (wildAnimal);
+		if (error)
+		{
+			return false;
+		}
+
 		AssetManager.HideAnimals ();
+		return true;
 	}
 
 	public void Click()
 	{
-		CatchEncounteredAnimal ();
-		EventManager.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
-		EventManager.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
+		if (CatchEncounteredAnimal ())
+		{
+			Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData (ScreenType.CatchAnimal, wildAnimal));
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
+			Event.Request.TriggerEvent (GameEvent.AnimalCaught, wildAnimal);
+		}
 	}
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
+		Event.Request.UnregisterEvent <AnimalSpecies> (GameEvent.AnimalEncounter, ShowEncounteredAnimal);
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, new Dictionary<string, object>()
+        {
+            { AnimalInformationController.ANIMAL, wildAnimal },
+            { AnimalInformationController.CALLING_SCREEN, ScreenType.CatchAnimal}
+        });*/

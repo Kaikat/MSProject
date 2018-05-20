@@ -10,21 +10,22 @@ public class MapDebugText : MonoBehaviour {
 
 	public Text ButtonText;
 
-	private const string show = "Show\nDebug\nText";
-	private const string hide = "Hide\nDebug\nText";
+	//private const string show = "Show\nDebug\nText";
+	//private const string hide = "Hide\nDebug\nText";
 
 	public void Click()
 	{
-		DebugText.enabled = !DebugText.enabled;
-		DebugMapUrlText.enabled = !DebugMapUrlText.enabled;
+		//TODO: Enabled/Disable Debug Text as needed
+		//DebugText.enabled = !DebugText.enabled;
+		//DebugMapUrlText.enabled = !DebugMapUrlText.enabled;
 
-		if (DebugText.enabled)
+		/*if (DebugText.enabled)
 		{
 			ButtonText.text = hide;
 		}
 		else
 		{
 			ButtonText.text = show;
-		}
+		}*/
 	}
 }

@@ -9,7 +9,7 @@ public class GetMapZenKey : MonoBehaviour {
 
 	public GoMap.GOMap Map;
 
-	void Start() 
+	void Awake() 
 	{
 		Map.mapzen_api_key = Keys.MapZenKey;
 	}

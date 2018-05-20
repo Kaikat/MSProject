@@ -23,17 +23,22 @@ public class SetJournalEntry : MonoBehaviour {
 	public Image Panel1;
 	public Image Panel2;
 
+	private Animal entryAnimal;
+
 	private const string HEALTH_FACTOR_1 = "Health Factor 1";
 	private const string HEALTH_FACTOR_2 = "Health Factor 2";
 	private const string HEALTH_FACTOR_3 = "Health Factor 3";
 
 	public void SetJournalEntryElements(JournalEntry entry)
 	{
-		string animal_species = Service.Request.AnimalName (entry.Species);
+		string animal_species = Service.Request.AnimalEnglishName (entry.Species);
+		entryAnimal = Service.Request.Player ().GetAnimalBySpeciesAndID (entry.Species, entry.AnimalID);
 		Species.text = animal_species;
-		AnimalImage.texture = Resources.Load<Texture> (entry.Species.ToString());
+		AnimalImage.texture = Resources.Load<Texture> (UIConstants.ANIMAL_IMAGE_PATH + entry.Species.ToString());
 		Panel1.color = UIConstants.Beige;
 		Panel2.color = UIConstants.Beige;
+		//Panel1.sprite = Resources.Load<Sprite> ("Limestone");
+		//Panel2.sprite = Resources.Load<Sprite> ("Limestone");
 
 		if (entry.EncounterType == AnimalEncounterType.Discovered)
 		{
@@ -47,6 +52,17 @@ public class SetJournalEntry : MonoBehaviour {
 		{
 			SetReleasedEntry (entry);
 		}
+	}
+
+	public void Click()
+	{
+		if (entryAnimal == null)
+		{
+			return;
+		}
+
+		Event.Request.TriggerEvent (GameEvent.ObservedAnimalsPreviousScreen, new PreviousScreenData(ScreenType.Journal, entryAnimal));
+		Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Caught);
 	}
 
 	private string ConvertDate(string dateString)

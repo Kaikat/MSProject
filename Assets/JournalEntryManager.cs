@@ -1,63 +1,43 @@
-﻿using System.Collections;
+﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JournalEntryManager : MonoBehaviour, IShowHideListener
 {
-	public GameObject journalScreen;
+	public GameObject JournalScreen;
 	public List<GameObject> JournalEntries;
 
 	void Awake () 
 	{
-		journalScreen.GetComponent<TaggedShowHide> ().listener = this;
+		JournalScreen.GetComponent<TaggedShowHide> ().listener = this;
 	}
 
 	public void OnShow()
 	{
-		List<JournalEntry> journalEntries = Service.Request.PlayerJournal ();
+        List<JournalEntry> journalEntryValues = Service.Request.PlayerJournal();
+		if (journalEntryValues == null)
+		{
+			Event.Request.TriggerEvent (GameEvent.SwitchScreen, ScreenType.Menu);
+			return;
+		}
 
 		for (int i = 0; i < JournalEntries.Count; i++)
 		{
-			if (i < journalEntries.Count)
+			if (i < journalEntryValues.Count)
 			{
-				JournalEntries [i].SetActive (true);
-				JournalEntry entry = journalEntries [i];
-
-				JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry);
-				JournalEntries [i].SetActive (true);
-				/*if (entry.EncounterType == AnimalEncounterType.Released)
-				{
-					string releasedString = "Released: " + ConvertDate (entry.LatestEncounterDate.ToString ());
-					string caughtString = "Caught: " + ConvertDate (entry.OldEncounterDate.ToString ());
-
-					JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, caughtString, 
-						entry.OldHealth1, entry.OldHealth2, entry.OldHealth3, releasedString, 
-						entry.LatestHealth1, entry.LatestHealth2, entry.LatestHealth3);
-				}
-				else
-				{
-					string encounterString = entry.EncounterType.ToString () + " " + ConvertDate (entry.LatestEncounterDate.ToString ());
-					if (entry.EncounterType == AnimalEncounterType.Caught)
-					{
-						JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, encounterString,
-							entry.LatestHealth1, entry.LatestHealth2, entry.LatestHealth3);
-					}
-					else
-					{
-						JournalEntries [i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry.Species, entry.LatestEncounterDate);
-					}
-				}*/
-
-
+				JournalEntry entry = journalEntryValues [i];
+				JournalEntries[i].GetComponent<SetJournalEntry> ().SetJournalEntryElements (entry);
+				JournalEntries[i].SetActive(true);
 			}
 			else
 			{
-				JournalEntries [i].SetActive (false);
+				JournalEntries[i].SetActive (false);
 			}
 		}
 	}
 
-	public void OnHide()
+    public void OnHide()
 	{
 	}
 
@@ -65,3 +45,69 @@ public class JournalEntryManager : MonoBehaviour, IShowHideListener
 	{
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get Animal objects if in Journal
+//    private Dictionary<int, Animal> journalAnimalObjects;
+
+/*Player player = Service.Request.Player();
+        journalAnimalObjects = player.GetAnimals().Values.SelectMany(x => x)
+                                     .Concat(player.GetReleasedAnimals().Values.SelectMany(x => x))
+                                     .Where(an => journalEntryValues.Any(entry => entry.AnimalID == an.AnimalID))
+                                     .ToDictionary(x => x.AnimalID);*/
+
+// Create local copy of index to pass into closure
+/*int _i = i;
+                JournalEntries[i].GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    Animal animal = journalAnimalObjects[journalEntryValues[_i].AnimalID];
+                    Dictionary<string, object> eventDict = new Dictionary<string, object>()
+                    {
+                        { AnimalInformationController.ANIMAL, animal },
+                        { AnimalInformationController.CALLING_SCREEN, ScreenType.Journal }
+                    };
+                    EventManager.TriggerEvent(GameEvent.SwitchScreen, ScreenType.Caught);
+                    EventManager.TriggerEvent(GameEvent.ViewingAnimalInformation, eventDict);
+                });*/

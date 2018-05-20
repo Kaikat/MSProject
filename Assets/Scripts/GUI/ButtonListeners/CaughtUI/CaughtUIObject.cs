@@ -13,13 +13,16 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void Awake()
 	{
-		EventManager.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
+		Event.Request.RegisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
 	}
 
 	void SetTextFields(Animal animal)
 	{
-		string animalName = Service.Request.AnimalName (animal.Species);
-		AnimalImage.texture = Resources.Load<Texture> (animal.Species.ToString());
+		string animalName = Service.Request.AnimalEnglishName (animal.Species);
+		animalName += "\n" + Service.Request.AnimalSpanishName (animal.Species);
+		animalName += "\n" + Service.Request.AnimalNahuatlName (animal.Species);
+
+		AnimalImage.texture = Resources.Load<Texture> (UIConstants.ANIMAL_IMAGE_PATH + animal.Species.ToString());
 		AnimalNameTitle.text = animalName;
 		AnimalDescription.text = Service.Request.AnimalDescription (animal.Species);
 
@@ -30,6 +33,6 @@ public class CaughtUIObject : MonoBehaviour {
 
 	void Destroy()
 	{
-		EventManager.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
+		Event.Request.UnregisterEvent <Animal> (GameEvent.AnimalCaught, SetTextFields);
 	}
 }

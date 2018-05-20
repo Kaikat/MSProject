@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 using JsonResponse;
 using HttpHeaderBodies;
+using MapzenJson;
+using System.Text;
+using System.Collections;
 
 public class AspNetDataManager : IDataManager
 {
@@ -31,6 +34,8 @@ public class AspNetDataManager : IDataManager
 	private const string NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER = "notifyanimalencounter";
 	private const string GENERATE_ANIMAL_CONTROLLER = "generateanimal";
 	private const string ANIMAL_ENCOUNTERS_CONTROLLER = "animalencounters";
+	private const string RECOMMENDATIONS_CONTROLLER = "recommendation";
+	private const string MAJORS_CONTROLLER = "majors";
 
 	private const int JOURNAL_ENTRY_LIMIT = 5;
 
@@ -38,6 +43,10 @@ public class AspNetDataManager : IDataManager
 	{
 		Dictionary<AnimalSpecies, AnimalData> Animals = new Dictionary<AnimalSpecies, AnimalData> ();
 		ListResponse response = WebManager.GetHttpResponse<ListResponse> (WEB_ADDRESS + ANIMAL_CONTROLLER);
+		if (response == null)
+		{
+			return null;
+		}
 		foreach (DataAnimal anim in response.AnimalData)
 		{
 			AnimalData animal = new AnimalData (anim.species.ToEnum<AnimalSpecies> (), anim.name, anim.nahuatl_name, anim.spanish_name, 
@@ -49,11 +58,17 @@ public class AspNetDataManager : IDataManager
 		return Animals;
 	}
 
-	public string CreateAccount (string username, string name, string password, string email)
+	public string CreateAccount (string username, string name, string password, string email, string gender, string birthday)
 	{
-		AccountDetails accountDetails = new AccountDetails (username, name, password, email);
+        // TODO: implement gender and birthday handle
+		AccountDetails accountDetails = new AccountDetails (username, name, password, email, gender, birthday);
 		BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + CREATE_ACCOUNT_CONTROLLER, JsonUtility.ToJson (accountDetails));
+
+		if (response == null)
+		{
+			return string.Empty;
+		}
 
 		Debug.LogWarning ("RESPONSE: " + response.message);
 		return response.message;
@@ -68,13 +83,20 @@ public class AspNetDataManager : IDataManager
 		BasicResponse loginSession = WebManager.PostHttpResponse<BasicResponse> (
 			WEB_ADDRESS + LOGIN_CONTROLLER, JsonUtility.ToJson(loginDetails));
 
+		if (loginSession == null)
+		{
+			return null;
+		}
+
 		return new LoginResponse (loginSession.error, loginSession.message);
 	}
 
-	public void UpdateAvatar(string sessionKey, Avatar avatar)
+	public bool UpdateAvatar(string sessionKey, Avatar avatar)
 	{
 		BasicResponse response = WebManager.GetHttpResponse<BasicResponse> (
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL(sessionKey) + "&avatar=" + avatar.ToString());
+
+		return response == null;
 	}
 
 	public List<AnimalLocation> GetGPSLocations()
@@ -82,9 +104,9 @@ public class AspNetDataManager : IDataManager
 		List<AnimalLocation> pointsOfInterest = new List<AnimalLocation> ();
 		LocationResponse response = WebManager.GetHttpResponse<LocationResponse> (WEB_ADDRESS + LOCATIONS_CONTROLLER);
 
-		if (response.empty)
+		if (response == null)
 		{
-			return pointsOfInterest;
+			return null;
 		}
 
 		foreach (LocationData d in response.LocationData)
@@ -103,8 +125,9 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + PLAYER_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 
 		//TODO: Possibly only have get the list of discovered animals and calculate the numbers from there
-		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar>(), playerData.currency, 
-			GetPlayerAnimals(sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals(sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals(sessionKey));
+		return new Player (playerData.name, playerData.avatar.ToEnum<Avatar> (), playerData.currency, playerData.survey,
+			GetPlayerAnimals (sessionKey, AnimalEncounterType.Caught), GetPlayerAnimals (sessionKey, AnimalEncounterType.Released), GetDiscoveredAnimals (sessionKey),
+			GetRecommendations(sessionKey));
 		//owned, released
 	}
 
@@ -201,6 +224,11 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + GENERATE_ANIMAL_CONTROLLER + 
 			"?session_key=" + WWW.EscapeURL (sessionKey) + "&species=" + species.ToString ().ToLower());
 
+		if (gennedAnimal == null)
+		{
+			return null;
+		}
+
 		string fstring = "GENNED_ANIMAL\nID: " + gennedAnimal.animal_id.ToString ();
 		fstring += "\nhealth1 : " + gennedAnimal.health_1.ToString ();
 		fstring += "\nhealth2 : " + gennedAnimal.health_2.ToString ();
@@ -209,7 +237,6 @@ public class AspNetDataManager : IDataManager
 		fstring += "\nsize : " + gennedAnimal.size.ToString ();
 		fstring += "\nweight: " + gennedAnimal.weight.ToString ();
 		Debug.LogWarning (fstring);
-
 
 		return new Animal (species, gennedAnimal.animal_id,
 			new AnimalStats(gennedAnimal.health_1, gennedAnimal.health_2, gennedAnimal.health_3, 
@@ -236,7 +263,7 @@ public class AspNetDataManager : IDataManager
 		return response.message;
 	}
 
-	public void NotifyAnimalCaught(string sessionKey, Animal animal)
+	public bool NotifyAnimalCaught(string sessionKey, Animal animal)
 	{
 		AnimalEncounterData animalData = new AnimalEncounterData ();
 		animalData.session_key = sessionKey;
@@ -255,11 +282,18 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
 
-		string fstring = "CAUGHT: " + response.message;
-		Debug.LogWarning (fstring);
+		if (response == null)
+		{
+			return true;
+		}
+
+		//string fstring = "CAUGHT: " + response.message;
+		//Debug.LogWarning (fstring);
+
+		return response.error;
 	}
 
-	public void NotifyAnimalReleased(string sessionKey, Animal animal)
+	public bool NotifyAnimalReleased(string sessionKey, Animal animal)
 	{
 		AnimalEncounterData animalData = new AnimalEncounterData ();
 		animalData.session_key = sessionKey;
@@ -278,8 +312,14 @@ public class AspNetDataManager : IDataManager
 			WEB_ADDRESS + NOTIFY_ANIMAL_ENCOUNTER_CONTROLLER, JsonUtility.ToJson(animalData)
 		);
 
-		string fstring = "RELEASED: " + response.message;
-		Debug.LogWarning (fstring);
+		//string fstring = "RELEASED: " + response.message;
+		//Debug.LogWarning (fstring);
+		if (response == null)
+		{
+			return true;
+		}
+
+		return response.error;
 	}
 
 	public List<JournalEntry> GetJournalEntryData(string sessionKey)
@@ -288,6 +328,11 @@ public class AspNetDataManager : IDataManager
 		JournalResponse response = WebManager.GetHttpResponse<JournalResponse> (
 			WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
 		);
+
+		if (response == null)
+		{
+			return null;
+		}
 
 		Debug.LogWarning ("JOURNAL: " + WEB_ADDRESS + ANIMAL_ENCOUNTERS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey));
 		foreach (JournalEntryData entry in response.JournalEntryData)
@@ -315,5 +360,220 @@ public class AspNetDataManager : IDataManager
         journalEntries.Sort((x, y) => System.DateTime.Compare(y.LatestEncounterDate, x.LatestEncounterDate));
 
         return new List<JournalEntry>(journalEntries.Take(JOURNAL_ENTRY_LIMIT));
+	}
+
+	public bool SendRatings(string sessionKey, List<InterestValue> interests)
+	{
+		SurveyData data = new SurveyData ();
+		data.session_key = sessionKey;
+		data.interests = new List<InterestData> ();
+		for (int i = 0; i < interests.Count; i++) 
+		{
+			data.interests.Add (new InterestData (interests [i].Interest.ToString (), interests [i].Value));
+		}
+		JsonResponse.BasicResponse response = WebManager.PostHttpResponse<BasicResponse> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER, JsonUtility.ToJson (data)
+		);
+			
+		string sentMessage = "RATINGS SENT: " + response.message;
+		Debug.LogWarning (sentMessage);
+		return response.error || response == null;
+	}
+
+	private int getIndexOfLocation(string location, List<MajorLocationData> majorListData)
+	{
+		for(int i = 0; i < majorListData.Count; i++)
+		{
+			if (majorListData[i].Location == location) 
+			{
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	//TODO: Fix this messy function
+	public Dictionary<string, MajorLocationData> GetRecommendations(string sessionKey)
+	{
+		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
+		);
+
+		if (recommendations == null)
+		{
+			return null;
+		}
+
+		//Debug.LogWarning ("URLLLLLLLLL: " + WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?username=" + username);
+		List<MajorLocation> majorListing = recommendations.recommended_majors;
+		List<MajorLocationData> majorData = new List<MajorLocationData> ();
+
+		for (int i = 0; i < majorListing.Count; i++) 
+		{
+			int index = getIndexOfLocation (majorListing [i].Location, majorData);
+			if (index == -1) 
+			{
+				MajorLocationData data = new MajorLocationData (majorListing [i].MajorPreference, majorListing [i].Location);
+				majorData.Add (data);
+			} 
+			else 
+			{
+				majorData [index].MajorPreferences.Add (majorListing [i].MajorPreference);
+			}
+		}
+
+		foreach (MajorLocationData data in majorData) 
+		{
+			data.CalculateAverageValue ();
+		}
+
+		majorData.Sort ((y, x) => (x.AverageValue).CompareTo (y.AverageValue));
+		Dictionary<string, MajorLocationData> majorRecommendations = new Dictionary<string, MajorLocationData>();
+		for (int i = 0; i < majorData.Count; i++) 
+		{
+			majorData [i].Index = i;
+			majorRecommendations.Add(majorData[i].Location, majorData[i]);
+		}
+
+		return majorRecommendations;//recommendations.recommended_majors;
+	}
+
+	public List<Venue> GetVenueList (string sessionKey)
+	{
+		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
+		);
+
+		if (recommendations == null)
+		{
+			return null;
+		}
+
+		List<MajorLocation> majorListing = recommendations.recommended_majors;
+		List<Venue> venues = new List<Venue> ();
+		List<AnimalLocation> animalListing = GetGPSLocations ();
+
+		//the problem is some locations have the same majors as other places
+		//and some places have more than one major
+		foreach(MajorLocation majorlocation in majorListing)
+		{
+			int index = venues.FindIndex(p => p.Location == majorlocation.Location);
+			if (index == -1) 
+			{
+				Venue venue = new Venue (majorlocation.Location, majorlocation.MajorPreference.Major.ToExactEnum<Major>());
+				venues.Add (venue);
+			} 
+			else 
+			{
+				venues [index].AddMajor (majorlocation.MajorPreference.Major.ToExactEnum<Major>());
+			}
+		}
+
+		foreach (AnimalLocation animallocation in animalListing) 
+		{
+			int index = venues.FindIndex(p => p.Location == animallocation.Location.LocationName);
+			if (index != -1) 
+			{
+				venues [index].SetDescription (animallocation.Location.Description);
+				venues [index].SetAnimal (animallocation.Animal);
+			}
+		}
+
+		return venues;
+	}
+
+	public Dictionary<string, List<Major>> GetMajorsAtLocation(string sessionKey)
+	{
+		RecommendationData recommendations = WebManager.GetHttpResponse<RecommendationData> (
+			WEB_ADDRESS + RECOMMENDATIONS_CONTROLLER + "?session_key=" + WWW.EscapeURL (sessionKey)
+		);
+
+		if (recommendations == null)
+		{
+			return null;
+		}
+
+		List<MajorLocation> majorListing = recommendations.recommended_majors;
+		Dictionary<string, List<Major>> majorLocations = new Dictionary<string, List<Major>> ();
+		foreach (MajorLocation majorLocation in majorListing)
+		{
+			if (!majorLocations.ContainsKey (majorLocation.Location))
+			{
+				majorLocations.Add (majorLocation.Location, new List<Major>());
+			}
+	
+			majorLocations [majorLocation.Location].Add (majorLocation.MajorPreference.Major.ToExactEnum<Major> ());
+		}
+
+		return majorLocations;
+	}
+
+	public Dictionary<Major, MajorData> AllMajors()
+	{
+		Debug.LogWarning (WEB_ADDRESS + MAJORS_CONTROLLER);
+
+		MajorEntriesResponse majorEntriesResponse = WebManager.GetHttpResponse<MajorEntriesResponse> (
+			WEB_ADDRESS + MAJORS_CONTROLLER
+		);
+
+		if (majorEntriesResponse == null)
+		{
+			return null;
+		}
+
+		List<MajorEntryData> majorEntriesList = majorEntriesResponse.MajorEntries;
+		Dictionary<Major, MajorData> majorEntries = new Dictionary<Major, MajorData> ();
+		foreach(MajorEntryData majorEntry in majorEntriesList)
+		{
+			majorEntries.Add (majorEntry.major.ToExactEnum<Major> (), new MajorData (majorEntry.major_name, majorEntry.description));
+		}
+
+		return majorEntries;
+	}
+
+	public List<Vector2> RequestDirections(List<Vector2> placesToVisit)
+	{
+		//TODO: Work in progress
+		string LATITUDE = "{%22lat%22:";
+		string LONGITUDE = ",%22lon%22:";
+		string END = ",%22type%22:%22through%22}";
+
+		string address = "https://valhalla.mapzen.com/route?json={%22locations%22:" +
+		                 "[";
+		string points = string.Empty;
+		for (int i = 1; i < placesToVisit.Count; i++)
+		{
+			points += LATITUDE + placesToVisit [i].x.ToString () + LONGITUDE + placesToVisit [i].y.ToString () + END;
+			if (i != placesToVisit.Count - 1)
+			{
+				points += ",";
+			}
+		}
+			//"{%22lat%22:34.414064," + "%22lon%22:-119.847391}," +
+			//"{%22lat%22:34.412744," + "%22lon%22:-119.848396}" + 
+
+		points += "]," +
+			"%22costing%22:%22pedestrian%22," +
+			"%22directions_options%22:{%22units%22:%22miles%22}," +
+			"%22id%22:%22recommended_route%22}&api_key=";
+		address += points + Keys.MapZenKey;
+		//address += Keys.MapZenKey;
+		Debug.LogWarning ("ADDRESS: " + address);
+		MapZenResponse response = WebManager.GetHttpResponse<MapZenResponse> (address);
+
+		List<Vector2> polyline = PolylineDecoder.ExtractPolyLine(response.trip.legs [0].shape);
+
+		string resultingPoints = "";
+		foreach (Vector2 line in polyline)
+		{
+			resultingPoints += line.x + ", " + line.y + ", ";
+		}
+		Debug.LogWarning ("RESULTING POINTS: " + resultingPoints);
+
+		//"For n number of break locations, there are n-1 legs. Through locations do not create separate legs."
+		//return ;
+
+		return polyline;
 	}
 }

@@ -1,11 +1,7 @@
-﻿
-public enum ScreenType {
-
-	CreateAccount,
+﻿public enum ScreenType {
 	Login,
-	Home,
-	FakeHome,
-	WorkingHome,
+    CreateAccount,
+    Home,
 	IDCard,
     AnimalUnderObs,
     CatchAnimal,
@@ -16,4 +12,11 @@ public enum ScreenType {
     Quiz,
     Gender,
 	GoMapHome,
+    Tutorial,
+	Survey,
+	PlaceJournal,
+	Menu,
+	MajorsJournal,
+	AnimalsJournal,
+	WifiError,
 }
