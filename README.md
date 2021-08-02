@@ -19,7 +19,7 @@ The game's location recommendations are tailored to each student's personal acad
 
     * MSProject's Backend uses a Microsoft Azure server and database (Transact-SQL).
 
-2. [TamuyalClassifier](https://github.com/Kaikat/MSProjectClassifier) <br>
+2. [MSProjectClassifier](https://github.com/Kaikat/MSProjectClassifier) <br>
 
     * The classifier parses survey responses from current college students or alumni about interests and majors. These responses are used to train a classifier and the resulting matrix is used in Tamuyal with the young player's interest responses for major recommendations.
 
