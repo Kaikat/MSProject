@@ -1,5 +1,5 @@
-# MS Project
-MS Project is a location-based, mobile, educational game for increasing K-12 students' interest in STEM fields.
+# MSProject
+MSProject is a location-based, mobile, educational game for increasing K-12 students' interest in STEM fields.
 
 **Note: For the most up-to-date code look at the develop branch.**
 
